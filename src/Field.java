@@ -1,80 +1,83 @@
 import java.util.List;
 
 abstract public class Field{
+    /**Az adott mezőn álló játékosok. */
     List<Character> players;
     
     /**
+     * Ez egy absztrakt függvény, mivel a leszármazottai más-más szabályok alapján adják meg, 
+     * hogy az adott irányba milyen szomszédos mezőjük van, illetve a leszármazottai tárolják a szomszédos
+     * mezőiket.
+     * @param d Irány, amelyből a szomszédok lekérik.
+     * @return Az adott irányból a szomszédos mező, vagy ha az adott irányba nincs érvényes mező, nullt ad vissza.
+     */
+    abstract public Field getNeighbour(int d);
+
+    /**
+     * Leveszi a paraméterben kapott karaktert a mezőről.
+     * @param c Karakter objektum, amelyet le akarnak venni a mezőről.
+     */
+    public void Remove(Character c){}
+
+    /**
+     * Felveszi a paraméterben kapott karaktert a mezőre.
+     * @param c Karakter objektum, amelyet fel akarnak vetetni a mezőre.
+     */
+    public void Accept(Character c){}
+
+    /**
+     * Nem csinál semmit, elnyeli a hívást, ha olyan objektumra hívják, aminek nincsen ez a függvénye felüldefiniálva.
+     */
+    public void Fix(){}
+
+    /**
+     * Nem csinál semmit, elnyeli a hívást, ha olyan objektumra hívják, aminek nincsen ez a függvénye felüldefiniálva.
+     */
+    public void Drill(){}
+
+    /**
+     * Nem csinál semmit, elnyeli a hívást, ha olyan objektumra hívják, aminek nincsen ez a függvénye felüldefiniálva.
+     * @param p Az a cső, amelyet bementi csőként kell beállítani.
+     * @param d Az a cső, amelyet kimeneti csőként kell beállítani.
+     */
+    public void Change(Pipe o, Pipe d){}
+
+    /**
+     * 
+     * @return
+     */
+    public Pipe PickUpPipe(){}
+
+    /**
+     * 
+     * @return
+     */
+    public Pump PickUpPump(){}
+
+    /**
+     * 
+     */
+    public void PlacePipe(){}
+
+    /**
      * 
      * @param d
      * @return
      */
-    abstract Field getNeighbour(int d);
-
-    /**
-     * 
-     * @param c
-     */
-    void Remove(Character c){}
-
-    /**
-     * 
-     * @param c
-     */
-    void Accept(Character c){}
-
-    /**
-     * 
-     */
-    void Fix(){}
-
-    /**
-     * 
-     */
-    void Drill(){}
-
-    /**
-     * 
-     * @param p
-     * @param d
-     */
-    void Change(Pipe p, Pipe d){}
-
-    /**
-     * 
-     * @return
-     */
-    Pipe PickUpPipe(){}
-
-    /**
-     * 
-     * @return
-     */
-    Pump PickUpPump(){}
-
-    /**
-     * 
-     */
-    void PlacePipe(){}
-
-    /**
-     * 
-     * @param d
-     * @return
-     */
-    Node getEndpoint(int d){}
+    public Node getEndpoint(int d){}
 
     /**
      * 
      * @param p
      */
-    void addEdge(Pipe p){}
+    public void addEdge(Pipe p){}
 
     /**
      * 
-     * @param p
+     * @param p 
      * @return
      */
-    Pump PlacePump(Pump p){}
+    public Pump PlacePump(Pump p){}
 
 
 
