@@ -2,13 +2,13 @@ import java.util.List;
 
 abstract public class Field{
     /**Az adott mezőn álló játékosok. */
-    List<Character> players;
+    protected List<Character> players;
     
     /**
      * Ez egy absztrakt függvény, mivel a leszármazottai más-más szabályok alapján adják meg, 
      * hogy az adott irányba milyen szomszédos mezőjük van, illetve a leszármazottai tárolják a szomszédos
      * mezőiket.
-     * @param d Irány, amelyből a szomszédok lekérik.
+     * @param d Irány, amelyből a szomszédot lekérik.
      * @return Az adott irányból a szomszédos mező, vagy ha az adott irányba nincs érvényes mező, nullt ad vissza.
      */
     abstract public Field getNeighbour(int d);
