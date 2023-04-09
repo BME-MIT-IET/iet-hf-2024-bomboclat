@@ -1,8 +1,9 @@
 import java.util.ArrayList;
 import java.util.List;
 
-import org.w3c.dom.Node;
-
+/**
+ * A csövet reprezentáló osztály
+ */
 public class Pipe extends Field{
     //A cső végpontjai
     List<Node> endpoints;
