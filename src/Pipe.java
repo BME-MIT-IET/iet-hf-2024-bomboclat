@@ -79,6 +79,9 @@ public class Pipe extends Field{
         return ret;
     }
 
+    /**
+     * Megnöveli az elfolyt víz mennyiségét. 
+     */
     public void addLost() {
         System.out.println("Pipe::addLost()");
     }
