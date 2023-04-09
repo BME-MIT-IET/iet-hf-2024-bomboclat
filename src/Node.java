@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.List;
 
 abstract public class Node extends Field implements Stepable{
@@ -7,6 +8,7 @@ abstract public class Node extends Field implements Stepable{
     /**Node konstruktora */
     public Node(){
         System.out.println("Node has been initialized");
+        edges=new ArrayList<>();
     }
 
     /**

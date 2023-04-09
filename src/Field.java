@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.List;
 
 abstract public class Field{
@@ -7,6 +8,7 @@ abstract public class Field{
     /**Field konstruktora */
     public Field(){
         System.out.println("Field has been initialized");
+        players=new ArrayList<>();
     }
     
     /**
