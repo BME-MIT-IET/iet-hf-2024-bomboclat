@@ -120,8 +120,11 @@ public class Pipe extends Field{
      */
     public void setEndpoint(Node n, int d) {
         System.out.println("Pipe::setEndpoint()");
-        endpoints.remove(d);
-        endpoints.add(d,n);
+        if(d == 0 || d == 1){
+            n.addEdge(this);
+            endpoints.remove(d);
+            endpoints.add(d,n);
+        }
     }
 
     /**
