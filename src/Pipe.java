@@ -52,6 +52,12 @@ public class Pipe extends Field{
         System.out.println("Pipe::Drill()");
     }
 
+    /**
+     * A Pipe step függvénye
+     */
+    public void Step() {
+        System.out.println("Pipe::Step()");
+    }
     
     /** 
      * Vizet ad a csőnek
