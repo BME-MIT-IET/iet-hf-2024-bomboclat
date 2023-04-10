@@ -20,12 +20,15 @@ public class Pipe extends Field{
      * Pipe konstruktor
      */
     public Pipe(){
+        for(int i = 0; i <= Main.tabCount; i++) {System.out.print("\t");}
+        Main.tabCount++;
         System.out.println("Pipe has been initialized");
         has_hole = false;
         has_water = false;
         lost = 0;
         has_player = false;
         endpoints = new ArrayList<Node>(2);
+        Main.tabCount--;
     }
 
     /**
