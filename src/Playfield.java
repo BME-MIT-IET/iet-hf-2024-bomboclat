@@ -1,7 +1,7 @@
 import java.util.List;
 import java.util.ArrayList;
 
-/*
+/**
  * A játékmezőt tárolja, ilyen objektumokban lehet pályákat tárolni.
  */
 public class Playfield implements Stepable{
@@ -12,7 +12,7 @@ public class Playfield implements Stepable{
     List<Pipe> pipes;
 
 
-    /*
+    /**
      * Playfield konstruktor
      */
     public Playfield(){
@@ -24,7 +24,7 @@ public class Playfield implements Stepable{
         Main.tabCount--;
     }
 
-    /*
+    /**
      * A Stepable interface Step() függvényének az implementációja.
      * Lépteti az összes játémezőt/meghívja a Step() függvényüket.
      */
@@ -42,7 +42,7 @@ public class Playfield implements Stepable{
         Main.tabCount--;
     }
     
-    /*
+    /**
      * Hozzáad egy csomópontot a játékmezőhöz.
      * @param n a hozzáadandó csomópont
      */
@@ -54,7 +54,7 @@ public class Playfield implements Stepable{
         Main.tabCount--;
     }
 
-    /*
+    /**
      * Levesz egy csomópontot a játékmezőről.
      * @param n a törlendő csomopónt
      */
@@ -66,7 +66,7 @@ public class Playfield implements Stepable{
         Main.tabCount--;
     }
 
-    /*
+    /**
      * Hozzáad egy csövet a játékmezőhöz.
      * @param p a hozzáadandó cső
      */
@@ -78,7 +78,7 @@ public class Playfield implements Stepable{
         Main.tabCount--;
     }
 
-    /*
+    /**
      * Levesz egy csövet a játékmezőről.
      * @param p a törlendő cső
      */
@@ -90,7 +90,7 @@ public class Playfield implements Stepable{
         Main.tabCount--;
     }
 
-    /*
+    /***
      * Összeszámolja a szerelők/mechanic-ek által megszerzett pontokat
      * @return int a megszerzett pontok száma
      */
@@ -106,7 +106,7 @@ public class Playfield implements Stepable{
         return count;
     }
 
-    /*
+    /**
      * Összeszámolja a nomádok által megszerzett pontokat
      * @return int a megszerzett pontok száma
      */

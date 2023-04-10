@@ -1,8 +1,9 @@
-
-/*
+/**
  * A léptethető mezők működését megvalósító interfész.
  */
 public interface Stepable{
-    // a léptethető mező lépését megvalósító absztrakt függvény.
+    /*
+     * a léptethető mező lépését megvalósító absztrakt függvény.
+     */
     public abstract void Step();
 }

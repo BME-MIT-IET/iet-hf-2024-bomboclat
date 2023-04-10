@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 import java.util.List;
 
-/*
+/**
 * Felelőssége a játék lebonyolítása, illetve a főbb események kezelése.
  */
 public class Game {
@@ -12,7 +12,7 @@ public class Game {
     //A pályát tároló változó.
     Playfield currPlayfield;
 
-    /*
+    /**
      * Game konstruktor
      */
     public Game(){
@@ -25,7 +25,7 @@ public class Game {
         Main.tabCount--;
     }
 
-    /*
+    /**
      * Elindítja a játékmenetet.
      */
     public void StartGame(){
@@ -35,7 +35,7 @@ public class Game {
         Main.tabCount--;
     }
 
-    /*
+    /**
      * A játék végeztével összeszámolja a csapatok által szerzett pontokat, továbbá eldönti, hogy melyik csapat nyert.
      * @return int 1 ha a mechanic csapat nyert, 0 ha a nomádok
      */
@@ -49,7 +49,7 @@ public class Game {
         return mech > nomad ? 1 : 0;
     }
 
-    /*
+    /**
      * A játszma végeztével leállítja a játékot.
      */
     public void EndGame(){
@@ -59,7 +59,7 @@ public class Game {
         Main.tabCount--;
     }
 
-    /*
+    /**
      * Egy kör végeztével levezényli a stepable interfészt megvalósító elemek lépését.
      */
     public void EndRound(){
@@ -71,18 +71,24 @@ public class Game {
         Main.tabCount--;
     }
 
-    //Karakter tömbhöz setter
-    public void setCharacters(List<Character> characters){
+    /**
+     * Karakter tömbhöz setter
+     * @param character a hozzáadandó játékos
+     */
+    public void addCharacter(Character character){
         for(int i = 0; i < Main.tabCount; i++) { System.out.print("\t"); }
         System.out.println("Game::setCharacters()");
         Main.tabCount++;
-        this.characters = characters;
+        characters.add(character);
         Main.tabCount--;
     }
-    //currPlayfield változóhoz setter
+    /**
+     * currPlayfield változóhoz setter
+     * @param playField a beállítandó playfield
+     */
     public void setCurrPlayfield(Playfield playfield){
         for(int i = 0; i < Main.tabCount; i++) { System.out.print("\t"); }
-        System.out.println("Game::setCharacters()");
+        System.out.println("Game::setCurrPlayfield()");
         Main.tabCount++;
         this.currPlayfield = playfield;
         Main.tabCount--;
