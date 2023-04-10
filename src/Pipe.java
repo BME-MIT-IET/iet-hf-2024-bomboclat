@@ -4,7 +4,7 @@ import java.util.List;
 /**
  * A csövet reprezentáló osztály
  */
-public class Pipe extends Field{
+public class Pipe extends Field implements Stepable{
     //A cső végpontjai
     List<Node> endpoints;
     //Lyukas-e a cső
