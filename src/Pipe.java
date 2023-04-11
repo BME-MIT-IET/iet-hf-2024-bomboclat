@@ -119,6 +119,7 @@ public class Pipe extends Field implements Stepable{
         for(int i = 0; i < Main.tabCount; i++) {System.out.print("\t");}
         System.out.println("Pipe::Accept()");
         Main.tabCount++;
+        c.setField(this);
         Main.tabCount--;
     }
 
@@ -169,7 +170,7 @@ public class Pipe extends Field implements Stepable{
         Main.tabCount++;
         if(d == 0 || d == 1){
             n.addEdge(this);
-            endpoints.remove(d);
+            if(!endpoints.isEmpty()) endpoints.remove(d);
             endpoints.add(d,n);
         }
         Main.tabCount--;

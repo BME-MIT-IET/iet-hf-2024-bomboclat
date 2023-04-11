@@ -83,7 +83,7 @@ public class Character{
 
     /**
      * A mozgatást végző függvény
-     * @param d Egy irány aról a mezőről, amin áll
+     * @param d Egy irány arról a mezőről, amin áll
      */
     public void Move(int d){
         for(int i = 0; i < Main.tabCount; i++) {System.out.print("\t");}

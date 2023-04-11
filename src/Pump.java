@@ -92,6 +92,7 @@ public class Pump extends Node{
         System.out.println("Pump::PickUpPipe()");
         Main.tabCount++;
 
+        return null; // lefordulas miatt
     }
 
 }

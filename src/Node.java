@@ -48,7 +48,7 @@ abstract public class Node extends Field implements Stepable{
         System.out.println("Node::getMechanicPoint()");
         Main.tabCount++;
         Main.tabCount--;
-        return null;
+        return 0;
     }
 
     /**
