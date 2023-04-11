@@ -100,7 +100,7 @@ public class Playfield implements Stepable{
         Main.tabCount++;
         int count = 0;
         for(int i = 0; i < nodes.size(); i++){
-            count += nodes.get(i).getMechanicPoints();
+            count += nodes.get(i).getMechanicPoint();
         }
         Main.tabCount--;
         return count;
