@@ -68,7 +68,19 @@ public class TestClass {
      * 20 Place Pump on Pipe
      */
     public void TestPlacePumpOnPipe() {
+        Pump pump = new Pump();
+        Pipe p = new Pipe();
 
+        Mechanic m = new Mechanic(10, p);
+        m.setPumpInHand(pump);
+        
+        Pump pump0 = new Pump();
+        Pump pump1 = new Pump();
+
+        p.setEndpoint(pump0, 0);
+        p.setEndpoint(pump1, 1);
+
+        m.PlacePump();
     }
 
     /**

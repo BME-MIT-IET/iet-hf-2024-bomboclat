@@ -75,4 +75,12 @@ public class Mechanic extends Character{
         pump_in_hand = p;
         Main.tabCount--;
     }
+
+    public void setPipeInHand(Pipe p) {
+        for(int i = 0; i < Main.tabCount; i++) {System.out.print("\t");}
+        Main.tabCount++;
+        System.out.println("Mechanic::setPipeInHand()");
+        pipe_in_hand = p;
+        Main.tabCount--;
+    }
 }
