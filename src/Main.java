@@ -23,15 +23,15 @@ public class Main {
         sc.close();
 
         switch(answer) {
-            case 0: tester.Test1();
-            case 14: tester.TestChangePump();
-            case 19: tester.TestPlacePumpOnPump();
-            case 20: tester.TestPlacePumpOnPipe();
-            case 26: tester.TestWaterStepSource();
-            case 27: tester.TestWaterStepCity();
-            case 28: tester.TestWaterStepPump();
-            case 29: tester.TestDrillPipe();
-            default:;
+            case 0: tester.Test1(); break;
+            case 14: tester.TestChangePump(); break;
+            case 19: tester.TestPlacePumpOnPump(); break;
+            case 20: tester.TestPlacePumpOnPipe(); break;
+            case 26: tester.TestWaterStepSource(); break;
+            case 27: tester.TestWaterStepCity(); break;
+            case 28: tester.TestWaterStepPump(); break;
+            case 29: tester.TestDrillPipe(); break;
+            default: break;
         }
     }
 }
