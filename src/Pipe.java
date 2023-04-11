@@ -121,7 +121,10 @@ public class Pipe extends Field implements Stepable{
         for(int i = 0; i < Main.tabCount; i++) {System.out.print("\t");}
         System.out.println("Pipe::Accept()");
         Main.tabCount++;
-        c.setField(this);
+        if(!has_player) {
+            c.setField(this);
+            has_player = true;
+        }
         Main.tabCount--;
     }
 
@@ -133,6 +136,8 @@ public class Pipe extends Field implements Stepable{
         for(int i = 0; i < Main.tabCount; i++) {System.out.print("\t");}
         System.out.println("Pipe::Remove()");
         Main.tabCount++;
+        has_player = false;
+        players.remove(c);
         Main.tabCount--;
     }
 
