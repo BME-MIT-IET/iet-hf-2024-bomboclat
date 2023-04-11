@@ -52,7 +52,16 @@ public class TestClass {
      * 19 Place Pump on Pump
      */
     public void TestPlacePumpOnPump() {
+        Main.tabCount = 0;
 
+        Pump pump = new Pump();
+        Pump p = new Pump();
+
+        Mechanic m = new Mechanic(10, p);
+
+        m.setPumpInHand(pump);
+        
+        m.PlacePump();
     }
 
     /**
@@ -66,13 +75,60 @@ public class TestClass {
      * 26 Test Water Step Source
      */
     public void TestWaterStepSource() {
+        Main.tabCount = 0;
 
+        City c = new City();
+        
+        Pump pump = new Pump();
+        
+        Pipe p1 = new Pipe();
+        Pipe p2 = new Pipe();
+        Pipe p3 = new Pipe();
+        
+        Source s1 = new Source();
+        Source s2 = new Source();
+
+        p1.setEndpoint(pump, 0);
+        p1.setEndpoint(s2, 1);
+        
+        p2.setEndpoint(pump, 0);
+        p2.setEndpoint(s1, 1);
+
+        p3.setEndpoint(pump, 0);
+        p3.setEndpoint(c, 1);
+
+        pump.setWhere(p1);
+        pump.setFrom(p2);
     }
 
     /**
      * 27 Test Water Step City
      */
     public void TestWaterStepCity() {
+        Main.tabCount = 0;
+
+        City c = new City();
+        
+        Pump pump = new Pump();
+        
+        Pipe p1 = new Pipe();
+        Pipe p2 = new Pipe();
+        Pipe p3 = new Pipe();
+        
+        Source s1 = new Source();
+        Source s2 = new Source();
+
+        p1.setEndpoint(pump, 0);
+        p1.setEndpoint(s2, 1);
+        
+        p2.setEndpoint(pump, 0);
+        p2.setEndpoint(s1, 1);
+
+        p3.setEndpoint(pump, 0);
+        p3.setEndpoint(c, 1);
+
+        pump.setWhere(p1);
+        pump.setFrom(p2);
 
     }
 
@@ -80,6 +136,30 @@ public class TestClass {
      * 28 Test Water Step Pump
      */
     public void TestWaterStepPump() {
+        Main.tabCount = 0;
+
+        City c = new City();
+        
+        Pump pump = new Pump();
+        
+        Pipe p1 = new Pipe();
+        Pipe p2 = new Pipe();
+        Pipe p3 = new Pipe();
+        
+        Source s1 = new Source();
+        Source s2 = new Source();
+
+        p1.setEndpoint(pump, 0);
+        p1.setEndpoint(s2, 1);
+        
+        p2.setEndpoint(pump, 0);
+        p2.setEndpoint(s1, 1);
+
+        p3.setEndpoint(pump, 0);
+        p3.setEndpoint(c, 1);
+
+        pump.setWhere(p1);
+        pump.setFrom(p2);
 
     }
 

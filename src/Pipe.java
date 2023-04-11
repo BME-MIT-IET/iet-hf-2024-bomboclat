@@ -145,6 +145,11 @@ public class Pipe extends Field implements Stepable{
         for(int i = 0; i < Main.tabCount; i++) {System.out.print("\t");}
         System.out.println("Pipe::PlacePump()");
         Main.tabCount++;
+        Pipe p2 = new Pipe();
+        p2.setEndpoint(p, 0);
+        p2.setEndpoint(this.getEndpoint(1), 1);
+        this.getEndpoint(1).removeEdge(this);
+        this.setEndpoint(p, 1);
         Main.tabCount--;
         return p;
     }
