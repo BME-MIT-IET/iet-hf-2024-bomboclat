@@ -5,8 +5,8 @@ public class TestClass {
         //Ezzel kezdődjön minden teszt
         Main.tabCount = 0;
 
-        Character c = new Character(1, null);
         Pump pump = new Pump();
+        Character c = new Character(1, pump);
         Pipe pipe = new Pipe();
 
         c.setField(pump);
@@ -14,6 +14,53 @@ public class TestClass {
         pipe.setEndpoint(pump, 0);
 
         c.Move(0);
+    }
+    /**
+     * 11 Water flows from Source to Pump
+     */
+    public void TestWaterFlowsSourceToPump(){
+        Main.tabCount = 0;
+        
+        Source source = new Source();
+        Pipe edge = new Pipe();
+        Pump pump = new Pump();
+        edge.setEndpoint(source, 0);
+        edge.setEndpoint(pump, 1);
+        pump.addEdge(edge);
+        pump.Change(edge, edge);
+        source.Step();
+        pump.Step();
+    }
+
+    /**
+     * 12 Water flows in City
+     */
+    public void TestWaterFlowsInCity(){
+        Main.tabCount = 0;
+
+        City city = new City();
+        Pipe inlet = new Pipe();
+        inlet.setEndpoint(city, 1);
+
+        city.Step();
+    }
+
+    /**
+     * 13 Water flows in blocked input of Pump
+     */
+    public void TestWaterFlowsInBlocked(){
+        Main.tabCount = 0;
+        
+        Pump pump = new Pump();
+        Pipe blocked = new Pipe();
+        Pipe from = new Pipe();
+        blocked.setEndpoint(pump, 1);
+        from.setEndpoint(pump, 1);
+        Pipe where = new Pipe();
+        where.setEndpoint(pump, 0);
+        pump.Change(from, where);
+
+        pump.Step();
     }
 
     /**
@@ -68,6 +115,8 @@ public class TestClass {
      * 20 Place Pump on Pipe
      */
     public void TestPlacePumpOnPipe() {
+        Main.tabCount = 0;
+        
         Pump pump = new Pump();
         Pipe p = new Pipe();
 
@@ -81,6 +130,62 @@ public class TestClass {
         p.setEndpoint(pump1, 1);
 
         m.PlacePump();
+    }
+
+    /**
+     * 21 Pick up Pipe on City
+     */
+    public void TestPickUpPipeOnCity(){
+        Main.tabCount = 0;
+        
+        City city = new City();
+        Mechanic mechanic = new Mechanic(1, city);
+        Pipe edge = new Pipe();
+        edge.setEndpoint(city, 1);
+        mechanic.setField(city);
+
+        mechanic.PickUpPipe();
+    }
+
+    /**
+     * 22 Pick up Pipe on Pump
+     */
+    public void TestPickUpPipeOnPump(){
+        Main.tabCount = 0;
+        
+        Pump pump = new Pump();
+        Mechanic mechanic = new Mechanic(1, pump);
+        Pipe edge = new Pipe();
+        edge.setEndpoint(pump, 1);
+        mechanic.setField(pump);
+
+        mechanic.PickUpPipe();
+    }
+
+    /**
+     * 23 Pick up Pipe on Pipe
+     */
+    public void TestPickUpPipeOnPipe(){
+        Main.tabCount = 0;
+        
+        Pipe pipe = new Pipe();
+        Mechanic mechanic = new Mechanic(1, pipe);
+        mechanic.setField(pipe);
+
+        mechanic.PickUpPipe();
+    }
+
+    /**
+     * 24 Pick up Pipe on Source
+     */
+    public void TestPickUpPipeOnSource(){
+        Main.tabCount = 0;
+        
+        Source source = new Source();
+        Mechanic mechanic = new Mechanic(1, source);
+        mechanic.setField(source);
+
+        mechanic.PickUpPipe();
     }
 
     /**
