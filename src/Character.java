@@ -18,6 +18,7 @@ public class Character{
         Main.tabCount++;
         moves = nMoves;
         field = nField;
+        field.Accept(this);
         System.out.println("Character has been initialized");
         Main.tabCount--;
     }
