@@ -95,4 +95,25 @@ public class Pump extends Node{
         return null; // lefordulas miatt
     }
 
+    public void setWhere(Pipe p) {
+        for(int i=0; i < Main.tabCount; i++) {
+            System.out.print("\t");
+        }
+        System.out.println("Pump::PickUpPipe()");
+        Main.tabCount++;
+        where = p;
+        Main.tabCount--;
+    } 
+
+    public void setFrom(Pipe p) {
+        for(int i=0; i < Main.tabCount; i++) {
+            System.out.print("\t");
+        }
+        System.out.println("Pump::PickUpPipe()");
+        
+        Main.tabCount++;
+        from = p;
+        Main.tabCount--;
+    }
+
 }

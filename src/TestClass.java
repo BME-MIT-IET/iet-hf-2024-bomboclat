@@ -20,7 +20,32 @@ public class TestClass {
      * 14 Change Pump
      */
     public void TestChangePump() {
+        Main.tabCount = 0;
 
+        City c = new City();
+        
+        Pump pump = new Pump();
+        
+        Pipe p1 = new Pipe();
+        Pipe p2 = new Pipe();
+        Pipe p3 = new Pipe();
+        
+        Source s1 = new Source();
+        Source s2 = new Source();
+
+        p1.setEndpoint(pump, 0);
+        p1.setEndpoint(s2, 1);
+        
+        p2.setEndpoint(pump, 0);
+        p2.setEndpoint(s1, 1);
+
+        p3.setEndpoint(pump, 0);
+        p3.setEndpoint(c, 1);
+
+        pump.setWhere(p1);
+        pump.setFrom(p2);
+
+        pump.Change(p2, p3);
     }
 
     /**
