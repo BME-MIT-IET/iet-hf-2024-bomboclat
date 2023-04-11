@@ -28,6 +28,8 @@ public class Pipe extends Field implements Stepable{
         lost = 0;
         has_player = false;
         endpoints = new ArrayList<Node>(2);
+        endpoints.add(null);
+        endpoints.add(null);
         Main.tabCount--;
     }
 
@@ -170,7 +172,7 @@ public class Pipe extends Field implements Stepable{
         Main.tabCount++;
         if(d == 0 || d == 1){
             n.addEdge(this);
-            if(!endpoints.isEmpty()) endpoints.remove(d);
+            endpoints.remove(d);
             endpoints.add(d,n);
         }
         Main.tabCount--;

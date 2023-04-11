@@ -99,7 +99,7 @@ public class Pump extends Node{
         for(int i=0; i < Main.tabCount; i++) {
             System.out.print("\t");
         }
-        System.out.println("Pump::PickUpPipe()");
+        System.out.println("Pump::setWhere()");
         Main.tabCount++;
         where = p;
         Main.tabCount--;
@@ -109,7 +109,7 @@ public class Pump extends Node{
         for(int i=0; i < Main.tabCount; i++) {
             System.out.print("\t");
         }
-        System.out.println("Pump::PickUpPipe()");
+        System.out.println("Pump::setFrom()");
         
         Main.tabCount++;
         from = p;
