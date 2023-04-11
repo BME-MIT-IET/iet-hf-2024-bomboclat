@@ -15,4 +15,53 @@ public class TestClass {
 
         c.Move(0);
     }
+
+    /**
+     * 14 Change Pump
+     */
+    public void TestChangePump() {
+
+    }
+
+    /**
+     * 19 Place Pump on Pump
+     */
+    public void TestPlacePumpOnPump() {
+
+    }
+
+    /**
+     * 20 Place Pump on Pipe
+     */
+    public void TestPlacePumpOnPipe() {
+
+    }
+
+    /**
+     * 26 Test Water Step Source
+     */
+    public void TestWaterStepSource() {
+
+    }
+
+    /**
+     * 27 Test Water Step City
+     */
+    public void TestWaterStepCity() {
+
+    }
+
+    /**
+     * 28 Test Water Step Pump
+     */
+    public void TestWaterStepPump() {
+
+    }
+
+    /** 
+     * 29 Test Drill Pipe On Pipe
+     */
+    public void TestDrillPipe() {
+
+    }
 }
