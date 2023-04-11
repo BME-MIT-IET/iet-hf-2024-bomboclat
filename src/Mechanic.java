@@ -1,10 +1,14 @@
 /**
  * A szerelőt reprezentáló osztály
  */
-public class Mechanic {
+public class Mechanic extends Character{
     
     private Pipe pipe_in_hand;
     private Pump pump_in_hand;
+
+    public Mechanic(int nMoves, Field nField){
+        super(nMoves, nField);
+    }
 
     /**
      * Megkísérli megjavítani az adott mezőt, amin éppen áll függetlenül
@@ -25,7 +29,7 @@ public class Mechanic {
         for(int i = 0; i < Main.tabCount; i++) {System.out.print("\t");}
         Main.tabCount++;
         System.out.println("Mechanic::PlacePump()");
-        pump_in_hand = field.PlacePump();
+        pump_in_hand = field.PlacePump(pump_in_hand);
         Main.tabCount--;
     }
 

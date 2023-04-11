@@ -1,12 +1,12 @@
-
 /**
  * A karaktert reprezentáló osztály
  */
-public class Character {
+public class Character{
     //A lépései száma az adott körben
     private int moves;
     //Az a mező, amin éppen áll
     protected Field field;
+
 
     /**
      * Character konstruktor
@@ -16,8 +16,8 @@ public class Character {
     public Character(int nMoves, Field nField){
         for(int i = 0; i < Main.tabCount; i++) {System.out.print("\t");}
         Main.tabCount++;
-        moves = nmoves;
-        field = nfield;
+        moves = nMoves;
+        field = nField;
         System.out.println("Character has been initialized");
         Main.tabCount--;
     }
@@ -41,8 +41,8 @@ public class Character {
         for(int i = 0; i < Main.tabCount; i++) {System.out.print("\t");}
         Main.tabCount++;
         System.out.println("Character::getMoves()");
-        return moves;
         Main.tabCount--;
+        return moves;
     }
 
     /**
@@ -64,8 +64,8 @@ public class Character {
         for(int i = 0; i < Main.tabCount; i++) {System.out.print("\t");}
         Main.tabCount++;
         System.out.println("Character::getField()");
-        return field;
         Main.tabCount--;
+        return field;
     }
 
     /**
@@ -78,6 +78,7 @@ public class Character {
         Main.tabCount++;
         System.out.println("Character::ChangePump()");
         field.Change(o, d);
+        Main.tabCount--;
     }
 
     /**
@@ -85,10 +86,14 @@ public class Character {
      * @param d Egy irány aról a mezőről, amin áll
      */
     public void Move(int d){
+        for(int i = 0; i < Main.tabCount; i++) {System.out.print("\t");}
+        Main.tabCount++;
+        System.out.println("Character::Move()");
         Field neighbour = field.getNeighbour(d);
         if(neighbour != null){
             field.Remove(this);
             neighbour.Accept(this);
         }
+        Main.tabCount--;
     }
 }
