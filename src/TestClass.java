@@ -216,6 +216,8 @@ public class TestClass {
 
         pump.setWhere(p1);
         pump.setFrom(p2);
+
+        s1.Step();
     }
 
     /**
@@ -246,7 +248,8 @@ public class TestClass {
 
         pump.setWhere(p1);
         pump.setFrom(p2);
-
+        
+        c.Step();
     }
 
     /**
@@ -278,12 +281,23 @@ public class TestClass {
         pump.setWhere(p1);
         pump.setFrom(p2);
 
+        pump.Step();
     }
 
     /** 
      * 29 Test Drill Pipe On Pipe
      */
     public void TestDrillPipe() {
+        Pipe p = new Pipe();
+        Source s = new Source();
 
+        Nomad n = new Nomad(10, p);
+
+        City c = new City();
+
+        p.setEndpoint(s, 0);
+        p.setEndpoint(c, 1);
+
+        n.DrillPipe();2
     }
 }
