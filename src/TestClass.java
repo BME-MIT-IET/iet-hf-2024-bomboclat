@@ -298,6 +298,6 @@ public class TestClass {
         p.setEndpoint(s, 0);
         p.setEndpoint(c, 1);
 
-        n.DrillPipe();2
+        n.DrillPipe();
     }
 }
