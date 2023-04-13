@@ -87,6 +87,7 @@ public class Pipe extends Field implements Stepable{
         System.out.println("Pipe::GiveWater()");
         Main.tabCount++;
         lost += has_hole ? 1 : 0;
+        has_water = !has_hole;
         Main.tabCount--;
     }
 
