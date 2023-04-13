@@ -17,6 +17,10 @@ public class Main {
         System.out.println("12 Water flows in City");
         System.out.println("13 Water flows in bloked input of Pump");
         System.out.println("14. Change Pump");
+        System.out.println("15. Water flows out of broken Pipe");
+        System.out.println("16. Fix Pipe");
+        System.out.println("17. Place Pipe on Pump");
+        System.out.println("18. Place Pipe on Pipe");
         System.out.println("19. Place Pump on Pump");
         System.out.println("20. Place Pump on Pipe");
         System.out.println("21. Pick up Pipe on City");
@@ -46,8 +50,12 @@ public class Main {
             case 7: tester.TestStepOnOccupiedPipeSource(); break;
             case 11: tester.TestWaterFlowsSourceToPump(); break;
             case 12: tester.TestWaterFlowsInCity(); break;
-            case 13: tester.TestWaterFlowsInBlocked(); ;break;
+            case 13: tester.TestWaterFlowsInBlocked(); break;
             case 14: tester.TestChangePump(); break;
+            case 15: tester.TestWaterFlowsOutOfBrokenPipe(); break;
+            case 16: tester.TestFixPipe(); break;
+            case 17: tester.TestPlacePipeOnPump(); break;
+            case 18: tester.TestPlacePipeOnPipe(); break;
             case 19: tester.TestPlacePumpOnPump(); break;
             case 20: tester.TestPlacePumpOnPipe(); break;
             case 21: tester.TestPickUpPipeOnCity(); break;

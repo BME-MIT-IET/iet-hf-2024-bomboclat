@@ -204,6 +204,81 @@ public class TestClass {
     }
 
     /**
+     * 15 Water flows out of broken pipe
+     */
+    public void TestWaterFlowsOutOfBrokenPipe() {
+        Main.tabCount=0;
+
+        Game game = new Game();
+        Source source = new Source();
+        Pipe pipe = new Pipe();
+        Playfield playfield = new Playfield();
+        Pump pump = new Pump();
+        Pipe pipe2 = new Pipe();
+
+        game.setCurrPlayfield(playfield);
+        pipe.setEndpoint(source, 0);
+        pipe.setEndpoint(pump, 1);
+        pump.setFrom(pipe);
+        playfield.addNode(source);
+        playfield.addNode(pump);
+        playfield.addPipe(pipe);
+        pipe2.setEndpoint(pump, 0);
+        pump.setWhere(pipe2);
+
+        pipe.Drill();
+
+        game.EndRound();
+
+    }
+
+    /**
+     * 16 Fix Pipe
+     */
+    public void TestFixPipe() {
+        Main.tabCount =0;
+
+        Pipe pipe = new Pipe();
+        Mechanic mechanic = new Mechanic(5, pipe);
+        mechanic.Fix();
+
+    }
+
+    /**
+     * 17 Test Place Pipe on Pump
+     */
+    public void TestPlacePipeOnPump() {
+        Main.tabCount = 0;
+
+        Pipe pipe = new Pipe();
+        Pump pump = new Pump();
+        pump.addEdge(pipe);
+        Mechanic mechanic = new Mechanic(5, pump);
+
+        mechanic.PickUpPipe();
+
+        mechanic.PlacePipe();
+
+    }
+
+    /**
+     * 18 Test Place Pipe on Pipe
+     */
+    public void TestPlacePipeOnPipe() {
+        Main.tabCount = 0;
+
+        Pipe pipe = new Pipe();
+        Pump pump = new Pump();
+        pump.addEdge(pipe);
+        Mechanic mechanic = new Mechanic(5, pump);
+        mechanic.setField(pipe);
+
+        mechanic.PickUpPipe();
+
+        mechanic.PlacePipe();
+    }
+
+    /**
      * 19 Place Pump on Pump
      */
     public void TestPlacePumpOnPump() {
