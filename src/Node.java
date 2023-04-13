@@ -28,7 +28,7 @@ abstract public class Node extends Field implements Stepable{
         System.out.println("Node::getNeighbour()");
          Main.tabCount++;
          Main.tabCount--;
-        return edges.get(d);
+        return edges.get(d).has_player == true ? null : edges.get(d);
      }
 
     /**

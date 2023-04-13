@@ -16,10 +16,10 @@ public class Character{
     public Character(int nMoves, Field nField){
         for(int i = 0; i < Main.tabCount; i++) {System.out.print("\t");}
         Main.tabCount++;
+        System.out.println("Character has been initialized");
         moves = nMoves;
         field = nField;
         field.Accept(this);
-        System.out.println("Character has been initialized");
         Main.tabCount--;
     }
 

@@ -16,6 +16,114 @@ public class TestClass {
         c.Move(0);
     }
     /**
+     * 2 Step on empty pipe from pump
+     */
+    public void TestStepOnEmptyPipePump(){
+        Main.tabCount = 0;
+
+        Pump pump = new Pump();
+        Character c = new Character(1, pump);
+        Pipe pipe = new Pipe();
+
+        c.setField(pump);
+        pump.addEdge(pipe);
+        pipe.setEndpoint(pump, 0);
+
+        c.Move(0);
+    }
+
+    /**
+     * 3 Step on occupied pipe from pump
+     */
+    public void TestStepOnOccupiedPipePump(){
+        Main.tabCount = 0;
+
+        Pump pump = new Pump();
+        Pipe pipe = new Pipe();
+        Character c1 = new Character(1, pump);
+        Character c2 = new Character(1, pipe);
+
+        c1.setField(pump);
+        c2.setField(pipe);
+        pump.addEdge(pipe);
+        pipe.setEndpoint(pump, 0);
+
+        c1.Move(0);
+    }
+
+    /**
+     * 4 Step on empty pipe from city
+     */
+    public void TestStepOnEmptyPipeCity(){
+        Main.tabCount = 0;
+
+        City city = new City();
+        Character c = new Character(1, city);
+        Pipe pipe = new Pipe();
+
+        c.setField(city);
+        city.addEdge(pipe);
+        pipe.setEndpoint(city, 0);
+
+        c.Move(0);
+    }
+
+    /**
+     * 5 Step on occupied pipe from city
+     */
+     public void TestStepOnOccupiedPipeCity(){
+        Main.tabCount = 0;
+
+        City city = new City();
+        Pipe pipe = new Pipe();
+        Character c1 = new Character(1, city);
+        Character c2 = new Character(1, pipe);
+
+        c1.setField(city);
+        c2.setField(pipe);
+        city.addEdge(pipe);
+        pipe.setEndpoint(city, 0);
+
+        c1.Move(0);
+    }
+
+    /**
+     * 6 Step on empty pipe from source 
+     */
+    public void TestStepOnEmptyPipeSource(){
+        Main.tabCount = 0;
+
+        Source source = new Source();
+        Character c = new Character(1, source);
+        Pipe pipe = new Pipe();
+
+        c.setField(source);
+        source.addEdge(pipe);
+        pipe.setEndpoint(source, 0);
+
+        c.Move(0);
+    }
+
+    /**
+     * 7 Step on occupied pipe from source
+     */
+    public void TestStepOnOccupiedPipeSource(){
+        Main.tabCount = 0;
+
+        Source source = new Source();
+        Pipe pipe = new Pipe();
+        Character c1 = new Character(1, source);
+        Character c2 = new Character(1, pipe);
+
+        c1.setField(source);
+        c2.setField(pipe);
+        source.addEdge(pipe);
+        pipe.setEndpoint(source, 0);
+
+        c1.Move(0);
+    }
+
+    /**
      * 11 Water flows from Source to Pump
      */
     public void TestWaterFlowsSourceToPump(){

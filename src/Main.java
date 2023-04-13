@@ -7,6 +7,12 @@ public class Main {
         TestClass tester = new TestClass();
         
         System.out.println("Pl (0. Teszt 1.)");
+        System.out.println("2 Step on empty pipe from pump");
+        System.out.println("3 Step on occupied pipe from pump");
+        System.out.println("4 Step on empty pipe from city");
+        System.out.println("5 Step on occupied pipe from city");
+        System.out.println("6 Step on empty pipe from source ");
+        System.out.println("7 Step on occupied pipe from source");
         System.out.println("11. Water flows on Pump from Source");
         System.out.println("12 Water flows in City");
         System.out.println("13 Water flows in bloked input of Pump");
@@ -31,6 +37,13 @@ public class Main {
 
         switch(answer) {
             case 0: tester.Test1(); break;
+            case 1: break; // elcsuszott a szekvenciadiagram szamoas a vegleges pdf-ben. Majd a megbeszelesen max atirjuk a szamozasokat
+            case 2: tester.TestStepOnEmptyPipePump(); break;
+            case 3: tester.TestStepOnOccupiedPipePump(); break;
+            case 4: tester.TestStepOnEmptyPipeCity(); break;
+            case 5: tester.TestStepOnOccupiedPipeCity(); break;
+            case 6: tester.TestStepOnEmptyPipeSource(); break;
+            case 7: tester.TestStepOnOccupiedPipeSource(); break;
             case 11: tester.TestWaterFlowsSourceToPump(); break;
             case 12: tester.TestWaterFlowsInCity(); break;
             case 13: tester.TestWaterFlowsInBlocked(); ;break;
