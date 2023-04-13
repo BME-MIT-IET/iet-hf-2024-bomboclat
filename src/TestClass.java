@@ -371,6 +371,16 @@ public class TestClass {
         mechanic.PickUpPipe();
     }
 
+    public void TestDestroyPumpFixPump() {
+        Main.tabCount = 0;
+
+        Pump pump = new Pump();
+        Mechanic mechanic = new Mechanic(5, pump);
+
+        pump.Die();
+        mechanic.Fix();
+    }
+
     /**
      * 26 Test Water Step Source
      */
