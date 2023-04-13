@@ -84,7 +84,7 @@ public class Pump extends Node{
         Main.tabCount--;
     }
 
-    //TODO
+
     public Pipe PickUpPipe() {
         for(int i=0; i < Main.tabCount; i++) {
             System.out.print("\t");

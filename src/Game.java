@@ -84,7 +84,7 @@ public class Game {
     }
     /**
      * currPlayfield változóhoz setter
-     * @param playField a beállítandó playfield
+     * @param playfield a beállítandó playfield
      */
     public void setCurrPlayfield(Playfield playfield){
         for(int i = 0; i < Main.tabCount; i++) { System.out.print("\t"); }

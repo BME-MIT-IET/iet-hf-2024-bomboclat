@@ -4,7 +4,7 @@ import java.util.List;
 /**
  * A csövet reprezentáló osztály
  */
-public class Pipe extends Field implements Stepable{
+public class Pipe extends Field{
     //A cső végpontjai
     List<Node> endpoints;
     //Lyukas-e a cső
@@ -65,16 +65,6 @@ public class Pipe extends Field implements Stepable{
         System.out.println("Pipe::Drill()");
         Main.tabCount++;
         has_hole = true;
-        Main.tabCount--;
-    }
-
-    /**
-     * A Pipe step függvénye
-     */
-    public void Step() {
-        for(int i = 0; i < Main.tabCount; i++) {System.out.print("\t");}
-        System.out.println("Pipe::Step()");
-        Main.tabCount++;
         Main.tabCount--;
     }
     
