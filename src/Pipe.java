@@ -53,6 +53,7 @@ public class Pipe extends Field implements Stepable{
         for(int i = 0; i < Main.tabCount; i++) {System.out.print("\t");}
         System.out.println("Pipe::Fix()");
         Main.tabCount++;
+        has_hole = false;
         Main.tabCount--;
     }
 
@@ -63,6 +64,7 @@ public class Pipe extends Field implements Stepable{
         for(int i = 0; i < Main.tabCount; i++) {System.out.print("\t");}
         System.out.println("Pipe::Drill()");
         Main.tabCount++;
+        has_hole = true;
         Main.tabCount--;
     }
 
@@ -84,6 +86,7 @@ public class Pipe extends Field implements Stepable{
         for(int i = 0; i < Main.tabCount; i++) {System.out.print("\t");}
         System.out.println("Pipe::GiveWater()");
         Main.tabCount++;
+        lost += has_hole ? 1 : 0;
         Main.tabCount--;
     }
 
