@@ -1,3 +1,6 @@
+/**
+ * A ciszternát reprezentáló osztály.
+ */
 public class City extends Node{
     /**
      * A városba (más néven ciszternába) befolyt víz mennyisége.

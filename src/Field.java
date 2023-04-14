@@ -1,6 +1,9 @@
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * A karakterek által használható mezőket reprezentáló osztály.
+ */
 abstract public class Field{
     /**Az adott mezőn álló játékosok. */
     protected List<Character> players;

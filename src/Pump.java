@@ -1,3 +1,6 @@
+/**
+ * A pumpát reprezentáló osztály.
+ */
 public class Pump extends Node{
     /**
      * Azt tárolja, hogy működik-e a pumpa. True ha igen, false ha nem.

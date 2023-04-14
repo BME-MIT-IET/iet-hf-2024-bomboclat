@@ -1,6 +1,9 @@
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * A csőhálózat csomópontjait reprezentáló osztály.
+ */
 abstract public class Node extends Field implements Stepable{
     /**A csomópontba befutó csövek. */
     protected List<Pipe> edges;

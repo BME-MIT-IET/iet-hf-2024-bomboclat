@@ -1,3 +1,6 @@
+/**
+ * A forrást reprezentáló osztály.
+ */
 public class Source extends Node{
 
     /**
