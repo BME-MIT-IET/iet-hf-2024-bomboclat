@@ -124,6 +124,48 @@ public class TestClass {
     }
 
     /**
+     * 8 Step on pump from pipe
+     */
+    public void TestStepOnPumpFromPipe(){
+        Main.tabCount=0;
+
+        Pipe field=new Pipe();
+        Pump pump=new Pump();
+        Character c=new Character(1, field);
+        field.setEndpoint(pump, 0);
+
+        c.Move(0);
+    }
+
+    /**
+     * 9 Step on city from pipe
+     */
+    public void TestStepOnCityFromPipe(){
+        Main.tabCount=0;
+
+        Pipe field=new Pipe();
+        City pump=new City();
+        Character c=new Character(1, field);
+        field.setEndpoint(pump, 0);
+
+        c.Move(0);
+    }
+
+    /**
+     * 10 Step on source from pipe
+     */
+    public void TestStepOnSourceFromPipe(){
+        Main.tabCount=0;
+
+        Pipe field=new Pipe();
+        Source pump=new Source();
+        Character c=new Character(1, field);
+        field.setEndpoint(pump, 0);
+
+        c.Move(0);
+    }
+
+    /**
      * 11 Water flows from Source to Pump
      */
     public void TestWaterFlowsSourceToPump(){
@@ -371,6 +413,9 @@ public class TestClass {
         mechanic.PickUpPipe();
     }
 
+    /**
+     * 25 Destroy pump, fix pump
+     */
     public void TestDestroyPumpFixPump() {
         Main.tabCount = 0;
 
@@ -492,5 +537,53 @@ public class TestClass {
         p.setEndpoint(c, 1);
 
         n.DrillPipe();
+    }
+
+    /**
+     * 30 Pick up pump on city
+     */
+    public void TestPickUpPumpOnCity(){
+        Main.tabCount=0;
+
+        City field=new City();
+        Mechanic m=new Mechanic(1, field);
+
+        m.PickUpPump();
+    }
+
+    /**
+     * 31 Pick up pump on pump
+     */
+    public void TestPickUpPumpOnPump(){
+        Main.tabCount=0;
+
+        Pump field=new Pump();
+        Mechanic m=new Mechanic(1, field);
+
+        m.PickUpPump();
+    }
+
+    /**
+     * 32 Pick up pump on pipe
+     */
+    public void TestPickUpPumpOnPipe(){
+        Main.tabCount=0;
+
+        Pipe field=new Pipe();
+        Mechanic m=new Mechanic(1, field);
+
+        m.PickUpPump();
+    }
+
+    /**
+     * 33 Pick up pump on source
+     */
+    public void TestPickUpPumpOnSource(){
+        Main.tabCount=0;
+
+        Source field=new Source();
+        Mechanic m=new Mechanic(1, field);
+
+        m.PickUpPump();
     }
 }

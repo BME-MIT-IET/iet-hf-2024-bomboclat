@@ -84,15 +84,17 @@ public class Pump extends Node{
         Main.tabCount--;
     }
 
-
+    /**
+     * Felvesz egy szomszédos csövet.
+     */
     public Pipe PickUpPipe() {
         for(int i=0; i < Main.tabCount; i++) {
             System.out.print("\t");
         }
         System.out.println("Pump::PickUpPipe()");
         Main.tabCount++;
-
-        return null; // lefordulas miatt
+        Main.tabCount--;
+        return edges.get(0);
     }
 
     public void setWhere(Pipe p) {

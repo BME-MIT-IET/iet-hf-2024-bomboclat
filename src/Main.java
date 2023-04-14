@@ -7,12 +7,15 @@ public class Main {
         TestClass tester = new TestClass();
         
         System.out.println("Pl (0. Teszt 1.)");
-        System.out.println("2 Step on empty pipe from pump");
-        System.out.println("3 Step on occupied pipe from pump");
-        System.out.println("4 Step on empty pipe from city");
-        System.out.println("5 Step on occupied pipe from city");
-        System.out.println("6 Step on empty pipe from source ");
-        System.out.println("7 Step on occupied pipe from source");
+        System.out.println("2. Step on empty pipe from pump");
+        System.out.println("3. Step on occupied pipe from pump");
+        System.out.println("4. Step on empty pipe from city");
+        System.out.println("5. Step on occupied pipe from city");
+        System.out.println("6. Step on empty pipe from source ");
+        System.out.println("7. Step on occupied pipe from source");
+        System.out.println("8. Step on pump from pipe");
+        System.out.println("9. Step on city from pipe");
+        System.out.println("10. Step on source from pipe");
         System.out.println("11. Water flows on Pump from Source");
         System.out.println("12 Water flows in City");
         System.out.println("13 Water flows in bloked input of Pump");
@@ -32,6 +35,12 @@ public class Main {
         System.out.println("27. Test Water Step City");
         System.out.println("28. Test Water Step Pump");
         System.out.println("29. Test Drill Pipe On Pipe");
+        System.out.println("30. Pick up Pump on City");
+        System.out.println("31. Pick up Pump on Pump");
+        System.out.println("32. Pick up Pump on Pipe");
+        System.out.println("33. Pick up Pump on Source");
+
+
 
         int answer;
         Scanner sc = new Scanner(System.in);
@@ -49,6 +58,9 @@ public class Main {
             case 5: tester.TestStepOnOccupiedPipeCity(); break;
             case 6: tester.TestStepOnEmptyPipeSource(); break;
             case 7: tester.TestStepOnOccupiedPipeSource(); break;
+            case 8: tester.TestStepOnPumpFromPipe(); break;
+            case 9: tester.TestStepOnCityFromPipe(); break;
+            case 10: tester.TestStepOnSourceFromPipe(); break;
             case 11: tester.TestWaterFlowsSourceToPump(); break;
             case 12: tester.TestWaterFlowsInCity(); break;
             case 13: tester.TestWaterFlowsInBlocked(); break;
@@ -68,6 +80,10 @@ public class Main {
             case 27: tester.TestWaterStepCity(); break;
             case 28: tester.TestWaterStepPump(); break;
             case 29: tester.TestDrillPipe(); break;
+            case 30: tester.TestPickUpPumpOnCity(); break;
+            case 31: tester.TestPickUpPumpOnPump(); break;
+            case 32: tester.TestPickUpPumpOnPipe(); break;
+            case 33: tester.TestPickUpPumpOnSource(); break;
             default: break;
         }
     }
