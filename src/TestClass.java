@@ -26,7 +26,6 @@ public class TestClass {
         Pipe pipe = new Pipe();
 
         c.setField(pump);
-        pump.addEdge(pipe);
         pipe.setEndpoint(pump, 0);
 
         c.Move(0);
@@ -45,7 +44,6 @@ public class TestClass {
 
         c1.setField(pump);
         c2.setField(pipe);
-        pump.addEdge(pipe);
         pipe.setEndpoint(pump, 0);
 
         c1.Move(0);
@@ -62,7 +60,6 @@ public class TestClass {
         Pipe pipe = new Pipe();
 
         c.setField(city);
-        city.addEdge(pipe);
         pipe.setEndpoint(city, 0);
 
         c.Move(0);
@@ -81,7 +78,6 @@ public class TestClass {
 
         c1.setField(city);
         c2.setField(pipe);
-        city.addEdge(pipe);
         pipe.setEndpoint(city, 0);
 
         c1.Move(0);
@@ -98,7 +94,6 @@ public class TestClass {
         Pipe pipe = new Pipe();
 
         c.setField(source);
-        source.addEdge(pipe);
         pipe.setEndpoint(source, 0);
 
         c.Move(0);
@@ -117,7 +112,6 @@ public class TestClass {
 
         c1.setField(source);
         c2.setField(pipe);
-        source.addEdge(pipe);
         pipe.setEndpoint(source, 0);
 
         c1.Move(0);
