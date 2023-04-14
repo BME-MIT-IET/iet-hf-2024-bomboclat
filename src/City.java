@@ -76,8 +76,9 @@ public class City extends Node{
         }
         System.out.println("City::PickUpPump()");
         Main.tabCount++;
+        Pump p=new Pump();
         Main.tabCount--;
-        return null;
+        return p;
     }
 
 
