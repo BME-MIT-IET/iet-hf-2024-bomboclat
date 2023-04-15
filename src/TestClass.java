@@ -1,22 +1,7 @@
 public class TestClass {
 
-    //Példa lehet bármi a neve
-    public void Test1() {
-        //Ezzel kezdődjön minden teszt
-        Main.tabCount = 0;
-
-        Pump pump = new Pump();
-        Character c = new Character(1, pump);
-        Pipe pipe = new Pipe();
-
-        c.setField(pump);
-        pump.addEdge(pipe);
-        pipe.setEndpoint(pump, 0);
-
-        c.Move(0);
-    }
     /**
-     * 2 Step on empty pipe from pump
+     * 1 Step on empty pipe from pump
      */
     public void TestStepOnEmptyPipePump(){
         Main.tabCount = 0;
@@ -32,7 +17,7 @@ public class TestClass {
     }
 
     /**
-     * 3 Step on occupied pipe from pump
+     * 2 Step on occupied pipe from pump
      */
     public void TestStepOnOccupiedPipePump(){
         Main.tabCount = 0;
@@ -50,7 +35,7 @@ public class TestClass {
     }
 
     /**
-     * 4 Step on empty pipe from city
+     * 3 Step on empty pipe from city
      */
     public void TestStepOnEmptyPipeCity(){
         Main.tabCount = 0;
@@ -66,7 +51,7 @@ public class TestClass {
     }
 
     /**
-     * 5 Step on occupied pipe from city
+     * 4 Step on occupied pipe from city
      */
      public void TestStepOnOccupiedPipeCity(){
         Main.tabCount = 0;
@@ -84,7 +69,7 @@ public class TestClass {
     }
 
     /**
-     * 6 Step on empty pipe from source 
+     * 5 Step on empty pipe from source 
      */
     public void TestStepOnEmptyPipeSource(){
         Main.tabCount = 0;
@@ -100,7 +85,7 @@ public class TestClass {
     }
 
     /**
-     * 7 Step on occupied pipe from source
+     * 6 Step on occupied pipe from source
      */
     public void TestStepOnOccupiedPipeSource(){
         Main.tabCount = 0;
@@ -118,7 +103,7 @@ public class TestClass {
     }
 
     /**
-     * 8 Step on pump from pipe
+     * 7 Step on pump from pipe
      */
     public void TestStepOnPumpFromPipe(){
         Main.tabCount=0;
@@ -132,7 +117,7 @@ public class TestClass {
     }
 
     /**
-     * 9 Step on city from pipe
+     * 8 Step on city from pipe
      */
     public void TestStepOnCityFromPipe(){
         Main.tabCount=0;
@@ -146,7 +131,7 @@ public class TestClass {
     }
 
     /**
-     * 10 Step on source from pipe
+     * 9 Step on source from pipe
      */
     public void TestStepOnSourceFromPipe(){
         Main.tabCount=0;
@@ -160,7 +145,7 @@ public class TestClass {
     }
 
     /**
-     * 11 Water flows from Source to Pump
+     * 10 Water flows from Source to Pump
      */
     public void TestWaterFlowsSourceToPump(){
         Main.tabCount = 0;
@@ -177,7 +162,7 @@ public class TestClass {
     }
 
     /**
-     * 12 Water flows in City
+     * 11 Water flows in City
      */
     public void TestWaterFlowsInCity(){
         Main.tabCount = 0;
@@ -190,7 +175,7 @@ public class TestClass {
     }
 
     /**
-     * 13 Water flows in blocked input of Pump
+     * 12 Water flows in blocked input of Pump
      */
     public void TestWaterFlowsInBlocked(){
         Main.tabCount = 0;
@@ -208,7 +193,7 @@ public class TestClass {
     }
 
     /**
-     * 14 Change Pump
+     * 13 Change Pump
      */
     public void TestChangePump() {
         Main.tabCount = 0;
@@ -240,7 +225,7 @@ public class TestClass {
     }
 
     /**
-     * 15 Water flows out of broken pipe
+     * 14 Water flows out of broken pipe
      */
     public void TestWaterFlowsOutOfBrokenPipe() {
         Main.tabCount=0;
@@ -269,7 +254,7 @@ public class TestClass {
     }
 
     /**
-     * 16 Fix Pipe
+     * 15 Fix Pipe
      */
     public void TestFixPipe() {
         Main.tabCount =0;
@@ -281,7 +266,7 @@ public class TestClass {
     }
 
     /**
-     * 17 Test Place Pipe on Pump
+     * 16 Test Place Pipe on Pump
      */
     public void TestPlacePipeOnPump() {
         Main.tabCount = 0;
@@ -298,7 +283,7 @@ public class TestClass {
     }
 
     /**
-     * 18 Test Place Pipe on Pipe
+     * 17 Test Place Pipe on Pipe
      */
     public void TestPlacePipeOnPipe() {
         Main.tabCount = 0;
@@ -315,7 +300,7 @@ public class TestClass {
     }
 
     /**
-     * 19 Place Pump on Pump
+     * 18 Place Pump on Pump
      */
     public void TestPlacePumpOnPump() {
         Main.tabCount = 0;
@@ -331,7 +316,7 @@ public class TestClass {
     }
 
     /**
-     * 20 Place Pump on Pipe
+     * 19 Place Pump on Pipe
      */
     public void TestPlacePumpOnPipe() {
         Main.tabCount = 0;
@@ -352,7 +337,7 @@ public class TestClass {
     }
 
     /**
-     * 21 Pick up Pipe on City
+     * 20 Pick up Pipe on City
      */
     public void TestPickUpPipeOnCity(){
         Main.tabCount = 0;
@@ -367,7 +352,7 @@ public class TestClass {
     }
 
     /**
-     * 22 Pick up Pipe on Pump
+     * 21 Pick up Pipe on Pump
      */
     public void TestPickUpPipeOnPump(){
         Main.tabCount = 0;
@@ -382,7 +367,7 @@ public class TestClass {
     }
 
     /**
-     * 23 Pick up Pipe on Pipe
+     * 22 Pick up Pipe on Pipe
      */
     public void TestPickUpPipeOnPipe(){
         Main.tabCount = 0;
@@ -395,7 +380,7 @@ public class TestClass {
     }
 
     /**
-     * 24 Pick up Pipe on Source
+     * 23 Pick up Pipe on Source
      */
     public void TestPickUpPipeOnSource(){
         Main.tabCount = 0;
@@ -408,7 +393,7 @@ public class TestClass {
     }
 
     /**
-     * 25 Destroy pump, fix pump
+     * 24 Destroy pump, fix pump
      */
     public void TestDestroyPumpFixPump() {
         Main.tabCount = 0;
@@ -421,7 +406,7 @@ public class TestClass {
     }
 
     /**
-     * 26 Test Water Step Source
+     * 25 Test Water Step Source
      */
     public void TestWaterStepSource() {
         Main.tabCount = 0;
@@ -453,7 +438,7 @@ public class TestClass {
     }
 
     /**
-     * 27 Test Water Step City
+     * 26 Test Water Step City
      */
     public void TestWaterStepCity() {
         Main.tabCount = 0;
@@ -485,7 +470,7 @@ public class TestClass {
     }
 
     /**
-     * 28 Test Water Step Pump
+     * 27 Test Water Step Pump
      */
     public void TestWaterStepPump() {
         Main.tabCount = 0;
@@ -517,7 +502,7 @@ public class TestClass {
     }
 
     /** 
-     * 29 Test Drill Pipe On Pipe
+     * 28 Test Drill Pipe On Pipe
      */
     public void TestDrillPipe() {
         Pipe p = new Pipe();
@@ -534,7 +519,7 @@ public class TestClass {
     }
 
     /**
-     * 30 Pick up pump on city
+     * 29 Pick up pump on city
      */
     public void TestPickUpPumpOnCity(){
         Main.tabCount=0;
@@ -546,7 +531,7 @@ public class TestClass {
     }
 
     /**
-     * 31 Pick up pump on pump
+     * 30 Pick up pump on pump
      */
     public void TestPickUpPumpOnPump(){
         Main.tabCount=0;
@@ -558,7 +543,7 @@ public class TestClass {
     }
 
     /**
-     * 32 Pick up pump on pipe
+     * 31 Pick up pump on pipe
      */
     public void TestPickUpPumpOnPipe(){
         Main.tabCount=0;
@@ -570,7 +555,7 @@ public class TestClass {
     }
 
     /**
-     * 33 Pick up pump on source
+     * 32 Pick up pump on source
      */
     public void TestPickUpPumpOnSource(){
         Main.tabCount=0;
