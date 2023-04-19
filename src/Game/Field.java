@@ -162,8 +162,14 @@ abstract public class Field{
         TesterMain.tabCount--;
         return p;
     }
+    
+    public void Glue(){
 
+    }
 
+    public void Lube(){
+
+    }
 
 
 }

@@ -85,5 +85,4 @@ abstract public class Node extends Field implements Stepable{
         TesterMain.tabCount++;
         TesterMain.tabCount--;
     }
-
 }

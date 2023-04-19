@@ -19,6 +19,12 @@ public class Pipe extends Field{
     int lost;
     //Áll-e a rajta játékos
     boolean has_player;
+    //Mikor lyukaszható újra
+    int hole_timer;
+    //Csúszós-e a cső
+    boolean slippery;
+    //Ragadós-e a cső
+    boolean sticky;
 
     /**
      * Pipe konstruktor
@@ -209,5 +215,46 @@ public class Pipe extends Field{
         TesterMain.tabCount++;
         TesterMain.tabCount--;
         return endpoints.get(d);
+    }
+
+
+    /**
+     * Visszaadja, hogy csúszós-e a cső
+     * @return Igaz, ha csúszós, hamis, ha nem
+     */
+    public boolean getSlippery(){
+        return slippery;
+    }
+
+    /**
+     * Beállítja, hogy csúszós-e vagy nem a cső
+     * @param nSlippery Az új érték: igaz, ha csúszóssá szeretnénk tenni a csövet, hamis ha nem
+     */
+    public void setSlippery(boolean nSlippery){
+        slippery = nSlippery;
+    }
+
+    /**
+     * Visszaadja, hogy ragadós-e a cső
+     * @return Igaz, ha ragadós, hamis, ha nem
+     */
+    public boolean getSticky(){
+        return sticky;
+    }
+
+    /**
+     * Beállítja, hogy ragadós-e vagy nem a cső
+     * @param nSlippery Az új érték: igaz, ha ragadóssá szeretnénk tenni a csövet, hamis ha nem
+     */
+    public void setSticky(boolean nSticky){
+        sticky = nSticky;
+    }
+
+    public void Glue(){
+
+    }
+
+    public void Lube(){
+        
     }
 }
