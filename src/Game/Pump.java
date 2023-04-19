@@ -104,6 +104,10 @@ public class Pump extends Node{
         return edges.get(0);
     }
 
+    /**
+     * Beállítja azt a csövet, ahova kifolyik a víz.
+     * @param p Az a Pipe objektum, amire beállítja.
+     */
     public void setWhere(Pipe p) {
         for(int i=0; i < TesterMain.tabCount; i++) {
             System.out.print("\t");
@@ -114,6 +118,10 @@ public class Pump extends Node{
         TesterMain.tabCount--;
     } 
 
+    /**
+     * Beállítja azt a csövet, ahonnan folyik a víz.
+     * @param p Az a Pipe objektum, amire beállítja.
+     */
     public void setFrom(Pipe p) {
         for(int i=0; i < TesterMain.tabCount; i++) {
             System.out.print("\t");
