@@ -1,3 +1,7 @@
+package Game;
+import skeleton.*;
+
+
 /**
  * A pumpát reprezentáló osztály.
  */
@@ -19,28 +23,28 @@ public class Pump extends Node{
      * Pump konstruktora.
      */
     public Pump(){
-        for(int i=0; i < Main.tabCount; i++) {
+        for(int i=0; i < TesterMain.tabCount; i++) {
             System.out.print("\t");
         }
         System.out.println("Pump has been initialized");
-        Main.tabCount++;
+        TesterMain.tabCount++;
         working = true;
         from = null;
         where = null;
-        Main.tabCount--;
+        TesterMain.tabCount--;
     }
 
     /**
      * Megjavítja az elromlott pumpát, ha a pumpa már működik, akkor nincsen hatása.
      */
     public void Fix() {
-        for(int i=0; i < Main.tabCount; i++) {
+        for(int i=0; i < TesterMain.tabCount; i++) {
             System.out.print("\t");
         }
         System.out.println("Pump::Fix()");
-        Main.tabCount++;
+        TesterMain.tabCount++;
         working = true;
-        Main.tabCount--;
+        TesterMain.tabCount--;
     }
 
     /**
@@ -49,14 +53,14 @@ public class Pump extends Node{
      * @param out Paraméterként megadott Pipe objektum, hogy hova pumpáljon.
      */
     public void Change(Pipe in, Pipe out) {
-        for(int i=0; i < Main.tabCount; i++) {
+        for(int i=0; i < TesterMain.tabCount; i++) {
             System.out.print("\t");
         }
         System.out.println("Pump::Change()");
-        Main.tabCount++;
+        TesterMain.tabCount++;
         this.from = in;
         this.where = out;
-        Main.tabCount--;
+        TesterMain.tabCount--;
     }
 
     /**
@@ -64,61 +68,61 @@ public class Pump extends Node{
      * pumpát a hívása.
      */
     public void Step() {
-        for(int i=0; i < Main.tabCount; i++) {
+        for(int i=0; i < TesterMain.tabCount; i++) {
             System.out.print("\t");
         }
         System.out.println("Pump::Step()");
-        Main.tabCount++;
+        TesterMain.tabCount++;
         int incoming = this.from.TakeWaterAway();
         this.where.GiveWater(incoming);
-        Main.tabCount--;
+        TesterMain.tabCount--;
     }
 
     /**
      * Elrontja a pumpát.
      */
     public void Die() {
-        for(int i=0; i < Main.tabCount; i++) {
+        for(int i=0; i < TesterMain.tabCount; i++) {
             System.out.print("\t");
         }
         System.out.println("Pump::Die()");
-        Main.tabCount++;
+        TesterMain.tabCount++;
         working = false;
-        Main.tabCount--;
+        TesterMain.tabCount--;
     }
 
     /**
      * Felvesz egy szomszédos csövet.
      */
     public Pipe PickUpPipe() {
-        for(int i=0; i < Main.tabCount; i++) {
+        for(int i=0; i < TesterMain.tabCount; i++) {
             System.out.print("\t");
         }
         System.out.println("Pump::PickUpPipe()");
-        Main.tabCount++;
-        Main.tabCount--;
+        TesterMain.tabCount++;
+        TesterMain.tabCount--;
         return edges.get(0);
     }
 
     public void setWhere(Pipe p) {
-        for(int i=0; i < Main.tabCount; i++) {
+        for(int i=0; i < TesterMain.tabCount; i++) {
             System.out.print("\t");
         }
         System.out.println("Pump::setWhere()");
-        Main.tabCount++;
+        TesterMain.tabCount++;
         where = p;
-        Main.tabCount--;
+        TesterMain.tabCount--;
     } 
 
     public void setFrom(Pipe p) {
-        for(int i=0; i < Main.tabCount; i++) {
+        for(int i=0; i < TesterMain.tabCount; i++) {
             System.out.print("\t");
         }
         System.out.println("Pump::setFrom()");
         
-        Main.tabCount++;
+        TesterMain.tabCount++;
         from = p;
-        Main.tabCount--;
+        TesterMain.tabCount--;
     }
 
 }

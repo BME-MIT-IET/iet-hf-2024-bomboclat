@@ -1,5 +1,9 @@
+package Game;
+
 import java.util.ArrayList;
 import java.util.List;
+import skeleton.*;
+
 
 /**
  * A csőhálózat csomópontjait reprezentáló osztály.
@@ -10,13 +14,13 @@ abstract public class Node extends Field implements Stepable{
 
     /**Node konstruktora. */
     public Node(){
-        for(int i=0; i < Main.tabCount; i++) {
+        for(int i=0; i < TesterMain.tabCount; i++) {
             System.out.print("\t");
         }
         System.out.println("Node has been initialized");
-        Main.tabCount++;
+        TesterMain.tabCount++;
         edges=new ArrayList<>();
-        Main.tabCount--;
+        TesterMain.tabCount--;
     }
 
     /**
@@ -25,12 +29,12 @@ abstract public class Node extends Field implements Stepable{
      * @return Az adott irányból a szomszédos mező, vagy ha az adott irányba nincs érvényes mező, nullt ad vissza.
      */
      public Field getNeighbour(int d){
-         for(int i=0; i < Main.tabCount; i++) {
+         for(int i=0; i < TesterMain.tabCount; i++) {
              System.out.print("\t");
          }
         System.out.println("Node::getNeighbour()");
-         Main.tabCount++;
-         Main.tabCount--;
+         TesterMain.tabCount++;
+         TesterMain.tabCount--;
         return edges.get(d).has_player == true ? null : edges.get(d);
      }
 
@@ -45,12 +49,12 @@ abstract public class Node extends Field implements Stepable{
      * @return Az összeadott pontok száma, null ha olyan objektumra hívják meg ami nem definiálta felül a függvényt.
      */
     public int getMechanicPoint(){
-        for(int i=0; i < Main.tabCount; i++) {
+        for(int i=0; i < TesterMain.tabCount; i++) {
             System.out.print("\t");
         }
         System.out.println("Node::getMechanicPoint()");
-        Main.tabCount++;
-        Main.tabCount--;
+        TesterMain.tabCount++;
+        TesterMain.tabCount--;
         return 0;
     }
 
@@ -59,13 +63,13 @@ abstract public class Node extends Field implements Stepable{
      * @param p Az paraméterként kapott cső.
      */
     public void addEdge(Pipe p){
-        for(int i=0; i < Main.tabCount; i++) {
+        for(int i=0; i < TesterMain.tabCount; i++) {
             System.out.print("\t");
         }
         System.out.println("Node::addEdge()");
         edges.add(p);
-        Main.tabCount++;
-        Main.tabCount--;
+        TesterMain.tabCount++;
+        TesterMain.tabCount--;
     }
 
     /**
@@ -73,13 +77,13 @@ abstract public class Node extends Field implements Stepable{
      * @param p A paraméterként kapott cső.
      */
     public void removeEdge(Pipe p){
-        for(int i=0; i < Main.tabCount; i++) {
+        for(int i=0; i < TesterMain.tabCount; i++) {
             System.out.print("\t");
         }
         System.out.println("Node::removeEdge()");
         edges.remove(p);
-        Main.tabCount++;
-        Main.tabCount--;
+        TesterMain.tabCount++;
+        TesterMain.tabCount--;
     }
 
 }

@@ -1,10 +1,16 @@
+package skeleton;
+
+import Game.*;
+import Game.Character;
+
+
 public class TestClass {
 
     /**
      * 1 Step on empty pipe from pump
      */
     public void TestStepOnEmptyPipePump(){
-        Main.tabCount = 0;
+        TesterMain.tabCount = 0;
 
         Pump pump = new Pump();
         Character c = new Character(1, pump);
@@ -20,7 +26,7 @@ public class TestClass {
      * 2 Step on occupied pipe from pump
      */
     public void TestStepOnOccupiedPipePump(){
-        Main.tabCount = 0;
+        TesterMain.tabCount = 0;
 
         Pump pump = new Pump();
         Pipe pipe = new Pipe();
@@ -38,7 +44,7 @@ public class TestClass {
      * 3 Step on empty pipe from city
      */
     public void TestStepOnEmptyPipeCity(){
-        Main.tabCount = 0;
+        TesterMain.tabCount = 0;
 
         City city = new City();
         Character c = new Character(1, city);
@@ -54,7 +60,7 @@ public class TestClass {
      * 4 Step on occupied pipe from city
      */
      public void TestStepOnOccupiedPipeCity(){
-        Main.tabCount = 0;
+        TesterMain.tabCount = 0;
 
         City city = new City();
         Pipe pipe = new Pipe();
@@ -72,7 +78,7 @@ public class TestClass {
      * 5 Step on empty pipe from source 
      */
     public void TestStepOnEmptyPipeSource(){
-        Main.tabCount = 0;
+        TesterMain.tabCount = 0;
 
         Source source = new Source();
         Character c = new Character(1, source);
@@ -88,7 +94,7 @@ public class TestClass {
      * 6 Step on occupied pipe from source
      */
     public void TestStepOnOccupiedPipeSource(){
-        Main.tabCount = 0;
+        TesterMain.tabCount = 0;
 
         Source source = new Source();
         Pipe pipe = new Pipe();
@@ -106,7 +112,7 @@ public class TestClass {
      * 7 Step on pump from pipe
      */
     public void TestStepOnPumpFromPipe(){
-        Main.tabCount=0;
+        TesterMain.tabCount=0;
 
         Pipe field=new Pipe();
         Pump pump=new Pump();
@@ -120,7 +126,7 @@ public class TestClass {
      * 8 Step on city from pipe
      */
     public void TestStepOnCityFromPipe(){
-        Main.tabCount=0;
+        TesterMain.tabCount=0;
 
         Pipe field=new Pipe();
         City pump=new City();
@@ -134,7 +140,7 @@ public class TestClass {
      * 9 Step on source from pipe
      */
     public void TestStepOnSourceFromPipe(){
-        Main.tabCount=0;
+        TesterMain.tabCount=0;
 
         Pipe field=new Pipe();
         Source pump=new Source();
@@ -148,7 +154,7 @@ public class TestClass {
      * 10 Water flows from Source to Pump
      */
     public void TestWaterFlowsSourceToPump(){
-        Main.tabCount = 0;
+        TesterMain.tabCount = 0;
         
         Source source = new Source();
         Pipe edge = new Pipe();
@@ -165,7 +171,7 @@ public class TestClass {
      * 11 Water flows in City
      */
     public void TestWaterFlowsInCity(){
-        Main.tabCount = 0;
+        TesterMain.tabCount = 0;
 
         City city = new City();
         Pipe inlet = new Pipe();
@@ -178,7 +184,7 @@ public class TestClass {
      * 12 Water flows in blocked input of Pump
      */
     public void TestWaterFlowsInBlocked(){
-        Main.tabCount = 0;
+        TesterMain.tabCount = 0;
         
         Pump pump = new Pump();
         Pipe blocked = new Pipe();
@@ -196,7 +202,7 @@ public class TestClass {
      * 13 Change Pump
      */
     public void TestChangePump() {
-        Main.tabCount = 0;
+        TesterMain.tabCount = 0;
 
         City c = new City();
         
@@ -228,7 +234,7 @@ public class TestClass {
      * 14 Water flows out of broken pipe
      */
     public void TestWaterFlowsOutOfBrokenPipe() {
-        Main.tabCount=0;
+        TesterMain.tabCount=0;
 
         Game game = new Game();
         Source source = new Source();
@@ -257,7 +263,7 @@ public class TestClass {
      * 15 Fix Pipe
      */
     public void TestFixPipe() {
-        Main.tabCount =0;
+        TesterMain.tabCount =0;
 
         Pipe pipe = new Pipe();
         Mechanic mechanic = new Mechanic(5, pipe);
@@ -269,7 +275,7 @@ public class TestClass {
      * 16 Test Place Pipe on Pump
      */
     public void TestPlacePipeOnPump() {
-        Main.tabCount = 0;
+        TesterMain.tabCount = 0;
 
         Pipe pipe = new Pipe();
         Pump pump = new Pump();
@@ -286,7 +292,7 @@ public class TestClass {
      * 17 Test Place Pipe on Pipe
      */
     public void TestPlacePipeOnPipe() {
-        Main.tabCount = 0;
+        TesterMain.tabCount = 0;
 
         Pipe pipe = new Pipe();
         Pump pump = new Pump();
@@ -303,7 +309,7 @@ public class TestClass {
      * 18 Place Pump on Pump
      */
     public void TestPlacePumpOnPump() {
-        Main.tabCount = 0;
+        TesterMain.tabCount = 0;
 
         Pump pump = new Pump();
         Pump p = new Pump();
@@ -319,7 +325,7 @@ public class TestClass {
      * 19 Place Pump on Pipe
      */
     public void TestPlacePumpOnPipe() {
-        Main.tabCount = 0;
+        TesterMain.tabCount = 0;
         
         Pump pump = new Pump();
         Pipe p = new Pipe();
@@ -340,7 +346,7 @@ public class TestClass {
      * 20 Pick up Pipe on City
      */
     public void TestPickUpPipeOnCity(){
-        Main.tabCount = 0;
+        TesterMain.tabCount = 0;
         
         City city = new City();
         Mechanic mechanic = new Mechanic(1, city);
@@ -355,7 +361,7 @@ public class TestClass {
      * 21 Pick up Pipe on Pump
      */
     public void TestPickUpPipeOnPump(){
-        Main.tabCount = 0;
+        TesterMain.tabCount = 0;
         
         Pump pump = new Pump();
         Mechanic mechanic = new Mechanic(1, pump);
@@ -370,7 +376,7 @@ public class TestClass {
      * 22 Pick up Pipe on Pipe
      */
     public void TestPickUpPipeOnPipe(){
-        Main.tabCount = 0;
+        TesterMain.tabCount = 0;
         
         Pipe pipe = new Pipe();
         Mechanic mechanic = new Mechanic(1, pipe);
@@ -383,7 +389,7 @@ public class TestClass {
      * 23 Pick up Pipe on Source
      */
     public void TestPickUpPipeOnSource(){
-        Main.tabCount = 0;
+        TesterMain.tabCount = 0;
         
         Source source = new Source();
         Mechanic mechanic = new Mechanic(1, source);
@@ -396,7 +402,7 @@ public class TestClass {
      * 24 Destroy pump, fix pump
      */
     public void TestDestroyPumpFixPump() {
-        Main.tabCount = 0;
+        TesterMain.tabCount = 0;
 
         Pump pump = new Pump();
         Mechanic mechanic = new Mechanic(5, pump);
@@ -409,7 +415,7 @@ public class TestClass {
      * 25 Test Water Step Source
      */
     public void TestWaterStepSource() {
-        Main.tabCount = 0;
+        TesterMain.tabCount = 0;
 
         City c = new City();
         
@@ -441,7 +447,7 @@ public class TestClass {
      * 26 Test Water Step City
      */
     public void TestWaterStepCity() {
-        Main.tabCount = 0;
+        TesterMain.tabCount = 0;
 
         City c = new City();
         
@@ -473,7 +479,7 @@ public class TestClass {
      * 27 Test Water Step Pump
      */
     public void TestWaterStepPump() {
-        Main.tabCount = 0;
+        TesterMain.tabCount = 0;
 
         City c = new City();
         
@@ -522,7 +528,7 @@ public class TestClass {
      * 29 Pick up pump on city
      */
     public void TestPickUpPumpOnCity(){
-        Main.tabCount=0;
+        TesterMain.tabCount=0;
 
         City field=new City();
         Mechanic m=new Mechanic(1, field);
@@ -534,7 +540,7 @@ public class TestClass {
      * 30 Pick up pump on pump
      */
     public void TestPickUpPumpOnPump(){
-        Main.tabCount=0;
+        TesterMain.tabCount=0;
 
         Pump field=new Pump();
         Mechanic m=new Mechanic(1, field);
@@ -546,7 +552,7 @@ public class TestClass {
      * 31 Pick up pump on pipe
      */
     public void TestPickUpPumpOnPipe(){
-        Main.tabCount=0;
+        TesterMain.tabCount=0;
 
         Pipe field=new Pipe();
         Mechanic m=new Mechanic(1, field);
@@ -558,7 +564,7 @@ public class TestClass {
      * 32 Pick up pump on source
      */
     public void TestPickUpPumpOnSource(){
-        Main.tabCount=0;
+        TesterMain.tabCount=0;
 
         Source field=new Source();
         Mechanic m=new Mechanic(1, field);

@@ -1,3 +1,5 @@
+package Game;
+
 /**
  * A léptethető mezők működését megvalósító interfész.
  */

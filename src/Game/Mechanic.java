@@ -1,3 +1,7 @@
+package Game;
+import skeleton.*;
+
+
 /**
  * A szerelőt reprezentáló osztály
  */
@@ -15,30 +19,30 @@ public class Mechanic extends Character{
      * attól, hogy az cső vagy pumpa.
      */
     public void Fix(){
-        for(int i = 0; i < Main.tabCount; i++) {System.out.print("\t");}
-        Main.tabCount++;
+        for(int i = 0; i < TesterMain.tabCount; i++) {System.out.print("\t");}
+        TesterMain.tabCount++;
         System.out.println("Mechanic::Fix()");
         field.Fix();
-        Main.tabCount--;
+        TesterMain.tabCount--;
     }
 
     /**
      * A szerelő leteszi a kezáben lévő pumpát, arra a csőre, amin áll
      */
     public void PlacePump(){
-        for(int i = 0; i < Main.tabCount; i++) {System.out.print("\t");}
-        Main.tabCount++;
+        for(int i = 0; i < TesterMain.tabCount; i++) {System.out.print("\t");}
+        TesterMain.tabCount++;
         System.out.println("Mechanic::PlacePump()");
         pump_in_hand = field.PlacePump(pump_in_hand);
-        Main.tabCount--;
+        TesterMain.tabCount--;
     }
 
     /**
      * A szerelő beköti a kezében lévő csövet abba a pumpába, amin áll
      */
     public void PlacePipe(){
-        for(int i = 0; i < Main.tabCount; i++) {System.out.print("\t");}
-        Main.tabCount++;
+        for(int i = 0; i < TesterMain.tabCount; i++) {System.out.print("\t");}
+        TesterMain.tabCount++;
         System.out.println("Mechanic::PlacePipe()");
         field.addEdge(pipe_in_hand);
     }
@@ -48,11 +52,11 @@ public class Mechanic extends Character{
      * pumpát, amivel a kezében mozoghat a pályán.
      */
     public void PickUpPump(){
-        for(int i = 0; i < Main.tabCount; i++) {System.out.print("\t");}
-        Main.tabCount++;
+        for(int i = 0; i < TesterMain.tabCount; i++) {System.out.print("\t");}
+        TesterMain.tabCount++;
         System.out.println("Mechanic::PickUpPump()");
         pump_in_hand = field.PickUpPump();
-        Main.tabCount--;
+        TesterMain.tabCount--;
     }
 
     /**
@@ -61,26 +65,26 @@ public class Mechanic extends Character{
      * vége a kezébe kerül, ezzel tud tovább mozogni.
      */
     public void PickUpPipe(){
-        for(int i = 0; i < Main.tabCount; i++) {System.out.print("\t");}
-        Main.tabCount++;
+        for(int i = 0; i < TesterMain.tabCount; i++) {System.out.print("\t");}
+        TesterMain.tabCount++;
         System.out.println("Mechanic::PickUpPipe()");
         pipe_in_hand = field.PickUpPipe();
-        Main.tabCount--;
+        TesterMain.tabCount--;
     }
 
     public void setPumpInHand(Pump p) {
-        for(int i = 0; i < Main.tabCount; i++) {System.out.print("\t");}
-        Main.tabCount++;
+        for(int i = 0; i < TesterMain.tabCount; i++) {System.out.print("\t");}
+        TesterMain.tabCount++;
         System.out.println("Mechanic::setPumpInHand()");
         pump_in_hand = p;
-        Main.tabCount--;
+        TesterMain.tabCount--;
     }
 
     public void setPipeInHand(Pipe p) {
-        for(int i = 0; i < Main.tabCount; i++) {System.out.print("\t");}
-        Main.tabCount++;
+        for(int i = 0; i < TesterMain.tabCount; i++) {System.out.print("\t");}
+        TesterMain.tabCount++;
         System.out.println("Mechanic::setPipeInHand()");
         pipe_in_hand = p;
-        Main.tabCount--;
+        TesterMain.tabCount--;
     }
 }

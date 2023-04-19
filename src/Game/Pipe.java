@@ -1,5 +1,9 @@
+package Game;
+
 import java.util.ArrayList;
 import java.util.List;
+import skeleton.*;
+
 
 /**
  * A csövet reprezentáló osztály
@@ -20,8 +24,8 @@ public class Pipe extends Field{
      * Pipe konstruktor
      */
     public Pipe(){
-        for(int i = 0; i < Main.tabCount; i++) {System.out.print("\t");}
-        Main.tabCount++;
+        for(int i = 0; i < TesterMain.tabCount; i++) {System.out.print("\t");}
+        TesterMain.tabCount++;
         System.out.println("Pipe has been initialized");
         has_hole = false;
         has_water = false;
@@ -30,7 +34,7 @@ public class Pipe extends Field{
         endpoints = new ArrayList<Node>(2);
         endpoints.add(null);
         endpoints.add(null);
-        Main.tabCount--;
+        TesterMain.tabCount--;
     }
 
     /**
@@ -39,10 +43,10 @@ public class Pipe extends Field{
      * @return Szomszéd az adott irányba
      */
     public Field getNeighbour(int direction) {
-        for(int i = 0; i < Main.tabCount; i++) {System.out.print("\t");}
+        for(int i = 0; i < TesterMain.tabCount; i++) {System.out.print("\t");}
         System.out.println("Pipe::getNeighbour()");
-        Main.tabCount++;
-        Main.tabCount--;
+        TesterMain.tabCount++;
+        TesterMain.tabCount--;
         return endpoints.get(direction);
     }
 
@@ -50,22 +54,22 @@ public class Pipe extends Field{
      * Megjavítja a csövet, eltüntei róla a lyukat
      */
     public void Fix() {
-        for(int i = 0; i < Main.tabCount; i++) {System.out.print("\t");}
+        for(int i = 0; i < TesterMain.tabCount; i++) {System.out.print("\t");}
         System.out.println("Pipe::Fix()");
-        Main.tabCount++;
+        TesterMain.tabCount++;
         has_hole = false;
-        Main.tabCount--;
+        TesterMain.tabCount--;
     }
 
     /**
      * Kilyukasztja a csövet
      */
     public void Drill() {
-        for(int i = 0; i < Main.tabCount; i++) {System.out.print("\t");}
+        for(int i = 0; i < TesterMain.tabCount; i++) {System.out.print("\t");}
         System.out.println("Pipe::Drill()");
-        Main.tabCount++;
+        TesterMain.tabCount++;
         has_hole = true;
-        Main.tabCount--;
+        TesterMain.tabCount--;
     }
     
     /** 
@@ -73,12 +77,12 @@ public class Pipe extends Field{
      * @param amount Az átadott víz mennyisége
      */
     public void GiveWater(int amount) {
-        for(int i = 0; i < Main.tabCount; i++) {System.out.print("\t");}
+        for(int i = 0; i < TesterMain.tabCount; i++) {System.out.print("\t");}
         System.out.println("Pipe::GiveWater()");
-        Main.tabCount++;
+        TesterMain.tabCount++;
         lost += has_hole ? 1 : 0;
         has_water = !has_hole;
-        Main.tabCount--;
+        TesterMain.tabCount--;
     }
 
     
@@ -87,12 +91,12 @@ public class Pipe extends Field{
      * @return int A kivett víz mennyisége
      */
     public int TakeWaterAway() {
-        for(int i = 0; i < Main.tabCount; i++) {System.out.print("\t");}
+        for(int i = 0; i < TesterMain.tabCount; i++) {System.out.print("\t");}
         System.out.println("Pipe::TakeWaterAway()");
-        Main.tabCount++;
+        TesterMain.tabCount++;
         int ret = has_water ? 1 : 0;
         has_water = false;
-        Main.tabCount--;
+        TesterMain.tabCount--;
         return ret;
     }
 
@@ -100,10 +104,10 @@ public class Pipe extends Field{
      * Megnöveli az elfolyt víz mennyiségét. 
      */
     public void addLost() {
-        for(int i = 0; i < Main.tabCount; i++) {System.out.print("\t");}
+        for(int i = 0; i < TesterMain.tabCount; i++) {System.out.print("\t");}
         System.out.println("Pipe::addLost()");
-        Main.tabCount++;
-        Main.tabCount--;
+        TesterMain.tabCount++;
+        TesterMain.tabCount--;
     }
 
     
@@ -112,14 +116,14 @@ public class Pipe extends Field{
      * @param c Az elfogadandó játékos
      */
     public void Accept(Character c) {
-        for(int i = 0; i < Main.tabCount; i++) {System.out.print("\t");}
+        for(int i = 0; i < TesterMain.tabCount; i++) {System.out.print("\t");}
         System.out.println("Pipe::Accept()");
-        Main.tabCount++;
+        TesterMain.tabCount++;
         if(!has_player) {
             c.setField(this);
             has_player = true;
         }
-        Main.tabCount--;
+        TesterMain.tabCount--;
     }
 
     /**
@@ -127,12 +131,12 @@ public class Pipe extends Field{
      * @param c A levetendő játékos
      */
     public void Remove(Character c) {
-        for(int i = 0; i < Main.tabCount; i++) {System.out.print("\t");}
+        for(int i = 0; i < TesterMain.tabCount; i++) {System.out.print("\t");}
         System.out.println("Pipe::Remove()");
-        Main.tabCount++;
+        TesterMain.tabCount++;
         has_player = false;
         players.remove(c);
-        Main.tabCount--;
+        TesterMain.tabCount--;
     }
 
     /**
@@ -141,15 +145,15 @@ public class Pipe extends Field{
      * @return  Sikeres lehelyezés esetén null, egyébként a pumpa
      */
     public Pump PlacePump(Pump p) {
-        for(int i = 0; i < Main.tabCount; i++) {System.out.print("\t");}
+        for(int i = 0; i < TesterMain.tabCount; i++) {System.out.print("\t");}
         System.out.println("Pipe::PlacePump()");
-        Main.tabCount++;
+        TesterMain.tabCount++;
         Pipe p2 = new Pipe();
         p2.setEndpoint(p, 0);
         p2.setEndpoint(this.getEndpoint(1), 1);
         this.getEndpoint(1).removeEdge(this);
         this.setEndpoint(p, 1);
-        Main.tabCount--;
+        TesterMain.tabCount--;
         return p;
     }
 
@@ -158,10 +162,10 @@ public class Pipe extends Field{
      * @param l  A beállítandó érték
      */
     public void setLost(int l) {
-        for(int i = 0; i < Main.tabCount; i++) {System.out.print("\t");}
+        for(int i = 0; i < TesterMain.tabCount; i++) {System.out.print("\t");}
         System.out.println("Pipe::setLost()");
-        Main.tabCount++;
-        Main.tabCount--;
+        TesterMain.tabCount++;
+        TesterMain.tabCount--;
         lost = l;
     }
 
@@ -171,15 +175,15 @@ public class Pipe extends Field{
      * @param d Az átállítandó végpont indexe (0 vagy 1)
      */
     public void setEndpoint(Node n, int d) {
-        for(int i = 0; i < Main.tabCount; i++) {System.out.print("\t");}
+        for(int i = 0; i < TesterMain.tabCount; i++) {System.out.print("\t");}
         System.out.println("Pipe::setEndpoint()");
-        Main.tabCount++;
+        TesterMain.tabCount++;
         if(d == 0 || d == 1){
             n.addEdge(this);
             endpoints.remove(d);
             endpoints.add(d,n);
         }
-        Main.tabCount--;
+        TesterMain.tabCount--;
     }
 
     /**
@@ -187,10 +191,10 @@ public class Pipe extends Field{
      * @return Az eddig elfolyt víz mennyisége
      */
     public int getLost() {
-        for(int i = 0; i < Main.tabCount; i++) {System.out.print("\t");}
+        for(int i = 0; i < TesterMain.tabCount; i++) {System.out.print("\t");}
         System.out.println("Pipe::getLost()");
-        Main.tabCount++;
-        Main.tabCount--;
+        TesterMain.tabCount++;
+        TesterMain.tabCount--;
         return lost;
     }
 
@@ -200,10 +204,10 @@ public class Pipe extends Field{
      * @return A végpont az adott irányba
      */
     public Node getEndpoint(int d) {
-        for(int i = 0; i < Main.tabCount; i++) {System.out.print("\t");}
+        for(int i = 0; i < TesterMain.tabCount; i++) {System.out.print("\t");}
         System.out.println("Pipe::getEndpoint()");
-        Main.tabCount++;
-        Main.tabCount--;
+        TesterMain.tabCount++;
+        TesterMain.tabCount--;
         return endpoints.get(d);
     }
 }

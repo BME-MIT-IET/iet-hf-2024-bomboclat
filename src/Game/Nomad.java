@@ -1,3 +1,7 @@
+package Game;
+
+import skeleton.*;
+
 /**
  * A szabotőrt reprezentáló osztály
  */
@@ -12,10 +16,10 @@ public class Nomad extends Character{
      * Ha nem csövön áll, akkor nem történik semmi
      */
     public void DrillPipe(){
-        for(int i = 0; i < Main.tabCount; i++) {System.out.print("\t");}
-        Main.tabCount++;
+        for(int i = 0; i < TesterMain.tabCount; i++) {System.out.print("\t");}
+        TesterMain.tabCount++;
         System.out.println("Nomad::DrillPipe()");
         field.Drill();
-        Main.tabCount--;
+        TesterMain.tabCount--;
     }
 }

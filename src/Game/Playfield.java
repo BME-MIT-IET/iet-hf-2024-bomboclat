@@ -1,5 +1,10 @@
+package Game;
+
+
 import java.util.List;
 import java.util.ArrayList;
+import skeleton.*;
+
 
 /**
  * A játékmezőt tárolja, ilyen objektumokban lehet pályákat tárolni.
@@ -16,12 +21,12 @@ public class Playfield implements Stepable{
      * Playfield konstruktor
      */
     public Playfield(){
-        for(int i = 0; i < Main.tabCount; i++) { System.out.print("\t"); }
+        for(int i = 0; i < TesterMain.tabCount; i++) { System.out.print("\t"); }
         System.out.println("Playfield has been initialized");
-        Main.tabCount++;
+        TesterMain.tabCount++;
         nodes = new ArrayList<Node>();
         pipes = new ArrayList<Pipe>();
-        Main.tabCount--;
+        TesterMain.tabCount--;
     }
 
     /**
@@ -30,13 +35,13 @@ public class Playfield implements Stepable{
      */
     @Override
     public void Step() {
-        for(int i = 0; i < Main.tabCount; i++) { System.out.print("\t"); }
+        for(int i = 0; i < TesterMain.tabCount; i++) { System.out.print("\t"); }
         System.out.println("Playfield::Step()");
-        Main.tabCount++;
+        TesterMain.tabCount++;
         for(int i = 0; i < nodes.size(); i++){
             nodes.get(i).Step();
         }
-        Main.tabCount--;
+        TesterMain.tabCount--;
     }
     
     /**
@@ -44,11 +49,11 @@ public class Playfield implements Stepable{
      * @param n a hozzáadandó csomópont
      */
     public void addNode(Node n){
-        for(int i = 0; i < Main.tabCount; i++) { System.out.print("\t"); }
+        for(int i = 0; i < TesterMain.tabCount; i++) { System.out.print("\t"); }
         System.out.println("Playfield::addNode()");
-        Main.tabCount++;
+        TesterMain.tabCount++;
         nodes.add(n);
-        Main.tabCount--;
+        TesterMain.tabCount--;
     }
 
     /**
@@ -56,11 +61,11 @@ public class Playfield implements Stepable{
      * @param n a törlendő csomopónt
      */
     public void deleteNode(Node n){
-        for(int i = 0; i < Main.tabCount; i++) { System.out.print("\t"); }
+        for(int i = 0; i < TesterMain.tabCount; i++) { System.out.print("\t"); }
         System.out.println("Playfield::deleteNode()");
-        Main.tabCount++;
+        TesterMain.tabCount++;
         nodes.remove(n);
-        Main.tabCount--;
+        TesterMain.tabCount--;
     }
 
     /**
@@ -68,11 +73,11 @@ public class Playfield implements Stepable{
      * @param p a hozzáadandó cső
      */
     public void addPipe(Pipe p){
-        for(int i = 0; i < Main.tabCount; i++) { System.out.print("\t"); }
+        for(int i = 0; i < TesterMain.tabCount; i++) { System.out.print("\t"); }
         System.out.println("Playfield::addPipe()");
-        Main.tabCount++;
+        TesterMain.tabCount++;
         pipes.add(p);
-        Main.tabCount--;
+        TesterMain.tabCount--;
     }
 
     /**
@@ -80,11 +85,11 @@ public class Playfield implements Stepable{
      * @param p a törlendő cső
      */
     public void deletePipe(Pipe p){
-        for(int i = 0; i < Main.tabCount; i++) { System.out.print("\t"); }
+        for(int i = 0; i < TesterMain.tabCount; i++) { System.out.print("\t"); }
         System.out.println("Playfield::deletePipe()");
-        Main.tabCount++;
+        TesterMain.tabCount++;
         pipes.remove(p);
-        Main.tabCount--;
+        TesterMain.tabCount--;
     }
 
     /***
@@ -92,14 +97,14 @@ public class Playfield implements Stepable{
      * @return int a megszerzett pontok száma
      */
     public int getMechanicPoints(){
-        for(int i = 0; i < Main.tabCount; i++) { System.out.print("\t"); }
+        for(int i = 0; i < TesterMain.tabCount; i++) { System.out.print("\t"); }
         System.out.println("Playfield::getMechanicPoints()");
-        Main.tabCount++;
+        TesterMain.tabCount++;
         int count = 0;
         for(int i = 0; i < nodes.size(); i++){
             count += nodes.get(i).getMechanicPoint();
         }
-        Main.tabCount--;
+        TesterMain.tabCount--;
         return count;
     }
 
@@ -108,14 +113,14 @@ public class Playfield implements Stepable{
      * @return int a megszerzett pontok száma
      */
     public int getNomadPoints(){
-        for(int i = 0; i < Main.tabCount; i++) { System.out.print("\t"); }
+        for(int i = 0; i < TesterMain.tabCount; i++) { System.out.print("\t"); }
         System.out.println("Playfield::getNomadPoints()");
-        Main.tabCount++;
+        TesterMain.tabCount++;
         int count = 0;
         for(int i = 0; i < pipes.size(); i++){
             count += pipes.get(i).getLost();
         }
-        Main.tabCount--;
+        TesterMain.tabCount--;
         return count;
     }
 

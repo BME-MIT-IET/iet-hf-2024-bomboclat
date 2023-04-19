@@ -1,5 +1,9 @@
+package Game;
+
 import java.util.ArrayList;
 import java.util.List;
+import skeleton.*;
+
 
 /**
  * A karakterek által használható mezőket reprezentáló osztály.
@@ -10,13 +14,13 @@ abstract public class Field{
 
     /**Field konstruktora. */
     public Field(){
-        for(int i=0; i < Main.tabCount; i++) {
+        for(int i=0; i < TesterMain.tabCount; i++) {
             System.out.print("\t");
         }
         System.out.println("Field has been initialized");
-        Main.tabCount++;
+        TesterMain.tabCount++;
         players=new ArrayList<>();
-        Main.tabCount--;
+        TesterMain.tabCount--;
     }
     
     /**
@@ -33,13 +37,13 @@ abstract public class Field{
      * @param c Karakter objektum, amelyet le akarnak venni a mezőről.
      */
     public void Remove(Character c){
-        for(int i=0; i < Main.tabCount; i++) {
+        for(int i=0; i < TesterMain.tabCount; i++) {
             System.out.print("\t");
         }
         System.out.println("Field::Remove()");
         this.players.remove(c);
-        Main.tabCount++;
-        Main.tabCount--;
+        TesterMain.tabCount++;
+        TesterMain.tabCount--;
     }
 
     /**
@@ -47,38 +51,38 @@ abstract public class Field{
      * @param c Karakter objektum, amelyet fel akarnak vetetni a mezőre.
      */
     public void Accept(Character c){
-        for(int i=0; i < Main.tabCount; i++) {
+        for(int i=0; i < TesterMain.tabCount; i++) {
             System.out.print("\t");
         }
         System.out.println("Field::Accept()");
-        Main.tabCount++;
+        TesterMain.tabCount++;
         this.players.add(c);
         c.setField(this);
-        Main.tabCount--;
+        TesterMain.tabCount--;
     }
 
     /**
      * Nem csinál semmit, elnyeli a hívást, ha olyan objektumra hívják, aminek nincsen ez a függvénye felüldefiniálva.
      */
     public void Fix(){
-        for(int i=0; i < Main.tabCount; i++) {
+        for(int i=0; i < TesterMain.tabCount; i++) {
             System.out.print("\t");
         }
         System.out.println("Field::Fix()");
-        Main.tabCount++;
-        Main.tabCount--;
+        TesterMain.tabCount++;
+        TesterMain.tabCount--;
     }
 
     /**
      * Nem csinál semmit, elnyeli a hívást, ha olyan objektumra hívják, aminek nincsen ez a függvénye felüldefiniálva.
      */
     public void Drill(){
-        for(int i=0; i < Main.tabCount; i++) {
+        for(int i=0; i < TesterMain.tabCount; i++) {
             System.out.print("\t");
         }
         System.out.println("Field::Drill()");
-        Main.tabCount++;
-        Main.tabCount--;
+        TesterMain.tabCount++;
+        TesterMain.tabCount--;
     }
 
     /**
@@ -87,12 +91,12 @@ abstract public class Field{
      * @param out Az a cső, amelyet kimeneti csőként kell beállítani.
      */
     public void Change(Pipe in, Pipe out){
-        for(int i=0; i < Main.tabCount; i++) {
+        for(int i=0; i < TesterMain.tabCount; i++) {
             System.out.print("\t");
         }
         System.out.println("Field::Change()");
-        Main.tabCount++;
-        Main.tabCount--;
+        TesterMain.tabCount++;
+        TesterMain.tabCount--;
     }
 
     /**
@@ -102,12 +106,12 @@ abstract public class Field{
      * definiálva, ha olyanra aminek nincs akkor null.
      */
     public Pipe PickUpPipe(){
-        for(int i=0; i < Main.tabCount; i++) {
+        for(int i=0; i < TesterMain.tabCount; i++) {
             System.out.print("\t");
         }
         System.out.println("Field::PickUpPipe()");
-        Main.tabCount++;
-        Main.tabCount--;
+        TesterMain.tabCount++;
+        TesterMain.tabCount--;
         return null;
     }
 
@@ -118,12 +122,12 @@ abstract public class Field{
      * definiálva, ha olyanra aminek nincs akkor null.
      */
     public Pump PickUpPump(){
-        for(int i=0; i < Main.tabCount; i++) {
+        for(int i=0; i < TesterMain.tabCount; i++) {
             System.out.print("\t");
         }
         System.out.println("Field::PickUpPump()");
-        Main.tabCount++;
-        Main.tabCount--;
+        TesterMain.tabCount++;
+        TesterMain.tabCount--;
         return null;
     }
 
@@ -133,12 +137,12 @@ abstract public class Field{
      * @param p A lehelyezendő Pipe objektum.
      */
     public void addEdge(Pipe p){
-        for(int i=0; i < Main.tabCount; i++) {
+        for(int i=0; i < TesterMain.tabCount; i++) {
             System.out.print("\t");
         }
         System.out.println("Field::addEdge()");
-        Main.tabCount++;
-        Main.tabCount--;
+        TesterMain.tabCount++;
+        TesterMain.tabCount--;
     }
 
     /**
@@ -150,12 +154,12 @@ abstract public class Field{
      * lehelyezni.
      */
     public Pump PlacePump(Pump p){
-        for(int i=0; i < Main.tabCount; i++) {
+        for(int i=0; i < TesterMain.tabCount; i++) {
             System.out.print("\t");
         }
         System.out.println("Field::PlacePump()");
-        Main.tabCount++;
-        Main.tabCount--;
+        TesterMain.tabCount++;
+        TesterMain.tabCount--;
         return p;
     }
 

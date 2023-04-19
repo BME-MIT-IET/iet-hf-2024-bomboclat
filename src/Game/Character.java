@@ -1,3 +1,6 @@
+package Game;
+import skeleton.*;
+
 /**
  * A karaktert reprezentáló osztály
  */
@@ -14,13 +17,13 @@ public class Character{
      * @param nField A mező, amelyen álljon
      */
     public Character(int nMoves, Field nField){
-        for(int i = 0; i < Main.tabCount; i++) {System.out.print("\t");}
-        Main.tabCount++;
+        for(int i = 0; i < TesterMain.tabCount; i++) {System.out.print("\t");}
+        TesterMain.tabCount++;
         System.out.println("Character has been initialized");
         moves = nMoves;
         field = nField;
         field.Accept(this);
-        Main.tabCount--;
+        TesterMain.tabCount--;
     }
 
     /**
@@ -28,21 +31,21 @@ public class Character{
      * @param newMoves A lépések új értéke
      */
     public void setMoves(int newMoves){
-        for(int i = 0; i < Main.tabCount; i++) {System.out.print("\t");}
-        Main.tabCount++;
+        for(int i = 0; i < TesterMain.tabCount; i++) {System.out.print("\t");}
+        TesterMain.tabCount++;
         System.out.println("Character::setMoves()");
         moves = newMoves;
-        Main.tabCount--;
+        TesterMain.tabCount--;
     }
 
     /**
      * A lépések gettere
      */
     public int getMoves(){
-        for(int i = 0; i < Main.tabCount; i++) {System.out.print("\t");}
-        Main.tabCount++;
+        for(int i = 0; i < TesterMain.tabCount; i++) {System.out.print("\t");}
+        TesterMain.tabCount++;
         System.out.println("Character::getMoves()");
-        Main.tabCount--;
+        TesterMain.tabCount--;
         return moves;
     }
 
@@ -51,21 +54,21 @@ public class Character{
      * @param newField A jelenlegi mező
      */
     public void setField(Field newField){
-        for(int i = 0; i < Main.tabCount; i++) {System.out.print("\t");}
-        Main.tabCount++;
+        for(int i = 0; i < TesterMain.tabCount; i++) {System.out.print("\t");}
+        TesterMain.tabCount++;
         System.out.println("Character::setField()");
         field = newField;
-        Main.tabCount--;
+        TesterMain.tabCount--;
     }
 
     /**
      * A jelenlegi mező gettere
      */
     public Field getField(){
-        for(int i = 0; i < Main.tabCount; i++) {System.out.print("\t");}
-        Main.tabCount++;
+        for(int i = 0; i < TesterMain.tabCount; i++) {System.out.print("\t");}
+        TesterMain.tabCount++;
         System.out.println("Character::getField()");
-        Main.tabCount--;
+        TesterMain.tabCount--;
         return field;
     }
 
@@ -75,11 +78,11 @@ public class Character{
      * @param d Új kimenet
      */
     public void ChangePump(Pipe o, Pipe d){
-        for(int i = 0; i < Main.tabCount; i++) {System.out.print("\t");}
-        Main.tabCount++;
+        for(int i = 0; i < TesterMain.tabCount; i++) {System.out.print("\t");}
+        TesterMain.tabCount++;
         System.out.println("Character::ChangePump()");
         field.Change(o, d);
-        Main.tabCount--;
+        TesterMain.tabCount--;
     }
 
     /**
@@ -87,14 +90,14 @@ public class Character{
      * @param d Egy irány arról a mezőről, amin áll
      */
     public void Move(int d){
-        for(int i = 0; i < Main.tabCount; i++) {System.out.print("\t");}
-        Main.tabCount++;
+        for(int i = 0; i < TesterMain.tabCount; i++) {System.out.print("\t");}
+        TesterMain.tabCount++;
         System.out.println("Character::Move()");
         Field neighbour = field.getNeighbour(d);
         if(neighbour != null){
             field.Remove(this);
             neighbour.Accept(this);
         }
-        Main.tabCount--;
+        TesterMain.tabCount--;
     }
 }
