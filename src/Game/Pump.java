@@ -90,10 +90,83 @@ public abstract class Pump extends Node{
         working = false;
         TesterMain.tabCount--;
     }
+   
+    /** 
+     * Leteszi a paraméterben megadott szerelő kezében lévő csövet, azaz hozzáadja a pumpából kimenő/pumpába befutó csövek közé.
+     * @param m a csövet letenni kívánó szerelő
+    */
+    public void PlacePipe(Mechanic m){
+        Pipe pipeInHand = m.GetPipeInHand();
+        edges.add(pipeInHand);
+
+        int pipeEnd = m.GetPipeEnd();
+
+        if(pipeEnd == 0){
+            pipeInHand.setEndpoint(this, 0);
+            m.setPipeInHand(null);
+            m.SetPipeEnd(-1);
+        } else if (pipeEnd == 1){
+            pipeInHand.setEndpoint(this, 1);
+            m.setPipeInHand(null);
+            m.SetPipeEnd(-1);
+        } else if(pipeEnd == 2){
+            pipeInHand.setEndpoint(this, 0);
+            m.SetPipeEnd(1);
+        }
+    }
+
+    /** regi kod
+     * Leteszi a paraméterben megadott szerelő kezében lévő csövet, azaz hozzáadja a pumpából kimenő/pumpába befutó csövek közé.
+     * @param m a csövet letenni kívánó szerelő
+     
+    public void PlacePipe(Mechanic m){
+        Pipe pipeInHand = m.GetPipeInHand();
+        edges.add(pipeInHand);
+
+        int pipeEnd = m.GetPipeEnd();
+
+        if(pipeEnd == 0){
+            pipeInHand.setEndpoint(this, 0);
+            m.setPipeInHand(null);
+            m.SetPipeEnd(-1);
+        } else if(pipeEnd == 1){
+            pipeInHand.setEndpoint(this, 1);
+            m.setPipeInHand(null);
+            m.SetPipeEnd(-1);
+        } else if(pipeEnd == 2){
+            pipeInHand.setEndpoint(this, 0);
+            m.SetPipeEnd(1);
+        }
+
+    }*/
 
     /**
-     * Felvesz egy szomszédos csövet.
+     * Felveszi a pumpa csövei közül az elsőt a mechanic kezébe
+     * @param m a szerelő játékos
+     * @return a felvett cső
      */
+    public Pipe PickUpPipe(Mechanic m){
+        if(m.GetPipeEnd() != -1){
+            m.SetPipeEnd(2);
+            return null;
+        } else{
+            Pipe returnPipe = edges.get(0);
+            int pipeEnd;
+
+            if(returnPipe.getNeighbour(0) == this){
+                pipeEnd = 0;
+            } else {
+                pipeEnd = 1;
+            }
+
+            m.SetPipeEnd(pipeEnd);
+            return returnPipe;
+        }
+    }
+
+    /** regi fuggveny
+     * Felvesz egy szomszédos csövet.
+     
     public Pipe PickUpPipe() {
         for(int i=0; i < TesterMain.tabCount; i++) {
             System.out.print("\t");
@@ -102,7 +175,7 @@ public abstract class Pump extends Node{
         TesterMain.tabCount++;
         TesterMain.tabCount--;
         return edges.get(0);
-    }
+    }*/
 
     /**
      * Beállítja azt a csövet, ahova kifolyik a víz.

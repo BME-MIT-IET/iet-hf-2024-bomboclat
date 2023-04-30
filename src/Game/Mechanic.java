@@ -9,6 +9,7 @@ public class Mechanic extends Character{
     
     private Pipe pipe_in_hand;
     private Pump pump_in_hand;
+    private int pipeEnd;
 
     public Mechanic(int nMoves, Field nField){
         super(nMoves, nField);
@@ -68,7 +69,10 @@ public class Mechanic extends Character{
         for(int i = 0; i < TesterMain.tabCount; i++) {System.out.print("\t");}
         TesterMain.tabCount++;
         System.out.println("Mechanic::PickUpPipe()");
-        pipe_in_hand = field.PickUpPipe(this);
+        Pipe pipe = field.PickUpPipe(this);
+        if(pipe != null){
+            pipe_in_hand = pipe;
+        }
         TesterMain.tabCount--;
     }
 
@@ -86,5 +90,21 @@ public class Mechanic extends Character{
         System.out.println("Mechanic::setPipeInHand()");
         pipe_in_hand = p;
         TesterMain.tabCount--;
+    }
+
+    public Pipe GetPipeInHand(){
+        return pipe_in_hand;
+    }
+
+    public int GetPipeEnd(){
+        return pipeEnd;
+    }
+
+    public void SetPipeInHand(Pipe pipe){
+        pipe_in_hand = pipe;
+    }
+
+    public void SetPipeEnd(int end){
+        pipeEnd = end;
     }
 }

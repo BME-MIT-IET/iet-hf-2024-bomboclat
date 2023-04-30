@@ -54,10 +54,23 @@ public class City extends Node{
         return consumed;
     }
 
-    /**
+    /** regi fv
      * A városból egy, onnan kivezető cső nem ciszterna felőli végét lehet felvenni ezzel a függvénnyel.
+     * @param m a csövet felvenni kívánó szerelő játékos.
      * @return A függvény a felvett cső objektumot adja vissza.
      */
+    public Pipe PickUpPipe(Mechanic m){
+        Pipe returnPipe = new Pipe();
+        returnPipe.setEndpoint(this, 0);
+
+        m.SetPipeEnd(1);
+        return returnPipe;
+    }
+
+    /** regi fv
+     * A városból egy, onnan kivezető cső nem ciszterna felőli végét lehet felvenni ezzel a függvénnyel.
+     * @return A függvény a felvett cső objektumot adja vissza.
+     
     public Pipe PickUpPipe() {
         for(int i=0; i < TesterMain.tabCount; i++) {
             System.out.print("\t");
@@ -68,7 +81,7 @@ public class City extends Node{
         n.setEndpoint(this, 1);
         TesterMain.tabCount--;
         return n;
-    }
+    }*/
 
     /**
      * A városból új pumpákat tudnak felvenni ezzel a függvénnyel.
@@ -80,7 +93,7 @@ public class City extends Node{
         }
         System.out.println("City::PickUpPump()");
         TesterMain.tabCount++;
-        Pump p=new Pump();
+        Pump p = new Pump();
         TesterMain.tabCount--;
         return p;
     }

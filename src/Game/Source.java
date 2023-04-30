@@ -34,4 +34,28 @@ public class Source extends Node{
         }
         TesterMain.tabCount--;
     }
+
+    /** 
+     * Leteszi a paraméterben megadott szerelő kezében lévő csövet, azaz hozzáadja a pumpából kimenő/pumpába befutó csövek közé.
+     * @param m a csövet letenni kívánó szerelő
+    */
+    public void PlacePipe(Mechanic m){
+        Pipe pipeInHand = m.GetPipeInHand();
+        edges.add(pipeInHand);
+
+        int pipeEnd = m.GetPipeEnd();
+
+        if(pipeEnd == 0){
+            pipeInHand.setEndpoint(this, 0);
+            m.setPipeInHand(null);
+            m.SetPipeEnd(-1);
+        } else if (pipeEnd == 1){
+            pipeInHand.setEndpoint(this, 1);
+            m.setPipeInHand(null);
+            m.SetPipeEnd(-1);
+        } else if(pipeEnd == 2){
+            pipeInHand.setEndpoint(this, 0);
+            m.SetPipeEnd(1);
+        }
+    }
 }
