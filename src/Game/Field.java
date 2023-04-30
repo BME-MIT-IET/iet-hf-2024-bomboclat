@@ -105,7 +105,7 @@ abstract public class Field{
      * @return A Pipe objektum amit felvett, ha olyan objektumra hívják meg, melynek ez a függvénye felül van
      * definiálva, ha olyanra aminek nincs akkor null.
      */
-    public Pipe PickUpPipe(){
+    public Pipe PickUpPipe(Player p){
         for(int i=0; i < TesterMain.tabCount; i++) {
             System.out.print("\t");
         }

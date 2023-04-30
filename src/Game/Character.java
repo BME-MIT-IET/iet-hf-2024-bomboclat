@@ -105,10 +105,10 @@ public class Character{
      * A karakter kilyukasztja amin éppen áll
      * Ha nem csövön áll, akkor nem történik semmi
      */
-    public void DrillPipe(){
+    public void DrillPipe(){ 
         for(int i = 0; i < TesterMain.tabCount; i++) {System.out.print("\t");}
         TesterMain.tabCount++;
-        System.out.println("Nomad::DrillPipe()");
+        System.out.println("Character::DrillPipe()");
         field.Drill();
         TesterMain.tabCount--;
     }

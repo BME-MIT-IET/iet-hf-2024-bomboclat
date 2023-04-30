@@ -68,7 +68,7 @@ public class Mechanic extends Character{
         for(int i = 0; i < TesterMain.tabCount; i++) {System.out.print("\t");}
         TesterMain.tabCount++;
         System.out.println("Mechanic::PickUpPipe()");
-        pipe_in_hand = field.PickUpPipe();
+        pipe_in_hand = field.PickUpPipe(this);
         TesterMain.tabCount--;
     }
 
