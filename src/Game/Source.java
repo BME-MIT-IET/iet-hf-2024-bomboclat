@@ -37,6 +37,8 @@ public class Source extends Node{
 
     /** 
      * Leteszi a paraméterben megadott szerelő kezében lévő csövet, azaz hozzáadja a pumpából kimenő/pumpába befutó csövek közé.
+     * Kezeli a szerelő kezében lévő csövet. (Kiveszi/egyik végét bennehagyja annak függvényében, hogy a szerelő kezében a csőnek mely
+     * vége(i) volt(ak))
      * @param m a csövet letenni kívánó szerelő
     */
     public void PlacePipe(Mechanic m){

@@ -7,7 +7,7 @@ import skeleton.*;
  */
 public class City extends Node{
     /**
-     * A városba (más néven ciszternába) befolyt víz mennyisége.
+     * A városba (más néven ciszternába) befolyt víz mennyisége. A szerelők pontszámát reprezentálja
      */
     private int consumed;
     /**
@@ -67,22 +67,7 @@ public class City extends Node{
         return returnPipe;
     }
 
-    /** regi fv
-     * A városból egy, onnan kivezető cső nem ciszterna felőli végét lehet felvenni ezzel a függvénnyel.
-     * @return A függvény a felvett cső objektumot adja vissza.
-     
-    public Pipe PickUpPipe() {
-        for(int i=0; i < TesterMain.tabCount; i++) {
-            System.out.print("\t");
-        }
-        System.out.println("City::PickUpPipe()");
-        TesterMain.tabCount++;
-        Pipe n = new Pipe();
-        n.setEndpoint(this, 1);
-        TesterMain.tabCount--;
-        return n;
-    }*/
-
+    
     /**
      * A városból új pumpákat tudnak felvenni ezzel a függvénnyel.
      * @return A függvény a felvett pumpa objektumot adja vissza.

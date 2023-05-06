@@ -5,7 +5,7 @@ import skeleton.*;
 /**
  * A pumpát reprezentáló osztály.
  */
-public abstract class Pump extends Node{
+public class Pump extends Node{
     /**
      * Azt tárolja, hogy működik-e a pumpa. True ha igen, false ha nem.
      */
