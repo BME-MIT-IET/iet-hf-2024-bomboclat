@@ -59,6 +59,23 @@ abstract public class Node extends Field implements Stepable{
     }
 
     /**
+     * A leszármazottakban van felüldefiniálva abban az esetben ha lehet belőlük felvenni csövet.
+     * @param m mechanic típusú játékos, aki az adott node(leszármazottan) áll.
+     * @return a felvett cső
+     */
+    public Pipe PickUpPipe(Mechanic m){
+        return null;
+    }
+
+    /**
+     * A leszármazottakban van felüldefiniálva abban az esetben ha lehet rájuk letenni/hozzájuk adni csövet.
+     * @param m a mechanic típusú játékos, aki leteszi a kezéből a csövet.
+     */
+    public void PlacePipe(Mechanic m){
+        return;
+    }
+
+    /**
      * Hozzáaadja az paraméterként kapott csövet az edges listához (a szomszédaihoz).
      * @param p Az paraméterként kapott cső.
      */
