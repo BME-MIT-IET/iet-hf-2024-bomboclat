@@ -54,7 +54,7 @@ public class CommandInterpreter {
         if(cmd[1].equals("Mechanic")) {
             Mechanic mechanic = new Mechanic();
             
-            for(int i = 2; i < cmd.length - 2; i++) {
+            for(int i = 0; i < cmd.length; i++) {
                 if(cmd[i].equals("-moves")) {
                     mechanic.setMoves(Integer.parseInt(cmd[i + 1]));
                 } else if(cmd[i].equals("-field")) {
