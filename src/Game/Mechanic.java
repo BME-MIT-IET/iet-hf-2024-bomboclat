@@ -11,6 +11,10 @@ public class Mechanic extends Character{
     private Pump pump_in_hand;
     private int pipeEnd;
 
+    public Mechanic() {
+        
+    }
+
     public Mechanic(int nMoves, Field nField){
         super(nMoves, nField);
     }

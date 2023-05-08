@@ -11,6 +11,11 @@ public class Character{
     protected Field field;
 
 
+
+    public Character() {
+        
+    }
+
     /**
      * Character konstruktor
      * @param nMoves A lépések száma
