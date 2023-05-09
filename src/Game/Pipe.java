@@ -8,7 +8,7 @@ import skeleton.*;
 /**
  * A csövet reprezentáló osztály
  */
-public class Pipe extends Field{
+public class Pipe extends Field implements Stepable{
     //A cső végpontjai
     List<Node> endpoints;
     //Lyukas-e a cső
@@ -256,5 +256,11 @@ public class Pipe extends Field{
 
     public void Lube(){
         
+    }
+
+    @Override
+    public void Step() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'Step'");
     }
 }

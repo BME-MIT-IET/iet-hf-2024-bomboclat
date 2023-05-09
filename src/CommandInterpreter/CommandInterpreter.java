@@ -112,11 +112,13 @@ public class CommandInterpreter {
 
             output = String.format("City has been initialized.\nCity object's ID: %d\n",  cities.size());
             cities.add(city);
+            stepables.add(city);
         } else if(cmd[1].equals("source")) {
             Source source = new Source();
 
             output = String.format("Source has been initialized.\nSource object's ID: %d\n",sources.size());
             sources.add(source);
+            stepables.add(source);
         } else if(cmd[1].equals("pump")) {
             Pump pump = new Pump();
 
@@ -141,6 +143,7 @@ public class CommandInterpreter {
             
             output = String.format("Pump has been initialized.\nPump object's ID: %d\n", pumps.size());
             pumps.add(pump);
+            stepables.add(pump);
         } else if(cmd[1].equals("pipe")) {
             Pipe pipe = new Pipe();
             
@@ -170,6 +173,7 @@ public class CommandInterpreter {
 
             output = String.format("Pipe has been initialized.\nPipe object's ID: %d\n", pipes.size());
             pipes.add(pipe);
+            stepables.add(pipe);
         }
 
         if(cmd[cmd.length - 2].equals(">")) {
