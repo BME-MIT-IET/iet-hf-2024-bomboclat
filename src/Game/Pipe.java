@@ -114,13 +114,6 @@ public class Pipe extends Field implements Stepable{
         has_water = false;
         return ret;
     }
-
-    /**
-     * Megnöveli az elfolyt víz mennyiségét. 
-     */
-    public void addLost() {
-    }
-
     
     /** 
      * Meghívja az ősosztály Accept függvényét, majd

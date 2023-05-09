@@ -37,7 +37,7 @@ public class Pump extends Node{
     /**
      * Megjavítja az elromlott pumpát, ha a pumpa már működik, akkor nincsen hatása.
      */
-    public void Fix() {
+    public boolean Fix() {
         for(int i=0; i < TesterMain.tabCount; i++) {
             System.out.print("\t");
         }
@@ -45,6 +45,7 @@ public class Pump extends Node{
         TesterMain.tabCount++;
         working = true;
         TesterMain.tabCount--;
+        return true;
     }
 
     /**

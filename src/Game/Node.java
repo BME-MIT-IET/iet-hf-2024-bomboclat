@@ -103,7 +103,7 @@ abstract public class Node extends Field implements Stepable{
         TesterMain.tabCount--;
     }
 
-    int getNeighbourCount(){
+    public int getNeighbourCount(){
         return edges.size();
     }
 }
