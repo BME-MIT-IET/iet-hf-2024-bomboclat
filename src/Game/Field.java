@@ -50,13 +50,15 @@ abstract public class Field{
     /**
      * Nem csinál semmit, elnyeli a hívást, ha olyan objektumra hívják, aminek nincsen ez a függvénye felüldefiniálva.
      */
-    public void Fix(){
+    public boolean Fix(){
+        return false;
     }
 
     /**
      * Nem csinál semmit, elnyeli a hívást, ha olyan objektumra hívják, aminek nincsen ez a függvénye felüldefiniálva.
      */
-    public void Drill(){
+    public boolean Drill(){
+        return false;
     }
 
     /**
@@ -110,14 +112,16 @@ abstract public class Field{
     /**
      * Elnyeli a függvényhívást olyan mezőkre, ahol annak nincs funkciója.
      */
-    public void Glue(){
+    public boolean Glue(){
+        return false;
     }
 
     /**
      * Elnyeli a függvényhívást olyan mezőkre, ahol annak nincs funkciója.
      */
-    public void Lube(){
+    public boolean Lube(){
+        return false;
     }
 
-    abstract int getNeighbourCount();
+    abstract public int getNeighbourCount();
 }
