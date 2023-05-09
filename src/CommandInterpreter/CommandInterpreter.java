@@ -1,4 +1,5 @@
 package CommandInterpreter;
+
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.IOException;
@@ -159,39 +160,51 @@ public class CommandInterpreter {
         if(cmd[1].equals("character")) {
             output = "Deleted object's type and ID: Character " + cmd[2] + "\n";
             characters.remove(Integer.parseInt(cmd[2]));
+            characters.add(Integer.parseInt(cmd[2]), null);
         } else if(cmd[1].equals("city")) {
             output = "Deleted object's type and ID: City " + cmd[2] + "\n";
             cities.remove(Integer.parseInt(cmd[2]));
+            cities.add(Integer.parseInt(cmd[2]), null);
         } else if(cmd[1].equals("field")) {
             output = "Deleted object's type and ID: Field " + cmd[2] + "\n";
             fields.remove(Integer.parseInt(cmd[2]));
+            fields.add(Integer.parseInt(cmd[2]), null);
         } else if(cmd[1].equals("game")) {
             output = "Deleted object's type and ID: Game " + cmd[2] + "\n";
             games.remove(Integer.parseInt(cmd[2]));
+            games.add(Integer.parseInt(cmd[2]), null);
         } else if(cmd[1].equals("mechanic")) {
             output = "Deleted object's type and ID: Mechanic " + cmd[2] + "\n";
             mechanics.remove(Integer.parseInt(cmd[2]));
+            mechanics.add(Integer.parseInt(cmd[2]), null);
         } else if(cmd[1].equals("node")) {
             output = "Deleted object's type and ID: Node " + cmd[2] + "\n";
             nodes.remove(Integer.parseInt(cmd[2]));
+            nodes.add(Integer.parseInt(cmd[2]), null);
         } else if(cmd[1].equals("nomad")) {
             output = "Deleted object's type and ID: Nomad " + cmd[2] + "\n";
             nomads.remove(Integer.parseInt(cmd[2]));
+            nomads.add(Integer.parseInt(cmd[2]), null);
         } else if(cmd[1].equals("pipe")) {
             output = "Deleted object's type and ID: Pipe " + cmd[2] + "\n";
             pipes.remove(Integer.parseInt(cmd[2]));
+            pipes.add(Integer.parseInt(cmd[2]), null);
         } else if(cmd[1].equals("playfield")) {
             output = "Deleted object's type and ID: Playfield " + cmd[2] + "\n";
             playfields.remove(Integer.parseInt(cmd[2]));
+            playfields.add(Integer.parseInt(cmd[2]), null);
         } else if(cmd[1].equals("pump")) {
             output = "Deleted object's type and ID: Pump " + cmd[2] + "\n";
             pumps.remove(Integer.parseInt(cmd[2]));
+            pumps.add(Integer.parseInt(cmd[2]), null);
         } else if(cmd[1].equals("source")) {
             output = "Deleted object's type and ID: Source " + cmd[2] + "\n";
             sources.remove(Integer.parseInt(cmd[2]));
+            sources.add(Integer.parseInt(cmd[2]), null);
         } else if(cmd[1].equals("stepable")) {
             output = "Deleted object's type and ID: Stepable " + cmd[2] + "\n";
             stepables.remove(Integer.parseInt(cmd[2]));
+            stepables.add(Integer.parseInt(cmd[2]), null);
         } else if(cmd[1].equals("-all")) {
             for(int j = 0; j < characters.size(); j++) {
                 output += "Deleted object's type and ID: Character " + j + "\n";
@@ -263,6 +276,92 @@ public class CommandInterpreter {
 
     public static void list(String[] cmd) {
         String output = "";
+
+        if(cmd[1].equals("mechanic")) {
+            output+= "Mechanics' ID:\n";
+            for(int i = 0; i < mechanics.size(); i++) {
+                if(mechanics.get(i) != null) {
+                    output += i + "\n";
+                }
+            }
+        } else if(cmd[1].equals("nomad")) {
+            output+= "Nomads' ID:\n";
+            for(int i = 0; i < nomads.size(); i++) {
+                if(nomads.get(i) != null) {
+                    output += i + "\n";
+                }
+            }
+        } else if(cmd[1].equals("city")) {
+            output+= "Citys' ID:\n";
+            for(int i = 0; i < cities.size(); i++) {
+                if(cities.get(i) != null) {
+                    output += i + "\n";
+                }
+            }
+        } else if(cmd[1].equals("source")) {
+            output+= "Sources' ID:\n";
+            for(int i = 0; i < sources.size(); i++) {
+                if(sources.get(i) != null) {
+                    output += i + "\n";
+                }
+            }
+        } else if(cmd[1].equals("pump")) {
+            output+= "Pumps' ID:\n";
+            for(int i = 0; i < pumps.size(); i++) {
+                if(pumps.get(i) != null) {
+                    output += i + "\n";
+                }
+            }
+        } else if(cmd[1].equals("pipe")) {
+            output+= "Pipes' ID:\n";
+            for(int i = 0; i < pipes.size(); i++) {
+                if(pipes.get(i) != null) {
+                    output += i + "\n";
+                }
+            }
+        } else if(cmd[1].equals("-all")) {
+            output+= "Mechanics' ID:\n";
+            for(int i = 0; i < mechanics.size(); i++) {
+                if(mechanics.get(i) != null) {
+                    output += i + "\n";
+                }
+            }
+
+            output+= "Nomads' ID:\n";
+            for(int i = 0; i < nomads.size(); i++) {
+                if(nomads.get(i) != null) {
+                    output += i + "\n";
+                }
+            }
+
+            output+= "Citys' ID:\n";
+            for(int i = 0; i < cities.size(); i++) {
+                if(cities.get(i) != null) {
+                    output += i + "\n";
+                }
+            }
+
+            output+= "Sources' ID:\n";
+            for(int i = 0; i < sources.size(); i++) {
+                if(sources.get(i) != null) {
+                    output += i + "\n";
+                }
+            }
+
+            output+= "Pumps' ID:\n";
+            for(int i = 0; i < pumps.size(); i++) {
+                if(pumps.get(i) != null) {
+                    output += i + "\n";
+                }
+            }
+
+            output+= "Pipes' ID:\n";
+            for(int i = 0; i < pipes.size(); i++) {
+                if(pipes.get(i) != null) {
+                    output += i + "\n";
+                }
+            }
+        }
 
         if(cmd[cmd.length - 2].equals(">")) {
             WriteToFile(cmd[cmd.length - 1], output);
