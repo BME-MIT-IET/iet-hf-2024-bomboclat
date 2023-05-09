@@ -260,12 +260,23 @@ public class CommandInterpreter {
             System.out.print(output);
         }
     }
-    
+
+    public static void list(String[] cmd) {
+        String output = "";
+
+        if(cmd[cmd.length - 2].equals(">")) {
+            WriteToFile(cmd[cmd.length - 1], output);
+        } else {
+            System.out.print(output);
+        }
+    }
+
     public static void main(String[] args) {
 
         commands.put("exit", (String[] cmd) -> run = false);
         commands.put("add", (String[] cmd) -> Add(cmd));
         commands.put("delete", (String [] cmd) -> delete(cmd));
+        commands.put("list", (String [] cmd) -> list(cmd));
 
         while(run){
             try {
