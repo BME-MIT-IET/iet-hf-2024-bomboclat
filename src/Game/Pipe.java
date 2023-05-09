@@ -2,6 +2,8 @@ package Game;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
+
 import skeleton.*;
 
 
@@ -9,30 +11,27 @@ import skeleton.*;
  * A csövet reprezentáló osztály
  */
 public class Pipe extends Field{
-    //A cső végpontjai
+    //A cső végpontjait számontartó lista. Egy időpillanatban maximum 2 db eleme lehet.
     List<Node> endpoints;
-    //Lyukas-e a cső
+    //Azt tárolja, hogy lyukas-e a cső.
     boolean has_hole;
-    //Van-e víz a csőben
+    //Azt tárolja, hogy jelenleg van-e víz a csőben.
     boolean has_water;
-    //Elfolyt víz mennyisége
+    //A körök során elfolyt víz mennyiségét tárolja az adott csőre.
     int lost;
-    //Áll-e a rajta játékos
+    //Azt tárolja, hogy tartózkodik-e éppen játékos a csövön.
     boolean has_player;
-    //Mikor lyukaszható újra
+    //Azt tárolja, hogy még hány körig nem lehet lyukasztani a csövet.
     int hole_timer;
-    //Csúszós-e a cső
+    //Azt tárolja, hogy csúszós-e a cső.
     boolean slippery;
-    //Ragadós-e a cső
+    //Azt tárolja, hogy ragadós-e a cső.
     boolean sticky;
 
     /**
-     * Pipe konstruktor
+     * Pipe konstruktora.
      */
     public Pipe(){
-        for(int i = 0; i < TesterMain.tabCount; i++) {System.out.print("\t");}
-        TesterMain.tabCount++;
-        System.out.println("Pipe has been initialized");
         has_hole = false;
         has_water = false;
         lost = 0;
@@ -40,69 +39,74 @@ public class Pipe extends Field{
         endpoints = new ArrayList<Node>(2);
         endpoints.add(null);
         endpoints.add(null);
-        TesterMain.tabCount--;
     }
 
     /**
-     * A cső adott irányba lévő végét adja vissza
-     * @param direction Az adott irány
-     * @return Szomszéd az adott irányba
+     * Ha a cső nem csúszós, abban az esetben
+     * visszaadja az endpoints adattag direction indexű elemét. Hogyha csúszós, úgy
+     * véletlenszerűen az egyik végpontját adja vissza. Hogyha ragadós saját magát. Illetve a
+     * megfelelő flageket beállítja.
+     * @param direction Az adott irány.
+     * @return Ha nem csúszós és nem is ragadós, akkor az endpoints adattag direction indexű elemét, 
+     * más esetekben pedig a fentebb említett szabályok szerint ad vissza egy adott objektumot.
      */
     public Field getNeighbour(int direction) {
-        for(int i = 0; i < TesterMain.tabCount; i++) {System.out.print("\t");}
-        System.out.println("Pipe::getNeighbour()");
-        TesterMain.tabCount++;
-        TesterMain.tabCount--;
-        return endpoints.get(direction);
+        if(direction>=2){
+            return null;
+        }else if(!sticky && !slippery){
+            return endpoints.get(direction);
+        }else if(slippery){
+            int rnd = new Random().nextInt(2);
+            return endpoints.get(rnd);
+        }else if(sticky){
+            return this;
+        }
+        return this;
     }
 
     /**
-     * Megjavítja a csövet, eltüntei róla a lyukat
+     * Megjavítja a csövet, eltünteti róla a lyukat.
      */
     public void Fix() {
-        for(int i = 0; i < TesterMain.tabCount; i++) {System.out.print("\t");}
-        System.out.println("Pipe::Fix()");
-        TesterMain.tabCount++;
         has_hole = false;
-        TesterMain.tabCount--;
     }
 
     /**
-     * Kilyukasztja a csövet
+     * Kilyukasztja a csövet amennyiben a hole_timer attribútum az 0. És a
+     * hole_timer beállítja egy véletlen számra 3-ig (ennyi körig nem lehet kilyukasztani
+     * megint a csövet.).
      */
     public void Drill() {
-        for(int i = 0; i < TesterMain.tabCount; i++) {System.out.print("\t");}
-        System.out.println("Pipe::Drill()");
-        TesterMain.tabCount++;
-        has_hole = true;
-        TesterMain.tabCount--;
+        if(hole_timer == 0){
+            hole_timer = new Random().nextInt(3)+1;
+            has_hole = true;
+        }
     }
     
     /** 
-     * Vizet ad a csőnek
+     * A csőre a paraméterben megadott mennyiségű víz érkezik. Ha ez a
+     * mennyiség nagyobb, mint 0 akkor a has_water attribútumot igazra állítjuk, valamint ha
+     * lyukas a cső akkor az a víz elfolyik tehát a lost értékét növeli.
      * @param amount Az átadott víz mennyisége
      */
     public void GiveWater(int amount) {
-        for(int i = 0; i < TesterMain.tabCount; i++) {System.out.print("\t");}
-        System.out.println("Pipe::GiveWater()");
-        TesterMain.tabCount++;
-        lost += has_hole ? 1 : 0;
-        has_water = !has_hole;
-        TesterMain.tabCount--;
+        if(amount > 0){
+            if(!has_hole){
+                has_water = true;
+            }else{
+                lost+=amount;
+            }
+        }
     }
 
     
     /** 
-     * Elveszi a csőből a vizet
+     * Kivesszük a csőből a vizet, amennyiben van benne.
      * @return int A kivett víz mennyisége
      */
     public int TakeWaterAway() {
-        for(int i = 0; i < TesterMain.tabCount; i++) {System.out.print("\t");}
-        System.out.println("Pipe::TakeWaterAway()");
-        TesterMain.tabCount++;
         int ret = has_water ? 1 : 0;
         has_water = false;
-        TesterMain.tabCount--;
         return ret;
     }
 
@@ -110,86 +114,68 @@ public class Pipe extends Field{
      * Megnöveli az elfolyt víz mennyiségét. 
      */
     public void addLost() {
-        for(int i = 0; i < TesterMain.tabCount; i++) {System.out.print("\t");}
-        System.out.println("Pipe::addLost()");
-        TesterMain.tabCount++;
-        TesterMain.tabCount--;
     }
 
     
     /** 
-     * Elfogad a mezőre egy játékost amennyiben van a csövön hely
-     * @param c Az elfogadandó játékos
+     * Meghívja az ősosztály Accept függvényét, majd
+     * beállítja a has_player attribútumot igazra. Ráálítja a 
+     * játékost a csőre, ha nem állnak már rajta.
+     * @param c A játékost, amelyet rá szeretnének állítani a csőre.
      */
     public void Accept(Character c) {
-        for(int i = 0; i < TesterMain.tabCount; i++) {System.out.print("\t");}
-        System.out.println("Pipe::Accept()");
-        TesterMain.tabCount++;
         if(!has_player) {
-            c.setField(this);
+            this.Accept(c);
             has_player = true;
         }
-        TesterMain.tabCount--;
     }
 
     /**
-     * Leveszi a játékost aki éppen a csövön áll
-     * @param c A levetendő játékos
+     * Meghívja az ősosztály Remove függvényét, majd
+     * beállítja a has_player attribútumot hamisra.
+     * Leveszi a játékost aki éppen a csövön áll.
+     * @param c A levetendő játékos.
      */
     public void Remove(Character c) {
-        for(int i = 0; i < TesterMain.tabCount; i++) {System.out.print("\t");}
-        System.out.println("Pipe::Remove()");
-        TesterMain.tabCount++;
+        this.Remove(c);
         has_player = false;
-        players.remove(c);
-        TesterMain.tabCount--;
     }
 
     /**
-     * Lehelyezünk egy pumpát az adott csőszakaszra.
+     * Lehelyezünk egy pumpát az adott csőszakaszra egy új cső létrehozásával.
      * @param p  A lehelyezendő pumpa.
-     * @return  Sikeres lehelyezés esetén null, egyébként a pumpa
+     * @return  Sikeres lehelyezés esetén null, egyébként a pumpa.
      */
     public Pump PlacePump(Pump p) {
-        for(int i = 0; i < TesterMain.tabCount; i++) {System.out.print("\t");}
-        System.out.println("Pipe::PlacePump()");
-        TesterMain.tabCount++;
         Pipe p2 = new Pipe();
         p2.setEndpoint(p, 0);
         p2.setEndpoint(this.getEndpoint(1), 1);
         this.getEndpoint(1).removeEdge(this);
         this.setEndpoint(p, 1);
-        TesterMain.tabCount--;
-        return p;
+        return null;
     }
 
     /**
-     * Beállítja az elfolyt víz mennyiségét
-     * @param l  A beállítandó érték
+     * Beállítja az elfolyt víz mennyiségét a paraméterben megadott értékre.
+     * @param l  A beállítandó érték.
      */
     public void setLost(int l) {
-        for(int i = 0; i < TesterMain.tabCount; i++) {System.out.print("\t");}
-        System.out.println("Pipe::setLost()");
-        TesterMain.tabCount++;
-        TesterMain.tabCount--;
         lost = l;
     }
 
     /**
-     * Átállítja a cső egyik végpontját
-     * @param n Az új végpont
-     * @param d Az átállítandó végpont indexe (0 vagy 1)
+     * Beállítja a cső egyik végpontját. Amennyiben d
+     * 0 vagy 1, úgy a d-re meghívja az addEdge függvényt saját magát átadva
+     * paraméterként. Az endpoints listában a d indexű elemet kicseréli n-re.
+     * @param n Az új végpont.
+     * @param d Az átállítandó végpont indexe (0 vagy 1).
      */
     public void setEndpoint(Node n, int d) {
-        for(int i = 0; i < TesterMain.tabCount; i++) {System.out.print("\t");}
-        System.out.println("Pipe::setEndpoint()");
-        TesterMain.tabCount++;
         if(d == 0 || d == 1){
             n.addEdge(this);
             endpoints.remove(d);
             endpoints.add(d,n);
         }
-        TesterMain.tabCount--;
     }
 
     /**
@@ -197,64 +183,66 @@ public class Pipe extends Field{
      * @return Az eddig elfolyt víz mennyisége
      */
     public int getLost() {
-        for(int i = 0; i < TesterMain.tabCount; i++) {System.out.print("\t");}
-        System.out.println("Pipe::getLost()");
-        TesterMain.tabCount++;
-        TesterMain.tabCount--;
         return lost;
     }
 
     /**
-     * Megadja a cső egyik végpontját az adott irányba
-     * @param d Az adott irány (0 vagy 1)
-     * @return A végpont az adott irányba
+     * Megmondja, hogy d irányban milyen vége van a csőnek, ha a d 0 vagy 1.
+     * Egyéb esetben null-t ad vissza.
+     * @param d Az adott irány (0 vagy 1).
+     * @return A végpont az adott irányba.
      */
     public Node getEndpoint(int d) {
-        for(int i = 0; i < TesterMain.tabCount; i++) {System.out.print("\t");}
-        System.out.println("Pipe::getEndpoint()");
-        TesterMain.tabCount++;
-        TesterMain.tabCount--;
-        return endpoints.get(d);
+        if(d == 0 || d ==1){
+            return endpoints.get(d);
+        }
+        return null;
     }
 
 
     /**
-     * Visszaadja, hogy csúszós-e a cső
-     * @return Igaz, ha csúszós, hamis, ha nem
+     * Visszaadja, hogy csúszós-e a cső.
+     * @return Igaz, ha csúszós, hamis, ha nem.
      */
     public boolean getSlippery(){
         return slippery;
     }
 
     /**
-     * Beállítja, hogy csúszós-e vagy nem a cső
-     * @param nSlippery Az új érték: igaz, ha csúszóssá szeretnénk tenni a csövet, hamis ha nem
+     * Beállítja, hogy csúszós-e vagy nem a cső.
+     * @param nSlippery Az új érték: igaz, ha csúszóssá szeretnénk tenni a csövet, hamis ha nem.
      */
     public void setSlippery(boolean nSlippery){
         slippery = nSlippery;
     }
 
     /**
-     * Visszaadja, hogy ragadós-e a cső
-     * @return Igaz, ha ragadós, hamis, ha nem
+     * Visszaadja, hogy ragadós-e a cső.
+     * @return Igaz, ha ragadós, hamis, ha nem.
      */
     public boolean getSticky(){
         return sticky;
     }
 
     /**
-     * Beállítja, hogy ragadós-e vagy nem a cső
-     * @param nSlippery Az új érték: igaz, ha ragadóssá szeretnénk tenni a csövet, hamis ha nem
+     * Beállítja, hogy ragadós-e vagy nem a cső.
+     * @param nSlippery Az új érték: igaz, ha ragadóssá szeretnénk tenni a csövet, hamis ha nem.
      */
     public void setSticky(boolean nSticky){
         sticky = nSticky;
     }
 
+    /**
+     * Beragasztózza a csövet. A sticky értékét true-ra állítja.
+     */
     public void Glue(){
-
+        sticky = true;
     }
 
+    /**
+     * Csúszóssá teszi a csövet. A slippery értékét true-ra állítja.
+     */
     public void Lube(){
-        
+        slippery = true;
     }
 }
