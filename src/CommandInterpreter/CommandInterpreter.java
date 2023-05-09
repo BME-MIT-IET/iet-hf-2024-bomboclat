@@ -669,6 +669,19 @@ public class CommandInterpreter {
         }
     }
 
+    public static void placepump(String[] cmd) {
+        String output = "";
+        Mechanic m = mechanics.get(Integer.parseInt(cmd[2]));
+
+        m.getField().PlacePump(m.GetPumpInHand());
+
+        if(cmd.length > 2 && cmd[cmd.length - 2].equals(">")) {
+            WriteToFile(cmd[cmd.length - 1], output);
+        } else {
+            System.out.print(output);
+        }
+    }
+
 
     public static void main(String[] args) {
 
@@ -682,6 +695,7 @@ public class CommandInterpreter {
         commands.put("changepump", (String[] cmd) -> changepump(cmd));
         commands.put("lube", (String[] cmd) -> lube(cmd));
         commands.put("glue", (String[] cmd) -> glue(cmd));
+        commands.put("placepump", (String[] cmd) -> placepump(cmd));
 
         while(run){
             try {

@@ -101,6 +101,10 @@ public class Mechanic extends Character{
         return pipe_in_hand;
     }
 
+    public Pump GetPumpInHand(){
+        return pump_in_hand;
+    }
+
     public int GetPipeEnd(){
         return pipeEnd;
     }
