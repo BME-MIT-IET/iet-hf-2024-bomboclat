@@ -634,6 +634,41 @@ public class CommandInterpreter {
         }
     }
 
+    public static void lube(String[] cmd) {
+        Nomad m = nomads.get(Integer.parseInt(cmd[1]));
+        String output = "Lube not available.\n";
+        if(m.Lube()) {
+            output = "Successfully lubricated current field.\n";
+        }
+        
+        if(cmd.length > 2 && cmd[cmd.length - 2].equals(">")) {
+            WriteToFile(cmd[cmd.length - 1], output);
+        } else {
+            System.out.print(output);
+        }
+    }
+
+    public static void glue(String[] cmd) {
+        Character m = new Nomad();
+
+        if(cmd[1].equals("nomad")) {
+            m = nomads.get(Integer.parseInt(cmd[2]));
+        } else if(cmd[1].equals("mechanic")) {
+            m = mechanics.get(Integer.parseInt(cmd[2]));
+        }
+
+        String output = "Glue not available.\n";
+        if(m.Glue()) {
+            output = "Successfully glued current field.\n";
+        }
+        
+        if(cmd.length > 2 && cmd[cmd.length - 2].equals(">")) {
+            WriteToFile(cmd[cmd.length - 1], output);
+        } else {
+            System.out.print(output);
+        }
+    }
+
 
     public static void main(String[] args) {
 
@@ -645,6 +680,8 @@ public class CommandInterpreter {
         commands.put("move", (String[] cmd) -> move(cmd));
         commands.put("fix", (String[] cmd) -> fix(cmd));
         commands.put("changepump", (String[] cmd) -> changepump(cmd));
+        commands.put("lube", (String[] cmd) -> lube(cmd));
+        commands.put("glue", (String[] cmd) -> glue(cmd));
 
         while(run){
             try {
