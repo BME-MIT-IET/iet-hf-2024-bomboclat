@@ -531,11 +531,13 @@ public class CommandInterpreter {
 
         Field f = character.getField();
         Field desieredField = new Pump();
+        boolean slippery = false;
 
         if(cmd[3].equals("pump")) {
             desieredField = pumps.get(Integer.parseInt(cmd[4]));
         } else if(cmd[3].equals("pipe")) {
             desieredField = pipes.get(Integer.parseInt(cmd[4]));
+            slippery = pipes.get(Integer.parseInt(cmd[4])).getSlippery();
         } else if(cmd[3].equals("city")) {
             desieredField = cities.get(Integer.parseInt(cmd[4]));
         } else if(cmd[3].equals("source")) {
@@ -546,8 +548,22 @@ public class CommandInterpreter {
 
         if(f.getNeighbour(0) == f) {
             output = "Current pipe is sticky, could not move.";
+        } else if(slippery) {
+            output = "Stepped on slippery pipe.";
+            character.Move(0);
         } else {
-            
+            int direction = -1;
+            output = "Invalid input, not legal move for the character";
+            for(int i = 0;i < f.getNeighbourCount(); i++) {
+                if(desieredField == f.getNeighbour(i)) {
+                    direction = i;
+                    output = "";
+                }
+            }
+                        
+            if(direction != -1) {
+                character.Move(direction);
+            }
         }
 
         if(cmd[cmd.length - 2].equals(">")) {
