@@ -11,6 +11,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 import Game.*;
 import Game.Character;
@@ -670,10 +672,12 @@ public class CommandInterpreter {
     }
 
     public static void placepump(String[] cmd) {
-        String output = "";
+        String output = "Failure.\n";
         Mechanic m = mechanics.get(Integer.parseInt(cmd[2]));
 
-        m.getField().PlacePump(m.GetPumpInHand());
+        if(m.getField().PlacePump(m.GetPumpInHand()) == null) {
+            output = "Pipe has been placed down successfully\n";
+        }
 
         if(cmd.length > 2 && cmd[cmd.length - 2].equals(">")) {
             WriteToFile(cmd[cmd.length - 1], output);
@@ -682,6 +686,86 @@ public class CommandInterpreter {
         }
     }
 
+    public static void pickuppipe(String[] cmd) {
+        String output = "";
+        Mechanic m = mechanics.get(Integer.parseInt(cmd[2]));
+        
+        m.PickUpPipe();
+
+        if(m.GetPipeInHand() == null) {
+            output = "Successfully picked up pipe null.\n";
+        } else {
+            int id = 0;
+            for(int i = 0; i < pipes.size(); i++) {
+                if(pipes.get(i) == m.GetPipeInHand()) {
+                    id = i;
+                }
+            }
+            output = "Successfully picked up pipe " + id +"\n";
+        }
+
+        if(cmd.length > 2 && cmd[cmd.length - 2].equals(">")) {
+            WriteToFile(cmd[cmd.length - 1], output);
+        } else {
+            System.out.print(output);
+        }
+    }
+
+    public static void pickuppump(String[] cmd) {
+        String output = "";
+        Mechanic m = mechanics.get(Integer.parseInt(cmd[2]));
+        
+        m.PickUpPump();
+
+        if(m.GetPumpInHand() == null) {
+            output = "Successfully picked up pump null.\n";
+        } else {
+            int id = 0;
+            for(int i = 0; i < pumps.size(); i++) {
+                if(pumps.get(i) == m.GetPumpInHand()) {
+                    id = i;
+                }
+            }
+            output = "Successfully picked up pump " + id +"\n";
+        }
+
+        if(cmd.length > 2 && cmd[cmd.length - 2].equals(">")) {
+            WriteToFile(cmd[cmd.length - 1], output);
+        } else {
+            System.out.print(output);
+        }
+    }
+
+    public static void init(String[] cmd) {
+        games.add(new Game());
+        String output = "Game has been initialized.\n";
+        if(cmd.length > 2 && cmd[cmd.length - 2].equals(">")) {
+            WriteToFile(cmd[cmd.length - 1], output);
+        } else {
+            System.out.print(output);
+        }
+    }
+
+    public static void read(String[] cmd) {
+        List<String> result = new ArrayList<String>();
+        try (Stream<String> lines = Files.lines(Paths.get(cmd[1]))) {
+            result = lines.collect(Collectors.toList());
+        } catch (IOException ie) {
+            System.out.println("Invalid file"); 
+        }
+
+        if(cmd.length > 2 && cmd[cmd.length - 2].equals(">")) {
+            for(int i = 0; i < result.size();i++) {
+                result.set(i, result.get(i) + " > " + cmd[cmd.length - 1]);
+            }
+        }
+
+        for(String line : result){
+            String[] cmd1 = line.split(" ");
+
+            commands.get(cmd1[0]).execute(cmd1);
+        }
+    }
 
     public static void main(String[] args) {
 
@@ -696,6 +780,10 @@ public class CommandInterpreter {
         commands.put("lube", (String[] cmd) -> lube(cmd));
         commands.put("glue", (String[] cmd) -> glue(cmd));
         commands.put("placepump", (String[] cmd) -> placepump(cmd));
+        commands.put("pickuppipe", (String[] cmd) -> pickuppipe(cmd));
+        commands.put("pickuppump", (String[] cmd) -> pickuppump(cmd));
+        commands.put("init", (String[] cmd) -> init(cmd));
+        commands.put("read", (String[] cmd) -> read(cmd));
 
         while(run){
             try {
