@@ -10,7 +10,7 @@ import skeleton.*;
 /**
  * A csövet reprezentáló osztály
  */
-public class Pipe extends Field{
+public class Pipe extends Field implements Stepable{
     //A cső végpontjait számontartó lista. Egy időpillanatban maximum 2 db eleme lehet.
     List<Node> endpoints;
     //Azt tárolja, hogy lyukas-e a cső.
@@ -244,5 +244,19 @@ public class Pipe extends Field{
      */
     public void Lube(){
         slippery = true;
+    }
+
+    /**
+     * A Pipe osztály Step függvénye. Csökkenti a hole_timer attribútum értékét,
+     * ha az nem 0.
+     */
+    public void Step() {
+        if(hole_timer > 0){
+            hole_timer--;
+        }
+    }
+
+    int getNeighbourCount(){
+        return 2;
     }
 }

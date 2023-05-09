@@ -52,6 +52,7 @@ public class CommandInterpreter {
 
     static public void Add(String[] cmd) {
         String output = "";
+
         if(cmd[1].equals("mechanic")) {
             Mechanic mechanic = new Mechanic();
             
@@ -59,7 +60,19 @@ public class CommandInterpreter {
                 if(cmd[i].equals("-moves")) {
                     mechanic.setMoves(Integer.parseInt(cmd[i + 1]));
                 } else if(cmd[i].equals("-field")) {
-                    mechanic.setField(fields.get(Integer.parseInt(cmd[i + 1])));
+                    if(cmd[i + 1].equals("pump")) {
+                        mechanic.setField(pumps.get(Integer.parseInt(cmd[i + 2])));
+                        pumps.get(Integer.parseInt(cmd[i + 2])).Accept(mechanic);
+                    } else if(cmd[i + 1].equals("pipe")) {
+                        mechanic.setField(pipes.get(Integer.parseInt(cmd[i + 2])));
+                        pipes.get(Integer.parseInt(cmd[i + 2])).Accept(mechanic);
+                    } else if(cmd[i + 1].equals("city")) {
+                        mechanic.setField(cities.get(Integer.parseInt(cmd[i + 2])));
+                        cities.get(Integer.parseInt(cmd[i + 2])).Accept(mechanic);
+                    } else if(cmd[i + 1].equals("source")) {
+                        mechanic.setField(sources.get(Integer.parseInt(cmd[i + 2])));
+                        sources.get(Integer.parseInt(cmd[i + 2])).Accept(mechanic);
+                    }         
                 } else if(cmd[i].equals("-pump")) {
                     mechanic.setPumpInHand(pumps.get(Integer.parseInt(cmd[i + 1])));
                 } else if(cmd[i].equals("-pipe")) {
@@ -67,7 +80,7 @@ public class CommandInterpreter {
                 }
             }
             
-            output = String.format("Mechanic%d has been initialized.\nMechanic object's ID: %d\n", mechanics.size(), mechanics.size());
+            output = String.format("Mechanic has been initialized.\nMechanic object's ID: %d\n", mechanics.size());
             mechanics.add(mechanic);
         } else if(cmd[1].equals("nomad")) {
             Nomad nomad = new Nomad();
@@ -76,22 +89,36 @@ public class CommandInterpreter {
                 if(cmd[i].equals("-moves")) {
                     nomad.setMoves(Integer.parseInt(cmd[i + 1]));
                 } else if(cmd[i].equals("-field")) {
-                    nomad.setField(fields.get(Integer.parseInt(cmd[i + 1])));
+                    if(cmd[i + 1].equals("pump")) {
+                        nomad.setField(pumps.get(Integer.parseInt(cmd[i + 2])));
+                        pumps.get(Integer.parseInt(cmd[i + 2])).Accept(nomad);
+                    } else if(cmd[i + 1].equals("pipe")) {
+                        nomad.setField(pipes.get(Integer.parseInt(cmd[i + 2])));
+                        pipes.get(Integer.parseInt(cmd[i + 2])).Accept(nomad);
+                    } else if(cmd[i + 1].equals("city")) {
+                        nomad.setField(cities.get(Integer.parseInt(cmd[i + 2])));
+                        cities.get(Integer.parseInt(cmd[i + 2])).Accept(nomad);
+                    } else if(cmd[i + 1].equals("source")) {
+                        nomad.setField(sources.get(Integer.parseInt(cmd[i + 2])));
+                        sources.get(Integer.parseInt(cmd[i + 2])).Accept(nomad);
+                    }         
                 } 
             }
             
-            output = String.format("Nomad%d has been initialized.\nNomad object's ID: %d\n", nomads.size(), nomads.size());
+            output = String.format("Nomad has been initialized.\nNomad object's ID: %d\n", nomads.size());
             nomads.add(nomad);
         } else if(cmd[1].equals("city")) {
             City city = new City();
 
-            output = String.format("City%d has been initialized.\nCity object's ID: %d\n", cities.size(), cities.size());
+            output = String.format("City has been initialized.\nCity object's ID: %d\n",  cities.size());
             cities.add(city);
+            stepables.add(city);
         } else if(cmd[1].equals("source")) {
             Source source = new Source();
 
-            output = String.format("Source%d has been initialized.\nSource object's ID: %d\n", sources.size(), sources.size());
+            output = String.format("Source has been initialized.\nSource object's ID: %d\n",sources.size());
             sources.add(source);
+            stepables.add(source);
         } else if(cmd[1].equals("pump")) {
             Pump pump = new Pump();
 
@@ -114,8 +141,9 @@ public class CommandInterpreter {
                 }
             }
             
-            output = String.format("Pump%d has been initialized.\nPump object's ID: %d\n", pumps.size(), pumps.size());
+            output = String.format("Pump has been initialized.\nPump object's ID: %d\n", pumps.size());
             pumps.add(pump);
+            stepables.add(pump);
         } else if(cmd[1].equals("pipe")) {
             Pipe pipe = new Pipe();
             
@@ -143,8 +171,9 @@ public class CommandInterpreter {
                 }
             }
 
-            output = String.format("Pipe%d has been initialized.\nPipe object's ID: %d\n", pipes.size(), pipes.size());
+            output = String.format("Pipe has been initialized.\nPipe object's ID: %d\n", pipes.size());
             pipes.add(pipe);
+            stepables.add(pipe);
         }
 
         if(cmd[cmd.length - 2].equals(">")) {
@@ -370,12 +399,171 @@ public class CommandInterpreter {
         }
     }
 
+    public static void set(String[] cmd) {
+        String output = "";
+        
+        if(cmd[1].equals("mechanic")) {
+            Mechanic mechanic = mechanics.get(Integer.parseInt(cmd[2]));
+            
+            for(int i = 0; i < cmd.length; i++) {
+                if(cmd[i].equals("-moves")) {
+                    mechanic.setMoves(Integer.parseInt(cmd[i + 1]));
+                } else if(cmd[i].equals("-field")) {
+                    if(cmd[i + 1].equals("pump")) {
+                        mechanic.setField(pumps.get(Integer.parseInt(cmd[i + 2])));
+                        pumps.get(Integer.parseInt(cmd[i + 2])).Accept(mechanic);
+                    } else if(cmd[i + 1].equals("pipe")) {
+                        mechanic.setField(pipes.get(Integer.parseInt(cmd[i + 2])));
+                        pipes.get(Integer.parseInt(cmd[i + 2])).Accept(mechanic);
+                    } else if(cmd[i + 1].equals("city")) {
+                        mechanic.setField(cities.get(Integer.parseInt(cmd[i + 2])));
+                        cities.get(Integer.parseInt(cmd[i + 2])).Accept(mechanic);
+                    } else if(cmd[i + 1].equals("source")) {
+                        mechanic.setField(sources.get(Integer.parseInt(cmd[i + 2])));
+                        sources.get(Integer.parseInt(cmd[i + 2])).Accept(mechanic);
+                    }                     
+                } else if(cmd[i].equals("-pump")) {
+                    mechanic.setPumpInHand(pumps.get(Integer.parseInt(cmd[i + 1])));
+                } else if(cmd[i].equals("-pipe")) {
+                    mechanic.setPipeInHand(pipes.get(Integer.parseInt(cmd[i + 1])));
+                }
+            }
+            
+            output = String.format("Mechanic %d has been modified.\n", mechanics.size());
+            mechanics.add(mechanic);
+        } else if(cmd[1].equals("nomad")) {
+            Nomad nomad = nomads.get(Integer.parseInt(cmd[2]));;
+            
+            for(int i = 0; i < cmd.length; i++) {
+                if(cmd[i].equals("-moves")) {
+                    nomad.setMoves(Integer.parseInt(cmd[i + 1]));
+                } else if(cmd[i].equals("-field")) {
+                    if(cmd[i + 1].equals("pump")) {
+                        nomad.setField(pumps.get(Integer.parseInt(cmd[i + 2])));
+                        pumps.get(Integer.parseInt(cmd[i + 2])).Accept(nomad);
+                    } else if(cmd[i + 1].equals("pipe")) {
+                        nomad.setField(pipes.get(Integer.parseInt(cmd[i + 2])));
+                        pipes.get(Integer.parseInt(cmd[i + 2])).Accept(nomad);
+                    } else if(cmd[i + 1].equals("city")) {
+                        nomad.setField(cities.get(Integer.parseInt(cmd[i + 2])));
+                        cities.get(Integer.parseInt(cmd[i + 2])).Accept(nomad);
+                    } else if(cmd[i + 1].equals("source")) {
+                        nomad.setField(sources.get(Integer.parseInt(cmd[i + 2])));
+                        sources.get(Integer.parseInt(cmd[i + 2])).Accept(nomad);
+                    }         
+                } 
+            }
+            
+            output = String.format("Nomad %d has been modified.", nomads.size());
+            nomads.add(nomad);
+        } else if(cmd[1].equals("pump")) {
+            Pump pump = pumps.get(Integer.parseInt(cmd[2]));
+
+            for(int i = 0; i < cmd.length; i++) {
+                if(cmd[i].equals("-input")) {
+                    pump.setFrom(pipes.get(Integer.parseInt(cmd[i+1])));
+                } else if(cmd[i].equals("-output")) {
+                    pump.setWhere(pipes.get(Integer.parseInt(cmd[i + 1])));
+                } else if(cmd[i].equals("-ends")) {
+                    String[] pipenumbers = cmd[i + 1].split(",");
+
+                    for(int j = 0; j < pipenumbers.length; j++){
+                        Pipe p = pipes.get(Integer.parseInt(pipenumbers[j]));
+                        if(p.getEndpoint(0) == null) {
+                            p.setEndpoint(pump, 0);
+                        } else {
+                            p.setEndpoint(pump, 1);
+                        }
+                    }
+                }
+            }
+            
+            output = String.format("Pump%d has been modified.\n", pumps.size());
+            pumps.add(pump);
+        } else if(cmd[1].equals("pipe")) {
+            Pipe pipe = pipes.get(Integer.parseInt(cmd[2]));;
+            
+            for(int i = 0; i < cmd.length; i++) {
+                if(cmd[i].equals("-endpoint")) {
+                    Node endpoint = new Pump();
+
+                    if(cmd[i + 2].equals("source")) {
+                        endpoint = sources.get(Integer.parseInt(cmd[i + 3]));
+                    } else if(cmd[i + 2].equals("city")) {
+                        endpoint = cities.get(Integer.parseInt(cmd[i + 3]));
+                    } else if(cmd[i + 2].equals("pump")) {
+                        endpoint = pumps.get(Integer.parseInt(cmd[i + 3]));
+                    }
+
+                    pipe.setEndpoint(endpoint, Integer.parseInt(cmd[i + 1]));
+                } else if(cmd[i].equals("-has_hole")) {
+                    pipe.Drill();
+                } else if(cmd[i].equals("-has_water")) {
+                    pipe.GiveWater(1);
+                } else if(cmd[i].equals("-is_lubricated")) {
+                    pipe.setSlippery(true);
+                } else if(cmd[i].equals("-is_glued")) {
+                    pipe.setSticky(true);
+                }
+            }
+
+            output = String.format("Pipe%d has been modified.\n", pipes.size());
+            pipes.add(pipe);
+        }
+
+        if(cmd[cmd.length - 2].equals(">")) {
+            WriteToFile(cmd[cmd.length - 1], output);
+        } else {
+            System.out.print(output);
+        }
+    }
+   
+   public static void move(String[] cmd) {
+        String output = "";
+
+        Character character = new Nomad();
+
+        if(cmd[1].equals("nomad")) {
+            character = nomads.get(Integer.parseInt(cmd[2]));
+        } else if(cmd[1].equals("mechanic")) {
+            character = mechanics.get(Integer.parseInt(cmd[2]));
+        }
+
+        Field f = character.getField();
+        Field desieredField = new Pump();
+
+        if(cmd[3].equals("pump")) {
+            desieredField = pumps.get(Integer.parseInt(cmd[4]));
+        } else if(cmd[3].equals("pipe")) {
+            desieredField = pipes.get(Integer.parseInt(cmd[4]));
+        } else if(cmd[3].equals("city")) {
+            desieredField = cities.get(Integer.parseInt(cmd[4]));
+        } else if(cmd[3].equals("source")) {
+            desieredField = sources.get(Integer.parseInt(cmd[4]));
+        } else if(cmd[3].equals("pump")) {
+            desieredField = pumps.get(Integer.parseInt(cmd[4]));
+        }
+
+        if(f.getNeighbour(0) == f) {
+            output = "Current pipe is sticky, could not move.";
+        } else {
+            
+        }
+
+        if(cmd[cmd.length - 2].equals(">")) {
+            WriteToFile(cmd[cmd.length - 1], output);
+        } else {
+            System.out.print(output);
+        }
+   } 
     public static void main(String[] args) {
 
         commands.put("exit", (String[] cmd) -> run = false);
         commands.put("add", (String[] cmd) -> Add(cmd));
         commands.put("delete", (String [] cmd) -> delete(cmd));
         commands.put("list", (String [] cmd) -> list(cmd));
+        commands.put("set", (String[] cmd) -> set(cmd));
+        commands.put("move", (String[] cmd) -> move(cmd));
 
         while(run){
             try {

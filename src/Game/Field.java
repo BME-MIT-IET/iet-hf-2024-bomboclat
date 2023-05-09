@@ -119,4 +119,5 @@ abstract public class Field{
     public void Lube(){
     }
 
+    abstract int getNeighbourCount();
 }
