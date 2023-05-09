@@ -57,8 +57,10 @@ public class Pipe extends Field implements Stepable{
             return endpoints.get(direction);
         }else if(slippery){
             int rnd = new Random().nextInt(2);
+            slippery = false;
             return endpoints.get(rnd);
         }else if(sticky){
+            sticky = false;
             return this;
         }
         return this;
