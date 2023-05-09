@@ -260,6 +260,7 @@ public class CommandInterpreter {
             System.out.print(output);
         }
     }
+    
     public static void main(String[] args) {
 
         commands.put("exit", (String[] cmd) -> run = false);
