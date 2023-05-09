@@ -153,10 +153,118 @@ public class CommandInterpreter {
         }
     } 
 
+    static public void delete(String[] cmd) {
+        String output = "";
+
+        if(cmd[1].equals("character")) {
+            output = "Deleted object's type and ID: Character " + cmd[2] + "\n";
+            characters.remove(Integer.parseInt(cmd[2]));
+        } else if(cmd[1].equals("city")) {
+            output = "Deleted object's type and ID: City " + cmd[2] + "\n";
+            cities.remove(Integer.parseInt(cmd[2]));
+        } else if(cmd[1].equals("field")) {
+            output = "Deleted object's type and ID: Field " + cmd[2] + "\n";
+            fields.remove(Integer.parseInt(cmd[2]));
+        } else if(cmd[1].equals("game")) {
+            output = "Deleted object's type and ID: Game " + cmd[2] + "\n";
+            games.remove(Integer.parseInt(cmd[2]));
+        } else if(cmd[1].equals("mechanic")) {
+            output = "Deleted object's type and ID: Mechanic " + cmd[2] + "\n";
+            mechanics.remove(Integer.parseInt(cmd[2]));
+        } else if(cmd[1].equals("node")) {
+            output = "Deleted object's type and ID: Node " + cmd[2] + "\n";
+            nodes.remove(Integer.parseInt(cmd[2]));
+        } else if(cmd[1].equals("nomad")) {
+            output = "Deleted object's type and ID: Nomad " + cmd[2] + "\n";
+            nomads.remove(Integer.parseInt(cmd[2]));
+        } else if(cmd[1].equals("pipe")) {
+            output = "Deleted object's type and ID: Pipe " + cmd[2] + "\n";
+            pipes.remove(Integer.parseInt(cmd[2]));
+        } else if(cmd[1].equals("playfield")) {
+            output = "Deleted object's type and ID: Playfield " + cmd[2] + "\n";
+            playfields.remove(Integer.parseInt(cmd[2]));
+        } else if(cmd[1].equals("pump")) {
+            output = "Deleted object's type and ID: Pump " + cmd[2] + "\n";
+            pumps.remove(Integer.parseInt(cmd[2]));
+        } else if(cmd[1].equals("source")) {
+            output = "Deleted object's type and ID: Source " + cmd[2] + "\n";
+            sources.remove(Integer.parseInt(cmd[2]));
+        } else if(cmd[1].equals("stepable")) {
+            output = "Deleted object's type and ID: Stepable " + cmd[2] + "\n";
+            stepables.remove(Integer.parseInt(cmd[2]));
+        } else if(cmd[1].equals("-all")) {
+            for(int j = 0; j < characters.size(); j++) {
+                output += "Deleted object's type and ID: Character " + j + "\n";
+            }
+            characters.clear();
+
+            for(int j = 0; j < cities.size(); j++) {
+                output += "Deleted object's type and ID: City " + j + "\n";
+            }
+            cities.clear();
+
+            for(int j = 0; j < fields.size(); j++) {
+                output += "Deleted object's type and ID: Field " + j + "\n";
+            }
+            fields.clear();
+
+            for(int j = 0; j < games.size(); j++) {
+                output += "Deleted object's type and ID: Game " + j + "\n";
+            }
+            games.clear();
+
+            for(int j = 0; j < mechanics.size(); j++) {
+                output += "Deleted object's type and ID: Mechanic " + j + "\n";
+            }
+            mechanics.clear();
+
+            for(int j = 0; j < nodes.size(); j++) {
+                output += "Deleted object's type and ID: Node " + j + "\n";
+            }
+            nodes.clear();
+
+            for(int j = 0; j < nomads.size(); j++) {
+                output += "Deleted object's type and ID: Nomad " + j + "\n";
+            }
+            nomads.clear();
+
+            for(int j = 0; j < pipes.size(); j++) {
+                output += "Deleted object's type and ID: Pipe " + j + "\n";
+            }
+            pipes.clear();
+
+            for(int j = 0; j < playfields.size(); j++) {
+                output += "Deleted object's type and ID: PlayField " + j + "\n";
+            }
+            playfields.clear();
+
+            for(int j = 0; j < pumps.size(); j++) {
+                output += "Deleted object's type and ID: Pump " + j + "\n";
+            }
+            pumps.clear();
+
+            for(int j = 0; j < sources.size(); j++) {
+                output += "Deleted object's type and ID: Source " + j + "\n";
+            }
+            sources.clear();
+
+            for(int j = 0; j < stepables.size(); j++) {
+                output += "Deleted object's type and ID: Stepable " + j + "\n";
+            }
+            stepables.clear();
+        }
+
+        if(cmd[cmd.length - 2].equals(">")) {
+            WriteToFile(cmd[cmd.length - 1], output);
+        } else {
+            System.out.print(output);
+        }
+    }
     public static void main(String[] args) {
 
         commands.put("exit", (String[] cmd) -> run = false);
         commands.put("add", (String[] cmd) -> Add(cmd));
+        commands.put("delete", (String [] cmd) -> delete(cmd));
 
         while(run){
             try {
