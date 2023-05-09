@@ -51,7 +51,7 @@ public class CommandInterpreter {
 
     static public void Add(String[] cmd) {
         String output = "";
-        if(cmd[1].equals("Mechanic")) {
+        if(cmd[1].equals("mechanic")) {
             Mechanic mechanic = new Mechanic();
             
             for(int i = 0; i < cmd.length; i++) {
@@ -68,6 +68,82 @@ public class CommandInterpreter {
             
             output = String.format("Mechanic%d has been initialized.\nMechanic object's ID: %d\n", mechanics.size(), mechanics.size());
             mechanics.add(mechanic);
+        } else if(cmd[1].equals("nomad")) {
+            Nomad nomad = new Nomad();
+            
+            for(int i = 0; i < cmd.length; i++) {
+                if(cmd[i].equals("-moves")) {
+                    nomad.setMoves(Integer.parseInt(cmd[i + 1]));
+                } else if(cmd[i].equals("-field")) {
+                    nomad.setField(fields.get(Integer.parseInt(cmd[i + 1])));
+                } 
+            }
+            
+            output = String.format("Nomad%d has been initialized.\nNomad object's ID: %d\n", nomads.size(), nomads.size());
+            nomads.add(nomad);
+        } else if(cmd[1].equals("city")) {
+            City city = new City();
+
+            output = String.format("City%d has been initialized.\nCity object's ID: %d\n", cities.size(), cities.size());
+            cities.add(city);
+        } else if(cmd[1].equals("source")) {
+            Source source = new Source();
+
+            output = String.format("Source%d has been initialized.\nSource object's ID: %d\n", sources.size(), sources.size());
+            sources.add(source);
+        } else if(cmd[1].equals("pump")) {
+            Pump pump = new Pump();
+
+            for(int i = 0; i < cmd.length; i++) {
+                if(cmd[i].equals("-input")) {
+                    pump.setFrom(pipes.get(Integer.parseInt(cmd[i+1])));
+                } else if(cmd[i].equals("-output")) {
+                    pump.setWhere(pipes.get(Integer.parseInt(cmd[i + 1])));
+                } else if(cmd[i].equals("-ends")) {
+                    String[] pipenumbers = cmd[i + 1].split(",");
+
+                    for(int j = 0; j < pipenumbers.length; j++){
+                        Pipe p = pipes.get(Integer.parseInt(pipenumbers[j]));
+                        if(p.getEndpoint(0) == null) {
+                            p.setEndpoint(pump, 0);
+                        } else {
+                            p.setEndpoint(pump, 1);
+                        }
+                    }
+                }
+            }
+            
+            output = String.format("Pump%d has been initialized.\nPump object's ID: %d\n", pumps.size(), pumps.size());
+            pumps.add(pump);
+        } else if(cmd[1].equals("pipe")) {
+            Pipe pipe = new Pipe();
+            
+            for(int i = 0; i < cmd.length; i++) {
+                if(cmd[i].equals("-endpoint")) {
+                    Node endpoint = new Pump();
+
+                    if(cmd[i + 2].equals("source")) {
+                        endpoint = sources.get(Integer.parseInt(cmd[i + 3]));
+                    } else if(cmd[i + 2].equals("city")) {
+                        endpoint = cities.get(Integer.parseInt(cmd[i + 3]));
+                    } else if(cmd[i + 2].equals("pump")) {
+                        endpoint = pumps.get(Integer.parseInt(cmd[i + 3]));
+                    }
+
+                    pipe.setEndpoint(endpoint, Integer.parseInt(cmd[i + 1]));
+                } else if(cmd[i].equals("-has_hole")) {
+                    pipe.Drill();
+                } else if(cmd[i].equals("-has_water")) {
+                    pipe.GiveWater(1);
+                } else if(cmd[i].equals("-is_lubricated")) {
+                    pipe.setSlippery(true);
+                } else if(cmd[i].equals("-is_glued")) {
+                    pipe.setSticky(true);
+                }
+            }
+
+            output = String.format("Pipe%d has been initialized.\nPipe object's ID: %d\n", pipes.size(), pipes.size());
+            pipes.add(pipe);
         }
 
         if(cmd[cmd.length - 2].equals(">")) {
