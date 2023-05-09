@@ -517,6 +517,45 @@ public class CommandInterpreter {
             System.out.print(output);
         }
     }
+   
+   public static void move(String[] cmd) {
+        String output = "";
+
+        Character character = new Nomad();
+
+        if(cmd[1].equals("nomad")) {
+            character = nomads.get(Integer.parseInt(cmd[2]));
+        } else if(cmd[1].equals("mechanic")) {
+            character = mechanics.get(Integer.parseInt(cmd[2]));
+        }
+
+        Field f = character.getField();
+        Field desieredField = new Pump();
+
+        if(cmd[3].equals("pump")) {
+            desieredField = pumps.get(Integer.parseInt(cmd[4]));
+        } else if(cmd[3].equals("pipe")) {
+            desieredField = pipes.get(Integer.parseInt(cmd[4]));
+        } else if(cmd[3].equals("city")) {
+            desieredField = cities.get(Integer.parseInt(cmd[4]));
+        } else if(cmd[3].equals("source")) {
+            desieredField = sources.get(Integer.parseInt(cmd[4]));
+        } else if(cmd[3].equals("pump")) {
+            desieredField = pumps.get(Integer.parseInt(cmd[4]));
+        }
+
+        if(f.getNeighbour(0) == f) {
+            output = "Current pipe is sticky, could not move.";
+        } else {
+            
+        }
+
+        if(cmd[cmd.length - 2].equals(">")) {
+            WriteToFile(cmd[cmd.length - 1], output);
+        } else {
+            System.out.print(output);
+        }
+   } 
     public static void main(String[] args) {
 
         commands.put("exit", (String[] cmd) -> run = false);
@@ -524,6 +563,7 @@ public class CommandInterpreter {
         commands.put("delete", (String [] cmd) -> delete(cmd));
         commands.put("list", (String [] cmd) -> list(cmd));
         commands.put("set", (String[] cmd) -> set(cmd));
+        commands.put("move", (String[] cmd) -> move(cmd));
 
         while(run){
             try {

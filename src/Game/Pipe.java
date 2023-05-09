@@ -263,4 +263,8 @@ public class Pipe extends Field implements Stepable{
         // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'Step'");
     }
+
+    int getNeighbourCount(){
+        return 2;
+    }
 }

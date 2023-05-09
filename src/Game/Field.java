@@ -171,5 +171,6 @@ abstract public class Field{
 
     }
 
+    abstract int getNeighbourCount();
 
 }
