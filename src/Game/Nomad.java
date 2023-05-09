@@ -15,7 +15,8 @@ public class Nomad extends Character{
         super(nMoves, nField);
     }
 
-    public void Lube(){
-        
+    public boolean Lube(){
+        boolean ret = this.Lube();
+        return ret;
     }
 }

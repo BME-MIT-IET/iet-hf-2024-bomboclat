@@ -23,12 +23,13 @@ public class Mechanic extends Character{
      * Megkísérli megjavítani az adott mezőt, amin éppen áll függetlenül
      * attól, hogy az cső vagy pumpa.
      */
-    public void Fix(){
+    public boolean Fix(){
         for(int i = 0; i < TesterMain.tabCount; i++) {System.out.print("\t");}
         TesterMain.tabCount++;
         System.out.println("Mechanic::Fix()");
-        field.Fix();
+        boolean ret =field.Fix();
         TesterMain.tabCount--;
+        return ret;
     }
 
     /**
