@@ -518,7 +518,7 @@ public class CommandInterpreter {
         }
     }
    
-   public static void move(String[] cmd) {
+    public static void move(String[] cmd) {
         String output = "";
 
         Character character = new Nomad();
@@ -572,6 +572,69 @@ public class CommandInterpreter {
             System.out.print(output);
         }
    } 
+
+    public static void fix(String[] cmd) {
+        Mechanic m = mechanics.get(Integer.parseInt(cmd[1]));
+        String output = "";
+        if(m.Fix()) {
+            output = "Successfully repaired current field.\n";
+        }
+        
+        if(cmd.length > 2 && cmd[cmd.length - 2].equals(">")) {
+            WriteToFile(cmd[cmd.length - 1], output);
+        } else {
+            System.out.print(output);
+        }
+    }
+
+    public static void changepump(String[] cmd) {
+        String output = "";
+
+        Field p1 = pipes.get(Integer.parseInt(cmd[3]));
+        Field p2 = pipes.get(Integer.parseInt(cmd[4]));
+
+        Character c = new Nomad();
+
+        if(cmd[1].equals("nomad")) {
+            c = nomads.get(Integer.parseInt(cmd[2]));
+        } else if(cmd[1].equals("mechanic")) {
+            c = mechanics.get(Integer.parseInt(cmd[2]));
+        }
+
+        Field curr = c.getField();
+
+        boolean validinput1 = false;
+        boolean validinput2 = false;
+
+        output = cmd[3] + "was invalid. Pipe does not connect to the pump the player is at.";
+        for(int i= 0; i < curr.getNeighbourCount(); i++) {
+            if(p1 == curr.getNeighbour(i)) {
+                validinput1 = true;
+                output = "";
+            }
+        }
+
+        if(validinput1) {
+            output = cmd[4] + "was invalid. Pipe does not connect to the pump the player is at.";
+            for(int i= 0; i < curr.getNeighbourCount(); i++) {
+                if(p2 == curr.getNeighbour(i)) {
+                    validinput2 = true;
+                    output = "";
+                }
+            }
+            if(validinput2) {
+                c.ChangePump(pipes.get(Integer.parseInt(cmd[3])), pipes.get(Integer.parseInt(cmd[4])));
+            }
+        }
+
+        if(cmd[cmd.length - 2].equals(">")) {
+            WriteToFile(cmd[cmd.length - 1], output);
+        } else {
+            System.out.print(output);
+        }
+    }
+
+
     public static void main(String[] args) {
 
         commands.put("exit", (String[] cmd) -> run = false);
@@ -580,6 +643,8 @@ public class CommandInterpreter {
         commands.put("list", (String [] cmd) -> list(cmd));
         commands.put("set", (String[] cmd) -> set(cmd));
         commands.put("move", (String[] cmd) -> move(cmd));
+        commands.put("fix", (String[] cmd) -> fix(cmd));
+        commands.put("changepump", (String[] cmd) -> changepump(cmd));
 
         while(run){
             try {
