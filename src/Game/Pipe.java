@@ -67,8 +67,9 @@ public class Pipe extends Field implements Stepable{
     /**
      * Megjavítja a csövet, eltünteti róla a lyukat.
      */
-    public void Fix() {
+    public boolean Fix() {
         has_hole = false;
+        return true;
     }
 
     /**
@@ -76,11 +77,13 @@ public class Pipe extends Field implements Stepable{
      * hole_timer beállítja egy véletlen számra 3-ig (ennyi körig nem lehet kilyukasztani
      * megint a csövet.).
      */
-    public void Drill() {
+    public boolean Drill() {
         if(hole_timer == 0){
             hole_timer = new Random().nextInt(3)+1;
             has_hole = true;
+            return true;
         }
+        return false;
     }
     
     /** 
@@ -235,15 +238,17 @@ public class Pipe extends Field implements Stepable{
     /**
      * Beragasztózza a csövet. A sticky értékét true-ra állítja.
      */
-    public void Glue(){
+    public boolean Glue(){
         sticky = true;
+        return true;
     }
 
     /**
      * Csúszóssá teszi a csövet. A slippery értékét true-ra állítja.
      */
-    public void Lube(){
+    public boolean Lube(){
         slippery = true;
+        return true;
     }
 
     /**
@@ -256,7 +261,7 @@ public class Pipe extends Field implements Stepable{
         }
     }
 
-    int getNeighbourCount(){
+    public int getNeighbourCount(){
         return 2;
     }
 }
