@@ -606,7 +606,7 @@ public class CommandInterpreter {
         boolean validinput1 = false;
         boolean validinput2 = false;
 
-        output = cmd[3] + "was invalid. Pipe does not connect to the pump the player is at.";
+        output = cmd[3] + "was invalid. Pipe does not connect to the pump the player is at.\n";
         for(int i= 0; i < curr.getNeighbourCount(); i++) {
             if(p1 == curr.getNeighbour(i)) {
                 validinput1 = true;
@@ -615,7 +615,7 @@ public class CommandInterpreter {
         }
 
         if(validinput1) {
-            output = cmd[4] + "was invalid. Pipe does not connect to the pump the player is at.";
+            output = cmd[4] + "was invalid. Pipe does not connect to the pump the player is at.\n";
             for(int i= 0; i < curr.getNeighbourCount(); i++) {
                 if(p2 == curr.getNeighbour(i)) {
                     validinput2 = true;
