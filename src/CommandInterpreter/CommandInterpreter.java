@@ -801,7 +801,7 @@ public class CommandInterpreter {
                 } else {
                     outputtest = "TEST " + cmd[1] + " OK\n";
                     for(int j = 0; j < result.size(); j++) {
-                        if(result.get(j) != expected.get(j)) {
+                        if(!result.get(i).equals(expected.get(i))) {
                             outputtest = "TEST " + i + " FAILED\n";
                             differences += "Expected: " + expected.get(j) + "\nGot: " + result.get(j) + "\n";
                         }
@@ -839,7 +839,7 @@ public class CommandInterpreter {
             } else {
                 output = "TEST " + cmd[1] + " OK\n";
                 for(int i = 0; i < result.size(); i++) {
-                    if(result.get(i) != expected.get(i)) {
+                    if(!result.get(i).equals(expected.get(i))) {
                         output = "TEST " + cmd[1] + " FAILED\n";
                         differences += "Expected: " + expected.get(i) + "\nGot: " + result.get(i) + "\n";
                     }
