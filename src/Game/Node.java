@@ -32,11 +32,13 @@ abstract public class Node extends Field implements Stepable{
     public abstract void Step(boolean rnd);
 
     /**
-     * Összeszámolja a szerelők pontját a városba folyt
-     * vízmennyiség alapján. Absztrakt függvény, a City osztály implementálja
+     * Összeszámolja a szerelők pontját a városba folyt 
+     * vízmennyiség alapján, ha városra hívódik meg, egyébként nem csinál semmit, elnyeli a hívást.
      * @return Az összeadott pontok száma, null ha olyan objektumra hívják meg ami nem definiálta felül a függvényt.
      */
-    public abstract int getMechanicPoint();
+    public int getMechanicPoint(){
+        return 0;
+    }
 
     /**
      * A leszármazottakban van felüldefiniálva abban az esetben ha lehet belőlük felvenni csövet.
