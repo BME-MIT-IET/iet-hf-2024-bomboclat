@@ -737,6 +737,19 @@ public class CommandInterpreter {
     }
 
     public static void init(String[] cmd) {
+        characters.clear();
+        cities.clear();
+        fields.clear();
+        games.clear();
+        mechanics.clear();
+        nodes.clear();
+        nomads.clear();
+        pipes.clear();
+        playfields.clear();
+        pumps.clear();
+        sources.clear();
+        stepables.clear();
+
         games.add(new Game());
         String output = "Game has been initialized.\n";
         if(cmd.length > 2 && cmd[cmd.length - 2].equals(">")) {
@@ -797,9 +810,9 @@ public class CommandInterpreter {
                 String differences = "";
 
                 if(result.size() != expected.size()) {
-                    outputtest = "TEST " + cmd[1] + " FAILED\nLength of the two results doesnt match";
+                    outputtest = "TEST " + i + " FAILED\nLength of the two results doesnt match\n";
                 } else {
-                    outputtest = "TEST " + cmd[1] + " OK\n";
+                    outputtest = "TEST " + i + " OK\n";
                     for(int j = 0; j < result.size(); j++) {
                         if(!result.get(i).equals(expected.get(i))) {
                             outputtest = "TEST " + i + " FAILED\n";
@@ -835,7 +848,7 @@ public class CommandInterpreter {
             String differences = "";
 
             if(result.size() != expected.size()) {
-                output = "TEST " + cmd[1] + " FAILED\nLength of the two results doesnt match";
+                output = "TEST " + cmd[1] + " FAILED\nLength of the two results doesnt match\n";
             } else {
                 output = "TEST " + cmd[1] + " OK\n";
                 for(int i = 0; i < result.size(); i++) {
