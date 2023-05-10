@@ -872,7 +872,7 @@ public class CommandInterpreter {
         boolean drillable = false;
 
         if(cmd[3].equals("-drillable")) {
-            drillable = cmd[4].equals("true") ? true : false;
+            drillable =  true;
         }
 
         if(c.DrillPipe(drillable)) {
