@@ -125,7 +125,7 @@ public class Pipe extends Field implements Stepable{
      */
     public void Accept(Character c) {
         if(!has_player) {
-            this.Accept(c);
+            super.Accept(c);
             has_player = true;
         }
     }
