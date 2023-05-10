@@ -163,8 +163,8 @@ public class TestClass {
         edge.setEndpoint(pump, 1);
         pump.addEdge(edge);
         pump.Change(edge, edge);
-        source.Step();
-        pump.Step();
+        source.Step(true);
+        pump.Step(true);
     }
 
     /**
@@ -177,7 +177,7 @@ public class TestClass {
         Pipe inlet = new Pipe();
         inlet.setEndpoint(city, 1);
 
-        city.Step();
+        city.Step(true);
     }
 
     /**
@@ -195,7 +195,7 @@ public class TestClass {
         where.setEndpoint(pump, 0);
         pump.Change(from, where);
 
-        pump.Step();
+        pump.Step(true);
     }
 
     /**
@@ -253,7 +253,7 @@ public class TestClass {
         pipe2.setEndpoint(pump, 0);
         pump.setWhere(pipe2);
 
-        pipe.Drill();
+        pipe.Drill(true);
 
         game.EndRound();
 
@@ -440,7 +440,7 @@ public class TestClass {
         pump.setWhere(p1);
         pump.setFrom(p2);
 
-        s1.Step();
+        s1.Step(true);
     }
 
     /**
@@ -472,7 +472,7 @@ public class TestClass {
         pump.setWhere(p1);
         pump.setFrom(p2);
         
-        c.Step();
+        c.Step(true);
     }
 
     /**
@@ -504,7 +504,7 @@ public class TestClass {
         pump.setWhere(p1);
         pump.setFrom(p2);
 
-        pump.Step();
+        pump.Step(true);
     }
 
     /** 
@@ -521,7 +521,7 @@ public class TestClass {
         p.setEndpoint(s, 0);
         p.setEndpoint(c, 1);
 
-        n.DrillPipe();
+        n.DrillPipe(true);
     }
 
     /**

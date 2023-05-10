@@ -110,11 +110,11 @@ public class Character{
      * A karakter kilyukasztja amin éppen áll
      * Ha nem csövön áll, akkor nem történik semmi
      */
-    public boolean DrillPipe(){ 
+    public boolean DrillPipe(boolean rnd){ 
         for(int i = 0; i < TesterMain.tabCount; i++) {System.out.print("\t");}
         TesterMain.tabCount++;
         System.out.println("Character::DrillPipe()");
-        boolean ret = field.Drill();
+        boolean ret = field.Drill(rnd);
         TesterMain.tabCount--;
         return ret;
     }

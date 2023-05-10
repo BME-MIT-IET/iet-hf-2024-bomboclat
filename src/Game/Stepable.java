@@ -7,5 +7,5 @@ public interface Stepable{
     /*
      * a léptethető mező lépését megvalósító absztrakt függvény.
      */
-    public abstract void Step();
+    public abstract void Step(boolean rnd);
 }

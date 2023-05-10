@@ -23,7 +23,7 @@ public class Source extends Node{
     /**
      * Minden belőle kivezető csőre vizet tesz.
      */
-    public void Step() {
+    public void Step(boolean rnd) {
         for(int i=0; i < TesterMain.tabCount; i++) {
             System.out.print("\t");
         }

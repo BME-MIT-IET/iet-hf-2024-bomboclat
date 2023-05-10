@@ -79,9 +79,11 @@ public class Pipe extends Field implements Stepable{
      * hole_timer beállítja egy véletlen számra 3-ig (ennyi körig nem lehet kilyukasztani
      * megint a csövet.).
      */
-    public boolean Drill() {
+    public boolean Drill(boolean rnd) {
         if(hole_timer == 0){
-            hole_timer = new Random().nextInt(3)+1;
+            if(rnd){
+                hole_timer = new Random().nextInt(3)+1;
+            }
             has_hole = true;
             return true;
         }
@@ -250,7 +252,7 @@ public class Pipe extends Field implements Stepable{
      * A Pipe osztály Step függvénye. Csökkenti a hole_timer attribútum értékét,
      * ha az nem 0.
      */
-    public void Step() {
+    public void Step(boolean rnd) {
         if(hole_timer > 0){
             hole_timer--;
         }

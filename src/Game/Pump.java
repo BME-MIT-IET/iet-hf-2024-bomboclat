@@ -68,7 +68,7 @@ public class Pump extends Node{
      * Lépésenként frissíti a ki és bemeneti csövein a vízfolyam állapotát. Valamint véletlenszerűen elronthatja a
      * pumpát a hívása.
      */
-    public void Step() {
+    public void Step(boolean rnd) {
         for(int i=0; i < TesterMain.tabCount; i++) {
             System.out.print("\t");
         }

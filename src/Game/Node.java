@@ -41,7 +41,7 @@ abstract public class Node extends Field implements Stepable{
     /**
      * Absztrakt függvény, nincs implementálva.
      */
-    public abstract void Step();
+    public abstract void Step(boolean rnd);
 
     /**
      * Összeszámolja a szerelők pontját a városba folyt 

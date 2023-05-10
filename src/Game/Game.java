@@ -71,7 +71,7 @@ public class Game {
         for(int i = 0; i < TesterMain.tabCount; i++) { System.out.print("\t"); }
         System.out.println("Game::EndRound()");
         TesterMain.tabCount++;
-        currPlayfield.Step();
+        currPlayfield.Step(true);
         round_count++;
         TesterMain.tabCount--;
     }
