@@ -164,7 +164,7 @@ public class CommandInterpreter {
 
                     pipe.setEndpoint(endpoint, Integer.parseInt(cmd[i + 1]));
                 } else if(cmd[i].equals("-has_hole")) {
-                    pipe.Drill();
+                    pipe.Drill(false);
                 } else if(cmd[i].equals("-has_water")) {
                     pipe.GiveWater(1);
                 } else if(cmd[i].equals("-is_lubricated")) {
@@ -500,7 +500,7 @@ public class CommandInterpreter {
 
                     pipe.setEndpoint(endpoint, Integer.parseInt(cmd[i + 1]));
                 } else if(cmd[i].equals("-has_hole")) {
-                    pipe.Drill();
+                    pipe.Drill(false);
                 } else if(cmd[i].equals("-has_water")) {
                     pipe.GiveWater(1);
                 } else if(cmd[i].equals("-is_lubricated")) {
@@ -860,6 +860,85 @@ public class CommandInterpreter {
         }
     }
 
+    public static void drill(String[] cmd) {
+        String output = "";
+        Character c = new Nomad();
+
+        if(cmd[1].equals("nomad")) {
+            c = nomads.get(Integer.parseInt(cmd[2]));
+        } else if(cmd[1].equals("mechanic")) {
+            c = mechanics.get(Integer.parseInt(cmd[2]));
+        }
+
+        boolean drillable = false;
+
+        if(cmd[3].equals("-drillable")) {
+            drillable = cmd[4].equals("true") ? true : false;
+        }
+
+        if(c.DrillPipe(drillable)) {
+            output = "Successfully drilled current field.";
+        } else {
+            output = "Drilling not available.";
+        }
+
+        if(cmd.length > 2 && cmd[cmd.length - 2].equals(">")) {
+            WriteToFile(cmd[cmd.length - 1], output);
+        } else {
+            System.out.print(output);
+        }
+    }
+
+    public static void simulate_step(String[] cmd) {
+        String output = "";
+
+        boolean random = false;
+        if(cmd.length > 1 && cmd[1].equals("-ranomd")) {
+            random = true;
+        }
+
+        if(random) {
+            output = "non-deterministic behaviour\n";
+        } else {
+            output = "deterministic behaviour\n";
+        }
+
+        for(int i = 0; i < sources.size(); i++) {
+            if(sources.get(i) != null) {
+                output += "Source (" + i + ") flows\n";
+                sources.get(i).Step(random);
+            }
+        }
+
+        for(int i = 0; i < pipes.size(); i++) {
+            if(pipes.get(i) != null) {
+                output += "Pipe (" + i + ") flows\n";
+                pipes.get(i).Step(random);
+            }
+        }
+
+        for(int i = 0; i < pumps.size(); i++) {
+            if(pumps.get(i) != null) {
+                output += "Pump (" + i + ") flows\n";
+                pumps.get(i).Step(random);
+            }
+        }
+
+        for(int i = 0; i < cities.size(); i++) {
+            if(cities.get(i) != null) {
+                output += "City (" + i + ") flows\n";
+                cities.get(i).Step(random);
+            }
+        }
+        
+        if(cmd.length > 2 && cmd[cmd.length - 2].equals(">")) {
+            WriteToFile(cmd[cmd.length - 1], output);
+        } else {
+            System.out.print(output);
+        }
+    }
+
+
     public static void main(String[] args) {
 
         commands.put("exit", (String[] cmd) -> run = false);
@@ -878,6 +957,8 @@ public class CommandInterpreter {
         commands.put("init", (String[] cmd) -> init(cmd));
         commands.put("read", (String[] cmd) -> read(cmd));
         commands.put("test", (String[] cmd) -> test(cmd));
+        commands.put("drill", (String[] cmd) -> drill(cmd));
+        commands.put("simulate_step", (String[] cmd) -> simulate_step(cmd));
 
 
         while(run){
