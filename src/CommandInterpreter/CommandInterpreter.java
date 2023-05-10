@@ -7,6 +7,7 @@ import java.io.InputStreamReader;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.nio.file.StandardOpenOption;
+import java.security.spec.ECField;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -767,6 +768,98 @@ public class CommandInterpreter {
         }
     }
 
+    public static void test(String[] cmd) {
+        String output = "";
+        
+        if(cmd[1].equals("-all")){
+            for(int i = 1; i < 41; i++){
+                String outputtest = "";
+                String testname = "test" + i + "in.txt";
+                String[] testparams = {"read", testname, ">", "temp.txt"};
+                read(testparams);
+            
+            
+
+                List<String> result = new ArrayList<String>();
+                try (Stream<String> lines = Files.lines(Paths.get("temp.txt"))) {
+                    result = lines.collect(Collectors.toList());
+                } catch (IOException ie) {
+                    System.out.println("Invalid file"); 
+                }
+
+
+                List<String> expected = new ArrayList<String>();
+                try (Stream<String> lines = Files.lines(Paths.get("test" + i + "expected.txt"))) {
+                    expected = lines.collect(Collectors.toList());
+                } catch (IOException ie) {
+                    System.out.println("Invalid file"); 
+                }
+
+                String differences = "";
+
+                if(result.size() != expected.size()) {
+                    outputtest = "TEST " + cmd[1] + " FAILED\nLength of the two results doesnt match";
+                } else {
+                    outputtest = "TEST " + cmd[1] + " OK\n";
+                    for(int j = 0; j < result.size(); j++) {
+                        if(result.get(j) != expected.get(j)) {
+                            outputtest = "TEST " + i + " FAILED\n";
+                            differences += "Expected: " + expected.get(j) + "\nGot: " + result.get(j) + "\n";
+                        }
+                    }
+                    outputtest += differences;
+                }
+                output += outputtest;
+            }
+        } else {
+            String testname = "test" + cmd[1] + "in.txt";
+            String[] testparams = {"read", testname, ">", "temp.txt"};
+            read(testparams);
+        
+        
+
+            List<String> result = new ArrayList<String>();
+            try (Stream<String> lines = Files.lines(Paths.get("temp.txt"))) {
+                result = lines.collect(Collectors.toList());
+            } catch (IOException ie) {
+                System.out.println("Invalid file"); 
+            }
+
+
+            List<String> expected = new ArrayList<String>();
+            try (Stream<String> lines = Files.lines(Paths.get("test" + cmd[1] + "expected.txt"))) {
+                expected = lines.collect(Collectors.toList());
+            } catch (IOException ie) {
+                System.out.println("Invalid file"); 
+            }
+
+            String differences = "";
+
+            if(result.size() != expected.size()) {
+                output = "TEST " + cmd[1] + " FAILED\nLength of the two results doesnt match";
+            } else {
+                output = "TEST " + cmd[1] + " OK\n";
+                for(int i = 0; i < result.size(); i++) {
+                    if(result.get(i) != expected.get(i)) {
+                        output = "TEST " + cmd[1] + " FAILED\n";
+                        differences += "Expected: " + expected.get(i) + "\nGot: " + result.get(i) + "\n";
+                    }
+                }
+                output += differences;
+            }
+        }
+
+
+        File temp = new File("temp.txt");
+        temp.delete();
+
+        if(cmd.length > 2 && cmd[cmd.length - 2].equals(">")) {
+            WriteToFile(cmd[cmd.length - 1], output);
+        } else {
+            System.out.print(output);
+        }
+    }
+
     public static void main(String[] args) {
 
         commands.put("exit", (String[] cmd) -> run = false);
@@ -784,6 +877,8 @@ public class CommandInterpreter {
         commands.put("pickuppump", (String[] cmd) -> pickuppump(cmd));
         commands.put("init", (String[] cmd) -> init(cmd));
         commands.put("read", (String[] cmd) -> read(cmd));
+        commands.put("test", (String[] cmd) -> test(cmd));
+
 
         while(run){
             try {
