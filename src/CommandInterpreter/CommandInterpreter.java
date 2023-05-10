@@ -938,6 +938,9 @@ public class CommandInterpreter {
         }
     }
 
+    public static void placepipe(String[] cmd) {
+        //TODO
+    }
 
     public static void main(String[] args) {
 
@@ -959,7 +962,7 @@ public class CommandInterpreter {
         commands.put("test", (String[] cmd) -> test(cmd));
         commands.put("drill", (String[] cmd) -> drill(cmd));
         commands.put("simulate_step", (String[] cmd) -> simulate_step(cmd));
-
+        commands.put("placepipe", (String[] cmd) -> placepipe(cmd));
 
         while(run){
             try {
