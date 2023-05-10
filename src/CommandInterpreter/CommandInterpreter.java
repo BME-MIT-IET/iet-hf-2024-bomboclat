@@ -797,7 +797,7 @@ public class CommandInterpreter {
                 String differences = "";
 
                 if(result.size() != expected.size()) {
-                    outputtest = "TEST " + cmd[1] + " FAILED\nLength of the two results doesnt match";
+                    outputtest = "TEST " + cmd[1] + " FAILED\nLength of the two results doesnt match\n";
                 } else {
                     outputtest = "TEST " + cmd[1] + " OK\n";
                     for(int j = 0; j < result.size(); j++) {
