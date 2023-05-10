@@ -431,7 +431,7 @@ public class CommandInterpreter {
                 }
             }
             
-            output = String.format("Mechanic %d has been modified.\n", mechanics.size());
+            output = String.format("Mechanic %d has been modified.\n", Integer.parseInt(cmd[2]));
             mechanics.add(mechanic);
         } else if(cmd[1].equals("nomad")) {
             Nomad nomad = nomads.get(Integer.parseInt(cmd[2]));;
@@ -456,7 +456,7 @@ public class CommandInterpreter {
                 } 
             }
             
-            output = String.format("Nomad %d has been modified.", nomads.size());
+            output = String.format("Nomad %d has been modified.", Integer.parseInt(cmd[2]));
             nomads.add(nomad);
         } else if(cmd[1].equals("pump")) {
             Pump pump = pumps.get(Integer.parseInt(cmd[2]));
@@ -480,7 +480,7 @@ public class CommandInterpreter {
                 }
             }
             
-            output = String.format("Pump%d has been modified.\n", pumps.size());
+            output = String.format("Pump%d has been modified.\n", Integer.parseInt(cmd[2]));
             pumps.add(pump);
         } else if(cmd[1].equals("pipe")) {
             Pipe pipe = pipes.get(Integer.parseInt(cmd[2]));;
@@ -509,7 +509,7 @@ public class CommandInterpreter {
                 }
             }
 
-            output = String.format("Pipe%d has been modified.\n", pipes.size());
+            output = String.format("Pipe%d has been modified.\n", Integer.parseInt(cmd[2]));
             pipes.add(pipe);
         }
 
