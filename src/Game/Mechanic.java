@@ -12,7 +12,9 @@ public class Mechanic extends Character{
     private int pipeEnd;
 
     public Mechanic() {
-        
+        pipe_in_hand = null;
+        pump_in_hand = null;
+        pipeEnd = -1;
     }
 
     public Mechanic(int nMoves, Field nField){
@@ -24,11 +26,7 @@ public class Mechanic extends Character{
      * attól, hogy az cső vagy pumpa.
      */
     public boolean Fix(){
-        for(int i = 0; i < TesterMain.tabCount; i++) {System.out.print("\t");}
-        TesterMain.tabCount++;
-        System.out.println("Mechanic::Fix()");
         boolean ret =field.Fix();
-        TesterMain.tabCount--;
         return ret;
     }
 
@@ -36,20 +34,13 @@ public class Mechanic extends Character{
      * A szerelő leteszi a kezáben lévő pumpát, arra a csőre, amin áll
      */
     public void PlacePump(){
-        for(int i = 0; i < TesterMain.tabCount; i++) {System.out.print("\t");}
-        TesterMain.tabCount++;
-        System.out.println("Mechanic::PlacePump()");
         pump_in_hand = field.PlacePump(pump_in_hand);
-        TesterMain.tabCount--;
     }
 
     /**
      * A szerelő beköti a kezében lévő csövet abba a pumpába, amin áll
      */
     public void PlacePipe(){
-        for(int i = 0; i < TesterMain.tabCount; i++) {System.out.print("\t");}
-        TesterMain.tabCount++;
-        System.out.println("Mechanic::PlacePipe()");
         field.addEdge(pipe_in_hand);
     }
     /**
@@ -58,11 +49,7 @@ public class Mechanic extends Character{
      * pumpát, amivel a kezében mozoghat a pályán.
      */
     public void PickUpPump(){
-        for(int i = 0; i < TesterMain.tabCount; i++) {System.out.print("\t");}
-        TesterMain.tabCount++;
-        System.out.println("Mechanic::PickUpPump()");
         pump_in_hand = field.PickUpPump();
-        TesterMain.tabCount--;
     }
 
     /**
@@ -71,30 +58,18 @@ public class Mechanic extends Character{
      * vége a kezébe kerül, ezzel tud tovább mozogni.
      */
     public void PickUpPipe(){
-        for(int i = 0; i < TesterMain.tabCount; i++) {System.out.print("\t");}
-        TesterMain.tabCount++;
-        System.out.println("Mechanic::PickUpPipe()");
         Pipe pipe = field.PickUpPipe(this);
         if(pipe != null){
             pipe_in_hand = pipe;
         }
-        TesterMain.tabCount--;
     }
 
     public void setPumpInHand(Pump p) {
-        for(int i = 0; i < TesterMain.tabCount; i++) {System.out.print("\t");}
-        TesterMain.tabCount++;
-        System.out.println("Mechanic::setPumpInHand()");
         pump_in_hand = p;
-        TesterMain.tabCount--;
     }
 
     public void setPipeInHand(Pipe p) {
-        for(int i = 0; i < TesterMain.tabCount; i++) {System.out.print("\t");}
-        TesterMain.tabCount++;
-        System.out.println("Mechanic::setPipeInHand()");
         pipe_in_hand = p;
-        TesterMain.tabCount--;
     }
 
     public Pipe GetPipeInHand(){

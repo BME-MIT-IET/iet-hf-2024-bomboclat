@@ -23,28 +23,16 @@ public class Pump extends Node{
      * Pump konstruktora.
      */
     public Pump(){
-        for(int i=0; i < TesterMain.tabCount; i++) {
-            System.out.print("\t");
-        }
-        System.out.println("Pump has been initialized");
-        TesterMain.tabCount++;
         working = true;
         from = null;
         where = null;
-        TesterMain.tabCount--;
     }
 
     /**
      * Megjavítja az elromlott pumpát, ha a pumpa már működik, akkor nincsen hatása.
      */
     public boolean Fix() {
-        for(int i=0; i < TesterMain.tabCount; i++) {
-            System.out.print("\t");
-        }
-        System.out.println("Pump::Fix()");
-        TesterMain.tabCount++;
         working = true;
-        TesterMain.tabCount--;
         return true;
     }
 
@@ -54,14 +42,8 @@ public class Pump extends Node{
      * @param out Paraméterként megadott Pipe objektum, hogy hova pumpáljon.
      */
     public void Change(Pipe in, Pipe out) {
-        for(int i=0; i < TesterMain.tabCount; i++) {
-            System.out.print("\t");
-        }
-        System.out.println("Pump::Change()");
-        TesterMain.tabCount++;
         this.from = in;
         this.where = out;
-        TesterMain.tabCount--;
     }
 
     /**
@@ -69,27 +51,15 @@ public class Pump extends Node{
      * pumpát a hívása.
      */
     public void Step(boolean rnd) {
-        for(int i=0; i < TesterMain.tabCount; i++) {
-            System.out.print("\t");
-        }
-        System.out.println("Pump::Step()");
-        TesterMain.tabCount++;
         int incoming = this.from.TakeWaterAway();
         this.where.GiveWater(incoming);
-        TesterMain.tabCount--;
     }
 
     /**
      * Elrontja a pumpát.
      */
     public void Die() {
-        for(int i=0; i < TesterMain.tabCount; i++) {
-            System.out.print("\t");
-        }
-        System.out.println("Pump::Die()");
-        TesterMain.tabCount++;
         working = false;
-        TesterMain.tabCount--;
     }
    
     /** 
@@ -116,31 +86,6 @@ public class Pump extends Node{
         }
     }
 
-    /** regi kod
-     * Leteszi a paraméterben megadott szerelő kezében lévő csövet, azaz hozzáadja a pumpából kimenő/pumpába befutó csövek közé.
-     * @param m a csövet letenni kívánó szerelő
-     
-    public void PlacePipe(Mechanic m){
-        Pipe pipeInHand = m.GetPipeInHand();
-        edges.add(pipeInHand);
-
-        int pipeEnd = m.GetPipeEnd();
-
-        if(pipeEnd == 0){
-            pipeInHand.setEndpoint(this, 0);
-            m.setPipeInHand(null);
-            m.SetPipeEnd(-1);
-        } else if(pipeEnd == 1){
-            pipeInHand.setEndpoint(this, 1);
-            m.setPipeInHand(null);
-            m.SetPipeEnd(-1);
-        } else if(pipeEnd == 2){
-            pipeInHand.setEndpoint(this, 0);
-            m.SetPipeEnd(1);
-        }
-
-    }*/
-
     /**
      * Felveszi a pumpa csövei közül az elsőt a mechanic kezébe
      * @param m a szerelő játékos
@@ -165,31 +110,12 @@ public class Pump extends Node{
         }
     }
 
-    /** regi fuggveny
-     * Felvesz egy szomszédos csövet.
-     
-    public Pipe PickUpPipe() {
-        for(int i=0; i < TesterMain.tabCount; i++) {
-            System.out.print("\t");
-        }
-        System.out.println("Pump::PickUpPipe()");
-        TesterMain.tabCount++;
-        TesterMain.tabCount--;
-        return edges.get(0);
-    }*/
-
     /**
      * Beállítja azt a csövet, ahova kifolyik a víz.
      * @param p Az a Pipe objektum, amire beállítja.
      */
     public void setWhere(Pipe p) {
-        for(int i=0; i < TesterMain.tabCount; i++) {
-            System.out.print("\t");
-        }
-        System.out.println("Pump::setWhere()");
-        TesterMain.tabCount++;
         where = p;
-        TesterMain.tabCount--;
     } 
 
     /**
@@ -197,14 +123,7 @@ public class Pump extends Node{
      * @param p Az a Pipe objektum, amire beállítja.
      */
     public void setFrom(Pipe p) {
-        for(int i=0; i < TesterMain.tabCount; i++) {
-            System.out.print("\t");
-        }
-        System.out.println("Pump::setFrom()");
-        
-        TesterMain.tabCount++;
         from = p;
-        TesterMain.tabCount--;
     }
 
 }

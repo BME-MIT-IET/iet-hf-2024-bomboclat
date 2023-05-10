@@ -13,7 +13,8 @@ public class Character{
 
 
     public Character() {
-        
+        moves = 0;
+        field = null;
     }
 
     /**
@@ -22,13 +23,9 @@ public class Character{
      * @param nField A mező, amelyen álljon
      */
     public Character(int nMoves, Field nField){
-        for(int i = 0; i < TesterMain.tabCount; i++) {System.out.print("\t");}
-        TesterMain.tabCount++;
-        System.out.println("Character has been initialized");
         moves = nMoves;
         field = nField;
         field.Accept(this);
-        TesterMain.tabCount--;
     }
 
     /**
@@ -36,21 +33,13 @@ public class Character{
      * @param newMoves A lépések új értéke
      */
     public void setMoves(int newMoves){
-        for(int i = 0; i < TesterMain.tabCount; i++) {System.out.print("\t");}
-        TesterMain.tabCount++;
-        System.out.println("Character::setMoves()");
         moves = newMoves;
-        TesterMain.tabCount--;
     }
 
     /**
      * A lépések gettere
      */
     public int getMoves(){
-        for(int i = 0; i < TesterMain.tabCount; i++) {System.out.print("\t");}
-        TesterMain.tabCount++;
-        System.out.println("Character::getMoves()");
-        TesterMain.tabCount--;
         return moves;
     }
 
@@ -59,21 +48,13 @@ public class Character{
      * @param newField A jelenlegi mező
      */
     public void setField(Field newField){
-        for(int i = 0; i < TesterMain.tabCount; i++) {System.out.print("\t");}
-        TesterMain.tabCount++;
-        System.out.println("Character::setField()");
         field = newField;
-        TesterMain.tabCount--;
     }
 
     /**
      * A jelenlegi mező gettere
      */
     public Field getField(){
-        for(int i = 0; i < TesterMain.tabCount; i++) {System.out.print("\t");}
-        TesterMain.tabCount++;
-        System.out.println("Character::getField()");
-        TesterMain.tabCount--;
         return field;
     }
 
@@ -83,11 +64,7 @@ public class Character{
      * @param d Új kimenet
      */
     public void ChangePump(Pipe o, Pipe d){
-        for(int i = 0; i < TesterMain.tabCount; i++) {System.out.print("\t");}
-        TesterMain.tabCount++;
-        System.out.println("Character::ChangePump()");
         field.Change(o, d);
-        TesterMain.tabCount--;
     }
 
     /**
@@ -95,15 +72,11 @@ public class Character{
      * @param d Egy irány arról a mezőről, amin áll
      */
     public void Move(int d){
-        for(int i = 0; i < TesterMain.tabCount; i++) {System.out.print("\t");}
-        TesterMain.tabCount++;
-        System.out.println("Character::Move()");
         Field neighbour = field.getNeighbour(d);
         if(neighbour != null){
             field.Remove(this);
             neighbour.Accept(this);
         }
-        TesterMain.tabCount--;
     }
 
     /**
@@ -111,11 +84,7 @@ public class Character{
      * Ha nem csövön áll, akkor nem történik semmi
      */
     public boolean DrillPipe(boolean rnd){ 
-        for(int i = 0; i < TesterMain.tabCount; i++) {System.out.print("\t");}
-        TesterMain.tabCount++;
-        System.out.println("Character::DrillPipe()");
         boolean ret = field.Drill(rnd);
-        TesterMain.tabCount--;
         return ret;
     }
 

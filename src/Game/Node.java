@@ -14,13 +14,7 @@ abstract public class Node extends Field implements Stepable{
 
     /**Node konstruktora. */
     public Node(){
-        for(int i=0; i < TesterMain.tabCount; i++) {
-            System.out.print("\t");
-        }
-        System.out.println("Node has been initialized");
-        TesterMain.tabCount++;
         edges=new ArrayList<>();
-        TesterMain.tabCount--;
     }
 
     /**
@@ -29,12 +23,6 @@ abstract public class Node extends Field implements Stepable{
      * @return Az adott irányból a szomszédos mező, vagy ha az adott irányba nincs érvényes mező, nullt ad vissza.
      */
      public Field getNeighbour(int d){
-         for(int i=0; i < TesterMain.tabCount; i++) {
-             System.out.print("\t");
-         }
-        System.out.println("Node::getNeighbour()");
-         TesterMain.tabCount++;
-         TesterMain.tabCount--;
         return edges.get(d).has_player == true ? null : edges.get(d);
      }
 
@@ -44,19 +32,11 @@ abstract public class Node extends Field implements Stepable{
     public abstract void Step(boolean rnd);
 
     /**
-     * Összeszámolja a szerelők pontját a városba folyt 
-     * vízmennyiség alapján, ha városra hívódik meg, egyébként nem csinál semmit, elnyeli a hívást.
+     * Összeszámolja a szerelők pontját a városba folyt
+     * vízmennyiség alapján. Absztrakt függvény, a City osztály implementálja
      * @return Az összeadott pontok száma, null ha olyan objektumra hívják meg ami nem definiálta felül a függvényt.
      */
-    public int getMechanicPoint(){
-        for(int i=0; i < TesterMain.tabCount; i++) {
-            System.out.print("\t");
-        }
-        System.out.println("Node::getMechanicPoint()");
-        TesterMain.tabCount++;
-        TesterMain.tabCount--;
-        return 0;
-    }
+    public abstract int getMechanicPoint();
 
     /**
      * A leszármazottakban van felüldefiniálva abban az esetben ha lehet belőlük felvenni csövet.
@@ -80,13 +60,7 @@ abstract public class Node extends Field implements Stepable{
      * @param p Az paraméterként kapott cső.
      */
     public void addEdge(Pipe p){
-        for(int i=0; i < TesterMain.tabCount; i++) {
-            System.out.print("\t");
-        }
-        System.out.println("Node::addEdge()");
         edges.add(p);
-        TesterMain.tabCount++;
-        TesterMain.tabCount--;
     }
 
     /**
@@ -94,13 +68,7 @@ abstract public class Node extends Field implements Stepable{
      * @param p A paraméterként kapott cső.
      */
     public void removeEdge(Pipe p){
-        for(int i=0; i < TesterMain.tabCount; i++) {
-            System.out.print("\t");
-        }
-        System.out.println("Node::removeEdge()");
         edges.remove(p);
-        TesterMain.tabCount++;
-        TesterMain.tabCount--;
     }
 
     public int getNeighbourCount(){

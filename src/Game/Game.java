@@ -21,23 +21,16 @@ public class Game {
      * Game konstruktor
      */
     public Game(){
-        for(int i = 0; i < TesterMain.tabCount; i++) { System.out.print("\t"); }
-        System.out.println("Game has been initialized");
-        TesterMain.tabCount++;
         round_count = 0;
         characters = new ArrayList<Character>();
         currPlayfield = null;
-        TesterMain.tabCount--;
     }
 
     /**
      * Elindítja a játékmenetet.
      */
     public void StartGame(){
-        for(int i = 0; i < TesterMain.tabCount; i++) { System.out.print("\t"); }
-        System.out.println("Game::StartGame()");
-        TesterMain.tabCount++;
-        TesterMain.tabCount--;
+
     }
 
     /**
@@ -45,12 +38,8 @@ public class Game {
      * @return int 1 ha a mechanic csapat nyert, 0 ha a nomádok
      */
     public int GetResult(){
-        for(int i = 0; i < TesterMain.tabCount; i++) { System.out.print("\t"); }
-        System.out.println("Game::GetResult()");
-        TesterMain.tabCount++;
         int mech = currPlayfield.getMechanicPoints();
         int nomad = currPlayfield.getNomadPoints();
-        TesterMain.tabCount--;
         return mech > nomad ? 1 : 0;
     }
 
@@ -58,22 +47,15 @@ public class Game {
      * A játszma végeztével leállítja a játékot.
      */
     public void EndGame(){
-        for(int i = 0; i < TesterMain.tabCount; i++) { System.out.print("\t"); }
-        System.out.println("Game::EndGame()");
-        TesterMain.tabCount++;
-        TesterMain.tabCount--;
+
     }
 
     /**
      * Egy kör végeztével levezényli a stepable interfészt megvalósító elemek lépését.
      */
     public void EndRound(){
-        for(int i = 0; i < TesterMain.tabCount; i++) { System.out.print("\t"); }
-        System.out.println("Game::EndRound()");
-        TesterMain.tabCount++;
         currPlayfield.Step(true);
         round_count++;
-        TesterMain.tabCount--;
     }
 
     /**
@@ -81,21 +63,13 @@ public class Game {
      * @param character a hozzáadandó játékos
      */
     public void addCharacter(Character character){
-        for(int i = 0; i < TesterMain.tabCount; i++) { System.out.print("\t"); }
-        System.out.println("Game::setCharacters()");
-        TesterMain.tabCount++;
         characters.add(character);
-        TesterMain.tabCount--;
     }
     /**
      * currPlayfield változóhoz setter
      * @param playfield a beállítandó playfield
      */
     public void setCurrPlayfield(Playfield playfield){
-        for(int i = 0; i < TesterMain.tabCount; i++) { System.out.print("\t"); }
-        System.out.println("Game::setCurrPlayfield()");
-        TesterMain.tabCount++;
         this.currPlayfield = playfield;
-        TesterMain.tabCount--;
     }
 }

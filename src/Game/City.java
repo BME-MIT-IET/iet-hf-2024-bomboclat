@@ -14,30 +14,18 @@ public class City extends Node{
      * City konstruktora.
      */
     public City(){
-        for(int i=0; i < TesterMain.tabCount; i++) {
-            System.out.print("\t");
-        }
-        System.out.println("City has been initialized");
-        TesterMain.tabCount++;
         consumed=0;
-        TesterMain.tabCount--;
     }
 
     /**
      * Összeadja a rákötött csöveken beérkező vízmennyiséget.
      */
     public void Step(boolean rnd) {
-        for(int i=0; i < TesterMain.tabCount; i++) {
-            System.out.print("\t");
-        }
-        System.out.println("City::Step()");
-        TesterMain.tabCount++;
         int sum = 0;
         for(int i=0; i < this.edges.size(); i++) {
             sum += this.edges.get(i).TakeWaterAway();
         }
         consumed += sum;
-        TesterMain.tabCount--;
     }
 
     /**
@@ -45,12 +33,6 @@ public class City extends Node{
      * @return A szerelők pontjai, a consumed tagváltozó értéke.
      */
     public int getMechanicPoint(){
-        for(int i=0; i < TesterMain.tabCount; i++) {
-            System.out.print("\t");
-        }
-        System.out.println("City::getMechanicPoint()");
-        TesterMain.tabCount++;
-        TesterMain.tabCount--;
         return consumed;
     }
 
@@ -73,13 +55,7 @@ public class City extends Node{
      * @return A függvény a felvett pumpa objektumot adja vissza.
      */
     public Pump PickUpPump() {
-        for(int i=0; i < TesterMain.tabCount; i++) {
-            System.out.print("\t");
-        }
-        System.out.println("City::PickUpPump()");
-        TesterMain.tabCount++;
         Pump p = new Pump();
-        TesterMain.tabCount--;
         return p;
     }
 
