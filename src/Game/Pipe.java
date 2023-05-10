@@ -137,7 +137,7 @@ public class Pipe extends Field implements Stepable{
      * @param c A levetendő játékos.
      */
     public void Remove(Character c) {
-        this.Remove(c);
+        super.Remove(c);
         has_player = false;
     }
 
