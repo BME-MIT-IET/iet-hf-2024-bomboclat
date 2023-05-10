@@ -57,7 +57,7 @@ abstract public class Field{
     /**
      * Nem csinál semmit, elnyeli a hívást, ha olyan objektumra hívják, aminek nincsen ez a függvénye felüldefiniálva.
      */
-    public boolean Drill(){
+    public boolean Drill(boolean rnd){
         return false;
     }
 

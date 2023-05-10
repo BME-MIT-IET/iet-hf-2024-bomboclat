@@ -26,7 +26,7 @@ public class City extends Node{
     /**
      * Összeadja a rákötött csöveken beérkező vízmennyiséget.
      */
-    public void Step() {
+    public void Step(boolean rnd) {
         for(int i=0; i < TesterMain.tabCount; i++) {
             System.out.print("\t");
         }

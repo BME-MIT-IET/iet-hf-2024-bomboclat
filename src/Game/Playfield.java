@@ -34,13 +34,13 @@ public class Playfield implements Stepable{
      * Lépteti az összes játémezőt/meghívja a Step() függvényüket.
      */
     @Override
-    public void Step() {
+    public void Step(boolean rnd) {
         for(int i = 0; i < TesterMain.tabCount; i++) { System.out.print("\t"); }
         System.out.println("Playfield::Step()");
         TesterMain.tabCount++;
 
         for(int i = 0; i < nodes.size(); i++){
-            nodes.get(i).Step();
+            nodes.get(i).Step(rnd);
         }
         TesterMain.tabCount--;
     }
