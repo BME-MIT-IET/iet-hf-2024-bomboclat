@@ -871,7 +871,7 @@ public class CommandInterpreter {
 
         boolean drillable = false;
 
-        if(cmd[3].equals("-drillable")) {
+        if(cmd.length > 2 && cmd[3].equals("-drillable")) {
             drillable =  true;
         }
 
