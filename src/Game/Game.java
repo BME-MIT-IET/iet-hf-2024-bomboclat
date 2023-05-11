@@ -28,10 +28,49 @@ public class Game {
 
     /**
      * Elindítja a játékmenetet.
-     */
-    public void StartGame(String filepath){
+     */        
+    public void StartGame(){
         round_count = 0;
+        currPlayfield = new Playfield();
+
+        City c1 = new City();
+        Source s1 = new Source();
         
+        Pump p1 = new Pump();
+        Pump p2 = new Pump();
+        Pipe pipe1 = new Pipe();
+        Pipe pipe2 = new Pipe();
+        Pipe pipe3 = new Pipe();
+        Pipe pipe4 = new Pipe();
+
+        pipe1.setEndpoint(c1, 1);
+        pipe1.setEndpoint(s1, 0);
+        pipe2.setEndpoint(c1, 1);
+        pipe2.setEndpoint(p2, 0);
+        pipe3.setEndpoint(p1, 1);
+        pipe3.setEndpoint(p2, 0);
+        pipe4.setEndpoint(s1, 0);
+        pipe4.setEndpoint(p1, 1);
+
+        p1.Change(pipe4, pipe3);
+        p2.Change(pipe3, pipe2);
+
+        Mechanic m1 = new Mechanic(5, p1);
+        Mechanic m2 = new Mechanic(5, p1);
+        Nomad n1 = new Nomad(5, p2);
+        Nomad n2 = new Nomad(5, p2);
+        
+        characters.add(m1);
+        characters.add(m2);
+        characters.add(n1);
+        characters.add(n2);
+
+        currPlayfield.addNode(p1);
+        currPlayfield.addNode(p2);
+        currPlayfield.addPipe(pipe1);
+        currPlayfield.addPipe(pipe2);
+        currPlayfield.addPipe(pipe3);
+        currPlayfield.addPipe(pipe4);
     }
 
     /**

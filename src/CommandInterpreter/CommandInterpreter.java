@@ -951,7 +951,20 @@ public class CommandInterpreter {
     }
 
     public static void placepipe(String[] cmd) {
-        //TODO
+        String output = "";
+
+        Mechanic m = mechanics.get(Integer.parseInt(cmd[1]));
+
+        output = "Failure";
+        if(m.PlacePipe()) {
+            output = "Pipe has been placed down successfully\n";
+        } 
+
+        if(cmd.length > 2 && cmd[cmd.length - 2].equals(">")) {
+            WriteToFile(cmd[cmd.length - 1], output);
+        } else {
+            System.out.print(output);
+        }
     }
 
     public static void main(String[] args) {
