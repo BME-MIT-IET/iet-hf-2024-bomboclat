@@ -28,6 +28,7 @@ abstract public class Node extends Field implements Stepable{
 
     /**
      * Absztrakt függvény, nincs implementálva.
+     * @param rnd ha igaz, akkor nemdeterminisztikusan működik
      */
     public abstract void Step(boolean rnd);
 

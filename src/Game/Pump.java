@@ -49,6 +49,7 @@ public class Pump extends Node{
     /**
      * Lépésenként frissíti a ki és bemeneti csövein a vízfolyam állapotát. Valamint véletlenszerűen elronthatja a
      * pumpát a hívása.
+     * @param rnd ha igaz, akkor nemdeterminisztikusan működik
      */
     public void Step(boolean rnd) {
         int incoming = this.from.TakeWaterAway();
