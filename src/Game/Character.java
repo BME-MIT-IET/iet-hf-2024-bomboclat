@@ -92,4 +92,8 @@ public class Character{
         boolean ret = field.Glue();
         return ret;
     }
+
+    public void Pass(){
+        moves = 0;
+    }
 }
