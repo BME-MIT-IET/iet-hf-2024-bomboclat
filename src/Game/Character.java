@@ -82,6 +82,7 @@ public class Character{
     /**
      * A karakter kilyukasztja amin éppen áll
      * Ha nem csövön áll, akkor nem történik semmi
+     * @param rnd ha igaz, akkor nemdeterminisztikusan működik
      */
     public boolean DrillPipe(boolean rnd){ 
         boolean ret = field.Drill(rnd);

@@ -19,6 +19,7 @@ public class City extends Node{
 
     /**
      * Összeadja a rákötött csöveken beérkező vízmennyiséget.
+     * @param rnd ha igaz, akkor nemdeterminisztikusan működik
      */
     public void Step(boolean rnd) {
         int sum = 0;
