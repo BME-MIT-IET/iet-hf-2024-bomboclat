@@ -29,7 +29,6 @@ public class Game {
     /**
      * Elindítja a játékmenetet.
      */
-    public void StartGame(){
         
     public void StartGame(String filepath){
         round_count = 0;
