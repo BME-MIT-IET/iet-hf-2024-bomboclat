@@ -33,15 +33,26 @@ public class Mechanic extends Character{
     /**
      * A szerelő leteszi a kezáben lévő pumpát, arra a csőre, amin áll
      */
-    public void PlacePump(){
-        pump_in_hand = field.PlacePump(pump_in_hand);
+    public boolean PlacePump(){
+        if(pump_in_hand != null){
+            pump_in_hand = field.PlacePump(pump_in_hand);
+            if(pump_in_hand != null){
+                return true; //Sikeres pumpa lehelyezés
+            }
+            return false; //Sikertelen pumpa lehelyezés
+        }
+        return false; //Sikertelen pumpa lehelyezés
     }
 
     /**
      * A szerelő beköti a kezében lévő csövet abba a pumpába, amin áll
      */
-    public void PlacePipe(){
+    public boolean PlacePipe(){
         field.addEdge(pipe_in_hand);
+        if(pipe_in_hand == null){
+            return true; //Sikerült letenni a csövet
+        }
+        return false; //Nem sikerült letenni a csövet
     }
     /**
      * A szerelőnek ezen függvénye hívódik meg, amikor a
