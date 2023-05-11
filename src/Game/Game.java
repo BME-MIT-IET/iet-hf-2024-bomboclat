@@ -30,7 +30,7 @@ public class Game {
      * Elindítja a játékmenetet.
      */
     public void StartGame(){
-
+        
     }
 
     /**
