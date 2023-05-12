@@ -109,6 +109,14 @@ abstract public class Field{
     public Pump PlacePump(Pump p){
         return p;
     }
+
+    /**
+     * Nem csinál semmit, elnyeli a hívást, ha olyan objektumra hívják, aminek nincsen ez a függvénye felüldefiniálva
+     * @param m A szerelő, aki le akar helyezni csövet
+     */
+    public void PlacePipe(Mechanic m){
+        return;
+    }
     
     /**
      * Elnyeli a függvényhívást olyan mezőkre, ahol annak nincs funkciója.
