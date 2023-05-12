@@ -87,10 +87,7 @@ public class Game {
      * A játszma végeztével leállítja a játékot.
      */
     public void EndGame(){
-        int mechPoint = currPlayfield.getMechanicPoints();
-        int nomadPoint = currPlayfield.getNomadPoints();
-
-        String winMessage = mechPoint > nomadPoint ? "Mechanic team wins. NYOMOD!!!!" : "Nomad team wins. NYOMOD!!!!";
+        String winMessage = GetResult() == 1 ? "Mechanic team wins. NYOMOD!!!!" : "Nomad team wins. NYOMOD!!!!";
 
         System.out.println(winMessage);
     }

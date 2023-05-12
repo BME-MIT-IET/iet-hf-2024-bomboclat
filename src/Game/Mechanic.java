@@ -93,6 +93,7 @@ public class Mechanic extends Character{
 
     public void SetPipeInHand(Pipe pipe){
         pipe_in_hand = pipe;
+	pipeEnd = 0;
     }
 
     public void SetPipeEnd(int end){
