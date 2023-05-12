@@ -11,3 +11,5 @@ Pump0 has been modified.
 deterministic behaviour
 Source (0) flows
 Pipe (0) flows
+Pipe (1) flows
+Pump (0) flows

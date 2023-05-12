@@ -3,4 +3,6 @@ add source
 add pump
 add pipe -endpoint 0 source 0 -endpoint 1 pump 0
 add pipe -endpoint 0 pump 0
+add pipe -endpoint 1 pump 0
 set pump 0 -input 1 -output 2
+simulate_step

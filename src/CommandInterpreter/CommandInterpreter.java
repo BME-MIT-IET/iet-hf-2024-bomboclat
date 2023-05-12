@@ -481,7 +481,7 @@ public class CommandInterpreter {
             }
             
             output = String.format("Pump%d has been modified.\n", Integer.parseInt(cmd[2]));
-            pumps.add(pump);
+            // pumps.add(pump);
         } else if(cmd[1].equals("pipe")) {
             Pipe pipe = pipes.get(Integer.parseInt(cmd[2]));;
             
