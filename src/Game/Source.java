@@ -12,12 +12,7 @@ public class Source extends Node{
      * Source konstruktora.
      */
     public Source(){
-        for(int i=0; i < TesterMain.tabCount; i++) {
-            System.out.print("\t");
-        }
-        System.out.println("Source has been initialized");
-        TesterMain.tabCount++;
-        TesterMain.tabCount--;
+        
     }
 
     /**
@@ -25,15 +20,9 @@ public class Source extends Node{
      * @param rnd ha igaz, akkor nemdeterminisztikusan működik
      */
     public void Step(boolean rnd) {
-        for(int i=0; i < TesterMain.tabCount; i++) {
-            System.out.print("\t");
-        }
-        System.out.println("Source::Step()");
-        TesterMain.tabCount++;
         for(int i=0; i < this.edges.size(); i++) {
             this.edges.get(i).GiveWater(1);
         }
-        TesterMain.tabCount--;
     }
 
     /** 
