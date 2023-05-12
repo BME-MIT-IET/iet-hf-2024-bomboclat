@@ -8,7 +8,7 @@ import skeleton.*;
 public class Nomad extends Character{
     
     public Nomad() {
-        super(0, null);
+        //super(0, null);
     }
 
     public Nomad(int nMoves, Field nField){

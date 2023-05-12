@@ -28,6 +28,7 @@ public class Playfield implements Stepable{
     /**
      * A Stepable interface Step() függvényének az implementációja.
      * Lépteti az összes játémezőt/meghívja a Step() függvényüket.
+     * @param rnd ha igaz, akkor nemdeterminisztikusan működik
      */
     @Override
     public void Step(boolean rnd) {

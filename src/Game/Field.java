@@ -95,6 +95,7 @@ abstract public class Field{
      * @param p A lehelyezendő Pipe objektum.
      */
     public void addEdge(Pipe p){
+        
     }
 
     /**

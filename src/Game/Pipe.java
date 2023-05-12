@@ -77,12 +77,16 @@ public class Pipe extends Field implements Stepable{
     /**
      * Kilyukasztja a csövet amennyiben a hole_timer attribútum az 0. És a
      * hole_timer beállítja egy véletlen számra 3-ig (ennyi körig nem lehet kilyukasztani
-     * megint a csövet.).
+     * megint a csövet.). Ha determinisztikusan működik, akkor nem random ideig nem lehet kilyukasztani
+     * a csövet, hanem 2 körig.
+     * @param rnd ha igaz, akkor nemdeterminisztikusan működik
      */
     public boolean Drill(boolean rnd) {
         if(hole_timer == 0){
             if(rnd){
                 hole_timer = new Random().nextInt(3)+1;
+            }else{
+                hole_timer = 2;
             }
             has_hole = true;
             return true;
@@ -125,7 +129,7 @@ public class Pipe extends Field implements Stepable{
      */
     public void Accept(Character c) {
         if(!has_player) {
-            this.Accept(c);
+            super.Accept(c);
             has_player = true;
         }
     }
@@ -137,7 +141,7 @@ public class Pipe extends Field implements Stepable{
      * @param c A levetendő játékos.
      */
     public void Remove(Character c) {
-        this.Remove(c);
+        super.Remove(c);
         has_player = false;
     }
 
@@ -251,6 +255,7 @@ public class Pipe extends Field implements Stepable{
     /**
      * A Pipe osztály Step függvénye. Csökkenti a hole_timer attribútum értékét,
      * ha az nem 0.
+     * @param rnd ha igaz, akkor nemdeterminisztikusan működik
      */
     public void Step(boolean rnd) {
         if(hole_timer > 0){

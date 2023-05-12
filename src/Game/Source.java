@@ -22,6 +22,7 @@ public class Source extends Node{
 
     /**
      * Minden belőle kivezető csőre vizet tesz.
+     * @param rnd ha igaz, akkor nemdeterminisztikusan működik
      */
     public void Step(boolean rnd) {
         for(int i=0; i < TesterMain.tabCount; i++) {
