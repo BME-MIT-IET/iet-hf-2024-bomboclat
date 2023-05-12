@@ -79,10 +79,6 @@ public class Mechanic extends Character{
         pump_in_hand = p;
     }
 
-    public void setPipeInHand(Pipe p) {
-        pipe_in_hand = p;
-    }
-
     public Pipe GetPipeInHand(){
         return pipe_in_hand;
     }
