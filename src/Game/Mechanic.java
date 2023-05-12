@@ -48,7 +48,7 @@ public class Mechanic extends Character{
      * A szerelő beköti a kezében lévő csövet abba a pumpába, amin áll
      */
     public boolean PlacePipe(){
-        field.addEdge(pipe_in_hand);
+        field.PlacePipe(this);
         if(pipe_in_hand == null){
             return true; //Sikerült letenni a csövet
         }
