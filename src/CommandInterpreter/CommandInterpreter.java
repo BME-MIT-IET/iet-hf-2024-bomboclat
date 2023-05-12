@@ -957,7 +957,7 @@ public class CommandInterpreter {
 
         Mechanic m = mechanics.get(Integer.parseInt(cmd[1]));
 
-        output = "Failure";
+        output = "Failure.\n";
         if(m.PlacePipe()) {
             output = "Pipe has been placed down successfully.\n";
         } 
