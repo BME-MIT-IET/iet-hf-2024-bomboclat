@@ -50,11 +50,11 @@ public class Source extends Node{
 
         if(pipeEnd == 0){
             pipeInHand.setEndpoint(this, 0);
-            m.setPipeInHand(null);
+            m.SetPipeInHand(null);
             m.SetPipeEnd(-1);
         } else if (pipeEnd == 1){
             pipeInHand.setEndpoint(this, 1);
-            m.setPipeInHand(null);
+            m.SetPipeInHand(null);
             m.SetPipeEnd(-1);
         } else if(pipeEnd == 2){
             pipeInHand.setEndpoint(this, 0);

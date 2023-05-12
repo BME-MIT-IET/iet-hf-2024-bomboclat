@@ -153,8 +153,10 @@ public class Pipe extends Field implements Stepable{
     public Pump PlacePump(Pump p) {
         Pipe p2 = new Pipe();
         p2.setEndpoint(p, 0);
-        p2.setEndpoint(this.getEndpoint(1), 1);
-        this.getEndpoint(1).removeEdge(this);
+        if(this.getEndpoint(1)!=null){
+            p2.setEndpoint(this.getEndpoint(1), 1);
+            this.getEndpoint(1).removeEdge(this);
+        }        
         this.setEndpoint(p, 1);
         return null;
     }

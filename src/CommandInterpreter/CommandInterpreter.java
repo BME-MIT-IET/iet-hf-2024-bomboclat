@@ -78,7 +78,7 @@ public class CommandInterpreter {
                 } else if(cmd[i].equals("-pump")) {
                     mechanic.setPumpInHand(pumps.get(Integer.parseInt(cmd[i + 1])));
                 } else if(cmd[i].equals("-pipe")) {
-                    mechanic.setPipeInHand(pipes.get(Integer.parseInt(cmd[i + 1])));
+                    mechanic.SetPipeInHand(pipes.get(Integer.parseInt(cmd[i + 1])));
                 }
             }
             
@@ -427,7 +427,7 @@ public class CommandInterpreter {
                 } else if(cmd[i].equals("-pump")) {
                     mechanic.setPumpInHand(pumps.get(Integer.parseInt(cmd[i + 1])));
                 } else if(cmd[i].equals("-pipe")) {
-                    mechanic.setPipeInHand(pipes.get(Integer.parseInt(cmd[i + 1])));
+                    mechanic.SetPipeInHand(pipes.get(Integer.parseInt(cmd[i + 1])));
                 }
             }
             
@@ -673,10 +673,10 @@ public class CommandInterpreter {
 
     public static void placepump(String[] cmd) {
         String output = "Failure.\n";
-        Mechanic m = mechanics.get(Integer.parseInt(cmd[2]));
+        Mechanic m = mechanics.get(Integer.parseInt(cmd[1]));
 
         if(m.getField().PlacePump(m.GetPumpInHand()) == null) {
-            output = "Pipe has been placed down successfully.\n";
+            output = "Pump has been placed down successfully.\n";
         }
 
         if(cmd.length > 2 && cmd[cmd.length - 2].equals(">")) {
@@ -688,7 +688,7 @@ public class CommandInterpreter {
 
     public static void pickuppipe(String[] cmd) {
         String output = "";
-        Mechanic m = mechanics.get(Integer.parseInt(cmd[2]));
+        Mechanic m = mechanics.get(Integer.parseInt(cmd[1]));
         
         m.PickUpPipe();
 
@@ -701,7 +701,7 @@ public class CommandInterpreter {
                     id = i;
                 }
             }
-            output = "Successfully picked up pipe " + id +"\n";
+            output = "Successfully picked up pipe " + id +"."+"\n";
         }
 
         if(cmd.length > 2 && cmd[cmd.length - 2].equals(">")) {
@@ -782,6 +782,8 @@ public class CommandInterpreter {
 
     public static void test(String[] cmd) {
         String output = "";
+        File temp1 = new File("temp.txt");
+        temp1.delete();
         
         if(cmd[1].equals("-all")){
             for(int i = 1; i < 41; i++){

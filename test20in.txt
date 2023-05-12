@@ -1,0 +1,5 @@
+init
+add city
+add pipe -endpoint 1 city 0
+add mechanic -field city 0 -moves 1
+pickuppipe 0

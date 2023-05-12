@@ -1,0 +1,5 @@
+init
+add pump
+add pipe
+add mechanic -field pipe 0 -pump 0 -moves 1
+placepump 0
