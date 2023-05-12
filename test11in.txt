@@ -1,0 +1,5 @@
+init
+add source
+add city
+add pipe -endpoint 0 source 0 -endpoint 1 city 0 -has_water
+simulate_step

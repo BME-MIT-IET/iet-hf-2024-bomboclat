@@ -1,0 +1,4 @@
+init
+add pipe -has_hole
+add mechanic -field pipe 0 -moves 1
+fix 0
