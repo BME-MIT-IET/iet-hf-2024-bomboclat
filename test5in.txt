@@ -1,0 +1,5 @@
+init
+add source
+add mechanic -moves 1 -field source 0
+add pipe -endpoint 0 source 0
+move mechanic 0 pipe 0

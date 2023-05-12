@@ -555,7 +555,7 @@ public class CommandInterpreter {
             character.Move(0);
         } else {
             int direction = -1;
-            output = "Invalid input, not legal move for the character";
+            output = "Invalid input, not legal move for the character.";
             for(int i = 0;i < f.getNeighbourCount(); i++) {
                 if(desieredField == f.getNeighbour(i)) {
                     direction = i;

@@ -1,0 +1,5 @@
+init
+add city
+add mechanic -moves 1 -field city 0
+add pipe -endpoint 0 city 0
+move mechanic 0 pipe 0
