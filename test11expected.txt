@@ -1,0 +1,11 @@
+Game has been initialized.
+Source has been initialized.
+Source object's ID: 0
+City has been initialized.
+City object's ID: 0
+Pipe has been initialized.
+Pipe object's ID: 0
+deterministic behaviour
+Source (0) flows
+Pipe (0) flows
+City (0) flows

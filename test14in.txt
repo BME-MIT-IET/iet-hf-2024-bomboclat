@@ -1,0 +1,7 @@
+init
+add pump
+add source
+add pipe -endpoint 0 source 0 -endpoint 1 pump 0 -has_hole
+add pipe -endpoint 0 pump 0
+set pump 0 -input 0 -output 1
+simulate_step

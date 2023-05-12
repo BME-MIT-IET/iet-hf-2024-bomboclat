@@ -676,7 +676,7 @@ public class CommandInterpreter {
         Mechanic m = mechanics.get(Integer.parseInt(cmd[2]));
 
         if(m.getField().PlacePump(m.GetPumpInHand()) == null) {
-            output = "Pipe has been placed down successfully\n";
+            output = "Pipe has been placed down successfully.\n";
         }
 
         if(cmd.length > 2 && cmd[cmd.length - 2].equals(">")) {
@@ -957,7 +957,7 @@ public class CommandInterpreter {
 
         output = "Failure";
         if(m.PlacePipe()) {
-            output = "Pipe has been placed down successfully\n";
+            output = "Pipe has been placed down successfully.\n";
         } 
 
         if(cmd.length > 2 && cmd[cmd.length - 2].equals(">")) {
