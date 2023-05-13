@@ -790,7 +790,7 @@ public class CommandInterpreter {
                 File temp = new File("temp.txt");
                 temp.delete();
                 String outputtest = "";
-                String testname = "test" + i + "in.txt";
+                String testname = "tests/test" + i + "in.txt";
                 String[] testparams = {"read", testname, ">", "temp.txt"};
                 read(testparams);
             
@@ -808,7 +808,7 @@ public class CommandInterpreter {
 
                 List<String> expected = new ArrayList<String>();
                 expected.clear();
-                try (Stream<String> lines = Files.lines(Paths.get("test" + i + "expected.txt"))) {
+                try (Stream<String> lines = Files.lines(Paths.get("tests/test" + i + "expected.txt"))) {
                     expected = lines.collect(Collectors.toList());
                 } catch (IOException ie) {
                     System.out.println("Invalid file"); 
@@ -831,7 +831,7 @@ public class CommandInterpreter {
                 output += outputtest;
             }
         } else {
-            String testname = "test" + cmd[1] + "in.txt";
+            String testname = "tests/test" + cmd[1] + "in.txt";
             String[] testparams = {"read", testname, ">", "temp.txt"};
             read(testparams);
         
@@ -846,7 +846,7 @@ public class CommandInterpreter {
 
 
             List<String> expected = new ArrayList<String>();
-            try (Stream<String> lines = Files.lines(Paths.get("test" + cmd[1] + "expected.txt"))) {
+            try (Stream<String> lines = Files.lines(Paths.get("tests/test" + cmd[1] + "expected.txt"))) {
                 expected = lines.collect(Collectors.toList());
             } catch (IOException ie) {
                 System.out.println("Invalid file"); 
