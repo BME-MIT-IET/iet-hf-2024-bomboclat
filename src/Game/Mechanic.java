@@ -11,12 +11,20 @@ public class Mechanic extends Character{
     private Pump pump_in_hand;
     private int pipeEnd;
 
+    /**
+     * Mechanic default konstruktor
+     */
     public Mechanic() {
         pipe_in_hand = null;
         pump_in_hand = null;
         pipeEnd = -1;
     }
 
+    /**
+     * Mechanic konstruktor
+     * @param nMoves A szerelő lépéseinek száma egy körben
+     * @param nField Az a mező, amelyiken a szerelő áll
+     */
     public Mechanic(int nMoves, Field nField){
         super(nMoves, nField);
     }
@@ -75,27 +83,51 @@ public class Mechanic extends Character{
         }
     }
 
+    /**
+     * Setter a pump_in_hand tagváltozónak
+     * @param p A beállítani kívánt pumpa
+     */
     public void setPumpInHand(Pump p) {
         pump_in_hand = p;
     }
 
+    /**
+     * Getter a pipe_in_hand tagváltozónak
+     * @return A szerelő kezében lévő cső, vagy null, ha nincs a kezében cső
+     */
     public Pipe GetPipeInHand(){
         return pipe_in_hand;
     }
 
+    /**
+     * Getter a pump_in_hand tagváltozónak
+     * @return A szerelő kezében lévő pumpa, vagy null, ha nincs a kezében pumpa
+     */
     public Pump GetPumpInHand(){
         return pump_in_hand;
     }
 
+    /**
+     * Getter a szerelő kezében lévő cső végére
+     * @return A kezében lévő cső melyik vége van a kezében
+     */
     public int GetPipeEnd(){
         return pipeEnd;
     }
 
+    /**
+     * Setter a pipe_in_hand tagváltozónak
+     * @param pipe A beállítani kívánt cső
+     */
     public void SetPipeInHand(Pipe pipe){
         pipe_in_hand = pipe;
 	pipeEnd = 0;
     }
 
+    /**
+     * Setter a pipeEnd tagváltozónak
+     * @param end A beállítani kívánt csővég
+     */
     public void SetPipeEnd(int end){
         pipeEnd = end;
     }

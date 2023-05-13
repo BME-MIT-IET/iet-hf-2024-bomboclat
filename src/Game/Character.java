@@ -11,7 +11,9 @@ public class Character{
     protected Field field;
 
 
-
+    /**
+     * Character default konstruktor
+     */
     public Character() {
         moves = 0;
         field = null;
@@ -89,6 +91,11 @@ public class Character{
         return ret;
     }
 
+    /**
+     * A karakter beragasztózza amin éppen áll
+     * Ha nem csövön áll, akkor nem történik semmi
+     * @return ha igaz, akkor sikeresen beragasztózta a csövet
+     */
     public boolean Glue(){
         boolean ret = field.Glue();
         return ret;

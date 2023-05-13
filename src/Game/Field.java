@@ -132,5 +132,10 @@ abstract public class Field{
         return false;
     }
 
+    /**
+     * Visszaadja a szomszédok számát
+     * Ebben az esetben virtuális függvényként jelenik meg, a leszármazottakban felül kell definiálni
+     * @return Szomszédok száma
+     */
     abstract public int getNeighbourCount();
 }

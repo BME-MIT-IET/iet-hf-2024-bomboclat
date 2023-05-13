@@ -74,6 +74,10 @@ abstract public class Node extends Field implements Stepable{
         edges.remove(p);
     }
 
+    /**
+     * A szomszédok számát adja vissza
+     * @return Hány szomszédja van a csomópontnak
+     */
     public int getNeighbourCount(){
         return edges.size();
     }

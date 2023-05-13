@@ -265,6 +265,10 @@ public class Pipe extends Field implements Stepable{
         }
     }
 
+    /**
+     * A szomszédok számát adja vissza
+     * @return 2, mivel egy csőnek mindig 2 vége van
+     */
     public int getNeighbourCount(){
         return 2;
     }
