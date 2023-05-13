@@ -7,4 +7,4 @@ Pipe has been initialized.
 Pipe object's ID: 1
 Pipe has been initialized.
 Pipe object's ID: 2
-Pump0 has been modified.
+Pump 0 has been modified.

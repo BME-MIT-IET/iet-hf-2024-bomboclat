@@ -7,9 +7,9 @@ Pipe has been initialized.
 Pipe object's ID: 0
 Pipe has been initialized.
 Pipe object's ID: 1
-Pump0 has been modified.
+Pump 0 has been modified.
 deterministic behaviour
 Source (0) flows
+Pump (0) flows
 Pipe (0) flows
 Pipe (1) flows
-Pump (0) flows
