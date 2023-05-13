@@ -480,7 +480,7 @@ public class CommandInterpreter {
                 }
             }
             
-            output = String.format("Pump%d has been modified.\n", Integer.parseInt(cmd[2]));
+            output = String.format("Pump %d has been modified.\n", Integer.parseInt(cmd[2]));
             // pumps.add(pump);
         } else if(cmd[1].equals("pipe")) {
             Pipe pipe = pipes.get(Integer.parseInt(cmd[2]));;
@@ -713,7 +713,7 @@ public class CommandInterpreter {
 
     public static void pickuppump(String[] cmd) {
         String output = "";
-        Mechanic m = mechanics.get(Integer.parseInt(cmd[2]));
+        Mechanic m = mechanics.get(Integer.parseInt(cmd[1]));
         
         m.PickUpPump();
 
@@ -726,7 +726,7 @@ public class CommandInterpreter {
                     id = i;
                 }
             }
-            output = "Successfully picked up pump " + id +"\n";
+            output = "Successfully picked up pump " + id + "." + "\n";
         }
 
         if(cmd.length > 2 && cmd[cmd.length - 2].equals(">")) {
@@ -912,7 +912,7 @@ public class CommandInterpreter {
         String output = "";
 
         boolean random = false;
-        if(cmd.length > 1 && cmd[1].equals("-ranomd")) {
+        if(cmd.length > 1 && cmd[1].equals("-random")) {
             random = true;
         }
 
@@ -929,12 +929,6 @@ public class CommandInterpreter {
             }
         }
 
-        for(int i = 0; i < pipes.size(); i++) {
-            if(pipes.get(i) != null) {
-                output += "Pipe (" + i + ") flows\n";
-                pipes.get(i).Step(random);
-            }
-        }
 
         for(int i = 0; i < pumps.size(); i++) {
             if(pumps.get(i) != null) {
@@ -949,12 +943,20 @@ public class CommandInterpreter {
                 cities.get(i).Step(random);
             }
         }
-        
+
+        for(int i = 0; i < pipes.size(); i++) {
+            if(pipes.get(i) != null) {
+                output += "Pipe (" + i + ") flows\n";
+                pipes.get(i).Step(random);
+            }
+        }
+
         if(cmd.length > 2 && cmd[cmd.length - 2].equals(">")) {
             WriteToFile(cmd[cmd.length - 1], output);
         } else {
             System.out.print(output);
         }
+
     }
 
     public static void placepipe(String[] cmd) {

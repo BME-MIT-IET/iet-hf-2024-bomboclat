@@ -1,0 +1,4 @@
+init
+add city
+add mechanic -field city 0 -moves 1
+pickuppump 0

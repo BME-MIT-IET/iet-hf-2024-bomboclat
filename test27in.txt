@@ -1,0 +1,4 @@
+init
+add pipe
+add nomad -field pipe 0 -moves 1
+drill nomad 0 -drillable

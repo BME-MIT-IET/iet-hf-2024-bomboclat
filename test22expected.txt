@@ -1,0 +1,8 @@
+Game has been initialized.
+Pump has been initialized.
+Pump object's ID: 0
+Pipe has been initialized.
+Pipe object's ID: 0
+Mechanic has been initialized.
+Mechanic object's ID: 0
+Successfully picked up pipe null.

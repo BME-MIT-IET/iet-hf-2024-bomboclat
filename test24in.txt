@@ -1,0 +1,10 @@
+init
+add pump
+add source
+add city
+add pipe -endpoint 0 source 0 -endpoint 1 pump 0 
+add pipe -endpoint 0 pump 0 -endpoint 1 city 0
+set pump 0 -input 0 -output 1
+add mechanic -field pump 0 -moves 1
+simulate_step -random
+fix 0

@@ -1,0 +1,10 @@
+Game has been initialized.
+Source has been initialized.
+Source object's ID: 0
+Pipe has been initialized.
+Pipe object's ID: 0
+Mechanic has been initialized.
+Mechanic object's ID: 0
+Nomad has been initialized.
+Nomad object's ID: 0
+Invalid input, not legal move for the character.

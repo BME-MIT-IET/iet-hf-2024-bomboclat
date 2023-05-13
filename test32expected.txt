@@ -1,0 +1,7 @@
+Game has been initialized.
+Pipe has been initialized.
+Pipe object's ID: 0
+Mechanic has been initialized.
+Mechanic object's ID: 0
+Successfully repaired current field.
+Drilling not available.

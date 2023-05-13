@@ -1,0 +1,4 @@
+init
+add pump
+add nomad -field pump 0 -moves 1
+lube 0

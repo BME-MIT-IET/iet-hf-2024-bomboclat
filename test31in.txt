@@ -1,0 +1,4 @@
+init
+add source
+add mechanic -field source 0 -moves 1
+pickuppump 0

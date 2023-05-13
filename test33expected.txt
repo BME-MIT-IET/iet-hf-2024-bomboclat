@@ -1,0 +1,6 @@
+Game has been initialized.
+Pipe has been initialized.
+Pipe object's ID: 0
+Nomad has been initialized.
+Nomad object's ID: 0
+Successfully lubricated current field.

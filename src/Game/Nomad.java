@@ -16,7 +16,7 @@ public class Nomad extends Character{
     }
 
     public boolean Lube(){
-        boolean ret = this.Lube();
+        boolean ret = this.field.Lube();
         return ret;
     }
 }
