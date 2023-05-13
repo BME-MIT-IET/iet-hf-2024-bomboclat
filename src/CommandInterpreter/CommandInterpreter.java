@@ -787,6 +787,8 @@ public class CommandInterpreter {
         
         if(cmd[1].equals("-all")){
             for(int i = 1; i < 41; i++){
+                File temp = new File("temp.txt");
+                temp.delete();
                 String outputtest = "";
                 String testname = "test" + i + "in.txt";
                 String[] testparams = {"read", testname, ">", "temp.txt"};
@@ -795,28 +797,31 @@ public class CommandInterpreter {
             
 
                 List<String> result = new ArrayList<String>();
+                result.clear();
                 try (Stream<String> lines = Files.lines(Paths.get("temp.txt"))) {
                     result = lines.collect(Collectors.toList());
                 } catch (IOException ie) {
-                    System.out.println("Invalid file"); 
+                    System.out.println("Invalid file");
+                    continue; 
                 }
 
 
                 List<String> expected = new ArrayList<String>();
+                expected.clear();
                 try (Stream<String> lines = Files.lines(Paths.get("test" + i + "expected.txt"))) {
                     expected = lines.collect(Collectors.toList());
                 } catch (IOException ie) {
                     System.out.println("Invalid file"); 
+                    continue;
                 }
 
                 String differences = "";
-
                 if(result.size() != expected.size()) {
                     outputtest = "TEST " + i + " FAILED\nLength of the two results doesnt match\n";
                 } else {
                     outputtest = "TEST " + i + " OK\n";
                     for(int j = 0; j < result.size(); j++) {
-                        if(!result.get(i).equals(expected.get(i))) {
+                        if(!result.get(j).equals(expected.get(j))) {
                             outputtest = "TEST " + i + " FAILED\n";
                             differences += "Expected: " + expected.get(j) + "\nGot: " + result.get(j) + "\n";
                         }
