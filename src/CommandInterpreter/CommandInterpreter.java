@@ -651,7 +651,7 @@ public class CommandInterpreter {
     }
 
     public static void glue(String[] cmd) {
-        Character m = new Nomad();
+        Character m = new Character();
 
         if(cmd[1].equals("nomad")) {
             m = nomads.get(Integer.parseInt(cmd[2]));

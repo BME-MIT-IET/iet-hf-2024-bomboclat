@@ -1,0 +1,7 @@
+init
+add source
+add pump
+add pipe -endpoint 0 source 0 -endpoint 1 pump 0 -is_glued
+add mechanic -field source 0 -moves 2
+move mechanic 0 pipe 0
+move mechanic 0 pump 0

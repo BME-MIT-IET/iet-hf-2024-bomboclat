@@ -1,2 +1,1 @@
-TEST 10 FAILED
-Length of the two results doesnt match
+TEST 10 OK

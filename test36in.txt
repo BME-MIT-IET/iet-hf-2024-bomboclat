@@ -1,0 +1,4 @@
+init
+add pipe
+add nomad -field pipe 0 -moves 1
+glue nomad 0
