@@ -1,12 +1,15 @@
 package Game;
 
 import skeleton.*;
+import Graphics.NomadView;
 
 /**
  * A szabotőrt reprezentáló osztály
  */
 public class Nomad extends Character{
     
+
+    private NomadView nomadView;
     /**
      * Nomad default konstruktor
      */
@@ -29,5 +32,13 @@ public class Nomad extends Character{
     public boolean Lube(){
         boolean ret = this.field.Lube();
         return ret;
+    }
+
+    public void setView(NomadView view){
+        nomadView = view;
+    }
+
+    public void getView(){
+        return nomadView;
     }
 }

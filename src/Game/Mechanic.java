@@ -1,6 +1,6 @@
 package Game;
 import skeleton.*;
-
+import Graphics.MechanicView;
 
 /**
  * A szerelőt reprezentáló osztály
@@ -10,6 +10,7 @@ public class Mechanic extends Character{
     private Pipe pipe_in_hand;
     private Pump pump_in_hand;
     private int pipeEnd;
+    private MechanicView mechanicView;
 
     /**
      * Mechanic default konstruktor
@@ -17,6 +18,7 @@ public class Mechanic extends Character{
     public Mechanic() {
         pipe_in_hand = null;
         pump_in_hand = null;
+        mechanicView = null;
         pipeEnd = -1;
     }
 
@@ -130,5 +132,13 @@ public class Mechanic extends Character{
      */
     public void SetPipeEnd(int end){
         pipeEnd = end;
+    }
+
+    public void setView(MechanicView view){
+        mechanicView = view;
+    }
+
+    public MechanicView getView(){
+        return mechanicView;
     }
 }
