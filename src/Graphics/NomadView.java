@@ -28,13 +28,13 @@ public class NomadView implements IView{
     }
 
     @Override
-    public int GetPlayerPositionX() {
+    public int getPlayerPositionX() {
         //TODO
         return 0;
     }
 
-    @Override
-    public int GetPlayerPositionY() {
+
+    public int getPlayerPositionY() {
         //TODO
         return 0;
     }
