@@ -22,6 +22,10 @@ public class PumpView extends NodeView{
 
     public Pump getPump() {return pump;}
 
+    /**
+     * Kirajzolja a pumpát a pumpa megfelelő állapota szerint
+     * @param g Az a graphics objektum, amire rajzolunk.
+     */
     @Override
     public void Update(Graphics g) {
         int SIZE = 10;
