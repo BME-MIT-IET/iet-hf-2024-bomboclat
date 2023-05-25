@@ -17,6 +17,7 @@ public class Game {
     //A pályát tároló változó.
     Playfield currPlayfield;
 
+
     /**
      * Game konstruktor
      */
@@ -29,7 +30,7 @@ public class Game {
     /**
      * Elindítja a játékmenetet.
      */        
-    public void StartGame(){
+    public void StartGame(int _characters){
         round_count = 0;
         currPlayfield = new Playfield();
 
@@ -55,15 +56,12 @@ public class Game {
         p1.Change(pipe4, pipe3);
         p2.Change(pipe3, pipe2);
 
-        Mechanic m1 = new Mechanic(5, p1);
-        Mechanic m2 = new Mechanic(5, p1);
-        Nomad n1 = new Nomad(5, p2);
-        Nomad n2 = new Nomad(5, p2);
-        
-        characters.add(m1);
-        characters.add(m2);
-        characters.add(n1);
-        characters.add(n2);
+        for(int i=0; i<_characters; i++) {
+            characters.add(new Mechanic(5, p1));
+            characters.add(new Nomad(5, p2));
+        }
+        //teszt
+        System.out.print(characters.size());
 
         currPlayfield.addNode(p1);
         currPlayfield.addNode(p2);
