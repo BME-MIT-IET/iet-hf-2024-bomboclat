@@ -6,6 +6,6 @@ import java.awt.Graphics;
  */
 public interface IView {
    public void Update(Graphics g);
-   public int GetPlayerPositionX();
-   public int GetPlayerPositionY();
+   public int getPlayerPositionX();
+   public int getPlayerPositionY();
 }
