@@ -1,11 +1,12 @@
 package Graphics;
+import Game.Nomad;
 
-public class NomadView : IView{
+public class NomadView implements IView{
     private Nomad nomad;
     private int x;
     private int y;
 
-    public Nomad(){
+    public NomadView(){
         x = y = 0;
         nomad = null;
     }

@@ -2,6 +2,7 @@ package Game;
 
 import skeleton.*;
 import Graphics.NomadView;
+import Graphics.IView;
 
 /**
  * A szabotőrt reprezentáló osztály
@@ -38,7 +39,7 @@ public class Nomad extends Character{
         nomadView = view;
     }
 
-    public void getView(){
+    public IView getView(){
         return nomadView;
     }
 }

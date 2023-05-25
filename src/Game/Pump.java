@@ -1,6 +1,6 @@
 package Game;
 import skeleton.*;
-
+import Graphics.PumpView;
 
 /**
  * A pumpát reprezentáló osztály.
@@ -18,6 +18,8 @@ public class Pump extends Node{
      * Azt tárolja, hogy melyik Pipe objektumba pumpál vizet.
      */
     Pipe where;
+
+    PumpView pumpview;
 
     /**
      * Pump konstruktora.
@@ -127,4 +129,11 @@ public class Pump extends Node{
         from = p;
     }
 
+    public void setView(PumpView pw) {
+        pumpview = pw;
+    }
+
+    public PumpView getView() {return pumpview;}
+
+    public boolean isWorking() {return working;}
 }

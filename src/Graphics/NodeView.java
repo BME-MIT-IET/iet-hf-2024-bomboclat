@@ -4,7 +4,7 @@ import Game.Node;
 
 import java.awt.*;
 
-public abstract class NodeView {
+public abstract class NodeView implements IView{
     /**
      * A Node X koordinátája.
      */

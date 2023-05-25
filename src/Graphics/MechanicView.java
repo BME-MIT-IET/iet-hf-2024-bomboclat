@@ -1,12 +1,12 @@
 package Graphics;
 import Game.Mechanic;
 
-public class MechanicView : IView{
+public class MechanicView implements IView{
     private Mechanic mechanic;
     private int x;
     private int y;
 
-    MechanicView(){
+    public MechanicView(){
         x = 0;
         y = 0;
         mechanic = null;
