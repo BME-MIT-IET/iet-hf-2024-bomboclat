@@ -78,10 +78,10 @@ public class Game {
         for(int i=0; i<_characters; i++) {
             Mechanic mech = new Mechanic(5, p1);
             characters.add(mech);
-            //ret.add(mech.getView());
+            ret.add(mech.getView());
             Nomad nom = new Nomad(5, p2);
             characters.add(nom);
-            //ret.add(nom.getView());
+            ret.add(nom.getView());
         }
         return ret;
     }
