@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
+import Graphics.*;
 import skeleton.*;
 
 
@@ -27,6 +28,8 @@ public class Pipe extends Field implements Stepable{
     boolean slippery;
     //Azt tárolja, hogy ragadós-e a cső.
     boolean sticky;
+    //Megjelenítését kezelő View objektum.
+    PipeView pipeView;
 
     /**
      * Pipe konstruktora.
@@ -271,5 +274,28 @@ public class Pipe extends Field implements Stepable{
      */
     public int getNeighbourCount(){
         return 2;
+    }
+
+    /**
+     * Visszaadja azt a PipeView objektumot, ami felelős a megjelenítéséért.
+     */
+    public PipeView getView(){
+        return pipeView;
+    }
+
+    /**
+     * Beállítja v objektumra a pipeView attribútumot.
+     * @param v
+     */
+    public void setView(IView v){
+        pipeView= (PipeView) v;
+    }
+
+    public boolean getHasWater(){
+        return has_water;
+    }
+
+    public boolean getHasHole(){
+        return has_hole;
     }
 }

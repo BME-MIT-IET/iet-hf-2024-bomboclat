@@ -3,6 +3,8 @@ package Game;
 import java.util.ArrayList;
 import java.util.List;
 
+import Graphics.*;
+
 
 /**
  * A karakterek által használható mezőket reprezentáló osztály.
@@ -137,4 +139,7 @@ abstract public class Field{
      * @return Szomszédok száma
      */
     abstract public int getNeighbourCount();
+
+    abstract public IView getView();
+    abstract public void setView(IView view);
 }
