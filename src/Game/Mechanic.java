@@ -18,7 +18,6 @@ public class Mechanic extends Character{
     public Mechanic() {
         pipe_in_hand = null;
         pump_in_hand = null;
-        mechanicView = null;
         pipeEnd = -1;
         mechanicView = new MechanicView();
         mechanicView.setMechanic(this);

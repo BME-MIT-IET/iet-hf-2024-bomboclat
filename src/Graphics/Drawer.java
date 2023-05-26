@@ -32,7 +32,8 @@ public class Drawer extends Canvas{
      */
     public void Draw(Graphics g) {
         for(IView v : viewable) {
-            v.Update(g);
+            if(v != null)
+                v.Update(g);
         }
     }
 
