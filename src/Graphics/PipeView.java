@@ -84,7 +84,7 @@ public class PipeView implements IView{
         }
         if(hasHole){
             g2.setColor(Color.RED);
-            g2.drawOval(getPlayerPositionX(), getPlayerPositionY(), NodeSize/2, NodeSize/2);
+            g2.fillOval(getPlayerPositionX(), getPlayerPositionY(), NodeSize, NodeSize);
         }
     }
 
@@ -107,10 +107,10 @@ public class PipeView implements IView{
         }
         int halfway;
         if(end1X>=end0X){
-            halfway = (end1X-end0X)/2+end0X;
+            halfway = (end1X-end0X)/2+end0X+5;
             return halfway;
         }
-        halfway = (end0X-end1X)/2+end1X;
+        halfway = (end0X-end1X)/2+end1X-5;
         return halfway;
     }
 
@@ -125,10 +125,10 @@ public class PipeView implements IView{
         }
         int halfway;
         if(end1Y>=end0Y){
-            halfway = (end1Y-end0Y)/2+end0Y;
+            halfway = (end1Y-end0Y)/2+end0Y-5;
             return halfway;
         }
-        halfway = (end0Y-end1Y)/2+end1Y;
+        halfway = (end0Y-end1Y)/2+end1Y+5;
         return halfway;
     }
 }
