@@ -47,7 +47,6 @@ public class Game {
         ret.add(s1.getView());
 
         Pump p1 = new Pump();
-        p1.Die();
         p1.getView().setX(50);
         p1.getView().setY(100);
         ret.add(p1.getView());
@@ -79,10 +78,10 @@ public class Game {
         for(int i=0; i<_characters; i++) {
             Mechanic mech = new Mechanic(5, p1);
             characters.add(mech);
-            ret.add(mech.getView());
+            //ret.add(mech.getView());
             Nomad nom = new Nomad(5, p2);
             characters.add(nom);
-            ret.add(nom.getView());
+            //ret.add(nom.getView());
         }
         return ret;
     }
