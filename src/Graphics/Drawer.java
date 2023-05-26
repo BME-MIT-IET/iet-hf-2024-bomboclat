@@ -3,6 +3,7 @@ package Graphics;
 import java.awt.Canvas;
 import java.awt.Color;
 import java.awt.Graphics;
+import java.awt.image.BufferedImage;
 import java.util.*;
 
 public class Drawer extends Canvas{
@@ -43,7 +44,11 @@ public class Drawer extends Canvas{
      * Erre hív a repaint az újrarajzoláshoz
      */
     public void paint(Graphics g) {
-        setBackground(Color.WHITE);
-        Draw(g);
+        BufferedImage bim = new BufferedImage(this.getWidth(),this.getHeight(), BufferedImage.TYPE_INT_RGB);
+        Graphics img = bim.getGraphics(); 
+        img.setColor(Color.WHITE);  
+        img.fillRect(0, 0, getWidth(), getHeight());
+        Draw(img);
+        g.drawImage(bim,0,0,null);
     }
 }

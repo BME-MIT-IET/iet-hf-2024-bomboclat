@@ -6,6 +6,7 @@ import Game.Pump;
 
 public class PumpView extends NodeView{
     Pump pump;
+    int SIZE = 30;
 
     /**
      * Konstruktor
@@ -18,6 +19,21 @@ public class PumpView extends NodeView{
         pump = p;
     }
 
+    /**
+     * Visszaadja a Node X koordinátáját.
+     * @return A Node X koordinátája.
+     */
+    public int getPlayerPositionX() {
+        return x + SIZE / 2;
+    }
+    /**
+     * Visszaadja a Node Y koordinátáját.
+     * @return A Node Y koordinátája.
+     */
+    public int getPlayerPositionY() {
+        return y + SIZE / 2;
+    }
+
     public void setPump(Pump p) { pump = p;}
 
     public Pump getPump() {return pump;}
@@ -28,9 +44,8 @@ public class PumpView extends NodeView{
      */
     @Override
     public void Update(Graphics g) {
-        int SIZE = 30;
         g.setColor(Color.BLACK);
-        g.fillOval(getPlayerPositionX(), getPlayerPositionY(), SIZE, SIZE);
+        g.fillOval(x, y, SIZE, SIZE);
         if(!pump.isWorking()) {
             g.setColor(Color.RED);
             g.drawLine((int)Math.cos(Math.PI / 6) + getPlayerPositionX(),(int)Math.sin(Math.PI / 6) + getPlayerPositionY(),(int)Math.cos(Math.PI *180/150) + getPlayerPositionX(),(int)Math.sin(Math.PI * 180/150) + getPlayerPositionY());
