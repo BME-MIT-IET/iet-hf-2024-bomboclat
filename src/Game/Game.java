@@ -3,6 +3,8 @@ package Game;
 import java.util.ArrayList;
 import java.util.List;
 
+import Graphics.*;
+
 import skeleton.*;
 
 

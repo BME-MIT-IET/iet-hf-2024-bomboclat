@@ -9,7 +9,7 @@ import java.awt.event.KeyEvent;
 
 public class GameFrame extends JFrame {
     private JPanel control;
-    private Drawer canvas;
+    private Drawer canvas = new Drawer();
     private Color bgColor = new Color(255, 238, 203);
     private Game currentGame;
 
@@ -28,13 +28,17 @@ public class GameFrame extends JFrame {
 
         this.control = new JPanel();
         this.control.setLayout(new BorderLayout());
-        //init canvas
+        initCanvas();
         this.menuBar = this.createMenuBar();
         this.menuBar.setBackground(bgColor);
         this.menuBar.setBorder(new LineBorder(bgColor));
         this.setJMenuBar(this.menuBar);
 
         this.currentGame = new Game();
+    }
+
+    private void initCanvas() {
+        add(canvas, BorderLayout.CENTER);
     }
 
     private JMenuBar createMenuBar() {
