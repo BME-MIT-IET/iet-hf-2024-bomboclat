@@ -17,16 +17,18 @@ public class PipeView implements IView{
         if(pipe.getEndpoint(0)!=null){
             end0X = pipe.getEndpoint(0).getView().getPlayerPositionX();
             end0Y = pipe.getEndpoint(0).getView().getPlayerPositionY();
-        }else{
-            end0X = -1;
-            end0Y = -1;
         }
         if(pipe.getEndpoint(1)!= null){
             end1X = pipe.getEndpoint(1).getView().getPlayerPositionX();
             end1Y = pipe.getEndpoint(1).getView().getPlayerPositionY();
-        }else{
-            end1X = -1;
-            end1Y = -1;
+        }
+
+        if(pipe.getEndpoint(0)!=null && pipe.getEndpoint(1)== null){
+            end1X = pipe.getEndpoint(0).getView().getPlayerPositionX()+15;
+            end1Y = pipe.getEndpoint(0).getView().getPlayerPositionY()+15;
+        }else if(pipe.getEndpoint(0)==null && pipe.getEndpoint(1)!= null){
+            end0X = pipe.getEndpoint(1).getView().getPlayerPositionX()+15;
+            end0Y = pipe.getEndpoint(1).getView().getPlayerPositionY()+15;
         }
     }
 
@@ -39,7 +41,6 @@ public class PipeView implements IView{
         boolean hasHole = pipe.getHasHole();
 
         
-        //TODO kezelni kell, ha nincs szomszédja
         if(pipe.getEndpoint(0)!=null){
             end0X = pipe.getEndpoint(0).getView().getPlayerPositionX();
             end0Y = pipe.getEndpoint(0).getView().getPlayerPositionY();
