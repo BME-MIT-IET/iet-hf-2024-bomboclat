@@ -30,6 +30,8 @@ public class Mechanic extends Character{
      */
     public Mechanic(int nMoves, Field nField){
         super(nMoves, nField);
+        mechanicView = new MechanicView();
+        mechanicView.setMechanic(this);
     }
 
     /**
