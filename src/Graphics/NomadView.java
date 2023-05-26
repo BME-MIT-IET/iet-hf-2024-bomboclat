@@ -40,7 +40,7 @@ public class NomadView implements IView{
             imageName = imageName.concat("-selected");
         }
         try{
-            BufferedImage image = ImageIO.read(getClass().getResourceAsStream(imageName + ".png"));
+            BufferedImage image = ImageIO.read(getClass().getResourceAsStream("Images\\" + imageName + ".png"));
             g.drawImage(image, x, y, null);
         }
         catch(IOException e){
