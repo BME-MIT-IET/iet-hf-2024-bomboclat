@@ -1,6 +1,7 @@
 package Game;
 import skeleton.*;
 
+import Graphics.CityView;
 
 /**
  * A ciszternát reprezentáló osztály.
@@ -10,6 +11,13 @@ public class City extends Node{
      * A városba (más néven ciszternába) befolyt víz mennyisége. A szerelők pontszámát reprezentálja
      */
     private int consumed;
+
+    /**
+     * Tárolja a City(város/ciszterna) objektum kirajzolásáért felelős
+     * CityView objektumot.
+     */
+    private CityView cityView;
+
     /**
      * City konstruktora.
      */
@@ -61,4 +69,19 @@ public class City extends Node{
     }
 
 
+    /**
+     * Beállítja az objektumhoz tartozó cityView
+     * objektumot a függvény paraméterében megkapott view-ra.
+     */
+    public void setView(CityView view){
+        this.cityView = view;
+    }
+
+    /**
+     * Visszaadja az osztály cityView attribútumában tárolt CityView
+     * objektumot. 
+     */
+    public CityView getView(){
+        return this.cityView;
+    }
 }

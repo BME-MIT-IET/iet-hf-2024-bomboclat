@@ -9,6 +9,12 @@ import skeleton.*;
 public class Source extends Node{
 
     /**
+     * Tárolja a Source(vízforrás) objektum kirajzolásáért felelős
+     * SourceView objektumot.
+     */
+    private SourceView sourceView;
+
+    /**
      * Source konstruktora.
      */
     public Source(){
@@ -50,4 +56,21 @@ public class Source extends Node{
             m.SetPipeEnd(1);
         }
     }
+
+    /**
+     * Beállítja az objektumhoz tartozó sourceView
+     * objektumot a függvény paraméterében megkapott view-ra.
+     */
+    public void setView(SourceView view){
+        this.sourceView = view;
+    }
+
+    /**
+     * Visszaadja az osztály sourceView attribútumában tárolt
+     * SourceView objektumot.
+     */
+    public SourceView getView(){
+        return this.sourceView;
+    }
+
 }

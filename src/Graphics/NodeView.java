@@ -8,11 +8,11 @@ public abstract class NodeView implements IView{
     /**
      * A Node X koordinátája.
      */
-    private int x;
+    protected int x;
     /**
      * A Node Y koordinátája.
      */
-    private int y;
+    protected int y;
     /**
      * A kirajzolandó Node objektum.
      */
