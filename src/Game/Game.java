@@ -60,15 +60,6 @@ public class Game {
             characters.add(new Mechanic(5, p1));
             characters.add(new Nomad(5, p2));
         }
-        //teszt
-        System.out.print(characters.size());
-
-        currPlayfield.addNode(p1);
-        currPlayfield.addNode(p2);
-        currPlayfield.addPipe(pipe1);
-        currPlayfield.addPipe(pipe2);
-        currPlayfield.addPipe(pipe3);
-        currPlayfield.addPipe(pipe4);
     }
 
     /**

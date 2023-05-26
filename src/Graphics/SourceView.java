@@ -19,6 +19,7 @@ public class SourceView extends NodeView{
     /**
      * X és Y koordináták alapján(Node-től örökölt attribútumok) elvégzi a
      * source kirajzolását.
+     * A kirajzolt kép: Egy téglalap(kék) benne egy körrel(fekete)
      */ 
     @Override
     public void Update(Graphics g) {
