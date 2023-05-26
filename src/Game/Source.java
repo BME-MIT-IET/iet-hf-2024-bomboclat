@@ -19,7 +19,7 @@ public class Source extends Node{
      * Source konstruktora.
      */
     public Source(){
-        
+        sourceView = new SourceView(10, 10, this);
     }
 
     /**

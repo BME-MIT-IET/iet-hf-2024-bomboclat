@@ -3,6 +3,8 @@ package Game;
 import java.util.ArrayList;
 import java.util.List;
 
+import Graphics.*;
+
 import skeleton.*;
 
 
@@ -30,19 +32,36 @@ public class Game {
     /**
      * Elindítja a játékmenetet.
      */        
-    public void StartGame(int _characters){
+    public List<IView> StartGame(int _characters){
+        List<IView> ret = new ArrayList<IView>();
         round_count = 0;
         currPlayfield = new Playfield();
 
         City c1 = new City();
+        c1.getView().setX(20);
+        c1.getView().setY(20);
+        ret.add(c1.getView());
         Source s1 = new Source();
-        
+        s1.getView().setX(200);
+        s1.getView().setY(20);
+        ret.add(s1.getView());
+
         Pump p1 = new Pump();
+        p1.getView().setX(50);
+        p1.getView().setY(100);
+        ret.add(p1.getView());
         Pump p2 = new Pump();
+        p2.getView().setX(50);
+        p2.getView().setY(200);
+        ret.add(p2.getView());
         Pipe pipe1 = new Pipe();
+        ret.add(pipe1.getView());
         Pipe pipe2 = new Pipe();
+        ret.add(pipe2.getView());
         Pipe pipe3 = new Pipe();
+        ret.add(pipe3.getView());
         Pipe pipe4 = new Pipe();
+        ret.add(pipe4.getView());
 
         pipe1.setEndpoint(c1, 1);
         pipe1.setEndpoint(s1, 0);
@@ -57,9 +76,14 @@ public class Game {
         p2.Change(pipe3, pipe2);
 
         for(int i=0; i<_characters; i++) {
-            characters.add(new Mechanic(5, p1));
-            characters.add(new Nomad(5, p2));
+            Mechanic mech = new Mechanic(5, p1);
+            characters.add(mech);
+            ret.add(mech.getView());
+            Nomad nom = new Nomad(5, p2);
+            characters.add(nom);
+            ret.add(nom.getView());
         }
+        return ret;
     }
 
     /**

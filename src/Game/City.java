@@ -24,6 +24,7 @@ public class City extends Node{
      */
     public City(){
         consumed=0;
+        cityView = new CityView(10, 10, this);
     }
 
     /**
