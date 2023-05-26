@@ -48,8 +48,8 @@ public class PumpView extends NodeView{
         g.fillOval(x, y, SIZE, SIZE);
         if(!pump.isWorking()) {
             g.setColor(Color.RED);
-            g.drawLine((int)Math.cos(Math.PI / 6) + getPlayerPositionX(),(int)Math.sin(Math.PI / 6) + getPlayerPositionY(),(int)Math.cos(Math.PI *180/150) + getPlayerPositionX(),(int)Math.sin(Math.PI * 180/150) + getPlayerPositionY());
-            g.drawLine((int)Math.cos(Math.PI *120/180) + getPlayerPositionX(),(int)Math.sin(Math.PI *120/180) + getPlayerPositionY(),(int)Math.cos(Math.PI * 330/180) + getPlayerPositionX(),(int)Math.sin(Math.PI* 330/180) + getPlayerPositionY());
+            g.drawLine((int)Math.cos(Math.PI / 6) * SIZE + getPlayerPositionX(),(int)Math.sin(Math.PI / 6) * SIZE+ getPlayerPositionY(),(int)Math.cos(Math.PI *180/150)* SIZE + getPlayerPositionX(),(int)Math.sin(Math.PI * 180/150) * SIZE+ getPlayerPositionY());
+            g.drawLine((int)Math.cos(Math.PI *120/180)* SIZE + getPlayerPositionX(),(int)Math.sin(Math.PI *120/180) * SIZE+ getPlayerPositionY(),(int)Math.cos(Math.PI * 330/180)* SIZE + getPlayerPositionX(),(int)Math.sin(Math.PI* 330/180) * SIZE+ getPlayerPositionY());
         }
     }
 }

@@ -47,6 +47,7 @@ public class Game {
         ret.add(s1.getView());
 
         Pump p1 = new Pump();
+        p1.Die();
         p1.getView().setX(50);
         p1.getView().setY(100);
         ret.add(p1.getView());

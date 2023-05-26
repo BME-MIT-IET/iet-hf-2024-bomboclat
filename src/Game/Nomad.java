@@ -25,6 +25,8 @@ public class Nomad extends Character{
      */
     public Nomad(int nMoves, Field nField){
         super(nMoves, nField);
+        nomadView = new NomadView();
+        nomadView.setNomad(this);
     }
 
     /**
