@@ -299,4 +299,8 @@ public class Pipe extends Field implements Stepable{
     public boolean getHasHole(){
         return has_hole;
     }
+
+    public void setHasWater(boolean t){
+        has_water = t;
+    }
 }
