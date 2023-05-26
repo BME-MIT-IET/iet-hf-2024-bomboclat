@@ -74,4 +74,9 @@ public class Source extends Node{
         return this.sourceView;
     }
 
+    @Override
+    public void setView(IView view) {
+        sourceView = (SourceView)view;
+    }
+
 }

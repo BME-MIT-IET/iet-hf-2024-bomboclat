@@ -137,4 +137,9 @@ public class Pump extends Node{
     public PumpView getView() {return pumpview;}
 
     public boolean isWorking() {return working;}
+
+    @Override
+    public void setView(IView view) {
+        pumpview = (PumpView)view;
+    }
 }

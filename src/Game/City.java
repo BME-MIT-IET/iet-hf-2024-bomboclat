@@ -85,4 +85,9 @@ public class City extends Node{
     public CityView getView(){
         return this.cityView;
     }
+
+    @Override
+    public void setView(IView view) {
+        cityView = (CityView)view;
+    }
 }
