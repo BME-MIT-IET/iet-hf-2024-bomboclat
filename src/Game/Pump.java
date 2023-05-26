@@ -1,5 +1,6 @@
 package Game;
 import skeleton.*;
+import Graphics.IView;
 import Graphics.PumpView;
 
 /**
@@ -129,8 +130,8 @@ public class Pump extends Node{
         from = p;
     }
 
-    public void setView(PumpView pw) {
-        pumpview = pw;
+    public void setView(IView pw) {
+        pumpview = (PumpView) pw;
     }
 
     public PumpView getView() {return pumpview;}

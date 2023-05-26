@@ -1,6 +1,6 @@
 package Game;
 import skeleton.*;
-
+import Graphics.IView;
 import Graphics.SourceView;
 
 
@@ -62,8 +62,8 @@ public class Source extends Node{
      * Beállítja az objektumhoz tartozó sourceView
      * objektumot a függvény paraméterében megkapott view-ra.
      */
-    public void setView(SourceView view){
-        this.sourceView = view;
+    public void setView(IView view){
+        this.sourceView = (SourceView) view;
     }
 
     /**
