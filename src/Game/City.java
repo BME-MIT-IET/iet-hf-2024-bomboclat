@@ -74,6 +74,7 @@ public class City extends Node{
      * Beállítja az objektumhoz tartozó cityView
      * objektumot a függvény paraméterében megkapott view-ra.
      */
+    @Override
     public void setView(IView view){
         this.cityView = (CityView) view;
     }
@@ -86,8 +87,5 @@ public class City extends Node{
         return this.cityView;
     }
 
-    @Override
-    public void setView(IView view) {
-        cityView = (CityView)view;
-    }
+    
 }

@@ -62,6 +62,7 @@ public class Source extends Node{
      * Beállítja az objektumhoz tartozó sourceView
      * objektumot a függvény paraméterében megkapott view-ra.
      */
+    @Override
     public void setView(IView view){
         this.sourceView = (SourceView) view;
     }
@@ -74,9 +75,6 @@ public class Source extends Node{
         return this.sourceView;
     }
 
-    @Override
-    public void setView(IView view) {
-        sourceView = (SourceView)view;
-    }
+    
 
 }

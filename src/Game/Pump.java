@@ -130,6 +130,7 @@ public class Pump extends Node{
         from = p;
     }
 
+    @Override
     public void setView(IView pw) {
         pumpview = (PumpView) pw;
     }
@@ -138,8 +139,5 @@ public class Pump extends Node{
 
     public boolean isWorking() {return working;}
 
-    @Override
-    public void setView(IView view) {
-        pumpview = (PumpView)view;
-    }
+    
 }
