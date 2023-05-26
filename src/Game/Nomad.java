@@ -9,7 +9,6 @@ import Graphics.IView;
  */
 public class Nomad extends Character{
     
-
     private NomadView nomadView;
     /**
      * Nomad default konstruktor

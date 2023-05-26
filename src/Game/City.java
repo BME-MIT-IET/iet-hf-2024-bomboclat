@@ -2,6 +2,7 @@ package Game;
 import skeleton.*;
 
 import Graphics.CityView;
+import Graphics.IView;
 
 /**
  * A ciszternát reprezentáló osztály.
@@ -73,8 +74,9 @@ public class City extends Node{
      * Beállítja az objektumhoz tartozó cityView
      * objektumot a függvény paraméterében megkapott view-ra.
      */
-    public void setView(CityView view){
-        this.cityView = view;
+    @Override
+    public void setView(IView view){
+        this.cityView = (CityView) view;
     }
 
     /**
@@ -84,4 +86,6 @@ public class City extends Node{
     public CityView getView(){
         return this.cityView;
     }
+
+    
 }

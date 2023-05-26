@@ -1,6 +1,7 @@
 package Graphics;
 
 import Game.Game;
+import Game.Mechanic;
 
 import javax.swing.*;
 import javax.swing.border.LineBorder;
@@ -12,7 +13,6 @@ public class GameFrame extends JFrame {
     private Drawer canvas = new Drawer();
     private Color bgColor = new Color(255, 238, 203);
     private Game currentGame;
-
     private JMenuBar menuBar;
 
     public GameFrame(String title) {
