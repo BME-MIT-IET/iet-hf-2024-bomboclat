@@ -28,7 +28,7 @@ public class GameFrame extends JFrame {
 
         this.control = new JPanel();
         this.control.setLayout(new BorderLayout());
-        initCanvas();
+        initCanvas(); //TEMPORARY
         this.menuBar = this.createMenuBar();
         this.menuBar.setBackground(bgColor);
         this.menuBar.setBorder(new LineBorder(bgColor));
@@ -37,6 +37,7 @@ public class GameFrame extends JFrame {
         this.currentGame = new Game();
     }
 
+    //TEMPORARY
     private void initCanvas() {
         currentGame = new Game();
         canvas.setViewables(currentGame.StartGame(3));
