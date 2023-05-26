@@ -38,6 +38,8 @@ public class GameFrame extends JFrame {
     }
 
     private void initCanvas() {
+        currentGame = new Game();
+        canvas.setViewables(currentGame.StartGame(3));
         add(canvas, BorderLayout.CENTER);
     }
 

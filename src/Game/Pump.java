@@ -29,6 +29,7 @@ public class Pump extends Node{
         working = true;
         from = null;
         where = null;
+        pumpview = new PumpView(10, 10, this);
     }
 
     /**

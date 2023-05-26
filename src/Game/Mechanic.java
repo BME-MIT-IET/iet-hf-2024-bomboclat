@@ -20,6 +20,8 @@ public class Mechanic extends Character{
         pump_in_hand = null;
         mechanicView = null;
         pipeEnd = -1;
+        mechanicView = new MechanicView();
+        mechanicView.setMechanic(this);
     }
 
     /**

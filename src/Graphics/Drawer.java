@@ -36,6 +36,8 @@ public class Drawer extends Canvas{
         }
     }
 
+    public void setViewables(List<IView> l) {viewable = l;}
+
     /**
      * Erre hív a repaint az újrarajzoláshoz
      */

@@ -14,6 +14,8 @@ public class Nomad extends Character{
      * Nomad default konstruktor
      */
     public Nomad() {
+        nomadView = new NomadView();
+        nomadView.setNomad(this);
     }
 
     /**

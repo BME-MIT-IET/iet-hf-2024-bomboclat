@@ -28,9 +28,9 @@ public class PumpView extends NodeView{
      */
     @Override
     public void Update(Graphics g) {
-        int SIZE = 10;
+        int SIZE = 30;
         g.setColor(Color.BLACK);
-        g.drawOval(getPlayerPositionX(), getPlayerPositionY(), SIZE, SIZE);
+        g.fillOval(getPlayerPositionX(), getPlayerPositionY(), SIZE, SIZE);
         if(!pump.isWorking()) {
             g.setColor(Color.RED);
             g.drawLine((int)Math.cos(Math.PI / 6) + getPlayerPositionX(),(int)Math.sin(Math.PI / 6) + getPlayerPositionY(),(int)Math.cos(Math.PI *180/150) + getPlayerPositionX(),(int)Math.sin(Math.PI * 180/150) + getPlayerPositionY());

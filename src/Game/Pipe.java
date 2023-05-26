@@ -42,6 +42,7 @@ public class Pipe extends Field implements Stepable{
         endpoints = new ArrayList<Node>(2);
         endpoints.add(null);
         endpoints.add(null);
+        pipeView = new PipeView(this);
     }
 
     /**
