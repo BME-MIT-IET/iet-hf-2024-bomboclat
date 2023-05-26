@@ -64,7 +64,7 @@ public class PipeView implements IView{
 
 
         Graphics2D g2 = (Graphics2D) g;
-        g2.setStroke(new BasicStroke(7));
+        g2.setStroke(new BasicStroke(10));
 
         if(!haswater){
             g2.setColor(Color.BLACK);
@@ -77,10 +77,9 @@ public class PipeView implements IView{
             g2.setColor(Color.cyan);
             g2.setStroke(new BasicStroke(4));
             g2.draw(new Line2D.Float(end0X, end0Y, end1X, end1Y));
-        }
-        if(isSticky){
-            g2.setColor(new Color(102,51,0));
-            g2.setStroke(new BasicStroke(2));
+        }else if(isSticky){
+            g2.setColor(new Color(153,102,0));
+            g2.setStroke(new BasicStroke(4));
             g2.draw(new Line2D.Float(end0X, end0Y, end1X, end1Y));
         }
         if(hasHole){
