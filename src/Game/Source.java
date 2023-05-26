@@ -1,6 +1,6 @@
 package Game;
 import skeleton.*;
-
+import Graphics.IView;
 import Graphics.SourceView;
 
 
@@ -72,6 +72,11 @@ public class Source extends Node{
      */
     public SourceView getView(){
         return this.sourceView;
+    }
+
+    @Override
+    public void setView(IView view) {
+        sourceView = (SourceView)view;
     }
 
 }
