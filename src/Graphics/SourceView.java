@@ -19,12 +19,18 @@ public class SourceView extends NodeView{
     /**
      * X és Y koordináták alapján(Node-től örökölt attribútumok) elvégzi a
      * source kirajzolását.
+     * A kirajzolt kép: Egy téglalap(kék) benne egy körrel(fekete)
      */ 
     @Override
     public void Update(Graphics g) {
-        g.setColor(Color.BLUE);
-        g.drawRect(x, y, 20, 20);
-        g.setColor(Color.BLACK);
-        g.drawOval(x, y, 5, 5);
+        Graphics2D g2d = (Graphics2D)g;
+
+        Stroke stroke1 = new BasicStroke(6f);
+        g2d.setColor(Color.BLUE);
+        g2d.setStroke(stroke1);
+        g2d.drawRect(x, y, 20, 20);
+
+        g2d.setColor(Color.BLACK);
+        g2d.drawOval(x, y, 5, 5);
     }
 }
