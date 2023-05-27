@@ -132,8 +132,8 @@ public class Pipe extends Field implements Stepable{
      */
     public void Accept(Character c) {
         if(!has_player) {
-            super.Accept(c);
             has_player = true;
+            super.Accept(c);
         }
     }
 
@@ -144,8 +144,8 @@ public class Pipe extends Field implements Stepable{
      * @param c A levetendő játékos.
      */
     public void Remove(Character c) {
-        super.Remove(c);
         has_player = false;
+        super.Remove(c);
     }
 
     /**
@@ -245,6 +245,11 @@ public class Pipe extends Field implements Stepable{
      * Beragasztózza a csövet. A sticky értékét true-ra állítja.
      */
     public boolean Glue(){
+        if(this.getEndpoint(0)!=null){
+            players.get(0).Move(0);
+        }else if(this.getEndpoint(1)!=null){
+            players.get(0).Move(1);
+        }
         sticky = true;
         return true;
     }
@@ -253,6 +258,11 @@ public class Pipe extends Field implements Stepable{
      * Csúszóssá teszi a csövet. A slippery értékét true-ra állítja.
      */
     public boolean Lube(){
+        if(this.getEndpoint(0)!=null){
+            players.get(0).Move(0);
+        }else if(this.getEndpoint(1)!=null){
+            players.get(0).Move(1);
+        }
         slippery = true;
         return true;
     }
