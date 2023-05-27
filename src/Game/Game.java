@@ -19,6 +19,9 @@ public class Game {
     //A pályát tároló változó.
     Playfield currPlayfield;
 
+    Character currPlayer;
+    int step_count;
+
 
     /**
      * Game konstruktor
@@ -83,8 +86,13 @@ public class Game {
             characters.add(nom);
             ret.add(nom.getView());
         }
+        currPlayer=characters.get(0);
+        currPlayer.setActive();
+        step_count=0;
         return ret;
     }
+
+
 
     /**
      * A játék végeztével összeszámolja a csapatok által szerzett pontokat, továbbá eldönti, hogy melyik csapat nyert.
@@ -110,7 +118,22 @@ public class Game {
      */
     public void EndRound(){
         currPlayfield.Step(true);
+        currPlayer=characters.get(0);
+        currPlayer.setActive();
+        step_count=0;
         round_count++;
+    }
+
+    public void EndStep() {
+        currPlayer.setMoves(currPlayer.getAllMoves());
+        currPlayer.setNotActive();
+        if(step_count<characters.size()-1) {
+            currPlayer = characters.get(++step_count);
+            currPlayer.setActive();
+        }
+        else {
+            EndRound();
+        }
     }
 
     /**

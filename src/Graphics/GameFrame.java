@@ -150,7 +150,7 @@ public class GameFrame extends JFrame {
         this.exit.setBackground(new Color(255,255,255));
         this.exit.setCursor(new Cursor(Cursor.HAND_CURSOR));
         this.exit.setFocusPainted(false);
-        //actionlistener TODO
+        this.exit.addActionListener(e -> {this.currentGame.EndStep();this.canvas.revalidate();this.canvas.repaint();});
         control.add(exit);
         control.add(Box.createVerticalStrut(40));
         add(control, BorderLayout.EAST);

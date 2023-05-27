@@ -91,6 +91,7 @@ public class MechanicView implements IView{
      */
     public void setSelected(boolean value){
         selected = value;
+
     }
 
     /**

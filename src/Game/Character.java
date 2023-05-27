@@ -10,6 +10,13 @@ public class Character{
     //Az a mező, amin éppen áll
     protected Field field;
 
+    public int getAllMoves() {
+        return allMoves;
+    }
+
+    private int allMoves;
+    private boolean isActive;
+
 
     /**
      * Character default konstruktor
@@ -90,6 +97,11 @@ public class Character{
         boolean ret = field.Drill(rnd);
         return ret;
     }
+
+    public void setActive()
+    {}
+    public void setNotActive()
+    {}
 
     /**
      * A karakter beragasztózza amin éppen áll

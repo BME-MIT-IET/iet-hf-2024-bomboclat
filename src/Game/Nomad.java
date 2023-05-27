@@ -28,6 +28,15 @@ public class Nomad extends Character{
         nomadView = new NomadView();
         nomadView.setNomad(this);
     }
+    @Override
+    public void setActive() {
+        nomadView.setSelected(true);
+    }
+    @Override
+    public void setNotActive()
+    {
+        nomadView.setSelected(false);
+    }
 
     /**
      * A szabotőr csúszóssá teszi a csövet, amin áll

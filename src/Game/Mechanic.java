@@ -22,6 +22,15 @@ public class Mechanic extends Character{
         mechanicView = new MechanicView();
         mechanicView.setMechanic(this);
     }
+    @Override
+    public void setActive() {
+        mechanicView.setSelected(true);
+    }
+    @Override
+    public void setNotActive()
+    {
+        mechanicView.setSelected(false);
+    }
 
     /**
      * Mechanic konstruktor

@@ -31,6 +31,7 @@ public class NomadView implements IView{
         return nomad;
     }
 
+
     @Override
     public void Update(Graphics g) {
         x = nomad.getField().getView().getPlayerPositionX();
