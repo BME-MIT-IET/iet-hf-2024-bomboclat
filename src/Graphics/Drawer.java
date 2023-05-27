@@ -102,6 +102,8 @@ public class Drawer extends Canvas{
                         return;
                     }
                     if(desField.getNeighbour(0) == desField) {
+                        wantsToMove.Move(0);
+                        repaint();
                         return;
                     }
                     for(int i = 0; i < currField.getNeighbourCount(); i++) {
