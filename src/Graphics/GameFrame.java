@@ -71,7 +71,7 @@ public class GameFrame extends JFrame {
         this.fix.setBackground(new Color(255,255,255));
         this.fix.setCursor(new Cursor(Cursor.HAND_CURSOR));
         this.fix.setFocusPainted(false);
-        //actionlistener TODO
+        this.fix.addActionListener(e -> {(this.currentGame.getCurrPlayer()).Fix(); this.canvas.revalidate();this.canvas.repaint();});
         control.add(fix);
         control.add(Box.createVerticalStrut(40));
 
@@ -115,7 +115,8 @@ public class GameFrame extends JFrame {
         this.pickUpPipe.setBackground(new Color(255,255,255));
         this.pickUpPipe.setCursor(new Cursor(Cursor.HAND_CURSOR));
         this.pickUpPipe.setFocusPainted(false);
-        //actionlistener TODO
+        //TODO hibás
+        this.pickUpPipe.addActionListener(e -> {this.currentGame.getCurrPlayer().PickUpPipe(); this.canvas.revalidate();this.canvas.repaint();});
         control.add(pickUpPipe);
         control.add(Box.createVerticalStrut(40));
 
@@ -126,7 +127,7 @@ public class GameFrame extends JFrame {
         this.pickUpPump.setBackground(new Color(255,255,255));
         this.pickUpPump.setCursor(new Cursor(Cursor.HAND_CURSOR));
         this.pickUpPump.setFocusPainted(false);
-        //actionlistener TODO
+        this.pickUpPump.addActionListener(e -> {this.currentGame.getCurrPlayer().PickUpPump(); this.canvas.revalidate();this.canvas.repaint();});
         control.add(pickUpPump);
         control.add(Box.createVerticalStrut(40));
 

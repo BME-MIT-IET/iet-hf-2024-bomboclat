@@ -108,6 +108,10 @@ public class Character{
         return ret;
     }
 
+    public boolean Fix(){
+        return false;
+    }
+
     public void setActive()
     {}
     public void setNotActive()
@@ -125,4 +129,7 @@ public class Character{
         }
         return ret;
     }
+
+    public void PickUpPipe(){}
+    public void PickUpPump(){}
 }

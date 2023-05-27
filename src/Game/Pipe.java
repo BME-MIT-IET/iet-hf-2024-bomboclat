@@ -235,7 +235,7 @@ public class Pipe extends Field implements Stepable{
 
     /**
      * Beállítja, hogy ragadós-e vagy nem a cső.
-     * @param nSlippery Az új érték: igaz, ha ragadóssá szeretnénk tenni a csövet, hamis ha nem.
+     * @param nSticky Az új érték: igaz, ha ragadóssá szeretnénk tenni a csövet, hamis ha nem.
      */
     public void setSticky(boolean nSticky){
         sticky = nSticky;
