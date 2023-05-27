@@ -179,7 +179,7 @@ public class GameFrame extends JFrame {
     }
 
     private void startGame(int num) {
-        currentGame = new Game();
+        currentGame = new Game(10);
         canvas.setViewables(currentGame.StartGame(num));
         canvas.revalidate();
         canvas.repaint();
