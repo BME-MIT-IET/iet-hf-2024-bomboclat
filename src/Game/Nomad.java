@@ -43,6 +43,9 @@ public class Nomad extends Character{
      */
     public boolean Lube(){
         boolean ret = this.field.Lube();
+        if(ret){
+            moves--;
+        }
         return ret;
     }
 
