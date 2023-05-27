@@ -101,7 +101,8 @@ public class Drawer extends Canvas{
                         repaint();
                         return;
                     }
-                    if(desField.getNeighbour(0) == desField) {
+                    if(currField.getNeighbour(0) == currField) {
+                        repaint();
                         return;
                     }
                     for(int i = 0; i < currField.getNeighbourCount(); i++) {

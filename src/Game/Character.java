@@ -18,6 +18,11 @@ public class Character{
     private boolean isActive;
 
 
+    public boolean Lube() {
+        return false;
+    }
+
+
     /**
      * Character default konstruktor
      */
