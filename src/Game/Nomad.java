@@ -1,6 +1,5 @@
 package Game;
 
-import skeleton.*;
 import Graphics.NomadView;
 import Graphics.IView;
 

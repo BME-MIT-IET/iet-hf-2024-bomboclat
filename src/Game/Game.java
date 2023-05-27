@@ -5,8 +5,6 @@ import java.util.List;
 
 import Graphics.*;
 
-import skeleton.*;
-
 
 /**
 * Felelőssége a játék lebonyolítása, illetve a főbb események kezelése.
