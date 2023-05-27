@@ -46,7 +46,7 @@ public class Drawer extends Canvas{
     public void paint(Graphics g) {
         BufferedImage bim = new BufferedImage(this.getWidth(),this.getHeight(), BufferedImage.TYPE_INT_RGB);
         Graphics img = bim.getGraphics(); 
-        img.setColor(Color.WHITE);  
+        img.setColor(new Color(255, 238, 203));
         img.fillRect(0, 0, getWidth(), getHeight());
         Draw(img);
         g.drawImage(bim,0,0,null);
