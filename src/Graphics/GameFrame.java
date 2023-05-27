@@ -14,6 +14,7 @@ public class GameFrame extends JFrame {
     private Color bgColor = new Color(255, 238, 203);
     private Game currentGame;
     private JMenuBar menuBar;
+    private JPanel board;
 
     public GameFrame(String title) {
         super(title);
@@ -28,20 +29,25 @@ public class GameFrame extends JFrame {
 
         this.control = new JPanel();
         this.control.setLayout(new BorderLayout());
-        initCanvas(); //TEMPORARY
+
         this.menuBar = this.createMenuBar();
         this.menuBar.setBackground(bgColor);
         this.menuBar.setBorder(new LineBorder(bgColor));
         this.setJMenuBar(this.menuBar);
+        this.board=new JPanel(new BorderLayout());
+        board.setMinimumSize(new Dimension(1000, 800));
+        board.setPreferredSize(new Dimension(1000, 800));
+        board.add(canvas, BorderLayout.CENTER);
+        add(board, BorderLayout.WEST);
 
-        this.currentGame = new Game();
     }
 
-    //TEMPORARY
-    private void initCanvas() {
+    private void startGame(int num) {
         currentGame = new Game();
-        canvas.setViewables(currentGame.StartGame(3));
-        add(canvas, BorderLayout.CENTER);
+        canvas.setViewables(currentGame.StartGame(num));
+        canvas.revalidate();
+        canvas.repaint();
+
     }
 
     private JMenuBar createMenuBar() {
@@ -70,7 +76,7 @@ public class GameFrame extends JFrame {
                 int mNum = Integer.parseInt(mechanics.getText());
                 int nNum = Integer.parseInt(nomads.getText());
                 if (mNum == nNum)
-                    currentGame.StartGame(nNum);
+                    startGame(nNum);
                 else {
                     JOptionPane.showMessageDialog(this, "The number of Mechanics must equal the number of Nomads!", "Error", JOptionPane.ERROR_MESSAGE);
                 }
