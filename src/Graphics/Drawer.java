@@ -101,8 +101,7 @@ public class Drawer extends Canvas{
                         repaint();
                         return;
                     }
-                    if(desField.getNeighbour(0) == desField) {
-                        wantsToMove.Move(0);
+                    if(currField.getNeighbour(0) == currField) {
                         repaint();
                         return;
                     }
