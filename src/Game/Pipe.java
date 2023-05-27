@@ -132,8 +132,8 @@ public class Pipe extends Field implements Stepable{
      */
     public void Accept(Character c) {
         if(!has_player) {
-            super.Accept(c);
             has_player = true;
+            super.Accept(c);
         }
     }
 
@@ -144,8 +144,8 @@ public class Pipe extends Field implements Stepable{
      * @param c A levetendő játékos.
      */
     public void Remove(Character c) {
-        super.Remove(c);
         has_player = false;
+        super.Remove(c);
     }
 
     /**
