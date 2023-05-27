@@ -1,5 +1,4 @@
 package Game;
-import skeleton.*;
 import Graphics.MechanicView;
 
 /**

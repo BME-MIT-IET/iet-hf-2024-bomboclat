@@ -1,5 +1,5 @@
 package Game;
-import skeleton.*;
+
 import Graphics.IView;
 import Graphics.SourceView;
 

@@ -5,7 +5,6 @@ import java.util.List;
 import java.util.Random;
 
 import Graphics.*;
-import skeleton.*;
 
 
 /**
