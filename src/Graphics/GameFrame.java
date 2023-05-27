@@ -138,7 +138,7 @@ public class GameFrame extends JFrame {
         this.placePipe.setBackground(new Color(255,255,255));
         this.placePipe.setCursor(new Cursor(Cursor.HAND_CURSOR));
         this.placePipe.setFocusPainted(false);
-        //actionlistener TODO
+        this.placePipe.addActionListener(e -> {this.currentGame.getCurrPlayer().PlacePipe(); this.canvas.revalidate();this.canvas.repaint(); });
         control.add(placePipe);
         control.add(Box.createVerticalStrut(40));
 
@@ -149,7 +149,7 @@ public class GameFrame extends JFrame {
         this.placePump.setBackground(new Color(255,255,255));
         this.placePump.setCursor(new Cursor(Cursor.HAND_CURSOR));
         this.placePump.setFocusPainted(false);
-        //actionlistener TODO
+        this.placePump.addActionListener(e -> {this.currentGame.getCurrPlayer().PlacePump(); this.canvas.revalidate();this.canvas.repaint(); });
         control.add(placePump);
         control.add(Box.createVerticalStrut(40));
 

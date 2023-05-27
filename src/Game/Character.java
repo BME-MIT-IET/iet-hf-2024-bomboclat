@@ -132,4 +132,12 @@ public class Character{
 
     public void PickUpPipe(){}
     public void PickUpPump(){}
+
+    public boolean PlacePipe(){
+        return false; //Nem sikerült letenni a csövet
+    }
+
+    public boolean PlacePump(){
+        return false; //Sikertelen pumpa lehelyezés
+    }
 }

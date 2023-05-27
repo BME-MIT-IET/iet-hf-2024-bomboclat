@@ -180,7 +180,7 @@ public class Pipe extends Field implements Stepable{
      * @param d Az átállítandó végpont indexe (0 vagy 1).
      */
     public void setEndpoint(Node n, int d) {
-        if(d == 0 || d == 1){
+        if(d<endpoints.size()){
             n.addEdge(this);
             endpoints.remove(d);
             endpoints.add(d,n);
@@ -202,7 +202,7 @@ public class Pipe extends Field implements Stepable{
      * @return A végpont az adott irányba.
      */
     public Node getEndpoint(int d) {
-        if(d == 0 || d ==1){
+        if(d<endpoints.size()){
             return endpoints.get(d);
         }
         return null;

@@ -1,6 +1,8 @@
 package Game;
 import Graphics.MechanicView;
 
+import java.io.Console;
+
 /**
  * A szerelőt reprezentáló osztály
  */
@@ -38,6 +40,9 @@ public class Mechanic extends Character{
      */
     public Mechanic(int nMoves, Field nField){
         super(nMoves, nField);
+        pipe_in_hand = null;
+        pump_in_hand = null;
+        pipeEnd = -1;
         mechanicView = new MechanicView();
         mechanicView.setMechanic(this);
     }
@@ -112,10 +117,12 @@ public class Mechanic extends Character{
         }
         if(emptyHanded || oneEnd){
             Pipe pipe = field.PickUpPipe(this);
-            if(pipe != null){
+            if(pipe != null) {
                 pipe_in_hand = pipe;
+                System.out.println("up");
+                moves--;
             }
-            moves--;
+
         }
     }
 
