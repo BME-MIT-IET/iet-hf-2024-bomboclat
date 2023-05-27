@@ -4,6 +4,7 @@ import Game.Game;
 import Game.Mechanic;
 
 import javax.swing.*;
+import javax.swing.border.EmptyBorder;
 import javax.swing.border.LineBorder;
 import java.awt.*;
 import java.awt.event.KeyEvent;
@@ -25,6 +26,7 @@ public class GameFrame extends JFrame {
     private JButton placePipe;
     private JButton placePump;
     private JButton exit;
+    private JLabel infoLabel;
 
     public GameFrame(String title) {
         super(title);
@@ -42,6 +44,12 @@ public class GameFrame extends JFrame {
         control.setMinimumSize(new Dimension(400, 800));
         control.setPreferredSize(new Dimension(400, 800));
         control.setBackground(new Color(255,255,255));
+
+        this.infoLabel = new JLabel();
+        this.infoLabel.setAlignmentX(Component.CENTER_ALIGNMENT);
+        control.add(infoLabel, BorderLayout.NORTH);
+
+
 
         this.drill = new JButton("Drill");
         this.drill.setMaximumSize(new Dimension(175, 50));
@@ -72,7 +80,7 @@ public class GameFrame extends JFrame {
         this.glue.setBackground(new Color(255,255,255));
         this.glue.setCursor(new Cursor(Cursor.HAND_CURSOR));
         this.glue.setFocusPainted(false);
-        //actionlistener TODO
+        this.glue.addActionListener(e -> {this.currentGame.getCurrPlayer().Glue(); this.canvas.revalidate();this.canvas.repaint();});
         control.add(glue);
         control.add(Box.createVerticalStrut(40));
 
@@ -172,6 +180,8 @@ public class GameFrame extends JFrame {
         canvas.setViewables(currentGame.StartGame(num));
         canvas.revalidate();
         canvas.repaint();
+        this.infoLabel.setText("Round: "+ currentGame.getRound_count() +", Player: "+ currentGame.getStep_count()+1 +", Turn: "+ (5-currentGame.getCurrPlayer().getMoves()));
+
 
     }
 

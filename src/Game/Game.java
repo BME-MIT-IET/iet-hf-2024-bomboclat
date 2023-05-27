@@ -12,6 +12,10 @@ import skeleton.*;
 * Felelőssége a játék lebonyolítása, illetve a főbb események kezelése.
  */
 public class Game {
+    public int getRound_count() {
+        return round_count;
+    }
+
     //A játék köreinek számát tárolja.
     int round_count;
     //A játékosokat tároló változó
@@ -24,6 +28,11 @@ public class Game {
     }
 
     Character currPlayer;
+
+    public int getStep_count() {
+        return step_count;
+    }
+
     int step_count;
 
 
