@@ -115,7 +115,6 @@ public class GameFrame extends JFrame {
         this.pickUpPipe.setBackground(new Color(255,255,255));
         this.pickUpPipe.setCursor(new Cursor(Cursor.HAND_CURSOR));
         this.pickUpPipe.setFocusPainted(false);
-        //TODO hibás
         this.pickUpPipe.addActionListener(e -> {this.currentGame.getCurrPlayer().PickUpPipe(); this.canvas.revalidate();this.canvas.repaint();});
         control.add(pickUpPipe);
         control.add(Box.createVerticalStrut(40));
@@ -184,7 +183,7 @@ public class GameFrame extends JFrame {
         canvas.setViewables(currentGame.StartGame(num));
         canvas.revalidate();
         canvas.repaint();
-        this.infoLabel.setText("Round: "+ currentGame.getRound_count() +", Player: "+ currentGame.getStep_count()+1 +", Turn: "+ (5-currentGame.getCurrPlayer().getMoves()));
+        this.infoLabel.setText("Round: "+ currentGame.getRound_count() +", Player: "+ (currentGame.getStep_count()+1) +", Turn: "+ (5-currentGame.getCurrPlayer().getMoves()));
 
 
     }

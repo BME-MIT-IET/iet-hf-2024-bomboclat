@@ -185,6 +185,10 @@ public class Pipe extends Field implements Stepable{
             endpoints.remove(d);
             endpoints.add(d,n);
         }
+        else {
+            n.addEdge(this);
+            endpoints.add(d,n);
+        }
     }
 
     /**

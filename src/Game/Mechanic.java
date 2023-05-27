@@ -119,7 +119,6 @@ public class Mechanic extends Character{
             Pipe pipe = field.PickUpPipe(this);
             if(pipe != null) {
                 pipe_in_hand = pipe;
-                System.out.println("up");
                 moves--;
             }
 
@@ -164,7 +163,7 @@ public class Mechanic extends Character{
      */
     public void SetPipeInHand(Pipe pipe){
         pipe_in_hand = pipe;
-	pipeEnd = 0;
+	    //pipeEnd = 0;
     }
 
     /**
