@@ -47,6 +47,16 @@ public class Game {
     }
 
     /**
+     * Default konstruktor
+     */
+    public Game(){
+        round_count = 0;
+        all_rounds = 10;
+        characters = new ArrayList<Character>();
+        currPlayfield = null;
+    }
+
+    /**
      * Elindítja a játékmenetet.
      */        
     public List<IView> StartGame(int _characters){
