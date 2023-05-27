@@ -43,7 +43,9 @@ public class NomadView implements IView{
         }
         try{
             BufferedImage image = ImageIO.read(getClass().getResourceAsStream("Images\\" + imageName + ".png"));
-            g.drawImage(image, x, y, null);
+            int offsetX = image.getWidth();
+            int offsetY = image.getHeight();
+            g.drawImage(image, x - offsetX + 25, y - offsetY + 25, null);
         }
         catch(IOException e){
             
