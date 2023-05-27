@@ -10,16 +10,16 @@ import Graphics.*;
 * Felelőssége a játék lebonyolítása, illetve a főbb események kezelése.
  */
 public class Game {
-    public int getRound_count() {
-        return round_count;
-    }
-
     //A játék köreinek számát tárolja.
     int round_count;
     //A játékosokat tároló változó
     List<Character> characters;
     //A pályát tároló változó.
     Playfield currPlayfield;
+
+    public int getRound_count() {
+        return round_count;
+    }
 
     public Character getCurrPlayer() {
         return currPlayer;
