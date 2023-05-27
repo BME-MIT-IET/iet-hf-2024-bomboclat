@@ -6,7 +6,7 @@ import skeleton.*;
  */
 public class Character{
     //A lépései száma az adott körben
-    private int moves;
+    protected int moves;
     //Az a mező, amin éppen áll
     protected Field field;
 
@@ -78,6 +78,7 @@ public class Character{
      * @param d Új kimenet
      */
     public void ChangePump(Pipe o, Pipe d){
+        moves--;
         field.Change(o, d);
     }
 
@@ -90,6 +91,7 @@ public class Character{
         if(neighbour != null){
             field.Remove(this);
             neighbour.Accept(this);
+            moves--;
         }
     }
 
@@ -100,6 +102,9 @@ public class Character{
      */
     public boolean DrillPipe(boolean rnd){ 
         boolean ret = field.Drill(rnd);
+        if(ret){
+            moves--;
+        }
         return ret;
     }
 
@@ -115,6 +120,9 @@ public class Character{
      */
     public boolean Glue(){
         boolean ret = field.Glue();
+        if(ret){
+            moves--;
+        }
         return ret;
     }
 }

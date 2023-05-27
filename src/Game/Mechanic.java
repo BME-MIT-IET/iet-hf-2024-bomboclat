@@ -48,6 +48,9 @@ public class Mechanic extends Character{
      */
     public boolean Fix(){
         boolean ret =field.Fix();
+        if(ret){
+            moves--;
+        }
         return ret;
     }
 
@@ -57,7 +60,8 @@ public class Mechanic extends Character{
     public boolean PlacePump(){
         if(pump_in_hand != null){
             pump_in_hand = field.PlacePump(pump_in_hand);
-            if(pump_in_hand != null){
+            if(pump_in_hand == null){
+                moves--;
                 return true; //Sikeres pumpa lehelyezés
             }
             return false; //Sikertelen pumpa lehelyezés
@@ -71,6 +75,7 @@ public class Mechanic extends Character{
     public boolean PlacePipe(){
         field.PlacePipe(this);
         if(pipe_in_hand == null){
+            moves--;
             return true; //Sikerült letenni a csövet
         }
         return false; //Nem sikerült letenni a csövet
@@ -81,7 +86,14 @@ public class Mechanic extends Character{
      * pumpát, amivel a kezében mozoghat a pályán.
      */
     public void PickUpPump(){
+        boolean emptyHanded = false;
+        if(pump_in_hand == null){
+            emptyHanded = true;
+        }
         pump_in_hand = field.PickUpPump();
+        if(pump_in_hand != null && emptyHanded){
+            moves--;
+        }
     }
 
     /**
@@ -90,9 +102,20 @@ public class Mechanic extends Character{
      * vége a kezébe kerül, ezzel tud tovább mozogni.
      */
     public void PickUpPipe(){
-        Pipe pipe = field.PickUpPipe(this);
-        if(pipe != null){
-            pipe_in_hand = pipe;
+        boolean emptyHanded = false;
+        boolean oneEnd = false;
+        if(pipeEnd == -1){
+            emptyHanded = true;
+        }
+        if(pipeEnd == 0 || pipeEnd == 1){
+            oneEnd = true;
+        }
+        if(emptyHanded || oneEnd){
+            Pipe pipe = field.PickUpPipe(this);
+            if(pipe != null){
+                pipe_in_hand = pipe;
+            }
+            moves--;
         }
     }
 

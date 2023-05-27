@@ -98,10 +98,17 @@ public class Pump extends Node{
      */
     public Pipe PickUpPipe(Mechanic m){
         if(m.GetPipeEnd() != -1){
-            m.SetPipeEnd(2);
-            return null;
+            if(m.GetPipeEnd() == 1 || m.GetPipeEnd() == 0){
+                if(edges.contains(m.GetPipeInHand())){
+                    edges.remove(m.GetPipeInHand());
+                    m.GetPipeInHand().endpoints.remove(this);
+                    m.SetPipeEnd(2);
+                }
+            }
+            return m.GetPipeInHand();
         } else{
-            Pipe returnPipe = edges.get(0);
+            Pipe returnPipe = edges.remove(0);
+            returnPipe.endpoints.remove(this);
             int pipeEnd;
 
             if(returnPipe.getNeighbour(0) == this){

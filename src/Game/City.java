@@ -54,9 +54,13 @@ public class City extends Node{
     public Pipe PickUpPipe(Mechanic m){
         Pipe returnPipe = new Pipe();
         returnPipe.setEndpoint(this, 0);
-
-        m.SetPipeEnd(1);
-        return returnPipe;
+        if(m.GetPipeInHand() == null){
+            m.SetPipeEnd(1);
+            return returnPipe;
+        }
+        else{
+            return null;
+        }
     }
 
     
