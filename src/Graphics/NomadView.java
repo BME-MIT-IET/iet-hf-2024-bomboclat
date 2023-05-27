@@ -1,5 +1,6 @@
 package Graphics;
 
+import Game.Field;
 import Game.Nomad;
 
 import java.awt.*;
@@ -78,5 +79,10 @@ public class NomadView implements IView{
      */
     public boolean isSelected(){
         return selected;
+    }
+
+    @Override
+    public Field getField() {
+        return null;
     }
 }

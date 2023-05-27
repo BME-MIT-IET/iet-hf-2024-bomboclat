@@ -7,6 +7,8 @@ import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 import javax.swing.border.LineBorder;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 
 public class GameFrame extends JFrame {
@@ -102,7 +104,7 @@ public class GameFrame extends JFrame {
         this.move.setBackground(new Color(255,255,255));
         this.move.setCursor(new Cursor(Cursor.HAND_CURSOR));
         this.move.setFocusPainted(false);
-        //actionlistener TODO
+        this.move.addActionListener(e -> {canvas.setWantsToMove(currentGame.getCurrPlayer());});
         control.add(move);
         control.add(Box.createVerticalStrut(40));
 
@@ -157,7 +159,8 @@ public class GameFrame extends JFrame {
         this.exit.setBackground(new Color(255,255,255));
         this.exit.setCursor(new Cursor(Cursor.HAND_CURSOR));
         this.exit.setFocusPainted(false);
-        this.exit.addActionListener(e -> {this.currentGame.EndStep();this.canvas.revalidate();this.canvas.repaint();});
+        this.exit.addActionListener(e -> {this.currentGame.EndStep();this.canvas.revalidate();this.canvas.repaint();
+            this.canvas.setWantsToMove(null);});
         control.add(exit);
         control.add(Box.createVerticalStrut(40));
         add(control, BorderLayout.EAST);
@@ -228,6 +231,7 @@ public class GameFrame extends JFrame {
 
         return menuBar;
     }
+
 }
 
 

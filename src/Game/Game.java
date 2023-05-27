@@ -58,17 +58,17 @@ public class Game {
         c1.getView().setY(20);
         ret.add(c1.getView());
         Source s1 = new Source();
-        s1.getView().setX(200);
+        s1.getView().setX(400);
         s1.getView().setY(20);
         ret.add(s1.getView());
 
         Pump p1 = new Pump();
         p1.getView().setX(50);
-        p1.getView().setY(100);
+        p1.getView().setY(300);
         ret.add(p1.getView());
         Pump p2 = new Pump();
-        p2.getView().setX(50);
-        p2.getView().setY(200);
+        p2.getView().setX(500);
+        p2.getView().setY(300);
         ret.add(p2.getView());
         Pipe pipe1 = new Pipe();
         ret.add(pipe1.getView());

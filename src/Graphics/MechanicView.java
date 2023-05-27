@@ -1,4 +1,5 @@
 package Graphics;
+import Game.Field;
 import Game.Mechanic;
 
 import java.awt.*;
@@ -100,5 +101,10 @@ public class MechanicView implements IView{
      */
     public boolean isSelected(){
         return selected;
+    }
+
+    @Override
+    public Field getField() {
+        return null;
     }
 }

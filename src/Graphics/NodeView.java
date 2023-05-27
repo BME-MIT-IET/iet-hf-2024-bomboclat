@@ -1,8 +1,10 @@
 package Graphics;
 
+import Game.Field;
 import Game.Node;
 
 import java.awt.*;
+import java.io.ObjectInputStream.GetField;
 
 public abstract class NodeView implements IView{
     /**
@@ -74,5 +76,10 @@ public abstract class NodeView implements IView{
      */
     public void setNode(Node n) {
         node=n;
+    }
+
+    @Override
+    public Field getField() {
+        return node;
     }
 }

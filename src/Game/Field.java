@@ -141,6 +141,10 @@ abstract public class Field{
      */
     abstract public int getNeighbourCount();
 
+    public boolean getSlippery() {
+        return false;
+    }
+
     abstract public IView getView();
     abstract public void setView(IView view);
 }

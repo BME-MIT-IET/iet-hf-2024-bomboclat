@@ -132,4 +132,9 @@ public class PipeView implements IView{
         halfway = (end0Y-end1Y)/2+end1Y+5;
         return halfway;
     }
+
+    @Override
+    public Field getField() {
+        return pipe;
+    }
 }
