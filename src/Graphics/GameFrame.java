@@ -93,7 +93,7 @@ public class GameFrame extends JFrame {
         this.lube.setBackground(new Color(255,255,255));
         this.lube.setCursor(new Cursor(Cursor.HAND_CURSOR));
         this.lube.setFocusPainted(false);
-        //actionlistener TODO
+        this.lube.addActionListener(e -> {this.currentGame.getCurrPlayer().Lube(); this.canvas.revalidate();this.canvas.repaint();});
         control.add(lube);
         control.add(Box.createVerticalStrut(40));
 
