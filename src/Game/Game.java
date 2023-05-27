@@ -19,6 +19,10 @@ public class Game {
     //A pályát tároló változó.
     Playfield currPlayfield;
 
+    public Character getCurrPlayer() {
+        return currPlayer;
+    }
+
     Character currPlayer;
     int step_count;
 
@@ -79,7 +83,7 @@ public class Game {
         p2.Change(pipe3, pipe2);
 
         for(int i=0; i<_characters; i++) {
-            Mechanic mech = new Mechanic(5, p1);
+            Mechanic mech = new Mechanic(5, pipe1);
             characters.add(mech);
             ret.add(mech.getView());
             Nomad nom = new Nomad(5, p2);

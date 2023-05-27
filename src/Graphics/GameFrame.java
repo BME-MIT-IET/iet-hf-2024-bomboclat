@@ -41,7 +41,6 @@ public class GameFrame extends JFrame {
         this.control.setLayout(new BoxLayout(this.control, BoxLayout.Y_AXIS));
         control.setMinimumSize(new Dimension(400, 800));
         control.setPreferredSize(new Dimension(400, 800));
-        //TEMP
         control.setBackground(new Color(255,255,255));
 
         this.drill = new JButton("Drill");
@@ -51,7 +50,7 @@ public class GameFrame extends JFrame {
         this.drill.setBackground(new Color(255,255,255));
         this.drill.setCursor(new Cursor(Cursor.HAND_CURSOR));
         this.drill.setFocusPainted(false);
-        //actionlistener TODO
+        this.drill.addActionListener(e -> {this.currentGame.getCurrPlayer().DrillPipe(true); this.canvas.revalidate();this.canvas.repaint();});
         control.add(drill);
         control.add(Box.createVerticalStrut(40));
 
