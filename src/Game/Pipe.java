@@ -245,6 +245,11 @@ public class Pipe extends Field implements Stepable{
      * Beragasztózza a csövet. A sticky értékét true-ra állítja.
      */
     public boolean Glue(){
+        if(this.getEndpoint(0)!=null){
+            players.get(0).Move(0);
+        }else if(this.getEndpoint(1)!=null){
+            players.get(0).Move(1);
+        }
         sticky = true;
         return true;
     }
@@ -253,6 +258,11 @@ public class Pipe extends Field implements Stepable{
      * Csúszóssá teszi a csövet. A slippery értékét true-ra állítja.
      */
     public boolean Lube(){
+        if(this.getEndpoint(0)!=null){
+            players.get(0).Move(0);
+        }else if(this.getEndpoint(1)!=null){
+            players.get(0).Move(1);
+        }
         slippery = true;
         return true;
     }
