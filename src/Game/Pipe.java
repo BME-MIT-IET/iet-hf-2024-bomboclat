@@ -73,8 +73,12 @@ public class Pipe extends Field implements Stepable{
      * Megjavítja a csövet, eltünteti róla a lyukat.
      */
     public boolean Fix() {
-        has_hole = false;
-        return true;
+        if(has_hole)
+        {
+            has_hole = false;
+            return true;
+        }
+        return false;
     }
 
     /**

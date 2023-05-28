@@ -60,7 +60,7 @@ public class GameFrame extends JFrame {
         this.changePump.setCursor(new Cursor(Cursor.HAND_CURSOR));
         this.changePump.setFocusPainted(false);
         this.changePump.addActionListener(e -> {if(currentGame.getCurrPlayer().getMoves()>0){this.canvas.setWantsToChange(currentGame.getCurrPlayer());
-            this.infoLabel.setText("Round: "+ currentGame.getRound_count() +", Player: "+ (currentGame.getStep_count()+1) +", Turn: "+ (5-currentGame.getCurrPlayer().getMoves()));}});
+            this.infoLabel.setText("Round: "+  (currentGame.getRound_count()+1) +", Player: "+ (currentGame.getStep_count()+1) +", Turn: "+ (5-currentGame.getCurrPlayer().getMoves()));}});
         control.add(changePump);
         control.add(Box.createVerticalStrut(40));
 
@@ -72,7 +72,7 @@ public class GameFrame extends JFrame {
         this.drill.setCursor(new Cursor(Cursor.HAND_CURSOR));
         this.drill.setFocusPainted(false);
         this.drill.addActionListener(e -> {if(currentGame.getCurrPlayer().getMoves()>0){this.currentGame.getCurrPlayer().DrillPipe(true); this.canvas.revalidate();this.canvas.repaint();
-            this.infoLabel.setText("Round: "+ currentGame.getRound_count() +", Player: "+ (currentGame.getStep_count()+1) +", Turn: "+ (5-currentGame.getCurrPlayer().getMoves()));}});
+            this.infoLabel.setText("Round: "+  (currentGame.getRound_count()+1) +", Player: "+ (currentGame.getStep_count()+1) +", Turn: "+ (5-currentGame.getCurrPlayer().getMoves()));}});
         control.add(drill);
         control.add(Box.createVerticalStrut(40));
 
@@ -84,7 +84,7 @@ public class GameFrame extends JFrame {
         this.fix.setCursor(new Cursor(Cursor.HAND_CURSOR));
         this.fix.setFocusPainted(false);
         this.fix.addActionListener(e -> {if(currentGame.getCurrPlayer().getMoves()>0){(this.currentGame.getCurrPlayer()).Fix(); this.canvas.revalidate();this.canvas.repaint();
-            this.infoLabel.setText("Round: "+ currentGame.getRound_count() +", Player: "+ (currentGame.getStep_count()+1) +", Turn: "+ (5-currentGame.getCurrPlayer().getMoves()));}});
+            this.infoLabel.setText("Round: "+  (currentGame.getRound_count()+1) +", Player: "+ (currentGame.getStep_count()+1) +", Turn: "+ (5-currentGame.getCurrPlayer().getMoves()));}});
         control.add(fix);
         control.add(Box.createVerticalStrut(40));
 
@@ -96,7 +96,7 @@ public class GameFrame extends JFrame {
         this.glue.setCursor(new Cursor(Cursor.HAND_CURSOR));
         this.glue.setFocusPainted(false);
         this.glue.addActionListener(e -> {if(currentGame.getCurrPlayer().getMoves()>0){this.currentGame.getCurrPlayer().Glue(); this.canvas.revalidate();this.canvas.repaint();
-            this.infoLabel.setText("Round: "+ currentGame.getRound_count() +", Player: "+ (currentGame.getStep_count()+1) +", Turn: "+ (5-currentGame.getCurrPlayer().getMoves()));}});
+            this.infoLabel.setText("Round: "+  (currentGame.getRound_count()+1) +", Player: "+ (currentGame.getStep_count()+1) +", Turn: "+ (5-currentGame.getCurrPlayer().getMoves()));}});
         control.add(glue);
         control.add(Box.createVerticalStrut(40));
 
@@ -108,7 +108,7 @@ public class GameFrame extends JFrame {
         this.lube.setCursor(new Cursor(Cursor.HAND_CURSOR));
         this.lube.setFocusPainted(false);
         this.lube.addActionListener(e -> {if(currentGame.getCurrPlayer().getMoves()>0){this.currentGame.getCurrPlayer().Lube(); this.canvas.revalidate();this.canvas.repaint();
-            this.infoLabel.setText("Round: "+ currentGame.getRound_count() +", Player: "+ (currentGame.getStep_count()+1) +", Turn: "+ (5-currentGame.getCurrPlayer().getMoves()));}});
+            this.infoLabel.setText("Round: "+  (currentGame.getRound_count()+1) +", Player: "+ (currentGame.getStep_count()+1) +", Turn: "+ (5-currentGame.getCurrPlayer().getMoves()));}});
         control.add(lube);
         control.add(Box.createVerticalStrut(40));
 
@@ -120,7 +120,7 @@ public class GameFrame extends JFrame {
         this.move.setCursor(new Cursor(Cursor.HAND_CURSOR));
         this.move.setFocusPainted(false);
         this.move.addActionListener(e -> {if(currentGame.getCurrPlayer().getMoves()>0){canvas.setWantsToMove(currentGame.getCurrPlayer()); this.currentGame.getCurrPlayer().setMoves(currentGame.getCurrPlayer().getMoves()-1);
-            this.infoLabel.setText("Round: "+ currentGame.getRound_count() +", Player: "+ (currentGame.getStep_count()+1) +", Turn: "+ (5-currentGame.getCurrPlayer().getMoves()));}});
+            this.infoLabel.setText("Round: "+  (currentGame.getRound_count()+1) +", Player: "+ (currentGame.getStep_count()+1) +", Turn: "+ (5-currentGame.getCurrPlayer().getMoves()));}});
         control.add(move);
         control.add(Box.createVerticalStrut(40));
 
@@ -132,7 +132,7 @@ public class GameFrame extends JFrame {
         this.pickUpPipe.setCursor(new Cursor(Cursor.HAND_CURSOR));
         this.pickUpPipe.setFocusPainted(false);
         this.pickUpPipe.addActionListener(e -> {if(currentGame.getCurrPlayer().getMoves()>0){this.currentGame.getCurrPlayer().PickUpPipe(); this.canvas.revalidate();this.canvas.repaint();
-            this.infoLabel.setText("Round: "+ currentGame.getRound_count() +", Player: "+ (currentGame.getStep_count()+1) +", Turn: "+ (5-currentGame.getCurrPlayer().getMoves()));}});
+            this.infoLabel.setText("Round: "+  (currentGame.getRound_count()+1) +", Player: "+ (currentGame.getStep_count()+1) +", Turn: "+ (5-currentGame.getCurrPlayer().getMoves()));}});
         control.add(pickUpPipe);
         control.add(Box.createVerticalStrut(40));
 
@@ -144,7 +144,7 @@ public class GameFrame extends JFrame {
         this.pickUpPump.setCursor(new Cursor(Cursor.HAND_CURSOR));
         this.pickUpPump.setFocusPainted(false);
         this.pickUpPump.addActionListener(e -> {if(currentGame.getCurrPlayer().getMoves()>0){this.currentGame.getCurrPlayer().PickUpPump(); this.canvas.revalidate();this.canvas.repaint();
-            this.infoLabel.setText("Round: "+ currentGame.getRound_count() +", Player: "+ (currentGame.getStep_count()+1) +", Turn: "+ (5-currentGame.getCurrPlayer().getMoves()));}});
+            this.infoLabel.setText("Round: "+ (currentGame.getRound_count()+1) +", Player: "+ (currentGame.getStep_count()+1) +", Turn: "+ (5-currentGame.getCurrPlayer().getMoves()));}});
         control.add(pickUpPump);
         control.add(Box.createVerticalStrut(40));
 
@@ -156,7 +156,7 @@ public class GameFrame extends JFrame {
         this.placePipe.setCursor(new Cursor(Cursor.HAND_CURSOR));
         this.placePipe.setFocusPainted(false);
         this.placePipe.addActionListener(e -> {if(currentGame.getCurrPlayer().getMoves()>0){this.currentGame.getCurrPlayer().PlacePipe(); this.canvas.revalidate();this.canvas.repaint();
-            this.infoLabel.setText("Round: "+ currentGame.getRound_count() +", Player: "+ (currentGame.getStep_count()+1) +", Turn: "+ (5-currentGame.getCurrPlayer().getMoves()));}});
+            this.infoLabel.setText("Round: "+  (currentGame.getRound_count()+1) +", Player: "+ (currentGame.getStep_count()+1) +", Turn: "+ (5-currentGame.getCurrPlayer().getMoves()));}});
         control.add(placePipe);
         control.add(Box.createVerticalStrut(40));
 
@@ -168,7 +168,7 @@ public class GameFrame extends JFrame {
         this.placePump.setCursor(new Cursor(Cursor.HAND_CURSOR));
         this.placePump.setFocusPainted(false);
         this.placePump.addActionListener(e -> {if(currentGame.getCurrPlayer().getMoves()>0){this.currentGame.getCurrPlayer().PlacePump(); this.canvas.revalidate();this.canvas.repaint();
-            this.infoLabel.setText("Round: "+ currentGame.getRound_count() +", Player: "+ (currentGame.getStep_count()+1) +", Turn: "+ (5-currentGame.getCurrPlayer().getMoves())); }});
+            this.infoLabel.setText("Round: "+ (currentGame.getRound_count()+1) +", Player: "+ (currentGame.getStep_count()+1) +", Turn: "+ (5-currentGame.getCurrPlayer().getMoves())); }});
         control.add(placePump);
         control.add(Box.createVerticalStrut(40));
 
@@ -179,8 +179,11 @@ public class GameFrame extends JFrame {
         this.exit.setBackground(new Color(255,255,255));
         this.exit.setCursor(new Cursor(Cursor.HAND_CURSOR));
         this.exit.setFocusPainted(false);
-        this.exit.addActionListener(e -> {this.currentGame.EndStep();this.canvas.revalidate();this.canvas.repaint();
-            this.infoLabel.setText("Round: "+ currentGame.getRound_count() +", Player: "+ (currentGame.getStep_count()+1) +", Turn: "+ (5-currentGame.getCurrPlayer().getMoves()));;});
+        this.exit.addActionListener(e -> {String temp = currentGame.EndStep();this.canvas.revalidate();this.canvas.repaint();
+            this.infoLabel.setText("Round: "+  (currentGame.getRound_count()+1) +", Player: "+ (currentGame.getStep_count()+1) +", Turn: "+ (5-currentGame.getCurrPlayer().getMoves()));
+            if (this.currentGame.isFinished()) {
+                JOptionPane.showMessageDialog(this, temp, "Win", JOptionPane.PLAIN_MESSAGE);
+            }});
         control.add(exit);
         control.add(Box.createVerticalStrut(40));
         add(control, BorderLayout.EAST);
@@ -199,11 +202,11 @@ public class GameFrame extends JFrame {
     }
 
     private void startGame(int num) {
-        currentGame = new Game(10);
+        currentGame = new Game(2);
         canvas.setViewables(currentGame.StartGame(num));
         canvas.revalidate();
         canvas.repaint();
-        this.infoLabel.setText("Round: "+ currentGame.getRound_count() +", Player: "+ (currentGame.getStep_count()+1) +", Turn: "+ (5-currentGame.getCurrPlayer().getMoves()));
+        this.infoLabel.setText("Round: "+  (currentGame.getRound_count()+1) +", Player: "+ (currentGame.getStep_count()+1) +", Turn: "+ (5-currentGame.getCurrPlayer().getMoves()));
 
 
     }

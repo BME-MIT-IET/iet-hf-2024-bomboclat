@@ -10,6 +10,12 @@ import Graphics.*;
 * Felelőssége a játék lebonyolítása, illetve a főbb események kezelése.
  */
 public class Game {
+    public boolean isFinished() {
+        return finished;
+    }
+
+    boolean finished = false;
+
     // A játék összes körének számát tárolja
     int all_rounds;
     // A játék köreinek számát tárolja.
@@ -131,32 +137,39 @@ public class Game {
     /**
      * A játszma végeztével leállítja a játékot.
      */
-    public void EndGame(){
+    public String EndGame(){
         String winMessage = GetResult() == 1 ? "Mechanic team wins. NYOMOD!!!!" : "Nomad team wins. NYOMOD!!!!";
-
-        System.out.println(winMessage);
+        finished=true;
+        return(winMessage);
     }
 
     /**
      * Egy kör végeztével levezényli a stepable interfészt megvalósító elemek lépését.
      */
-    public void EndRound(){
+    public String EndRound(){
         currPlayfield.Step(true);
-        currPlayer=characters.get(0);
-        currPlayer.setActive();
-        step_count=0;
-        round_count++;
+        if(round_count==all_rounds-1) {
+            return EndGame();
+        }
+        else {
+            currPlayer = characters.get(0);
+            currPlayer.setActive();
+            step_count = 0;
+            round_count++;
+            return "";
+        }
     }
 
-    public void EndStep() {
+    public String EndStep() {
         currPlayer.setMoves(currPlayer.getAllMoves());
         currPlayer.setNotActive();
         if(step_count<characters.size()-1) {
             currPlayer = characters.get(++step_count);
             currPlayer.setActive();
+            return "";
         }
         else {
-            EndRound();
+            return EndRound();
         }
     }
 
