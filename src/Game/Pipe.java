@@ -30,6 +30,16 @@ public class Pipe extends Field implements Stepable{
     //Megjelenítését kezelő View objektum.
     PipeView pipeView;
 
+    public boolean isHadwater() {
+        return hadwater;
+    }
+
+    public void setHadwater(boolean hadwater) {
+        this.hadwater = hadwater;
+    }
+
+    boolean hadwater;
+
     /**
      * Pipe konstruktora.
      */
@@ -109,6 +119,7 @@ public class Pipe extends Field implements Stepable{
      */
     public void GiveWater(int amount) {
         if(amount > 0){
+            hadwater = true;
             if(!has_hole){
                 has_water = true;
             }else{

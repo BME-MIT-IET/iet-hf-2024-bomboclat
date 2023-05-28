@@ -14,7 +14,7 @@ public class Character{
         return allMoves;
     }
 
-    private int allMoves;
+    private int allMoves=5;
     private boolean isActive;
 
 

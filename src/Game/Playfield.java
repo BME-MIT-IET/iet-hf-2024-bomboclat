@@ -34,6 +34,9 @@ public class Playfield implements Stepable{
         for(int i = 0; i < nodes.size(); i++){
             nodes.get(i).Step(rnd);
         }
+        for(int i = 0; i<pipes.size(); i++) {
+            pipes.get(i).Step(rnd);
+        }
     }
     
     /**

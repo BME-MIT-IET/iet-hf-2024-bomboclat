@@ -78,6 +78,8 @@ public class Game {
         s1.getView().setX(400);
         s1.getView().setY(20);
         ret.add(s1.getView());
+        currPlayfield.addNode(c1);
+        currPlayfield.addNode(s1);
 
         Pump p1 = new Pump();
         p1.getView().setX(50);
@@ -95,6 +97,12 @@ public class Game {
         ret.add(pipe3.getView());
         Pipe pipe4 = new Pipe();
         ret.add(pipe4.getView());
+        currPlayfield.addNode(p1);
+        currPlayfield.addNode(p2);
+        currPlayfield.addPipe(pipe1);
+        currPlayfield.addPipe(pipe2);
+        currPlayfield.addPipe(pipe3);
+        currPlayfield.addPipe(pipe4);
 
         pipe1.setEndpoint(c1, 1);
         pipe1.setEndpoint(s1, 0);
@@ -138,6 +146,7 @@ public class Game {
      * A játszma végeztével leállítja a játékot.
      */
     public String EndGame(){
+
         String winMessage = GetResult() == 1 ? "Mechanic team wins. NYOMOD!!!!" : "Nomad team wins. NYOMOD!!!!";
         finished=true;
         return(winMessage);
@@ -147,6 +156,9 @@ public class Game {
      * Egy kör végeztével levezényli a stepable interfészt megvalósító elemek lépését.
      */
     public String EndRound(){
+        for(int i=0; i<this.currPlayfield.pipes.size(); i++) {
+            this.currPlayfield.pipes.get(i).setHadwater(false);
+        }
         currPlayfield.Step(true);
         if(round_count==all_rounds-1) {
             return EndGame();

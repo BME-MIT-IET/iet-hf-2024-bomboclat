@@ -67,7 +67,7 @@ public class PipeView implements IView{
         Graphics2D g2 = (Graphics2D) g;
         g2.setStroke(new BasicStroke(10));
 
-        if(!haswater){
+        if(!pipe.isHadwater()){
             g2.setColor(Color.BLACK);
         }else{
             g2.setColor(Color.BLUE);
