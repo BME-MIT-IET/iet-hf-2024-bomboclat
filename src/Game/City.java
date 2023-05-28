@@ -2,6 +2,7 @@ package Game;
 
 import Graphics.CityView;
 import Graphics.IView;
+import Graphics.PipeView;
 import Graphics.PumpView;
 
 /**
@@ -54,9 +55,11 @@ public class City extends Node{
      */
     public Pipe PickUpPipe(Mechanic m){
         Pipe returnPipe = new Pipe();
+        PipeView pv = new PipeView(returnPipe);
         returnPipe.setEndpoint(this, 0);
         if(m.GetPipeInHand() == null){
             m.SetPipeEnd(1);
+            Game.frame.getCanvas().addViewable(pv);
             return returnPipe;
         }
         else{

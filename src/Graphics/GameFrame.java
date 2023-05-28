@@ -207,7 +207,7 @@ public class GameFrame extends JFrame {
     }
 
     private void startGame(int num) {
-        currentGame = new Game(2);
+        currentGame = new Game(10, this);
         canvas.setViewables(currentGame.StartGame(num));
         canvas.revalidate();
         canvas.repaint();
@@ -258,6 +258,10 @@ public class GameFrame extends JFrame {
         menu.add(exitMenuItem);
 
         return menuBar;
+    }
+
+    public Drawer getCanvas(){
+        return canvas;
     }
 
 }

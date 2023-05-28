@@ -41,11 +41,20 @@ public class Game {
 
     int step_count;
 
+    public static GameFrame frame;
 
     /**
      * Game konstruktor
      */
     public Game(int _all_rounds){
+        round_count = 0;
+        all_rounds = _all_rounds;
+        characters = new ArrayList<Character>();
+        currPlayfield = null;
+    }
+
+    public Game(int _all_rounds, GameFrame f){
+        frame = f;
         round_count = 0;
         all_rounds = _all_rounds;
         characters = new ArrayList<Character>();

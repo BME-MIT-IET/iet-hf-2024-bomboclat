@@ -122,7 +122,6 @@ public class Mechanic extends Character{
                 pipe_in_hand = pipe;
                 moves--;
             }
-
         }
     }
 
