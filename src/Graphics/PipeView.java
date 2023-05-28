@@ -22,7 +22,6 @@ public class PipeView implements IView{
             end1X = pipe.getEndpoint(1).getView().getPlayerPositionX();
             end1Y = pipe.getEndpoint(1).getView().getPlayerPositionY();
         }
-
         if(pipe.getEndpoint(0)!=null && pipe.getEndpoint(1)== null){
             end1X = pipe.getEndpoint(0).getView().getPlayerPositionX()+15;
             end1Y = pipe.getEndpoint(0).getView().getPlayerPositionY()+15;

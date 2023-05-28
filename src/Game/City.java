@@ -2,6 +2,7 @@ package Game;
 
 import Graphics.CityView;
 import Graphics.IView;
+import Graphics.PumpView;
 
 /**
  * A ciszternát reprezentáló osztály.
