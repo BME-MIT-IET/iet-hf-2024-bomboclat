@@ -48,8 +48,17 @@ public class Drawer extends Canvas{
      */
     public void Draw(Graphics g) {
         for(IView v : viewable) {
-            if(v != null)
-                v.Update(g);
+            if(v != null) {
+                if(v instanceof PipeView)
+                    v.Update(g);
+            }
+        }
+
+        for(IView v : viewable) {
+            if(v != null) {
+                if(!(v instanceof PipeView))
+                    v.Update(g);
+            }
         }
     }
 
