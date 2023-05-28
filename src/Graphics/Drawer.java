@@ -10,6 +10,7 @@ import java.util.*;
 
 import Game.Character;
 import Game.Field;
+import Game.Pipe;
 
 public class Drawer extends Canvas{
     //A rajzolható objektumok listája
@@ -17,6 +18,11 @@ public class Drawer extends Canvas{
 
     //Az éppen mozogni kívánó karakter null ha senki.
     Character wantsToMove = null;
+
+    Character wantsToChange = null;
+    boolean first_option = true;
+    Field in;
+    Field out;
 
     //Konstruktor
     public Drawer() {
@@ -50,6 +56,7 @@ public class Drawer extends Canvas{
     public void setViewables(List<IView> l) {viewable = l;}
 
     public void setWantsToMove(Character w) {wantsToMove = w; }
+    public void setWantsToChange(Character w) {wantsToChange = w; }
 
     /**
      * Erre hív a repaint az újrarajzoláshoz
@@ -98,22 +105,38 @@ public class Drawer extends Canvas{
                     
                     if(currField.getSlippery()) {
                         wantsToMove.Move(0);
+                        wantsToMove=null;
                         repaint();
                         return;
                     }
                     if(currField.getNeighbour(0) == currField) {
+                        wantsToMove=null;
+                        wantsToMove.setMoves(wantsToMove.getMoves()+1);
                         repaint();
                         return;
                     }
                     for(int i = 0; i < currField.getNeighbourCount(); i++) {
                         if(currField.getNeighbour(i) == desField) {
                             wantsToMove.Move(i);
+                            wantsToMove=null;
                             repaint();
                             return;
                         }
                     }
 
                 }
+            }
+            else if(wantsToChange != null && first_option) {
+                 in = getClosestField(e.getX(), e.getY());
+                 first_option=false;
+            }
+            else if(wantsToChange != null && !first_option) {
+                out = getClosestField(e.getX(), e.getY());
+                wantsToChange.ChangePump((Pipe)in, (Pipe)out);
+                wantsToChange=null;
+                first_option=true;
+                revalidate();
+                repaint();
             }
         }
 

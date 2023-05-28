@@ -46,8 +46,10 @@ public class Pump extends Node{
      * @param out Paraméterként megadott Pipe objektum, hogy hova pumpáljon.
      */
     public void Change(Pipe in, Pipe out) {
-        this.from = in;
-        this.where = out;
+        if(this.edges.contains(in) && this.edges.contains(out)) {
+            this.from = in;
+            this.where = out;
+        }
     }
 
     /**

@@ -91,7 +91,6 @@ public class Character{
         if(neighbour != null){
             field.Remove(this);
             neighbour.Accept(this);
-            moves--;
         }
     }
 
