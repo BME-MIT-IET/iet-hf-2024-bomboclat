@@ -66,12 +66,8 @@ public class Pipe extends Field implements Stepable{
     public Field getNeighbour(int direction) {
         if(direction>=2){
             return null;
-        }else if(!sticky && !slippery){
+        }else if(!sticky){
             return endpoints.get(direction);
-        }else if(slippery){
-            int rnd = new Random().nextInt(2);
-            slippery = false;
-            return endpoints.get(rnd);
         }else if(sticky){
             sticky = false;
             return this;
@@ -147,8 +143,14 @@ public class Pipe extends Field implements Stepable{
      */
     public void Accept(Character c) {
         if(!has_player) {
-            has_player = true;
-            super.Accept(c);
+            if(slippery){
+                int rnd = new Random().nextInt(2);
+                slippery = false;
+                this.getEndpoint(rnd).Accept(c);
+            }else{
+                has_player = true;
+                super.Accept(c);
+            }
         }
     }
 
