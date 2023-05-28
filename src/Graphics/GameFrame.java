@@ -10,11 +10,12 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
+import java.net.URL;
 
 public class GameFrame extends JFrame {
     private JPanel control;
     private Drawer canvas = new Drawer();
-    private Color bgColor = new Color(255, 255, 255);
+    private Color bgColor = new Color(255, 238, 203);
     private Game currentGame;
     private JMenuBar menuBar;
     private JPanel board;
@@ -39,6 +40,10 @@ public class GameFrame extends JFrame {
     private void initFrame() {
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
         this.setResizable(false);
+        URL url = ClassLoader.getSystemResource("Graphics/Images/deserticon.jpg");
+        Toolkit kit = Toolkit.getDefaultToolkit();
+        Image img = kit.createImage(url);
+        this.setIconImage(img);
         setLayout(new BorderLayout());
         this.getContentPane().setBackground(bgColor);
 
@@ -46,7 +51,7 @@ public class GameFrame extends JFrame {
         this.control.setLayout(new BoxLayout(this.control, BoxLayout.Y_AXIS));
         control.setMinimumSize(new Dimension(400, 800));
         control.setPreferredSize(new Dimension(400, 800));
-        control.setBackground(new Color(255,255,255));
+        control.setBackground(new Color(255, 238, 203));
 
         this.infoLabel = new JLabel();
         this.infoLabel.setAlignmentX(Component.CENTER_ALIGNMENT);
