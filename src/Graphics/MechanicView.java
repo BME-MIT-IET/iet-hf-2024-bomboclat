@@ -105,6 +105,9 @@ public class MechanicView implements IView{
         return selected;
     }
 
+    /**
+     * Nem térít vissza semmit, hiszen játékos View-jához nem tartozik Field típusú objektum.
+     */
     @Override
     public Field getField() {
         return null;

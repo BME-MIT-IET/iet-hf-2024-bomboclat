@@ -12,6 +12,9 @@ import Game.Character;
 import Game.Field;
 import Game.Pipe;
 
+/**
+ * A rajzolási felületet reprezentáló osztály. Levezényli például a kirajzolási feladatokat (Update-ek meghívása)
+ */
 public class Drawer extends Canvas{
     //A rajzolható objektumok listája
     List<IView> viewable;
@@ -149,18 +152,30 @@ public class Drawer extends Canvas{
             }
         }
 
+        /**
+         * Nincs megvalósítva, elnyeli a hívást.
+         */
         @Override
         public void mousePressed(MouseEvent e) {
         }
 
+        /**
+         * Nincs megvalósítva, elnyeli a hívást.
+         */
         @Override
         public void mouseReleased(MouseEvent e) {
         }
 
+        /**
+         * Nincs megvalósítva, elnyeli a hívást.
+         */
         @Override
         public void mouseEntered(MouseEvent e) {
         }
 
+        /**
+         * Nincs megvalósítva, elnyeli a hívást.
+         */
         @Override
         public void mouseExited(MouseEvent e) {
         }

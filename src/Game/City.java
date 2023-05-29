@@ -85,7 +85,7 @@ public class City extends Node{
     public void setView(IView view){
         this.cityView = (CityView) view;
     }
-
+    
     /**
      * Visszaadja az osztály cityView attribútumában tárolt CityView
      * objektumot. 

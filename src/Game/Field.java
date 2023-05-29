@@ -144,6 +144,15 @@ abstract public class Field{
         return false;
     }
 
+    /**
+     * Absztrakt függvény, amelyek a leszármazottakban vannak megvalósítva.
+     * @return Visszaadja az adott objektumhoz tartozó IView-t implementáló osztályt reprezentáló objektumot.
+     */
     abstract public IView getView();
+
+    /**
+     * Absztrakt függvény, amelyek a leszármazottakban vannak megvalósítva.
+     * Beállítja a leszármazotthoz tartozó view objektumot a paraméterben megkapott objektumra.
+     */
     abstract public void setView(IView view);
 }

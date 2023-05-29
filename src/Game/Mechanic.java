@@ -7,9 +7,21 @@ import Graphics.MechanicView;
  */
 public class Mechanic extends Character{
     
+    /**
+     * A mechanic kezében lévő csövet tárolja
+     */
     private Pipe pipe_in_hand;
+    /**
+     * A mechanic kezében lévő pumpát tárolja
+     */
     private Pump pump_in_hand;
+    /**
+     * Azt tárolja, hogy a mechanic kezében a cső melyik vége van.
+     */
     private int pipeEnd;
+    /**
+     * A mechanic megjelenítéséért felelős MechanicView típusú objektumot tárolja
+     */
     private MechanicView mechanicView;
 
     /**
@@ -22,10 +34,20 @@ public class Mechanic extends Character{
         mechanicView = new MechanicView();
         mechanicView.setMechanic(this);
     }
+    /**
+     * Beállítja a mechanicView tagváltozó setSelected tagváltozóját true-ra.
+     * Ezáltal az adott játékos egy piros téglalappal lesz körülvéve, ezzel jelezve, hogy ő az aktív játékos, aki léphet.
+     * Felülírja az ős azonos nevű függvényét.
+     */
     @Override
     public void setActive() {
         mechanicView.setSelected(true);
     }
+    /**
+     * Beállítja a mechanicView tagváltozó setSelected tagváltozóját false-ra.
+     * Így vizuálisan se lesz aktív az adott játékoshoz tartozó karakter.
+     * Felülírja az ős azonos nevű függvényét.
+     */
     @Override
     public void setNotActive()
     {
@@ -172,10 +194,17 @@ public class Mechanic extends Character{
         pipeEnd = end;
     }
 
+    /**
+     * A mechanicView tagváltozó értékét állítja be.
+     * @param view beállítandó view objektum.
+     */
     public void setView(MechanicView view){
         mechanicView = view;
     }
 
+    /**
+     * @return visszaadja a mechanicView tagváltozóban tárolt objektumot (annak referenciáját.)
+     */
     public MechanicView getView(){
         return mechanicView;
     }

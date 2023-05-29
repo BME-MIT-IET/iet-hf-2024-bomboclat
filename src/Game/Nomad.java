@@ -27,10 +27,22 @@ public class Nomad extends Character{
         nomadView = new NomadView();
         nomadView.setNomad(this);
     }
+
+    /**
+     * Beállítja a mechanicView tagváltozó setSelected tagváltozóját true-ra.
+     * Ezáltal az adott játékos egy piros téglalappal lesz körülvéve, ezzel jelezve, hogy ő az aktív játékos, aki léphet.
+     * Felülírja az ős azonos nevű függvényét.
+     */
     @Override
     public void setActive() {
         nomadView.setSelected(true);
     }
+
+    /**
+     * Beállítja a mechanicView tagváltozó setSelected tagváltozóját false-ra.
+     * Így vizuálisan se lesz aktív az adott játékoshoz tartozó karakter.
+     * Felülírja az ős azonos nevű függvényét.
+     */
     @Override
     public void setNotActive()
     {
@@ -49,10 +61,17 @@ public class Nomad extends Character{
         return ret;
     }
 
+    /**
+     * A nomadView tagváltozó értékét állítja be.
+     * @param view beállítandó view objektum.
+     */
     public void setView(NomadView view){
         nomadView = view;
     }
 
+    /**
+     * @return visszaadja a nomadView tagváltozóban tárolt objektumot (annak referenciáját.)
+     */
     public IView getView(){
         return nomadView;
     }

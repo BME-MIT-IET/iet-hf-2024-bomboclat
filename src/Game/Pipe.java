@@ -11,34 +11,61 @@ import Graphics.*;
  * A csövet reprezentáló osztály
  */
 public class Pipe extends Field implements Stepable{
-    //A cső végpontjait számontartó lista. Egy időpillanatban maximum 2 db eleme lehet.
+    /**
+     * A cső végpontjait számontartó lista. Egy időpillanatban maximum 2 db eleme lehet.
+     */
     List<Node> endpoints;
-    //Azt tárolja, hogy lyukas-e a cső.
+    /**
+     * Azt tárolja, hogy lyukas-e a cső.
+     */
     boolean has_hole;
-    //Azt tárolja, hogy jelenleg van-e víz a csőben.
+    /**
+     * Azt tárolja, hogy jelenleg van-e víz a csőben.
+     */
     boolean has_water;
-    //A körök során elfolyt víz mennyiségét tárolja az adott csőre.
+    /**
+     * A körök során elfolyt víz mennyiségét tárolja az adott csőre.
+     */
     int lost;
-    //Azt tárolja, hogy tartózkodik-e éppen játékos a csövön.
+    /**
+     * Azt tárolja, hogy tartózkodik-e éppen játékos a csövön.
+     */
     boolean has_player;
-    //Azt tárolja, hogy még hány körig nem lehet lyukasztani a csövet.
+    /**
+     * Azt tárolja, hogy még hány körig nem lehet lyukasztani a csövet.
+     */
     int hole_timer;
-    //Azt tárolja, hogy csúszós-e a cső.
+    /**
+     * Azt tárolja, hogy csúszós-e a cső.
+     */
     boolean slippery;
-    //Azt tárolja, hogy ragadós-e a cső.
+    /**
+     * Azt tárolja, hogy ragadós-e a cső.
+     */
     boolean sticky;
-    //Megjelenítését kezelő View objektum.
+    /**
+     * Megjelenítését kezelő View objektum.
+     */
     PipeView pipeView;
+    /**
+     * Tárolja, hogy volt-e víz a csőben.
+     */
+    boolean hadwater;
 
+    /**
+     * @return visszaadja a hadwater tagváltozóban tárolt értéket.
+     */
     public boolean isHadwater() {
         return hadwater;
     }
 
+    /**
+     * Beállítja a hadwater tagváltozóban található értéket.
+     * @param hadwater beállítandó érték
+     */
     public void setHadwater(boolean hadwater) {
         this.hadwater = hadwater;
     }
-
-    boolean hadwater;
 
     /**
      * Pipe konstruktora.
@@ -328,14 +355,24 @@ public class Pipe extends Field implements Stepable{
         pipeView= (PipeView) v;
     }
 
+    /**
+     * Visszaadja a has_water boolean-ben tárolt értéket.
+     */
     public boolean getHasWater(){
         return has_water;
     }
 
+    /**
+     * Visszaadja a has_hole boolean-ben tárolt értéket.
+     */
     public boolean getHasHole(){
         return has_hole;
     }
 
+    /**
+     * Beállítja a has_water tagváltozó értékét a paraméterként megkapoot boolean értékére.
+     * @param t boolean, amelynek értéke a has_water tagváltozó értéke is lesz.
+     */
     public void setHasWater(boolean t){
         has_water = t;
     }

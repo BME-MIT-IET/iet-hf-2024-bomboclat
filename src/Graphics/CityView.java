@@ -3,12 +3,18 @@ package Graphics;
 import Game.*;
 import java.awt.*;
 
+/**
+ * A City típusú objektumok kirajzolásáért felelős osztály
+ */
 public class CityView extends NodeView{
 
     /**
-     * A várost/ciszternát reprezentáló négyzet szélessége és magassága
+     * A várost/ciszternát reprezentáló négyzet szélessége
      */
     int width = 75;
+    /**
+     * A várost/ciszternát reprezentáló négyzet magassága
+     */
     int height = 75;
 
     /**
