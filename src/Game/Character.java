@@ -1,5 +1,5 @@
 package Game;
-import skeleton.*;
+
 
 /**
  * A karaktert reprezentáló osztály
@@ -15,7 +15,6 @@ public class Character{
     }
 
     private int allMoves=5;
-    private boolean isActive;
 
 
     public boolean Lube() {

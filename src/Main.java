@@ -1,7 +1,3 @@
-import Game.*;
-import skeleton.*;
-import CommandInterpreter.*;
-
 import javax.swing.*;
 import java.awt.*;
 import Graphics.GameFrame;

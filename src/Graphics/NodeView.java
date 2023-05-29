@@ -4,7 +4,6 @@ import Game.Field;
 import Game.Node;
 
 import java.awt.*;
-import java.io.ObjectInputStream.GetField;
 
 public abstract class NodeView implements IView{
     /**

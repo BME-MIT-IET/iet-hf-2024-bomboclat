@@ -34,7 +34,6 @@ public class PipeView implements IView{
     @Override
     public void Update(Graphics g) {
         int NodeSize = 10;
-        boolean haswater = pipe.getHasWater();
         boolean isSticky = pipe.getSticky();
         boolean isSlippery = pipe.getSlippery();
         boolean hasHole = pipe.getHasHole();
