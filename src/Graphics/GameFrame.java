@@ -177,7 +177,7 @@ public class GameFrame extends JFrame {
         control.add(placePump);
         control.add(Box.createVerticalStrut(40));
 
-        this.exit = new JButton("Exit");
+        this.exit = new JButton("Pass");
         this.exit.setMaximumSize(new Dimension(175, 50));
         this.exit.setAlignmentX(Component.CENTER_ALIGNMENT);
         this.exit.setForeground(new Color(0,0,0));
