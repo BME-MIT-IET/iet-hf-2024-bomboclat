@@ -259,8 +259,11 @@ public class GameFrame extends JFrame {
     }
 
     /**
-     * 
-     * @return
+     * Elvégzi a menü beállítását, illetve kezeli azt is, hogy mi történik, ha a "Start new game"-re rákattint a felhasználó.
+     * Ilyenkor létrehoz egy új ablakot, amelyben bekéri a szerelők és a nomádok számát. Az ablakban az OK-ra kattintva indítható új játék
+     * A CANCEL-re kattintva az akció meghiúsul.
+     * Az új játék indításval kapcsolatos problémákat kezeli (pl.: Nem lehet a szerelők és nomádok száma különböző)
+     * @return a beállított JMenuBar objektum
      */
     private JMenuBar createMenuBar() {
         JMenuBar menuBar = new JMenuBar();
