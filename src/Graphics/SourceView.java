@@ -4,6 +4,9 @@ import java.awt.*;
 
 import Game.*;
 
+/**
+ * A Source típusú objektumok kirajzolásáért felelős osztály
+ */
 public class SourceView extends NodeView{
 
     /**

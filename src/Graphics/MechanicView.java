@@ -12,13 +12,21 @@ import javax.imageio.ImageIO;
  * A szerelő megjelnítéséért felelős osztály
  */
 public class MechanicView implements IView{
-    //A szerelő, akit megjelenít
+    /**
+     * A szerelő, akit megjelenít
+     */
     private Mechanic mechanic;
-    //A megjelenítési pozíció x koordinátája
+    /**
+     * A megjelenítési pozíció x koordinátája
+     */
     private int x;
-    //A megjelenítési pozíció y koordinátája
+    /**
+     * A megjelenítési pozíció y koordinátája
+     */
     private int y;
-    //Az adott karakter épp irányítás alatt áll-e
+    /**
+     * Az adott karakter épp irányítás alatt áll-e
+     */
     private boolean selected;
 
     /**
@@ -46,6 +54,14 @@ public class MechanicView implements IView{
         return mechanic;
     }
 
+    /**
+     * Az Update metódus felüldefiniálása (IView implementálása miatt)
+     * Elvégzi a szerelőt reprezentáló kép kirajzolását.
+     * Ehhez lekéri az objektumhoz tartozó backend-beli mechanic aktuális fieldjét.
+     * Majd ettől a field-től lekérdezi a field-hez tartozó frontend/view objektumot és lekéri annak x,y koordinátáját.
+     * A kapott koordináták alapján elvégzi a kirajzolást.
+     * Figyelembe veszi a karakter állapotát (pl. van-e a kezében cső/pumpa)
+     */
     @Override
     public void Update(Graphics g) {
         x = mechanic.getField().getView().getPlayerPositionX();
@@ -105,6 +121,9 @@ public class MechanicView implements IView{
         return selected;
     }
 
+    /**
+     * Nem térít vissza semmit, hiszen játékos View-jához nem tartozik Field típusú objektum.
+     */
     @Override
     public Field getField() {
         return null;

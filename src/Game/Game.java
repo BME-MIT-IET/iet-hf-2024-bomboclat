@@ -24,23 +24,37 @@ public class Game {
     List<Character> characters;
     // A pályát tároló változó.
     Playfield currPlayfield;
+    // Aktív játékost tároló tagváltozó
+    Character currPlayer;
 
+    /**
+     * Getter függvény a rounc_count változóhoz.
+     * @return a változóban tárolt érték.
+     */
     public int getRound_count() {
         return round_count;
     }
 
+    /**
+     * Getter függvény a currPlayer tagváltozóhoz.
+     * @return a változóban tárolt objektum referencia.
+     */
     public Character getCurrPlayer() {
         return currPlayer;
     }
-
-    Character currPlayer;
 
     public int getStep_count() {
         return step_count;
     }
 
+    /**
+     * Azt tárolja, hogy a játékos mennyi lépést végzett el.
+     */
     int step_count;
 
+    /**
+     * GameFrame-t tároló statikus változó. Grafikus megjelenítéshez kell.
+     */
     public static GameFrame frame;
 
     /**
@@ -53,6 +67,9 @@ public class Game {
         currPlayfield = null;
     }
 
+    /**
+     * Game második konstuktora. A grafikus megjelenítés miatt szükséges (GameFrame f paraméter)
+     */
     public Game(int _all_rounds, GameFrame f){
         frame = f;
         round_count = 0;
@@ -163,6 +180,7 @@ public class Game {
 
     /**
      * Egy kör végeztével levezényli a stepable interfészt megvalósító elemek lépését.
+     * @return grafikus megjelenítés miatt szükséges - tervezői döntés csak az EndGame esetében van jelentősége a stringnek.
      */
     public String EndRound(){
         for(int i=0; i<this.currPlayfield.pipes.size(); i++) {
@@ -181,6 +199,10 @@ public class Game {
         }
     }
 
+    /**
+     * 
+     * @return grafikus megjelenítés miatt szükséges - tervezői döntés csak az EndGame esetében van jelentősége a stringnek.
+     */
     public String EndStep() {
         currPlayer.setMoves(currPlayer.getAllMoves());
         currPlayer.setNotActive();

@@ -20,6 +20,9 @@ public class Pump extends Node{
      */
     Pipe where;
 
+    /**
+     * Tárolja az adott példányhoz tartozó PumpView objektumot, amely a megjelenítését végzi el a pump-nak.
+     */
     PumpView pumpview;
 
     /**
@@ -145,8 +148,16 @@ public class Pump extends Node{
         pumpview = (PumpView) pw;
     }
 
+    /**
+     * Visszaadja a pumpview tagváltozóban található PumpView objektum referenciáját.
+     * @return A referencia.
+     */
     public PumpView getView() {return pumpview;}
 
+    /**
+     * Visszaadja a working tagváltozóban tárolt boolean értéket.
+     * @return working tagváltozó (annak értéke)
+     */
     public boolean isWorking() {return working;}
 
     

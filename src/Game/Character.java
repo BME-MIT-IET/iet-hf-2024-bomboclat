@@ -110,8 +110,15 @@ public class Character{
         return false;
     }
 
+    /**
+     * A leszármazottakban van megvalósítva, itt csak elnyeli a függvényhívást.
+     */
     public void setActive()
     {}
+
+    /**
+     * A leszármazottakban van megvalósítva, itt csak elnyeli a függvényhívást.
+     */
     public void setNotActive()
     {}
 
@@ -128,7 +135,14 @@ public class Character{
         return ret;
     }
 
+    /**
+     * A leszármazottakban van megvalósítva, itt csak elnyeli a függvényhívást.
+     */
     public void PickUpPipe(){}
+
+    /**
+     * A leszármazottakban van megvalósítva, itt csak elnyeli a függvényhívást.
+     */
     public void PickUpPump(){}
 
     public boolean PlacePipe(){

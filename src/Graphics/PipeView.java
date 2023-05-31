@@ -4,14 +4,36 @@ import Game.*;
 import java.awt.*;
 import java.awt.geom.Line2D;
 
+/**
+ * Az a pipe objektum, aminek a megjelenítésért felelős.
+ */
 public class PipeView implements IView{
-    //Az a pipe objektum, aminek a megjelenítésért felelős.
+    /**
+     * A pipe objektum, amit megjelenít
+     */
     Pipe pipe;
+    /**
+     * A megjelenített pipe 1. számú végének x koordinátája.
+     */
     int end1X;
+    /**
+     * A megjelenített pipe 1. számú végének y koordinátája.
+     */
     int end1Y;
+    /**
+     * A megjelenített pipe 2. számú végének x koordinátája.
+     */
     int end0X;
+    /**
+     * A megjelenített pipe 1. számú végének y koordinátája.
+     */
     int end0Y;
 
+    /**
+     * PipeView konstruktora, az endNumberX/Y tegváltozókat annak függvényében állítja be, hogy a csőnek
+     * mely végei vannak bekötve valahova.
+     * @param _pipe pipe tagváltozó fogja ezt a referenciát tárolni
+     */
     public PipeView(Pipe _pipe){
         pipe = _pipe;
         if(pipe.getEndpoint(0)!=null){
@@ -31,6 +53,16 @@ public class PipeView implements IView{
         }
     }
 
+    /**
+     * Elvégzi az objektum kirajzolását a g objektumra.
+     * A rajzoláshoz lekérdezi először a cső állapotát:
+     * - Ragadós-e?
+     * - Csúszós-e?
+     * - Van-e rajta lyuk?
+     * - X,Y koordinátái a végeknek annak függvényében, hogy a cső be van-e kötve bármelyik végén valahova.
+     * Ezután elvégzi a kirajzolást a fent megszerzett adatok függvényében.
+     * @param g amire történik a rajzolás.
+     */
     @Override
     public void Update(Graphics g) {
         int NodeSize = 10;
@@ -87,10 +119,18 @@ public class PipeView implements IView{
         }
     }
 
+    /**
+     * Getter a pipe tagváltozóhoz.
+     * @return pipe tagváltozó referenciája
+     */
     public Pipe getPipe(){
         return pipe;
     }
 
+    /**
+     * Setter a pipe tagváltozóhoz.
+     * @param p A beállítandó objektum referenciája.
+     */
     public void setPipe(Pipe p){
         pipe = p;
     }
@@ -131,6 +171,10 @@ public class PipeView implements IView{
         return halfway;
     }
 
+    /**
+     * Visszaadja a pipe tagváltozóban tárolt objektum referenciáját.
+     * @return az objektum referenciája.
+     */
     @Override
     public Field getField() {
         return pipe;

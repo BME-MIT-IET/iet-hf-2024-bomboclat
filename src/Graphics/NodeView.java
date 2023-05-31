@@ -5,6 +5,9 @@ import Game.Node;
 
 import java.awt.*;
 
+/**
+ * A Node típusú objektumok kirajzolásáért felelős osztály
+ */
 public abstract class NodeView implements IView{
     /**
      * A Node X koordinátája.
@@ -76,7 +79,11 @@ public abstract class NodeView implements IView{
     public void setNode(Node n) {
         node=n;
     }
-
+    
+    /**
+     * Visszaadja a node tagváltozóban tárolt objektum referenciáját.
+     * @return az objektum referenciája.
+     */
     @Override
     public Field getField() {
         return node;

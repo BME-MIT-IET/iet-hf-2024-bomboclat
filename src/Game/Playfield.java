@@ -10,9 +10,13 @@ import java.util.ArrayList;
  */
 public class Playfield implements Stepable{
 
-    //a játékban a csúcspontként tárolt elemeket tárolja, ezekből felépíthető minden pálya, hiszen a csúcsok ismerik az éleiket.
+    /**
+     * A játékban a csúcspontként tárolt elemeket tárolja, ezekből felépíthető minden pálya, hiszen a csúcsok ismerik az éleiket.
+     */
     List<Node> nodes;
-    //Az előbb említett csúcspontokhoz tartozó éleket, azaz a csöveket tároló változó.
+    /**
+     * Az előbb említett csúcspontokhoz tartozó éleket, azaz a csöveket tároló változó.
+     */
     List<Pipe> pipes;
 
 

@@ -8,13 +8,41 @@ import java.awt.*;
 import java.awt.event.KeyEvent;
 import java.net.URL;
 
+/**
+ * A felhaszáló által látható ablakot megvalósító osztály
+ */
 public class GameFrame extends JFrame {
+
+    /**
+     * A játékhoz tartozó gombokat tartalmazó panel
+     */
     private JPanel control;
+    /**
+     * Rajzolási felület
+     */
     private Drawer canvas = new Drawer();
+    /**
+     * A rajzolási felület alap-/háttérszíne
+     */
     private Color bgColor = new Color(255, 238, 203);
+    /**
+     * Aktuális Game objektumot tároló változó
+     */
     private Game currentGame;
+
+    /**
+     * Menüt tartalmazó tagváltozó, annak megjelenítéséért felel.
+     */
     private JMenuBar menuBar;
+
+    /**
+     * A játék lényegi felületét tartalmazó panel (ahol megjelennek az objektumok, játékosok)
+     */
     private JPanel board;
+
+    /**
+     * Gombok a különböző játékkal kapcsolatos akciók megvalósításához, elsütéséhez.
+     */
     private JButton drill;
     private JButton fix;
     private JButton glue;
@@ -28,11 +56,26 @@ public class GameFrame extends JFrame {
     private JButton changePump;
     private JLabel infoLabel;
 
+    /**
+     * GameFrame konstruktor
+     */
     public GameFrame(String title) {
         super(title);
         this.initFrame();
     }
 
+    /**
+     * Elvégzi az ablak inicializálását.
+     * Ennek lépései vázlatosan:
+     * - Beállítja a játékhoz tartozó ikont.
+     * - Beállítja a control panelt, amely majd az akcióval kapcsolatos gombokat fogja tartalmazni.
+     * - Beállítja a gombokat.
+     * - Beállítja a menubar-t egy külön függvény meghívásával.
+     * - Beállítja a board panelt.
+     * Beállítás alatt érteni kell az elemek megfelelő elhelyezését, skálázását, illetve az eseménykezelők hozzárendelését az elemekhez is.
+     * Például ez a gombok esetén az adott gombhoz tartozó akciót indítja el, amely a backend-ben folytatja futását.
+     * (röviden: Lube gombra kattintva meghívódik az aktív játékos Lube függvénye)
+     */
     private void initFrame() {
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
         this.setResizable(false);
@@ -202,16 +245,26 @@ public class GameFrame extends JFrame {
 
     }
 
+    /**
+     * Elvégzi a játék elindítását.
+     * Létrehoz egy új játékot, majd a canvas (újra-)beállításával elindítja a játékot a megfelelő paraméterezéssel.
+     * @param num az játékban résztvevő karakterek száma (ennek igazából a 2-szerese. num darab szerelő és num darab nomád)
+     */
     private void startGame(int num) {
         currentGame = new Game(10, this);
         canvas.setViewables(currentGame.StartGame(num));
         canvas.revalidate();
         canvas.repaint();
         this.infoLabel.setText("Round: "+  (currentGame.getRound_count()+1) +", Player: "+ (currentGame.getStep_count()+1) +", Turn: "+ (5-currentGame.getCurrPlayer().getMoves()));
-
-
     }
 
+    /**
+     * Elvégzi a menü beállítását, illetve kezeli azt is, hogy mi történik, ha a "Start new game"-re rákattint a felhasználó.
+     * Ilyenkor létrehoz egy új ablakot, amelyben bekéri a szerelők és a nomádok számát. Az ablakban az OK-ra kattintva indítható új játék
+     * A CANCEL-re kattintva az akció meghiúsul.
+     * Az új játék indításval kapcsolatos problémákat kezeli (pl.: Nem lehet a szerelők és nomádok száma különböző)
+     * @return a beállított JMenuBar objektum
+     */
     private JMenuBar createMenuBar() {
         JMenuBar menuBar = new JMenuBar();
         var menu = new JMenu("Menu");
@@ -245,7 +298,6 @@ public class GameFrame extends JFrame {
             }
         });
         var exitMenuItem = new JMenuItem("Exit", KeyEvent.VK_X);
-        //kulturaltabb action listener
         exitMenuItem.addActionListener(e -> {
             this.dispose();
         });
@@ -256,6 +308,9 @@ public class GameFrame extends JFrame {
         return menuBar;
     }
 
+    /**
+     * @return Visszaadja a canvas tagváltozóban tárolt értéket.
+     */
     public Drawer getCanvas(){
         return canvas;
     }

@@ -4,8 +4,18 @@ import java.awt.Graphics;
 
 import Game.Pump;
 
+/**
+ * A Pump típusú objektumok kirajzolásáért felelős osztály
+ */
 public class PumpView extends NodeView{
+
+    /**
+     * A kirajzolandó pump objektum.
+     */
     Pump pump;
+    /**
+     * A kirajzolandó Node objektum mérete.
+     */
     int SIZE = 30;
 
     /**
@@ -34,8 +44,16 @@ public class PumpView extends NodeView{
         return y + SIZE / 2;
     }
 
+    /**
+     * Setter a pump tagváltozóhoz.
+     * @param p A beállítandó objektum referenciája.
+     */
     public void setPump(Pump p) { pump = p;}
 
+    /**
+     * Getter a pipe tagváltozóhoz.
+     * @return pump tagváltozó referenciája
+     */
     public Pump getPump() {return pump;}
 
     /**
