@@ -8,7 +8,6 @@
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<maven.compiler.source>/src</maven.compiler.source>
 	</properties>
 
 	<dependencies>
@@ -39,6 +38,7 @@
 				<artifactId>maven-compiler-plugin</artifactId>
 				<version>3.10.1</version>
 				<configuration>
+					<source>/src</source>
 					<release>11</release>
 				</configuration>
 			</plugin>
