@@ -1,6 +1,7 @@
+package hu.bomboclat;
 import javax.swing.*;
 import java.awt.*;
-import Graphics.GameFrame;
+import hu.bomboclat.Graphics.GameFrame;
 
 public class Main {
     

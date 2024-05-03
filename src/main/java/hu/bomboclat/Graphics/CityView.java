@@ -1,6 +1,6 @@
-package Graphics;
+package hu.bomboclat.Graphics;
 
-import Game.*;
+import hu.bomboclat.Game.*;
 import java.awt.*;
 
 /**
