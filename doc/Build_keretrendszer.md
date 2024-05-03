@@ -1,5 +1,5 @@
 # Célja
-A build keretrendszer beüzemelésének célja, hogy bizonyos körülmények között lefusson egy CI build a giten ezzel segítve a validációt, valamint hogy megfelelően fordul-e a program. 
+A build keretrendszer beüzemelésének célja, hogy bizonyos körülmények között lefusson egy CI build a giten ezzel segítve a validációt, valamint hogy megfelelően fordul-e a program, illetve a dependency gráfot is frissíti. 
 
 ## A build megírásának módja:
 A github actions fülön létrehoztam egy új maven buildet, majd kitöltöttem a yaml és a pom.xml tartalmát a megfelelő adatokkal.
