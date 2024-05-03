@@ -1,7 +1,7 @@
-package skeleton;
+package hu.bomboclat.skeleton;
 
-import Game.*;
-import Game.Character;
+import hu.bomboclat.Game.*;
+import hu.bomboclat.Game.Character;
 
 
 public class TestClass {

@@ -1,7 +1,7 @@
-package Graphics;
+package hu.bomboclat.Graphics;
 
-import Game.Field;
-import Game.Nomad;
+import hu.bomboclat.Game.Field;
+import hu.bomboclat.Game.Nomad;
 
 import java.awt.*;
 import java.awt.image.BufferedImage;

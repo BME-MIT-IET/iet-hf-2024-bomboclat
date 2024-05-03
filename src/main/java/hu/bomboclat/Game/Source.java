@@ -1,7 +1,7 @@
-package Game;
+package hu.bomboclat.Game;
 
-import Graphics.IView;
-import Graphics.SourceView;
+import hu.bomboclat.Graphics.IView;
+import hu.bomboclat.Graphics.SourceView;
 
 
 /**

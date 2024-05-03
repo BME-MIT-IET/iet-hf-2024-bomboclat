@@ -1,10 +1,10 @@
-package Game;
+package hu.bomboclat.Game;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-import Graphics.*;
+import hu.bomboclat.Graphics.*;
 
 
 /**

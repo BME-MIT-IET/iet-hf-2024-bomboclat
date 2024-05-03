@@ -1,8 +1,8 @@
-package Graphics;
+package hu.bomboclat.Graphics;
 
 import java.awt.*;
 
-import Game.*;
+import hu.bomboclat.Game.*;
 
 /**
  * A Source típusú objektumok kirajzolásáért felelős osztály

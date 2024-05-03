@@ -1,4 +1,4 @@
-package CommandInterpreter;
+package hu.bomboclat.CommandInterpreter;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -14,8 +14,8 @@ import java.util.Map;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-import Game.*;
-import Game.Character;
+import hu.bomboclat.Game.*;
+import hu.bomboclat.Game.Character;
 
 public class CommandInterpreter {
     /*A futtatható commandokról map*/

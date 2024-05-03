@@ -1,5 +1,5 @@
-package Graphics;
-import Game.*;
+package hu.bomboclat.Graphics;
+import hu.bomboclat.Game.*;
 
 import java.awt.*;
 import java.awt.geom.Line2D;

@@ -1,7 +1,7 @@
-package Graphics;
+package hu.bomboclat.Graphics;
 import java.awt.Graphics;
 
-import Game.Field;
+import hu.bomboclat.Game.Field;
 
 /**
  * A megjelenítést kezelő interfész.

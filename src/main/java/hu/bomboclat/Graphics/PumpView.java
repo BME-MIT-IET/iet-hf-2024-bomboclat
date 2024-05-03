@@ -1,8 +1,8 @@
-package Graphics;
+package hu.bomboclat.Graphics;
 import java.awt.Color;
 import java.awt.Graphics;
 
-import Game.Pump;
+import hu.bomboclat.Game.Pump;
 
 /**
  * A Pump típusú objektumok kirajzolásáért felelős osztály

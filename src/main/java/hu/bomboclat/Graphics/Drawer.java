@@ -1,4 +1,4 @@
-package Graphics;
+package hu.bomboclat.Graphics;
 
 import java.awt.Canvas;
 import java.awt.Color;
@@ -8,9 +8,9 @@ import java.awt.event.MouseListener;
 import java.awt.image.BufferedImage;
 import java.util.*;
 
-import Game.Character;
-import Game.Field;
-import Game.Pipe;
+import hu.bomboclat.Game.Character;
+import hu.bomboclat.Game.Field;
+import hu.bomboclat.Game.Pipe;
 
 /**
  * A rajzolási felületet reprezentáló osztály. Levezényli például a kirajzolási feladatokat (Update-ek meghívása)

@@ -1,6 +1,6 @@
-package Graphics;
-import Game.Field;
-import Game.Mechanic;
+package hu.bomboclat.Graphics;
+import hu.bomboclat.Game.Field;
+import hu.bomboclat.Game.Mechanic;
 
 import java.awt.*;
 import java.awt.image.BufferedImage;

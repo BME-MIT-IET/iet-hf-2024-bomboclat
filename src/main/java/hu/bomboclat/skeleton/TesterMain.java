@@ -1,4 +1,4 @@
-package skeleton;
+package hu.bomboclat.skeleton;
 
 import java.util.Scanner;
 

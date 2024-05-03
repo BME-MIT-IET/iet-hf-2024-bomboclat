@@ -1,5 +1,5 @@
-package Game;
-import Graphics.MechanicView;
+package hu.bomboclat.Game;
+import hu.bomboclat.Graphics.MechanicView;
 
 
 /**

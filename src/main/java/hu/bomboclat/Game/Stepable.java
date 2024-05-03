@@ -1,4 +1,4 @@
-package Game;
+package hu.bomboclat.Game;
 
 /**
  * A léptethető mezők működését megvalósító interfész.

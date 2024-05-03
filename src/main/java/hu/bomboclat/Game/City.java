@@ -1,8 +1,8 @@
-package Game;
+package hu.bomboclat.Game;
 
-import Graphics.CityView;
-import Graphics.IView;
-import Graphics.PipeView;
+import hu.bomboclat.Graphics.CityView;
+import hu.bomboclat.Graphics.IView;
+import hu.bomboclat.Graphics.PipeView;
 
 /**
  * A ciszternát reprezentáló osztály.

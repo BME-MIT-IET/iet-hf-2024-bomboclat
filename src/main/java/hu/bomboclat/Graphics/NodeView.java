@@ -1,7 +1,7 @@
-package Graphics;
+package hu.bomboclat.Graphics;
 
-import Game.Field;
-import Game.Node;
+import hu.bomboclat.Game.Field;
+import hu.bomboclat.Game.Node;
 
 import java.awt.*;
 

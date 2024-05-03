@@ -1,6 +1,6 @@
-package Graphics;
+package hu.bomboclat.Graphics;
 
-import Game.Game;
+import hu.bomboclat.Game.Game;
 
 import javax.swing.*;
 import javax.swing.border.LineBorder;

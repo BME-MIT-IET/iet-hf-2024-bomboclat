@@ -1,7 +1,7 @@
-package Game;
+package hu.bomboclat.Game;
 
-import Graphics.NomadView;
-import Graphics.IView;
+import hu.bomboclat.Graphics.NomadView;
+import hu.bomboclat.Graphics.IView;
 
 /**
  * A szabotőrt reprezentáló osztály
