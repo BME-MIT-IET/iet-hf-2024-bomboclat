@@ -70,3 +70,35 @@
 ![alt text](/doc/test_images/4.3image.png)
 
 4. Nem sikerül ezt megtenni, ahogy a fenti képen is látszik.
+
+
+## Teszt 6
+<table>
+  <tr>
+   <td><strong>Teszt-eset neve</strong>
+   </td>
+   <td>Step on occupied pipe from source
+   </td>
+  </tr>
+  <tr>
+   <td><strong>Rövid leírás</strong>
+   </td>
+   <td>A játékos megpróbál rálépni foglalt csőre a forrásból, amin áll.
+   </td>
+  </tr>
+  <tr>
+   <td><strong>Teszt célja</strong>
+   </td>
+   <td>Annak tesztelése, hogy a játékos ilyen esetben nem tud a csőre lépni, hiszen az sértené a játékszabályokat.
+   </td>
+  </tr>
+</table>
+
+### Lépések
+1. A játékosunk, amikor sorra kerül, rálép a Move akcióval egy forrásra (kék négyzet).
+![alt text](/doc/test_images/6.1image.png)
+2. Egy másik játékos a Move akcióval rálép egy mellette elhelyezkedő csőre.
+![alt text](/doc/test_images/6.2image.png)
+3. A játékosunk megpróbál a Move akcióval erre a foglalt csőre rálépni a Move akcióval.
+![alt text](/doc/test_images/6.3image.png)
+4. Nem sikerül neki, ahogy a fenti képen is látszik.
