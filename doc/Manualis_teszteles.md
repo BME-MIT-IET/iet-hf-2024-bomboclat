@@ -34,6 +34,7 @@
 ![alt text](/doc/test_images/2.4image.png)
 
 
+
 ## Teszt 4
 <table>
   <tr>
@@ -70,6 +71,7 @@
 ![alt text](/doc/test_images/4.3image.png)
 
 4. Nem sikerül ezt megtenni, ahogy a fenti képen is látszik.
+
 
 
 ## Teszt 6
