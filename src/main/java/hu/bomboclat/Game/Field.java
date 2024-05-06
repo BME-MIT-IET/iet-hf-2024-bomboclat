@@ -13,6 +13,8 @@ public abstract class Field{
     /**Az adott mezőn álló játékosok. */
     protected List<Character> players;
 
+    // random comment
+
     /**Field konstruktora. */
     public Field(){
         players=new ArrayList<>();

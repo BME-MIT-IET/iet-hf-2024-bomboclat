@@ -2,7 +2,7 @@ name: SonarCloud
 on:
   push:
     branches:
-      - static_analysis
+      - static-analysis
   pull_request:
     types: [opened, synchronize, reopened]
 jobs:
