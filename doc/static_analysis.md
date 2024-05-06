@@ -19,9 +19,26 @@ Ezzel szemben a problémák másik része már egy fontosabb hibára világítot
 "Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation."
 Alapjáraton ez problémás lenne. A sonarlint-es warning viszont megoldható azzal, ha egy placeholder kommentet a függvény hasába helyezünk - ezt eddig a függvény felé írtuk ezzel követve a kommentezési szokásokat.
 ### ./Game/City.java
+Ezen file esetében 2 probléma lépett fel.
 
+Az első probléma az, hogy az "Override" annotáció a projekt kódban több helyen hiányzik. Ez egy könnyen kifelejthető probléma, de ugyanakkor a kód olvashatóságát növeli, ha ez explicit ki van írva. Javításra került.
+
+A másik probléma az volt, hogy egy bizonyos függvény esetében (PickUpPump) a visszatérítendő változó először létre van hozva, majd ezután return-öli a függvény. Ez plusz komplexitást ad a kódhoz és adott esetben ronthat az olvashatóságon.
 ### ./Game/Field.java
+A problémák egy része itt is különböző kódolási irányelvek megsértése miatt léptek fel. Például:
+- A Field osztály absztrakt, így nem kéne publikussá tenni a konstruktorát, hiszen nem példányosítható. Helyette a protected a megfelelő.
+- Nem a Java nyelv specifikációjának megfelelő sorrendben lettek leírva egy függvény modifier-jei. 'public abstract' helyett 'abstract public'-ként szerepeltek.
 ### ./Game/Game.java
+A következő sorral két probléma is volt:
+`public static GameFrame frame;`
+Egyrészt az osztály egy adott tagváltozója publikus. Ez az egységbezárás elvét sérti. A változóban tárolt objektum így gyakorlatilag bárhonnan megváltoztatható, ami nem várt viselkedést eredményezhet. Ennek ellenére ez a program írásakor egy szándékos tervezői lépés volt.
+Másrészt a statikus mező nem final. Ez egy biztonsági rést jelent a program számára, hiszen ezzel a "megosztott állapottal" bármelyik másik (a Game referenciát birtokló) osztály bármit tud kezdeni, így pl. null-ra is állíthatja.
+
+A problémák egy másik része arra világított rá, hogy egy bizonyos Java verzió felett felesleges megadni egy ArrayList típusát az ArrayList lista inicializálásnál, hiszen ez már abból kiderül, hogy milyen típúsu ArrayList objektummal tesszük azt egyenlővé. Például:
+`(ArrayList<Character>) characters = new ArrayList<Character>();`
+helyett
+`(ArrayList<Character>) characters = new ArrayList<>();`
+Ezzel a kód olvashatóságát tudjuk tovább növelni
 ### ./Game/Mechanic.java
 ### ./Game/Node.java
 ### ./Game/Nomad.java
