@@ -44,6 +44,13 @@ Egyrészt egy kommentelt kódrész benne maradt a kódban. Erre mondta a SonarLi
 
 A másik probléma a már egyszer előjött `@Override` annotáció hiánya. Ez továbbra is az olvashatóságot hivatott növelni.
 ### ./Game/Node.java
+Ezen osztály esetében is előjött a modifier-ek sorrendjének problémája. Ez javításra került. Illetve ebben az esetben is egy absztrakt osztályról beszélhetünk, melynek a konstruktorja publikus. Ezt már a `Character` osztályban kifejtettek szerint érdemes `protected`-re megváltoztatni.
+
+`return edges.get(d).has_player == true ? null : edges.get(d);` sor esetében a boolean value `true`-val való ellenőrzése felesleges, ami a kód olvashatóságát rontja, így az kitörölhető.
+
+Az osztályban található a "Step" függvény is, amely absztrakt. Mivel ez már a Stepable interfész része, ezért itt nincs szükség újra deklarálni, a leszármazottakban enélkül is meg lehet majd valósítani.
+
+Az `@Override` annotáció hiánya itt is megjelent.
 ### ./Game/Nomad.java
 ### ./Game/Pipe.java
 ### ./Game/Playfield.java
