@@ -72,6 +72,7 @@ public class Mechanic extends Character{
      * Megkísérli megjavítani az adott mezőt, amin éppen áll függetlenül
      * attól, hogy az cső vagy pumpa.
      */
+    @Override
     public boolean Fix(){
         boolean ret =field.Fix();
         if(ret){
@@ -83,6 +84,7 @@ public class Mechanic extends Character{
     /**
      * A szerelő leteszi a kezáben lévő pumpát, arra a csőre, amin áll
      */
+    @Override
     public boolean PlacePump(){
         if(pump_in_hand != null){
             pump_in_hand = field.PlacePump(pump_in_hand);
@@ -98,6 +100,7 @@ public class Mechanic extends Character{
     /**
      * A szerelő beköti a kezében lévő csövet abba a pumpába, amin áll
      */
+    @Override
     public boolean PlacePipe(){
         field.PlacePipe(this);
         if(pipe_in_hand == null){
@@ -111,6 +114,7 @@ public class Mechanic extends Character{
      * játékos egy ciszternában pumpát szeretne a kezébe venni. Ekkor felvesz egy
      * pumpát, amivel a kezében mozoghat a pályán.
      */
+    @Override
     public void PickUpPump(){
         boolean emptyHanded = false;
         if(pump_in_hand == null){
@@ -127,6 +131,7 @@ public class Mechanic extends Character{
      * annak az egyik végét) arról a mezőről, amelyen áll, majd ha ez sikerül, a cső
      * vége a kezébe kerül, ezzel tud tovább mozogni.
      */
+    @Override
     public void PickUpPipe(){
         boolean emptyHanded = false;
         boolean oneEnd = false;
@@ -183,7 +188,6 @@ public class Mechanic extends Character{
      */
     public void SetPipeInHand(Pipe pipe){
         pipe_in_hand = pipe;
-	    //pipeEnd = 0;
     }
 
     /**

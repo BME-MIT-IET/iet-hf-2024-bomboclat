@@ -40,6 +40,9 @@ helyett
 `(ArrayList<Character>) characters = new ArrayList<>();`
 Ezzel a kód olvashatóságát tudjuk tovább növelni
 ### ./Game/Mechanic.java
+Egyrészt egy kommentelt kódrész benne maradt a kódban. Erre mondta a SonarLint, hogy ezt el kéne távolítani jogosan, hiszen ez a kód olvashatóságát rontja - abban az esetben egyre jobban minél több ilyen "elfelejtett" komment található a kódban.
+
+A másik probléma a már egyszer előjött `@Override` annotáció hiánya. Ez továbbra is az olvashatóságot hivatott növelni.
 ### ./Game/Node.java
 ### ./Game/Nomad.java
 ### ./Game/Pipe.java
