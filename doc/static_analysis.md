@@ -68,6 +68,7 @@ Ami ennél érdekesebb az a `PickUpPipe(Mechanic m)` függvényben található m
 ### ./Game/Source.java
 Ezen osztály esetében csak egy hiba jött fel, ez pedig a `@Override` annotációval volt kapcsolatos, így javítva lett - természetesen itt is megfigyelhető volt egy naming convention-nel kapcsolatos jelzés.
 ### ./Game/Stepable.java
+Nem volt probléma ezen osztály esetén - leszámítva a naming convention-öket.
 ### ./Graphics/CityView.java
 ### ./Graphics/Drawer.java
 ### ./Graphics/GameFrame.java
