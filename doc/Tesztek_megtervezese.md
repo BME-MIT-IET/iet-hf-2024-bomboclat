@@ -1,7 +1,6 @@
 # Tesztelési terv
 
 ## Teszt 1
-
 <table>
   <tr>
    <td>

@@ -104,3 +104,33 @@
 3. A játékosunk megpróbál a Move akcióval erre a foglalt csőre rálépni a Move akcióval.
 ![alt text](/doc/test_images/6.3image.png)
 4. Nem sikerül neki, ahogy a fenti képen is látszik.
+
+
+## Teszt 8
+<table>
+  <tr>
+   <td><strong>Teszt-eset neve</strong>
+   </td>
+   <td>Step on city from pipe
+   </td>
+  </tr>
+  <tr>
+   <td><strong>Rövid leírás</strong>
+   </td>
+   <td>A játékos megpróbál egy csőről egy szomszédos ciszternára rálépni.
+   </td>
+  </tr>
+  <tr>
+   <td><strong>Teszt célja</strong>
+   </td>
+   <td>A játékos sikeresen átlép a ciszternára.
+   </td>
+  </tr>
+</table>
+
+### Lépések
+1. A játékosunk a Move akcióval egy olyan csőre lép, amelynek egy szomszédja egy ciszterna (sárga négyzet).
+![alt text](/doc/test_images/8.1image.png)
+2. A Move akcióval megpróbál a ciszternára lépni.
+![alt text](/doc/test_images/8.2image.png)
+3. Sikerül ez az akció.
