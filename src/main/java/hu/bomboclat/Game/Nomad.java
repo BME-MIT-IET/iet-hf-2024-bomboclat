@@ -53,6 +53,7 @@ public class Nomad extends Character{
      * A szabotőr csúszóssá teszi a csövet, amin áll
      * @return Igaz, ha sikerült csúszóssá tenni a csövet
      */
+    @Override
     public boolean Lube(){
         boolean ret = this.field.Lube();
         if(ret){
