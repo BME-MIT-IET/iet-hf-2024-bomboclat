@@ -52,7 +52,11 @@ Az osztályban található a "Step" függvény is, amely absztrakt. Mivel ez má
 
 Az `@Override` annotáció hiánya itt is megjelent.
 ### ./Game/Nomad.java
+Nem volt probléma ezen osztály esetén - leszámítva a naming convention-öket.
 ### ./Game/Pipe.java
+Ezen osztály esetében is előjött az ArrayList típúsának megadásával kapcsolatos probléma. Ez - a már `Game.java` részben kifejtettek értelmében - ki lett javítva.
+
+
 ### ./Game/Playfield.java
 ### ./Game/Pump.java
 ### ./Game/Source.java
