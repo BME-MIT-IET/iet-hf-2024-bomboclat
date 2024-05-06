@@ -9,7 +9,7 @@ import hu.bomboclat.Graphics.*;
 /**
  * A karakterek által használható mezőket reprezentáló osztály.
  */
-abstract public class Field{
+public abstract class Field{
     /**Az adott mezőn álló játékosok. */
     protected List<Character> players;
 
