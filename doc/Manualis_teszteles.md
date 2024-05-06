@@ -159,6 +159,37 @@
 </table>
 
 ### Lépések
-1. Be kell állítani a víznek a folyásának kívánt útját.
+1. Be kell állítani a víznek a folyásának kívánt útját. A forrás mindig "tesz" vizet a mellette lévő csövekbe, továbbá úgy van most beállítva (amit tesztelni is szeretnénk),hogy a pumpák bemenete és kimenete úgy van beállítva, hogy a végén a ciszternába eljusson a víz.
+![alt text](/doc/test_images/10.1image.png)
 2. Meg kell várni egy kör végét, amikor a víz elkezd folyni.
-3. Meg kell vizsgálni, hogy egyezik-e a folyás pályája az elvártal.
+![alt text](/doc/test_images/10.2image.png)
+3. Meg kell vizsgálni, hogy egyezik-e a folyás pályája az elvárttal. Egyeznek, így sikerült minden elemnek megfelelően továbbitani a vizet. 
+
+## Teszt 12
+<table>
+  <tr>
+   <td><strong>Teszt-eset neve</strong>
+   </td>
+   <td>Water flows in blocked input of Pump
+   </td>
+  </tr>
+  <tr>
+   <td><strong>Rövid leírás</strong>
+   </td>
+   <td>Egy pumpába az egyik rákötött csőből folyna át víz, viszont nem ez a cső a pumpa kiválasztott bemenete.
+   </td>
+  </tr>
+  <tr>
+   <td><strong>Teszt célja</strong>
+   </td>
+   <td>Ellenőrizni, hogy a lezárt végekről nem tud továbbfolyni a víz.
+   </td>
+  </tr>
+</table>
+
+### Lépések
+1. Egy olyan pálya összeállítása, ahol egy pumpa bemenete és kimenete úgy van beállítva, hogy a víz ott elakadjon. Ebben az esetben a forrás melletti cső pumpa szomszédján tettem ezt meg.
+![alt text](/doc/test_images/12.1image.png)
+2. Meg kell várni a kör végét, hogy a víz folyását meg lehessen vizsgálni.
+![alt text](/doc/test_images/12.1image.png)
+3. Lehet látni, hogy valóban nem folyik tovább a víz ott.
