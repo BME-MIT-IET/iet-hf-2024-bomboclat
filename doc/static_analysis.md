@@ -66,6 +66,7 @@ Ezen osztály esetében is előjött az `@Override` annotációval kapcsolatos p
 
 Ami ennél érdekesebb az a `PickUpPipe(Mechanic m)` függvényben található meg. Itt az `if` statement második és harmadik sora összefűzhető egybe. Ez adott esetben fejlesztés során nem is tűnik fel az embernek vagy "biztonságból" szétszedi, mégis, az összefésüléssel növelhető a kód olvashatósága.
 ### ./Game/Source.java
+Ezen osztály esetében csak egy hiba jött fel, ez pedig a `@Override` annotációval volt kapcsolatos, így javítva lett - természetesen itt is megfigyelhető volt egy naming convention-nel kapcsolatos jelzés.
 ### ./Game/Stepable.java
 ### ./Graphics/CityView.java
 ### ./Graphics/Drawer.java
