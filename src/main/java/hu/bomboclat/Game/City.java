@@ -43,6 +43,7 @@ public class City extends Node{
      * Visszaadja, hogy hány pontja van a szerelőknek vagyis a consumed értékét.
      * @return A szerelők pontjai, a consumed tagváltozó értéke.
      */
+    @Override
     public int getMechanicPoint(){
         return consumed;
     }
@@ -52,6 +53,7 @@ public class City extends Node{
      * @param m a csövet felvenni kívánó szerelő játékos.
      * @return A függvény a felvett cső objektumot adja vissza.
      */
+    @Override
     public Pipe PickUpPipe(Mechanic m){
         Pipe returnPipe = new Pipe();
         PipeView pv = new PipeView(returnPipe);
@@ -71,9 +73,9 @@ public class City extends Node{
      * A városból új pumpákat tudnak felvenni ezzel a függvénnyel.
      * @return A függvény a felvett pumpa objektumot adja vissza.
      */
+    @Override
     public Pump PickUpPump() {
-        Pump p = new Pump();
-        return p;
+        return new Pump();
     }
 
 
