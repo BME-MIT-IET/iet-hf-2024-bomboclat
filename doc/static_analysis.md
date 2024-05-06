@@ -56,9 +56,15 @@ Nem volt probléma ezen osztály esetén - leszámítva a naming convention-öke
 ### ./Game/Pipe.java
 Ezen osztály esetében is előjött az ArrayList típúsának megadásával kapcsolatos probléma. Ez - a már `Game.java` részben kifejtettek értelmében - ki lett javítva.
 
+A már sokszor említett `@Override` annotációval kapcsolatos probléma itt is előjött, így az ki lett javítva.
 
+A `getNeighbour(int direction)` függvény esetében a második `else if` felesleges, hiszen ekkor az az ág MINDEN esetben igazként értékelődik ki. Ennek oka, hogy az előző ágban ellenőriztük, hogy a `sticky` változó false-e. Ha nem, akkor biztos true, így nem kell ezt explicit ellenőrizni. Ez a kód olvashatóságát rontja, így ezt is javítottuk.
 ### ./Game/Playfield.java
+Ennek az osztálynak az eseetében csak a `Game.java` esetében már említett ArrayList-es "probléma" lépett fel, így ez is javításra került.
 ### ./Game/Pump.java
+Ezen osztály esetében is előjött az `@Override` annotációval kapcsolatos probléma. Javításra került.
+
+Ami ennél érdekesebb az a `PickUpPipe(Mechanic m)` függvényben található meg. Itt az `if` statement második és harmadik sora összefűzhető egybe. Ez adott esetben fejlesztés során nem is tűnik fel az embernek vagy "biztonságból" szétszedi, mégis, az összefésüléssel növelhető a kód olvashatósága.
 ### ./Game/Source.java
 ### ./Game/Stepable.java
 ### ./Graphics/CityView.java
