@@ -134,3 +134,31 @@
 2. A Move akcióval megpróbál a ciszternára lépni.
 ![alt text](/doc/test_images/8.2image.png)
 3. Sikerül ez az akció.
+
+## Teszt 10
+
+<table>
+  <tr>
+   <td><strong>Teszt-eset neve</strong>
+   </td>
+   <td>Water flows on Pump from Source
+   </td>
+  </tr>
+  <tr>
+   <td><strong>Rövid leírás</strong>
+   </td>
+   <td>Egy forrásból vizet indítunk a kimenetén a cső végére kötött pumpa felé.
+   </td>
+  </tr>
+  <tr>
+   <td><strong>Teszt célja</strong>
+   </td>
+   <td>Ellenőrizni, hogy a pálya elemei megfelelően adják tovább a rajtuk átfolyó vizet.
+   </td>
+  </tr>
+</table>
+
+### Lépések
+1. Be kell állítani a víznek a folyásának kívánt útját.
+2. Meg kell várni egy kör végét, amikor a víz elkezd folyni.
+3. Meg kell vizsgálni, hogy egyezik-e a folyás pályája az elvártal.
