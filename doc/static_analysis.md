@@ -116,3 +116,4 @@ Egy problémán kívűl nem volt semmi gond - leszámítva a naming convention-�
 ### ./skeleton/TesterMain.java
 Ezen osztály esetében is a kiadott hibák a program felépítése által indokolhatóak. Például a 33 soros (miközben "maximum 30 lenne a megengedett") `switch-case` valóban nem olvasható, de ezt jobban nem tudtuk megoldani. Természetesen egy valódi helyzetben célszerű lenne erre rendes megoldást találni.
 ### ./Main.java
+Ebben az esetben egyedül egy elfelejtett komment volt a probléma. Ez több ilyen komment esetén valóban rontja az olvashatóságot. Törölve lett.
