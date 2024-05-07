@@ -75,6 +75,7 @@ Nem volt probléma ezen osztály esetén - leszámítva a naming convention-öke
 
 ### ./Graphics/GameFrame.java
 ### ./Graphics/IView.java
+Nem volt probléma ezen osztály esetén - leszámítva a naming convention-öket.
 ### ./Graphics/MechanicView.java
 ### ./Graphics/NodeView.java
 ### ./Graphics/NomadView.java
