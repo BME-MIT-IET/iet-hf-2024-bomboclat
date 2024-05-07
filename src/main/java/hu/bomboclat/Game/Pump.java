@@ -3,7 +3,7 @@ package hu.bomboclat.Game;
 import hu.bomboclat.Graphics.IView;
 import hu.bomboclat.Graphics.PumpView;
 
-/**
+/**s
  * A pumpát reprezentáló osztály.
  */
 public class Pump extends Node{

@@ -79,10 +79,12 @@ public class GameFrame extends JFrame {
     private void initFrame() {
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
         this.setResizable(false);
-        URL url = ClassLoader.getSystemResource("Graphics/Images/deserticon.jpg");
+        URL url = ClassLoader.getSystemResource("Images/deserticon.jpg");
         Toolkit kit = Toolkit.getDefaultToolkit();
-        Image img = kit.createImage(url);
-        this.setIconImage(img);
+        if(url != null) {
+            Image img = kit.createImage(url);
+            this.setIconImage(img);
+        }
         setLayout(new BorderLayout());
         this.getContentPane().setBackground(bgColor);
 
@@ -97,6 +99,7 @@ public class GameFrame extends JFrame {
         control.add(infoLabel, BorderLayout.NORTH);
 
         this.changePump = new JButton("Change Pump");
+        this.changePump.setName("ChangePump");
         this.changePump.setMaximumSize(new Dimension(175, 50));
         this.changePump.setAlignmentX(Component.CENTER_ALIGNMENT);
         this.changePump.setForeground(new Color(0,0,0));
@@ -268,10 +271,12 @@ public class GameFrame extends JFrame {
     private JMenuBar createMenuBar() {
         JMenuBar menuBar = new JMenuBar();
         var menu = new JMenu("Menu");
+        menu.setName("MenuButton");
         menu.setMnemonic(KeyEvent.VK_F);
         menuBar.add(menu);
 
         var newGameMenuItem = new JMenuItem("Start new game", KeyEvent.VK_N);
+        newGameMenuItem.setName("NewGameMenuButton");
         JPanel p = new JPanel(new BorderLayout(5, 5));
         JPanel labels = new JPanel(new GridLayout(0, 1, 2, 2));
         labels.add(new JLabel("Mechanic: ", SwingConstants.TRAILING));
@@ -298,6 +303,7 @@ public class GameFrame extends JFrame {
             }
         });
         var exitMenuItem = new JMenuItem("Exit", KeyEvent.VK_X);
+        exitMenuItem.setName("ExitButton");
         exitMenuItem.addActionListener(e -> {
             this.dispose();
         });
