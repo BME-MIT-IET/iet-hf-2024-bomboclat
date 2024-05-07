@@ -82,6 +82,7 @@ Nem volt probléma ezen osztály esetén - leszámítva a naming convention-öke
 ### ./Graphics/PipeView.java
 ### ./Graphics/PumpView.java
 ### ./Graphics/SourceView.java
+Nem volt probléma ezen osztály esetén - leszámítva a naming convention-öket.
 ### ./skeleton/TestClass.java
 ### ./skeleton/TesterMain.java
 ### ./Main.java
