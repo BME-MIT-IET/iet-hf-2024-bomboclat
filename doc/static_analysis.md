@@ -77,7 +77,8 @@ Nem volt probléma ezen osztály esetén - leszámítva a naming convention-öke
 ### ./Graphics/IView.java
 Nem volt probléma ezen osztály esetén - leszámítva a naming convention-öket.
 ### ./Graphics/MechanicView.java
-Nem volt probléma ezen osztály esetén - leszámítva a naming convention-öket.
+Nem volt probléma ezen osztály esetén azon kívűl, hogy logger helyett `System.out.println()`-t használtunk - leszámítva a naming convention-öket.
+A logok használatának egyébként számos előnye van, amely egy nagyobb projekt esetében elengedhetetlen
 ### ./Graphics/NodeView.java
 Ezen esetben is előjön a már kifejtett "absztrakt osztály, publikus metódus" probléma. Ezt is javítottuk.
 
