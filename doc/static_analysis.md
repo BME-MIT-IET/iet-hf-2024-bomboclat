@@ -9,7 +9,18 @@ A másik eszköz a SonarCloud, melynek segítségével egy átfogóbb képet kap
 Az elemzés során az előbb említett VSCode extension segítségével végignéztük az összes (code) file-t és az ebben található hibákat megvizsgáltuk, bizonyos részüket ki is javítottuk. A következőkben ezen elemzés kerül részletesen ismertetésre.
 
 ### ./CommandInterpreter/CommandInterpreter.java
+Ezen osztály esetében több hiba is előfordult.
+
+- `(String[] cmd) -> drill(cmd)` több ehhez hasonló sor található meg a forráskódban. Bár a lamdba kifejezések egyszerűek, de bizonyos mértékben rontják az olvashatóságot. A SonarLint is kiemelte ezt, és javaslata szerint metódusreferenciát kéne alkalmazni, ami javítja az olvashatóságot. Ezt javítottuk.
+- A már több helyen előfordult listás/'diamond operátor'-os probléma itt is előfordult. Ezt is javítottuk.
+- A `MechanicView.java` esetében előfordult logger helyett System.out használatának problémája itt is előfordult, amit alap esetben célszerű lenne javítani.
+- Több helyen javasolja (pl.: `output += i + "\n";`) a SonarLint StringBuilderek használatát. Ennek röviden az az célja, hogy a program teljesítményét segítse, hiszen az stringek ilyen szintű változtatgatása miatt visszaeshet. Természetesen ez projektfüggő, de célszerű mindig a legjobb performanciára törekedni.
+- Több esetben elmaradt bizonyos függvényhívások visszatérési értékének kezelése, pl.: `f.createNewFile();`. Ez alap esetben a megfelelő hibakezelés érdekében nem maradhatna el, így ezt szükséges lenne pótolni éles esetben.
+- A `GameFrame.java`-hoz hasonlóan itt is megfigyelhető több string esetében is az, hogy ugyanazt az értéket több helyen újrahasználtuk, gyakorlatilag "ctrl+c, ctrl+v"-zve. Ez, ahogy az már írtuk, rontja a kód karbantarthatóságát, így ezt itt is szükséges lenne kezelni.
+- Ezen osztály esetében is problémás az olyan függvények jelenléte, melyek túlságosan nagy komplexitásúak. Az olvashatóság, illetve karbantarthatóság érdekében célszerű ezeket is feldarabolni a felelősségek mentén. Ezen esetekben egyébként a SonarLint kiemeli, hogy mely dolgok szorulnának változtatásra pontosan. (pl.: nesting level, LOC, number of variables)
+- Bizonyos esetekben, pl.: `temp1.delete();` kiemeli a program, hogy célszerű lenne a `java.nio.file.Files#delete` használata. Erre azért lenne szükség, hogy részletesebb/jobb hibaüzeneteket kapjunk. Ezzel természetesen a hibakezelést egyszerűsítve, illetve segítve, amivel a programot robusztosabbá tehetjük.
 ### ./ICommand.java
+Nem volt probléma ezen interfész esetén - leszámítva a naming convention-öket.
 ### ./Game/Character.java
 Az esetek túlnyomó részében a hiba itt a következő volt:
 "Rename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'."
@@ -94,7 +105,7 @@ A harmadik probléma az `initFrame()` függvény komplexitása. Sajnos a függv�
 Nem volt probléma ezen osztály esetén - leszámítva a naming convention-öket.
 ### ./Graphics/MechanicView.java
 Nem volt probléma ezen osztály esetén azon kívűl, hogy logger helyett `System.out.println()`-t használtunk - leszámítva a naming convention-öket.
-A logok használatának egyébként számos előnye van, amely egy nagyobb projekt esetében elengedhetetlen
+A logok használatának egyébként számos előnye van, amely egy nagyobb projekt esetében elengedhetetlen.
 ### ./Graphics/NodeView.java
 Ezen esetben is előjön a már kifejtett "absztrakt osztály, publikus metódus" probléma. Ezt is javítottuk.
 
