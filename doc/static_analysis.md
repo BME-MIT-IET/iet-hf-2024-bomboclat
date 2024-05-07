@@ -78,6 +78,9 @@ Nem volt probléma ezen osztály esetén - leszámítva a naming convention-öke
 Nem volt probléma ezen osztály esetén - leszámítva a naming convention-öket.
 ### ./Graphics/MechanicView.java
 ### ./Graphics/NodeView.java
+Ezen esetben is előjön a már kifejtett "absztrakt osztály, publikus metódus" probléma. Ezt is javítottuk.
+
+Ezenkívűl a kód olvashatóságát itt is tovább rontja az, hogy egy függvény szerepel benne(`Update`), aminek nem kellene, hiszen az interfészben már definiálva van. Ezt itt explicit tehát nem kell definiálni, elég az absztrakt osztály leszármazottaiban, akik ezt felülírják majd.
 ### ./Graphics/NomadView.java
 Ezen forráskód esetén az egyetlen plusz hiba az volt, hogy egy `try-catch` block `catch` része üresen állt. Ez valós környezetben hatalmas problémát jelenthetne, hiszen bár a felhasználó számára tovább futna a program, de mivel a `catch` blokk hasában semmi sem szerepel, így a hiba nem lett rendesen lekezelve ezzel pontenciális bug-okat okozva.
 Bár itt egy rendesebb megoldás kéne, de ezen projekt esetén csak szimplán kiírattuk az exception-t a konzolba. (Erre a SonarLint továbbra is hibát jelez, logger használatát szorgalmazva.)

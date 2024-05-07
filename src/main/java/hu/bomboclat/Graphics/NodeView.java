@@ -3,8 +3,6 @@ package hu.bomboclat.Graphics;
 import hu.bomboclat.Game.Field;
 import hu.bomboclat.Game.Node;
 
-import java.awt.*;
-
 /**
  * A Node típusú objektumok kirajzolásáért felelős osztály
  */
@@ -27,7 +25,7 @@ public abstract class NodeView implements IView{
      * @param _y A Node Y koordinátája.
      * @param _node A kirajzolandó Node objektum.
      */
-    public NodeView(int _x, int _y, Node _node) {
+    protected NodeView(int _x, int _y, Node _node) {
         x=_x;
         y=_y;
         node=_node;
@@ -50,7 +48,7 @@ public abstract class NodeView implements IView{
      * Absztrakt függvény kirajzoláshoz.
      * @param g Graphics objektum rajzoláshoz.
      */
-    public abstract void Update(Graphics g);
+    //public abstract void Update(Graphics g); -> sonarlint
     /**
      * Visszaadja a Node X koordinátáját.
      * @return A Node X koordinátája.
