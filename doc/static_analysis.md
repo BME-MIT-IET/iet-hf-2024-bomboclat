@@ -111,5 +111,7 @@ A naming convention-öket leszámítva még egy hiba lépett fel. Eszerint az eg
 ### ./Graphics/SourceView.java
 Nem volt probléma ezen osztály esetén - leszámítva a naming convention-öket.
 ### ./skeleton/TestClass.java
+Egy problémán kívűl nem volt semmi gond - leszámítva a naming convention-öket.
+ A probléma azzal volt, hogy egy másik osztály statikus tagját változtattuk nem statikus függvényekből. Ez egyedül azért nem baj számunkra, mert a program alkotása során ezt figyelembe vettük.
 ### ./skeleton/TesterMain.java
 ### ./Main.java
