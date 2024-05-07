@@ -77,6 +77,7 @@ Nem volt probléma ezen osztály esetén - leszámítva a naming convention-öke
 ### ./Graphics/IView.java
 Nem volt probléma ezen osztály esetén - leszámítva a naming convention-öket.
 ### ./Graphics/MechanicView.java
+Nem volt probléma ezen osztály esetén - leszámítva a naming convention-öket.
 ### ./Graphics/NodeView.java
 Ezen esetben is előjön a már kifejtett "absztrakt osztály, publikus metódus" probléma. Ezt is javítottuk.
 
