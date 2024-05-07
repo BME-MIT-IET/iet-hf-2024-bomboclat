@@ -1,12 +1,13 @@
 package hu.bomboclat.Graphics;
 import java.awt.Graphics;
+import java.io.Serializable;
 
 import hu.bomboclat.Game.Field;
 
 /**
  * A megjelenítést kezelő interfész.
  */
-public interface IView {
+public interface IView extends Serializable {
    /**
     * Ezt megvalósítva végzendő el a g objektumra varó rajzolás.
     * @param g

@@ -72,6 +72,7 @@ Nem volt probléma ezen osztály esetén - leszámítva a naming convention-öke
 ### ./Graphics/CityView.java
 Nem volt probléma ezen osztály esetén - leszámítva a naming convention-öket.
 ### ./Graphics/Drawer.java
+
 ### ./Graphics/GameFrame.java
 ### ./Graphics/IView.java
 ### ./Graphics/MechanicView.java
