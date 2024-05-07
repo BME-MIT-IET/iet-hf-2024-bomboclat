@@ -72,7 +72,17 @@ Nem volt probléma ezen osztály esetén - leszámítva a naming convention-öke
 ### ./Graphics/CityView.java
 Nem volt probléma ezen osztály esetén - leszámítva a naming convention-öket.
 ### ./Graphics/Drawer.java
+Ezen osztály esetében is megjelen azt `@Override` probléma, ez javítva lett. Ezenkívül itt is lehetett pár `if statement`-et összevonni egy előtte lévővel, így ezt is megtettük, ezzel javítva az olvashatóságot. Ez egyébként bizonyos esetekben azt eredményezte, hogy az `if statement` tovább volt egyszerűsíthető (pl.: `v != null && v instanceof PipeView`, ahol az `instanceof` eleve `false`-t ad vissza `null` objektum esetén.). Így tehát ezek is javítva lettek.
 
+A listával kapcsolatos probléma itt is előjött, ez is javítva lett.
+
+Adott függvény esetében (`mouseClicked(MouseEvent e)`) a komplexitás túl nagy, avagy a függvény túl hosszú. A `GameFrame.java` részben megfogalmazottak értelmében ezt célszerű lenne feldarabolni kisebb függvényekre az olvashatóság és karbantarthatóság növelésének érdekében.
+Az említett függvényben egyébként egy nagyon hosszú `if-else` struktúra is megtalálható. Itt a SonarLint jelezte, hogy bizonyos feltételek esetében egy-egy részfeltétel elhagyható, hiszen mindig igaz az értéke. Ez is javítva lett.
+
+A program még kiemelte azt is, hogy bizonyos, implementáció nélküli (pl.: `mouseEntered(MouseEvent e)`) esetében vagy exception-t kéne dobni, hogy nem lett megvalósítva a függvény, vagy implementálni kellene. A csapat által alkotott kommentelés értelmében ezt a hibát ignoráltuk.
+
+Szerepel még kettő ehhez hasonló kódrészlet a forráskódban: `Math.sqrt((v.getPlayerPositionX() - x)*(v.getPlayerPositionX() - x)+(double)(v.getPlayerPositionY() - y)*(v.getPlayerPositionY() - y))`
+A SonarLint kiemelte, hogy ez nem feltétlen a legjobb megközelítés, hiszen cast-olás nélkül nem várt eredményekkel találkozhatunk, hiszen a függvény `double`-t ad vissza, míg mi `int`-ekkel dolgozunk a számolás során. Bár ritkán, de ez nem várt mellékhatásokkal járhat. Így ezt javítottuk.
 ### ./Graphics/GameFrame.java
 Ezen osztály esetében már több hiba lépett fel.
 Ezek egy része arra vonatkozott, hogy az osztály privát tagváltozói deklarálva vannak, de igazából csak egy függvény esetében vannak használva. Ez a program jelenlegi állapotában rontja a kód olvashatóságát, hiszen feleslegesen vannak tagváltozóként deklarálva, miközben az osztálynek egyrészt nincsenek leszármazottai, másrészt ezen tagváltozókhoz nem készítettünk gettereket, így kívülről se érjük el őket. Javítottuk ezt getterek és setterek írásával.

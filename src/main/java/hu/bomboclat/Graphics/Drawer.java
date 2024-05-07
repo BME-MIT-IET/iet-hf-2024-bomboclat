@@ -29,7 +29,7 @@ public class Drawer extends Canvas{
 
     //Konstruktor
     public Drawer() {
-        viewable = new ArrayList<IView>();
+        viewable = new ArrayList<>();
         addMouseListener(new MouseClickListener());
     }
 
@@ -51,17 +51,15 @@ public class Drawer extends Canvas{
      */
     public void Draw(Graphics g) {
         for(IView v : viewable) {
-            if(v != null) {
-                if(v instanceof PipeView)
+            if(v instanceof PipeView)
                     v.Update(g);
-            }
+            
         }
 
         for(IView v : viewable) {
-            if(v != null) {
-                if(!(v instanceof PipeView))
+            if(v != null && !(v instanceof PipeView))
                     v.Update(g);
-            }
+            
         }
     }
 
@@ -73,6 +71,7 @@ public class Drawer extends Canvas{
     /**
      * Erre hív a repaint az újrarajzoláshoz
      */
+    @Override
     public void paint(Graphics g) {
         BufferedImage bim = new BufferedImage(this.getWidth(),this.getHeight(), BufferedImage.TYPE_INT_RGB);
         Graphics img = bim.getGraphics(); 
@@ -92,12 +91,11 @@ public class Drawer extends Canvas{
         int mindistance = 60000;
         Field ret = null;
         for(IView v : viewable) {
-            if(Math.sqrt((v.getPlayerPositionX() - x)*(v.getPlayerPositionX() - x)+(v.getPlayerPositionY() - y)*(v.getPlayerPositionY() - y)) < mindistance) {
-                if(v.getField() != null) {
-                    mindistance = (int) Math.sqrt((v.getPlayerPositionX() - x)*(v.getPlayerPositionX() - x)+(v.getPlayerPositionY() - y)*(v.getPlayerPositionY() - y));
+            if(Math.sqrt((v.getPlayerPositionX() - x)*(v.getPlayerPositionX() - x)+(double)(v.getPlayerPositionY() - y)*(v.getPlayerPositionY() - y)) < mindistance && v.getField() != null) {
+                    mindistance = (int) Math.sqrt((v.getPlayerPositionX() - x)*(v.getPlayerPositionX() - x)+(double)(v.getPlayerPositionY() - y)*(v.getPlayerPositionY() - y));
                     ret = v.getField();
                 }
-            }
+            
         }
         return ret;
     }
@@ -142,7 +140,7 @@ public class Drawer extends Canvas{
                  in = getClosestField(e.getX(), e.getY());
                  first_option=false;
             }
-            else if(wantsToChange != null && !first_option) {
+            else if(wantsToChange != null) {
                 out = getClosestField(e.getX(), e.getY());
                 wantsToChange.ChangePump((Pipe)in, (Pipe)out);
                 wantsToChange=null;
