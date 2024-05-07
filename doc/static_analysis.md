@@ -128,3 +128,14 @@ Egy problémán kívűl nem volt semmi gond - leszámítva a naming convention-�
 Ezen osztály esetében is a kiadott hibák a program felépítése által indokolhatóak. Például a 33 soros (miközben "maximum 30 lenne a megengedett") `switch-case` valóban nem olvasható, de ezt jobban nem tudtuk megoldani. Természetesen egy valódi helyzetben célszerű lenne erre rendes megoldást találni.
 ### ./Main.java
 Ebben az esetben egyedül egy elfelejtett komment volt a probléma. Ez több ilyen komment esetén valóban rontja az olvashatóságot. Törölve lett.
+
+# Összefoglalás, tanulságok
+Az eddigiek alapján megállapítható, hogy egy olyan program elkészítése, amely hibáktól mentes nagyon időigényes és alapjáraton könnyen elfelejthető "szabályok" betartásával jár. Megfigyelhető, hogy a SonarLint által jelzett hibák legnagyobb százaléka egyébként a naming convention-ökre utalt. Ezek javítása egy egyszerűbb projektnél elhagyható, hiszen az imént említett szabályok követése csapatok együttműködését segítheti. Ezen projekt esetén azonban ez is problémás volt, hiszen bizonyos függvények egyfajta, más függvények pedig egy másfajta convention-t követtek (java vs. C#).
+
+A hibák más része olyan volt, amely az olvashatóságot növelte, illetve ezzel a karbantarthatóságot. Ezek egy része egyértelműen javított a kód minőségén (pl.: A `CommandInterpreter` esetében a lambdás eset), míg más része nem feltétlen segítette azt, vagy máshogy fogalmazva kevésbé javította az olvashatóságot, mint más esetben. De például egész hasznosak voltak azok a jelzések, amelyek az if statement-ek összevonhatóságáról szóltak, ezek valóban segítettek abban, hogy a kód kompaktabb legyen.
+
+A kód karbantarthatóságát növelte ezen kívűl pl.: még a string konstansok növelése is, ez is egy olyan dolog, amely már kis projektek esetében sem elhanyagolható abban az esetben, ha a projektet elő szeretnénk venni, és adott esetben tovább szeretnénk fejleszteni kis idő múlva. 
+Ezen kívűl az `@Override`-ot is megemlíteném, ami a csapatok együttműködését tudja segíteni, hiszen értelmezhetőbbé teszi a kódot.
+Különösen hasznos volt azon esetekben az eszköz, amikor észre tudta venni, hogy például egy összetett if statement esetében bizonyos részfeltételek mindig igazra értékelődnek ki. Ezek pont olyan "hibák", amit nagyon könnyen elkövet bárki, de ugyanakkor javításuk nagyon meg tudja könnyíteni mások számára azt, hogy értelmezhessék kódunkat.
+
+Összefoglalva az eszköz sok olyan dolgot vett észre, amely a projekt felépítéséből adódóan "hibás", illetve sok olyat is, amely pedig tényleges programozói "baki/hiba". Az elemzés során is látható volt, hogy ezek javítása nem kerül sok időbe, de ugyannakkor tényleg javít a kódminőségen. 
