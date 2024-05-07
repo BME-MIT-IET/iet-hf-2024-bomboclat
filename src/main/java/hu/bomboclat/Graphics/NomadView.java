@@ -77,7 +77,7 @@ public class NomadView implements IView{
             g.drawImage(image, x - offsetX + 25, y - offsetY + 25, null);
         }
         catch(IOException e){
-            
+            System.out.println(e.getMessage());
         }
     }
 

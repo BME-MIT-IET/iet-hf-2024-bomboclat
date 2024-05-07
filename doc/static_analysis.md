@@ -79,8 +79,14 @@ Nem volt probléma ezen osztály esetén - leszámítva a naming convention-öke
 ### ./Graphics/MechanicView.java
 ### ./Graphics/NodeView.java
 ### ./Graphics/NomadView.java
+Ezen forráskód esetén az egyetlen plusz hiba az volt, hogy egy `try-catch` block `catch` része üresen állt. Ez valós környezetben hatalmas problémát jelenthetne, hiszen bár a felhasználó számára tovább futna a program, de mivel a `catch` blokk hasában semmi sem szerepel, így a hiba nem lett rendesen lekezelve ezzel pontenciális bug-okat okozva.
+Bár itt egy rendesebb megoldás kéne, de ezen projekt esetén csak szimplán kiírattuk az exception-t a konzolba. (Erre a SonarLint továbbra is hibát jelez, logger használatát szorgalmazva.)
 ### ./Graphics/PipeView.java
+Nem volt probléma ezen osztály esetén - leszámítva a naming convention-öket.
 ### ./Graphics/PumpView.java
+Ezen osztály esetén is visszaköszönt az `@Override` annotációval kapcsolatos probléma, így azt javítottuk.
+
+A naming convention-öket leszámítva még egy hiba lépett fel. Eszerint az egyik sorban feleslegesen használtunk egy zárójelet. Bár ez kicsi dolog, de tény, hogy a kód olvashatóságát ronthatja, így ez is javításra került.
 ### ./Graphics/SourceView.java
 Nem volt probléma ezen osztály esetén - leszámítva a naming convention-öket.
 ### ./skeleton/TestClass.java
