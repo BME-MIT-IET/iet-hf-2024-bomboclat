@@ -70,6 +70,7 @@ Ezen osztály esetében csak egy hiba jött fel, ez pedig a `@Override` annotác
 ### ./Game/Stepable.java
 Nem volt probléma ezen osztály esetén - leszámítva a naming convention-öket.
 ### ./Graphics/CityView.java
+Nem volt probléma ezen osztály esetén - leszámítva a naming convention-öket.
 ### ./Graphics/Drawer.java
 ### ./Graphics/GameFrame.java
 ### ./Graphics/IView.java
