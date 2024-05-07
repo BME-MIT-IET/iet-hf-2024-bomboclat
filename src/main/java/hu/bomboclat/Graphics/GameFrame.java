@@ -17,6 +17,14 @@ public class GameFrame extends JFrame {
      * A játékhoz tartozó gombokat tartalmazó panel
      */
     private JPanel control;
+    public JPanel getControl() {
+        return control;
+    }
+
+    public void setControl(JPanel control) {
+        this.control = control;
+    }
+
     /**
      * Rajzolási felület
      */
@@ -33,27 +41,123 @@ public class GameFrame extends JFrame {
     /**
      * Menüt tartalmazó tagváltozó, annak megjelenítéséért felel.
      */
-    private JMenuBar menuBar;
+    
 
     /**
      * A játék lényegi felületét tartalmazó panel (ahol megjelennek az objektumok, játékosok)
      */
     private JPanel board;
 
+    public JPanel getBoard() {
+        return board;
+    }
+
+    public void setBoard(JPanel board) {
+        this.board = board;
+    }
+
     /**
      * Gombok a különböző játékkal kapcsolatos akciók megvalósításához, elsütéséhez.
      */
     private JButton drill;
+    public JButton getDrill() {
+        return drill;
+    }
+
+    public void setDrill(JButton drill) {
+        this.drill = drill;
+    }
+
     private JButton fix;
+    public JButton getFix() {
+        return fix;
+    }
+
+    public void setFix(JButton fix) {
+        this.fix = fix;
+    }
+
     private JButton glue;
+    public JButton getGlue() {
+        return glue;
+    }
+
+    public void setGlue(JButton glue) {
+        this.glue = glue;
+    }
+
     private JButton lube;
+    public JButton getLube() {
+        return lube;
+    }
+
+    public void setLube(JButton lube) {
+        this.lube = lube;
+    }
+
     private JButton move;
+    public JButton getMove() {
+        return move;
+    }
+
+    public void setMove(JButton move) {
+        this.move = move;
+    }
+
     private JButton pickUpPipe;
+    public JButton getPickUpPipe() {
+        return pickUpPipe;
+    }
+
+    public void setPickUpPipe(JButton pickUpPipe) {
+        this.pickUpPipe = pickUpPipe;
+    }
+
     private JButton pickUpPump;
+    public JButton getPickUpPump() {
+        return pickUpPump;
+    }
+
+    public void setPickUpPump(JButton pickUpPump) {
+        this.pickUpPump = pickUpPump;
+    }
+
     private JButton placePipe;
+    public JButton getPlacePipe() {
+        return placePipe;
+    }
+
+    public void setPlacePipe(JButton placePipe) {
+        this.placePipe = placePipe;
+    }
+
     private JButton placePump;
+    public JButton getPlacePump() {
+        return placePump;
+    }
+
+    public void setPlacePump(JButton placePump) {
+        this.placePump = placePump;
+    }
+
     private JButton exit;
+    public JButton getExit() {
+        return exit;
+    }
+
+    public void setExit(JButton exit) {
+        this.exit = exit;
+    }
+
     private JButton changePump;
+    public JButton getChangePump() {
+        return changePump;
+    }
+
+    public void setChangePump(JButton changePump) {
+        this.changePump = changePump;
+    }
+
     private JLabel infoLabel;
 
     /**
@@ -63,6 +167,10 @@ public class GameFrame extends JFrame {
         super(title);
         this.initFrame();
     }
+
+    static final  String RoundString = "Round: ";
+    static final String playerString =", Player: ";
+    static final String turnString = ", Turn: ";
 
     /**
      * Elvégzi az ablak inicializálását.
@@ -77,6 +185,7 @@ public class GameFrame extends JFrame {
      * (röviden: Lube gombra kattintva meghívódik az aktív játékos Lube függvénye)
      */
     private void initFrame() {
+        JMenuBar menuBar;
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
         this.setResizable(false);
         URL url = ClassLoader.getSystemResource("Graphics/Images/deserticon.jpg");
@@ -104,7 +213,7 @@ public class GameFrame extends JFrame {
         this.changePump.setCursor(new Cursor(Cursor.HAND_CURSOR));
         this.changePump.setFocusPainted(false);
         this.changePump.addActionListener(e -> {if(currentGame.getCurrPlayer().getMoves()>0){this.canvas.setWantsToChange(currentGame.getCurrPlayer());
-            this.infoLabel.setText("Round: "+  (currentGame.getRound_count()+1) +", Player: "+ (currentGame.getStep_count()+1) +", Turn: "+ (5-currentGame.getCurrPlayer().getMoves()));}});
+            this.infoLabel.setText(RoundString +  (currentGame.getRound_count()+1) + playerString + (currentGame.getStep_count()+1) + turnString + (5-currentGame.getCurrPlayer().getMoves()));}});
         control.add(changePump);
         control.add(Box.createVerticalStrut(40));
 
@@ -116,7 +225,7 @@ public class GameFrame extends JFrame {
         this.drill.setCursor(new Cursor(Cursor.HAND_CURSOR));
         this.drill.setFocusPainted(false);
         this.drill.addActionListener(e -> {if(currentGame.getCurrPlayer().getMoves()>0){this.currentGame.getCurrPlayer().DrillPipe(true); this.canvas.revalidate();this.canvas.repaint();
-            this.infoLabel.setText("Round: "+  (currentGame.getRound_count()+1) +", Player: "+ (currentGame.getStep_count()+1) +", Turn: "+ (5-currentGame.getCurrPlayer().getMoves()));}});
+            this.infoLabel.setText(RoundString +  (currentGame.getRound_count()+1) + playerString + (currentGame.getStep_count()+1) + turnString + (5-currentGame.getCurrPlayer().getMoves()));}});
         control.add(drill);
         control.add(Box.createVerticalStrut(40));
 
@@ -128,7 +237,7 @@ public class GameFrame extends JFrame {
         this.fix.setCursor(new Cursor(Cursor.HAND_CURSOR));
         this.fix.setFocusPainted(false);
         this.fix.addActionListener(e -> {if(currentGame.getCurrPlayer().getMoves()>0){(this.currentGame.getCurrPlayer()).Fix(); this.canvas.revalidate();this.canvas.repaint();
-            this.infoLabel.setText("Round: "+  (currentGame.getRound_count()+1) +", Player: "+ (currentGame.getStep_count()+1) +", Turn: "+ (5-currentGame.getCurrPlayer().getMoves()));}});
+            this.infoLabel.setText(RoundString +  (currentGame.getRound_count()+1) + playerString + (currentGame.getStep_count()+1) + turnString + (5-currentGame.getCurrPlayer().getMoves()));}});
         control.add(fix);
         control.add(Box.createVerticalStrut(40));
 
@@ -140,7 +249,7 @@ public class GameFrame extends JFrame {
         this.glue.setCursor(new Cursor(Cursor.HAND_CURSOR));
         this.glue.setFocusPainted(false);
         this.glue.addActionListener(e -> {if(currentGame.getCurrPlayer().getMoves()>0){this.currentGame.getCurrPlayer().Glue(); this.canvas.revalidate();this.canvas.repaint();
-            this.infoLabel.setText("Round: "+  (currentGame.getRound_count()+1) +", Player: "+ (currentGame.getStep_count()+1) +", Turn: "+ (5-currentGame.getCurrPlayer().getMoves()));}});
+            this.infoLabel.setText(RoundString +  (currentGame.getRound_count()+1) + playerString + (currentGame.getStep_count()+1) + turnString + (5-currentGame.getCurrPlayer().getMoves()));}});
         control.add(glue);
         control.add(Box.createVerticalStrut(40));
 
@@ -152,7 +261,7 @@ public class GameFrame extends JFrame {
         this.lube.setCursor(new Cursor(Cursor.HAND_CURSOR));
         this.lube.setFocusPainted(false);
         this.lube.addActionListener(e -> {if(currentGame.getCurrPlayer().getMoves()>0){this.currentGame.getCurrPlayer().Lube(); this.canvas.revalidate();this.canvas.repaint();
-            this.infoLabel.setText("Round: "+  (currentGame.getRound_count()+1) +", Player: "+ (currentGame.getStep_count()+1) +", Turn: "+ (5-currentGame.getCurrPlayer().getMoves()));}});
+            this.infoLabel.setText(RoundString +  (currentGame.getRound_count()+1) + playerString + (currentGame.getStep_count()+1) + turnString + (5-currentGame.getCurrPlayer().getMoves()));}});
         control.add(lube);
         control.add(Box.createVerticalStrut(40));
 
@@ -164,7 +273,7 @@ public class GameFrame extends JFrame {
         this.move.setCursor(new Cursor(Cursor.HAND_CURSOR));
         this.move.setFocusPainted(false);
         this.move.addActionListener(e -> {if(currentGame.getCurrPlayer().getMoves()>0){canvas.setWantsToMove(currentGame.getCurrPlayer()); this.currentGame.getCurrPlayer().setMoves(currentGame.getCurrPlayer().getMoves()-1);
-            this.infoLabel.setText("Round: "+  (currentGame.getRound_count()+1) +", Player: "+ (currentGame.getStep_count()+1) +", Turn: "+ (5-currentGame.getCurrPlayer().getMoves()));}});
+            this.infoLabel.setText(RoundString +  (currentGame.getRound_count()+1) + playerString + (currentGame.getStep_count()+1) + turnString + (5-currentGame.getCurrPlayer().getMoves()));}});
         control.add(move);
         control.add(Box.createVerticalStrut(40));
 
@@ -176,7 +285,7 @@ public class GameFrame extends JFrame {
         this.pickUpPipe.setCursor(new Cursor(Cursor.HAND_CURSOR));
         this.pickUpPipe.setFocusPainted(false);
         this.pickUpPipe.addActionListener(e -> {if(currentGame.getCurrPlayer().getMoves()>0){this.currentGame.getCurrPlayer().PickUpPipe(); this.canvas.revalidate();this.canvas.repaint();
-            this.infoLabel.setText("Round: "+  (currentGame.getRound_count()+1) +", Player: "+ (currentGame.getStep_count()+1) +", Turn: "+ (5-currentGame.getCurrPlayer().getMoves()));}});
+            this.infoLabel.setText(RoundString +  (currentGame.getRound_count()+1) + playerString + (currentGame.getStep_count()+1) + turnString + (5-currentGame.getCurrPlayer().getMoves()));}});
         control.add(pickUpPipe);
         control.add(Box.createVerticalStrut(40));
 
@@ -188,7 +297,7 @@ public class GameFrame extends JFrame {
         this.pickUpPump.setCursor(new Cursor(Cursor.HAND_CURSOR));
         this.pickUpPump.setFocusPainted(false);
         this.pickUpPump.addActionListener(e -> {if(currentGame.getCurrPlayer().getMoves()>0){this.currentGame.getCurrPlayer().PickUpPump(); this.canvas.revalidate();this.canvas.repaint();
-            this.infoLabel.setText("Round: "+ (currentGame.getRound_count()+1) +", Player: "+ (currentGame.getStep_count()+1) +", Turn: "+ (5-currentGame.getCurrPlayer().getMoves()));}});
+            this.infoLabel.setText(RoundString + (currentGame.getRound_count()+1) + playerString + (currentGame.getStep_count()+1) + turnString + (5-currentGame.getCurrPlayer().getMoves()));}});
         control.add(pickUpPump);
         control.add(Box.createVerticalStrut(40));
 
@@ -200,7 +309,7 @@ public class GameFrame extends JFrame {
         this.placePipe.setCursor(new Cursor(Cursor.HAND_CURSOR));
         this.placePipe.setFocusPainted(false);
         this.placePipe.addActionListener(e -> {if(currentGame.getCurrPlayer().getMoves()>0){this.currentGame.getCurrPlayer().PlacePipe(); this.canvas.revalidate();this.canvas.repaint();
-            this.infoLabel.setText("Round: "+  (currentGame.getRound_count()+1) +", Player: "+ (currentGame.getStep_count()+1) +", Turn: "+ (5-currentGame.getCurrPlayer().getMoves()));}});
+            this.infoLabel.setText(RoundString +  (currentGame.getRound_count()+1) + playerString + (currentGame.getStep_count()+1) + turnString + (5-currentGame.getCurrPlayer().getMoves()));}});
         control.add(placePipe);
         control.add(Box.createVerticalStrut(40));
 
@@ -212,7 +321,7 @@ public class GameFrame extends JFrame {
         this.placePump.setCursor(new Cursor(Cursor.HAND_CURSOR));
         this.placePump.setFocusPainted(false);
         this.placePump.addActionListener(e -> {if(currentGame.getCurrPlayer().getMoves()>0){this.currentGame.getCurrPlayer().PlacePump(); this.canvas.revalidate();this.canvas.repaint();
-            this.infoLabel.setText("Round: "+ (currentGame.getRound_count()+1) +", Player: "+ (currentGame.getStep_count()+1) +", Turn: "+ (5-currentGame.getCurrPlayer().getMoves())); }});
+            this.infoLabel.setText(RoundString + (currentGame.getRound_count()+1) + playerString + (currentGame.getStep_count()+1) + turnString + (5-currentGame.getCurrPlayer().getMoves())); }});
         control.add(placePump);
         control.add(Box.createVerticalStrut(40));
 
@@ -224,7 +333,7 @@ public class GameFrame extends JFrame {
         this.exit.setCursor(new Cursor(Cursor.HAND_CURSOR));
         this.exit.setFocusPainted(false);
         this.exit.addActionListener(e -> {String temp = currentGame.EndStep();this.canvas.revalidate();this.canvas.repaint();
-            this.infoLabel.setText("Round: "+  (currentGame.getRound_count()+1) +", Player: "+ (currentGame.getStep_count()+1) +", Turn: "+ (5-currentGame.getCurrPlayer().getMoves()));
+            this.infoLabel.setText(RoundString +  (currentGame.getRound_count()+1) + playerString + (currentGame.getStep_count()+1) + turnString + (5-currentGame.getCurrPlayer().getMoves()));
             if (this.currentGame.isFinished()) {
                 JOptionPane.showMessageDialog(this, temp, "Win", JOptionPane.PLAIN_MESSAGE);
             }});
@@ -232,10 +341,10 @@ public class GameFrame extends JFrame {
         control.add(Box.createVerticalStrut(40));
         add(control, BorderLayout.EAST);
 
-        this.menuBar = this.createMenuBar();
-        this.menuBar.setBackground(bgColor);
-        this.menuBar.setBorder(new LineBorder(bgColor));
-        this.setJMenuBar(this.menuBar);
+        menuBar = this.createMenuBar();
+        menuBar.setBackground(bgColor);
+        menuBar.setBorder(new LineBorder(bgColor));
+        this.setJMenuBar(menuBar);
 
         this.board=new JPanel(new BorderLayout());
         board.setMinimumSize(new Dimension(1000, 800));
@@ -255,7 +364,7 @@ public class GameFrame extends JFrame {
         canvas.setViewables(currentGame.StartGame(num));
         canvas.revalidate();
         canvas.repaint();
-        this.infoLabel.setText("Round: "+  (currentGame.getRound_count()+1) +", Player: "+ (currentGame.getStep_count()+1) +", Turn: "+ (5-currentGame.getCurrPlayer().getMoves()));
+        this.infoLabel.setText(RoundString +  (currentGame.getRound_count()+1) + playerString + (currentGame.getStep_count()+1) + turnString + (5-currentGame.getCurrPlayer().getMoves()));
     }
 
     /**

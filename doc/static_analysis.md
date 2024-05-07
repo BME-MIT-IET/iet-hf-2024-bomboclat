@@ -74,6 +74,12 @@ Nem volt probléma ezen osztály esetén - leszámítva a naming convention-öke
 ### ./Graphics/Drawer.java
 
 ### ./Graphics/GameFrame.java
+Ezen osztály esetében már több hiba lépett fel.
+Ezek egy része arra vonatkozott, hogy az osztály privát tagváltozói deklarálva vannak, de igazából csak egy függvény esetében vannak használva. Ez a program jelenlegi állapotában rontja a kód olvashatóságát, hiszen feleslegesen vannak tagváltozóként deklarálva, miközben az osztálynek egyrészt nincsenek leszármazottai, másrészt ezen tagváltozókhoz nem készítettünk gettereket, így kívülről se érjük el őket. Javítottuk ezt getterek és setterek írásával.
+
+A másik probléma bizonyos stringek újra leírása többször. Ezzel a kód karbantarthatósága romlik, hiszen ha egy helyen átírjuk a string-et, akkor minden másikon is át kell. Ezt egy konstans bevezetésével lehet kiküszöbölni, amely konstanst ezután minden régi string helyén hivatkozunk. Ezzel gyakorlatilag elég egyetlen egy helyen megváltoztatni a string értékét ahhoz, hogy pl. a kimenet más legyen.
+
+A harmadik probléma az `initFrame()` függvény komplexitása. Sajnos a függvény túlságosan hosszú, így romlik a karbantarthatósága, illetve olvashatósága. Alap esetben célszerű lenne ezt a függvényt több, kisebb függvényre feldarabolni felelősségek mentén.
 ### ./Graphics/IView.java
 Nem volt probléma ezen osztály esetén - leszámítva a naming convention-öket.
 ### ./Graphics/MechanicView.java
