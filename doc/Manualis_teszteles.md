@@ -412,3 +412,32 @@
 ![](/doc/test_images/26.4image.png)
 5. A következő Move akcióval már megy.
 ![alt text](/doc/test_images/26.5image.png)
+
+## Teszt 28
+<table>
+  <tr>
+   <td><strong>Teszt-eset neve</strong>
+   </td>
+   <td>Test drill pipe on pipe
+   </td>
+  </tr>
+  <tr>
+   <td><strong>Rövid leírás</strong>
+   </td>
+   <td>A játékos egy csövön állva megpróbálja kifúrni azt.
+   </td>
+  </tr>
+  <tr>
+   <td><strong>Teszt célja</strong>
+   </td>
+   <td>Ellenőrizni, hogy a csövet ki tudja-e lyukasztani a játékos.
+   </td>
+  </tr>
+</table>
+
+### Lépések
+1. Egy játékos Move akcióval egy csőre lép.
+![alt text](/doc/test_images/28.1image.png)
+2. A játékos a Drill akcióval megpróbálha kilyukasztani a csövet.
+![](/doc/test_images/28.2image.png)
+3. Lehet látni, hogy sikerült, megjelent a piros pötty a csövön.
