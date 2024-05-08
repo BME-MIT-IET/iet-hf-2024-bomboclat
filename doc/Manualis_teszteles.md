@@ -378,3 +378,4 @@
 3. A Fix akcióval megpróbálja ezt megjavítani.
 ![alt text](/doc/test_images/24.3image.png)
 4. Ahogy a képen is látszik, sikerült, eltűnt az X.
+

@@ -454,7 +454,7 @@
   <tr>
    <td><strong>Teszt célja</strong>
    </td>
-   <td>Ellenőrizni, hogy a csiszternába kötött csövek lecsatlakoztathatóak-e.
+   <td>Ellenőrizni, hogy a csiszternába kötött csövek nem lecsatlakoztathatóak, mivel a ciszternán a Pick up pipe új csövet ad.
    </td>
   </tr>
 </table>
@@ -580,23 +580,22 @@
   <tr>
    <td><strong>Teszt-eset neve</strong>
    </td>
-   <td>test 26: Test water step city
+   <td>test 26: Place Pipe that has no ends placed
    </td>
   </tr>
   <tr>
    <td><strong>Rövid leírás</strong>
    </td>
-   <td>Teszteli a város step víz folyásának szimulálását.
+   <td>A szerelő lehelyezi egy olyan cső egyik végét, melynek a lehelyezés előtt mindkét vége fel volt véve.
    </td>
   </tr>
   <tr>
    <td><strong>Teszt célja</strong>
    </td>
-   <td>Ellenőrizni, hogy helyes-e a városvíz irányítási működése.
+   <td>Ellenőrizni, hogy ilyenkor a cső hozzáadódik a csőhálózathoz, a másik vége továbbra is szerelő kezében van.
    </td>
   </tr>
 </table>
-
 
 ## Teszt 27
 <table>
@@ -920,27 +919,7 @@
 </table>
 
 
-## Teszt 41
-<table>
-  <tr>
-   <td><strong>Teszt-eset neve</strong>
-   </td>
-   <td>test 41: Place Pipe that has no ends placed
-   </td>
-  </tr>
-  <tr>
-   <td><strong>Rövid leírás</strong>
-   </td>
-   <td>A szerelő lehelyezi egy olyan cső egyik végét, melynek a lehelyezés előtt mindkét vége fel volt véve.
-   </td>
-  </tr>
-  <tr>
-   <td><strong>Teszt célja</strong>
-   </td>
-   <td>Ellenőrizni, hogy ilyenkor a cső hozzáadódik a csőhálózathoz, a másik vége továbbra is szerelő kezében van.
-   </td>
-  </tr>
-</table>
+
 
 
 
