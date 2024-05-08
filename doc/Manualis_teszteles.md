@@ -285,3 +285,37 @@
 3. Place pump akcióval megpróbálja lehelyezni a felvett pumpát.
 ![alt text](/doc/test_images/18.4image.png)
 4. Látszik, hogy nem sikerült, a kezében maradt a pumpa.
+
+
+## Teszt 20
+<table>
+  <tr>
+   <td><strong>Teszt-eset neve</strong>
+   </td>
+   <td>Pick up Pipe on City
+   </td>
+  </tr>
+  <tr>
+   <td><strong>Rövid leírás</strong>
+   </td>
+   <td>Egy játékos egy ciszternán állva lecsatlakoztatja az egyik cső végét.
+   </td>
+  </tr>
+  <tr>
+   <td><strong>Teszt célja</strong>
+   </td>
+   <td>Ellenőrizni, hogy a csiszternába kötött csövek nem lecsatlakoztathatóak, mivel a ciszternán a Pick up pipe új csövet ad.
+   </td>
+  </tr>
+</table>
+
+### Lépések
+1. Egy szerelő játékos egy ciszternára lép a Move akcióval.
+![alt text](/doc/test_images/20.1image.png)
+2. A Pick up pipe akcióval megpróbál egy csövet felvenni.
+![alt text](/doc/test_images/20.2image.png)
+3. Látható, hogy nem egy eddig is ciszternába kötött csövet kap, hanem egy teljesen új csövet a játékos (ezt az ábrán úgy szemléltetem, hogy egy Move akcióval arrébb lépek, hogy jobban látszódjon).
+![alt text](/doc/test_images/20.3image.png) 
+
+
+
