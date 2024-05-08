@@ -253,3 +253,35 @@
 3. A Place pipe akcióval el kell itt helyeznie.
 ![alt text](/doc/test_images/16.3image.png)
 4. Meg kell vizsgálni, hogy valóban bekötődött-e a cső. A szerelő kezéből eltűnt a cső.
+
+## Teszt 18
+<table>
+  <tr>
+   <td><strong>Teszt-eset neve</strong>
+   </td>
+   <td>Place pump on pump
+   </td>
+  </tr>
+  <tr>
+   <td><strong>Rövid leírás</strong>
+   </td>
+   <td>Egy pumpát próbál lehelyezni a játékos a kezéből, úgy hogy éppen egy pumpán áll.
+   </td>
+  </tr>
+  <tr>
+   <td><strong>Teszt célja</strong>
+   </td>
+   <td>Ellenőrzi, hogy nem tudunk pumpát elhelyezni olyan mezőre, amire nem lehet.
+   </td>
+  </tr>
+</table>
+
+### Lépések
+1. Egy szerelő játékosnak a ciszternán állva a a Pick up pump akcióval fel kell vennie egy pumpát. Ekkor a kezében megjelenik egy pumpa.
+![alt text](/doc/test_images/18.1image.png)
+![alt text](/doc/test_images/18.2image.png)
+2. Ahhoz a helyre (akár több) Move akcióval el kell jutnia, ahova le szeretné helyezni a pumpát, ebben az esetben ez egy pumpa.
+![alt text](/doc/test_images/18.3image.png)
+3. Place pump akcióval megpróbálja lehelyezni a felvett pumpát.
+![alt text](/doc/test_images/18.4image.png)
+4. Látszik, hogy nem sikerült, a kezében maradt a pumpa.
