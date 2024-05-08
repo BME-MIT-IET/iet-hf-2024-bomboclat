@@ -441,3 +441,35 @@
 2. A játékos a Drill akcióval megpróbálha kilyukasztani a csövet.
 ![](/doc/test_images/28.2image.png)
 3. Lehet látni, hogy sikerült, megjelent a piros pötty a csövön.
+
+## Teszt 30
+<table>
+  <tr>
+   <td><strong>Teszt-eset neve</strong>
+   </td>
+   <td>Pick up pump on pump
+   </td>
+  </tr>
+  <tr>
+   <td><strong>Rövid leírás</strong>
+   </td>
+   <td>A játékos egy pumpán állva megpróbál egy új pumpát a kezébe kapni.
+   </td>
+  </tr>
+  <tr>
+   <td><strong>Teszt célja</strong>
+   </td>
+   <td>Ellenőrizzük, hogy a játékos nem kap pumpát a kezébe.
+   </td>
+  </tr>
+</table>
+
+
+### Lépések
+1. Egy játékos egy pumpa pályaelemre lép Move akcióval.
+![alt text](/doc/test_images/30.1image.png)
+2. A játékos a Pick up pump akcióval megpróbál egy pumpát felvenni.
+![alt text](/doc/test_images/30.2image.png)
+3. Nem sikerül neki, ahogy a fenti képen is látható.
+
+
