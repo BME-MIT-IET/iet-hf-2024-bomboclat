@@ -502,3 +502,32 @@
 ![alt text](/doc/test_images/32.2image.png)
 
 3. Nem sikerül neki, ahogy a fenti képen is látható.
+
+## Teszt 34
+<table>
+  <tr>
+   <td><strong>Teszt-eset neve</strong>
+   </td>
+   <td>Lubricate Pipe
+   </td>
+  </tr>
+  <tr>
+   <td><strong>Rövid leírás</strong>
+   </td>
+   <td>A szabotőr játékos a csövet amin áll rövid időre csúszóssá tudja tenni.
+   </td>
+  </tr>
+  <tr>
+   <td><strong>Teszt célja</strong>
+   </td>
+   <td>Ellenőrizni, hogy a szabotőr a csövet valóban csúszóssá tette.
+   </td>
+  </tr>
+</table>
+
+### Lépések
+1. Egy szabotőr játékos agy cső pályaelemre lép a Move akcióval.
+![alt text](/doc/test_images/34.1image.png)
+2. A játékos a Lube akcióval megpróbálja csúszássá tenni a csövet.
+![alt text](/doc/test_images/34.2image.png)
+3. Sikerül neki, és átkerül az egyik oldalára a csőnek.
