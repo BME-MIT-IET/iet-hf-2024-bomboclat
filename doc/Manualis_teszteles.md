@@ -193,3 +193,32 @@
 2. Meg kell várni a kör végét, hogy a víz folyását meg lehessen vizsgálni.
 ![alt text](/doc/test_images/12.1image.png)
 3. Lehet látni, hogy valóban nem folyik tovább a víz ott.
+
+## Teszt 14
+<table>
+  <tr>
+   <td><strong>Teszt-eset neve</strong>
+   </td>
+   <td>Water flows out of broken pipe
+   </td>
+  </tr>
+  <tr>
+   <td><strong>Rövid leírás</strong>
+   </td>
+   <td>A csőből ha lyukas kifolyik a víz a sivatagba.
+   </td>
+  </tr>
+  <tr>
+   <td><strong>Teszt célja</strong>
+   </td>
+   <td>Ellenőrizzük, hogy a csőből a víz elfolyt, nem folyt tovább.
+   </td>
+  </tr>
+</table>
+
+### Lépések
+1. Egy olyan pálya összeállítása, ahol a víz folyásának útjában egy törött cső van. Törött cső esetén a csöven egy piros pont van középen.
+![alt text](/doc/test_images/14.1image.png)
+2. Egy kör végét megvárni, hogy látszódjon a víz folyása.
+![alt text](/doc/test_images/14.2image.png)
+3. Láthatjuk, hogy nem folyik a víz a törött cső után.
