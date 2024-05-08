@@ -531,3 +531,36 @@
 2. A játékos a Lube akcióval megpróbálja csúszássá tenni a csövet.
 ![alt text](/doc/test_images/34.2image.png)
 3. Sikerül neki, és átkerül az egyik oldalára a csőnek.
+
+## Teszt 36
+<table>
+  <tr>
+   <td><strong>Teszt-eset neve</strong>
+   </td>
+   <td>Step on lubricated Pipe
+   </td>
+  </tr>
+  <tr>
+   <td><strong>Rövid leírás</strong>
+   </td>
+   <td>Aki csúszós csőre rálép véletlenszerűen a cső valamelyik végéhez kapcsolódó elemre kerül.
+   </td>
+  </tr>
+  <tr>
+   <td><strong>Teszt célja</strong>
+   </td>
+   <td>Ellenőrizni, hogyha valaki a csúszós csőre lépne akkor valóban a cső valamelyik végére kerül és nem a cső objektumra.
+   </td>
+  </tr>
+</table>
+
+### Lépések
+1. Egy szabotőr játékos agy cső pályaelemre lép a Move akcióval.
+![alt text](/doc/test_images/34.1image.png)
+2. A játékos a Lube akcióval megpróbálja csúszássá tenni a csövet.
+![alt text](/doc/test_images/34.2image.png)
+3. Sikerül neki, és átkerül az egyik oldalára a csőnek.
+4. Egy másik játékos megpróbál rálépni erre a csúszós csőre, és átkerül random a cső egyik oldalára (ebben az esetben visszakerült oda, ahol eredetileg is volt).
+![](/doc/test_images/36.1image.png)
+![alt text](/doc/test_images/36.2image.png)
+5. Már nem csúszós a cső, ahogy a fenti képen is látható.
