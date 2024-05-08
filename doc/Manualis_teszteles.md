@@ -222,3 +222,34 @@
 2. Egy kör végét megvárni, hogy látszódjon a víz folyása.
 ![alt text](/doc/test_images/14.2image.png)
 3. Láthatjuk, hogy nem folyik a víz a törött cső után.
+
+## Teszt 16
+<table>
+  <tr>
+   <td><strong>Teszt-eset neve</strong>
+   </td>
+   <td>Place Pipe on Pump
+   </td>
+  </tr>
+  <tr>
+   <td><strong>Rövid leírás</strong>
+   </td>
+   <td>Megkísérelünk letenni egy cső objektumot egy Pump objektumra, vagyis bekötni a pumpába.
+   </td>
+  </tr>
+  <tr>
+   <td><strong>Teszt célja</strong>
+   </td>
+   <td>Ellenőrizzük, hogy a cső valóban bekötődött a pumpába.
+   </td>
+  </tr>
+</table>
+
+### Lépések
+1. A szerelő játékosunknak egy cső objektumot fel kell vennie a Pick up pipe akcióval egy tetszőleges helyről. Pumpán állva random dől el melyik cső kerül felszedve. Ilyenkor megjelenik a játékos kezében egy cső jel, valamint a másik pumpán megjelent egy "fél" cső, ami jelzi, hogy oda kerül majd bekötésre egy cső.
+![alt text](/doc/test_images/16.1image.png)
+2. Ahhoz a helyre (akár több) Move akcióval el kell jutnia, ahova szeretné bekötni a csövet.
+![alt text](/doc/test_images/16.2image.png)
+3. A Place pipe akcióval el kell itt helyeznie.
+![alt text](/doc/test_images/16.3image.png)
+4. Meg kell vizsgálni, hogy valóban bekötődött-e a cső. A szerelő kezéből eltűnt a cső.
