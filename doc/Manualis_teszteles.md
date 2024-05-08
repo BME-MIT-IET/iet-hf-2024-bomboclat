@@ -564,3 +564,32 @@
 ![](/doc/test_images/36.1image.png)
 ![alt text](/doc/test_images/36.2image.png)
 5. Már nem csúszós a cső, ahogy a fenti képen is látható.
+
+## Teszt 38
+<table>
+  <tr>
+   <td><strong>Teszt-eset neve</strong>
+   </td>
+   <td>Glue on Pump
+   </td>
+  </tr>
+  <tr>
+   <td><strong>Rövid leírás</strong>
+   </td>
+   <td>A játékosok a csövet amin állnak ragadóssá tudják tenni.
+   </td>
+  </tr>
+  <tr>
+   <td><strong>Teszt célja</strong>
+   </td>
+   <td>Ellenőrizni, hogy amennyiben a játékos egy Pump objektumon (vagy bármilyen Node-on) áll, az nem lesz ragadós, hiszen ez egy érvénytelen művelet.
+   </td>
+  </tr>
+</table>
+
+### Lépések
+1. Egy játékos egy pumpa pályaelemre megy a Move akcióval.
+![alt text](/doc/test_images/38.1image.png)
+2. Megpróbálja a Glue akcióval ezt ragadossá tenni.
+![alt text](/doc/test_images/38.2image.png)
+3. Nem sikerül neki, hiszen a pumpát nem lehet ragadóssá tenni.
