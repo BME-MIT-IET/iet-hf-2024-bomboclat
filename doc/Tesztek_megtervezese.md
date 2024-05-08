@@ -580,19 +580,19 @@
   <tr>
    <td><strong>Teszt-eset neve</strong>
    </td>
-   <td>test 26: Place Pipe that has no ends placed
+   <td>test 39: Step on and from glued Pipe
    </td>
   </tr>
   <tr>
    <td><strong>Rövid leírás</strong>
    </td>
-   <td>A szerelő lehelyezi egy olyan cső egyik végét, melynek a lehelyezés előtt mindkét vége fel volt véve.
+   <td>Aki először rálép egy ragadóssá tett Pipe objektumra, az egy ideig nem tud továbblépni onnan.
    </td>
   </tr>
   <tr>
    <td><strong>Teszt célja</strong>
    </td>
-   <td>Ellenőrizni, hogy ilyenkor a cső hozzáadódik a csőhálózathoz, a másik vége továbbra is szerelő kezében van.
+   <td>Ellenőrizni, hogy amennyiben a játékos elsőként lépett rá egy ragadós csőre, akkor valóban nem tud onnan rögtön elmozogni.
    </td>
   </tr>
 </table>
@@ -832,7 +832,7 @@
   <tr>
    <td><strong>Teszt-eset neve</strong>
    </td>
-   <td>test 37: Glue Pipe
+   <td>test 37: Glue Pipe on Pipe
    </td>
   </tr>
   <tr>
@@ -855,7 +855,7 @@
   <tr>
    <td><strong>Teszt-eset neve</strong>
    </td>
-   <td>test 38: Glue Pump
+   <td>test 38: Glue Pump on Pump
    </td>
   </tr>
   <tr>
@@ -873,50 +873,8 @@
 </table>
 
 
-## Teszt 39
-<table>
-  <tr>
-   <td><strong>Teszt-eset neve</strong>
-   </td>
-   <td>test 39: Step on and from glued Pipe
-   </td>
-  </tr>
-  <tr>
-   <td><strong>Rövid leírás</strong>
-   </td>
-   <td>Aki először rálép egy ragadóssá tett Pipe objektumra, az egy ideig nem tud továbblépni onnan.
-   </td>
-  </tr>
-  <tr>
-   <td><strong>Teszt célja</strong>
-   </td>
-   <td>Ellenőrizni, hogy amennyiben a játékos elsőként lépett rá egy ragadós csőre, akkor valóban nem tud onnan rögtön elmozogni.
-   </td>
-  </tr>
-</table>
 
 
-## Teszt 40
-<table>
-  <tr>
-   <td><strong>Teszt-eset neve</strong>
-   </td>
-   <td>test 40: Pick up Pipe that has already been picked up
-   </td>
-  </tr>
-  <tr>
-   <td><strong>Rövid leírás</strong>
-   </td>
-   <td>A szerelő felvesz egy olyan csövet, melynek egyik vége már fel van véve.
-   </td>
-  </tr>
-  <tr>
-   <td><strong>Teszt célja</strong>
-   </td>
-   <td>Ellenőrizni, hogy ez lehetséges, a cső valóban eltávolítódik a csőhálózatból a szerelő kezében azonban ott van.
-   </td>
-  </tr>
-</table>
 
 
 

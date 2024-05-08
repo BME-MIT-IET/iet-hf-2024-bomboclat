@@ -379,3 +379,36 @@
 ![alt text](/doc/test_images/24.3image.png)
 4. Ahogy a képen is látszik, sikerült, eltűnt az X.
 
+## Teszt 26
+<table>
+  <tr>
+   <td><strong>Teszt-eset neve</strong>
+   </td>
+   <td>Step on and from glued Pipe
+   </td>
+  </tr>
+  <tr>
+   <td><strong>Rövid leírás</strong>
+   </td>
+   <td>Aki először rálép egy ragadóssá tett Pipe objektumra, az egy ideig nem tud továbblépni onnan.
+   </td>
+  </tr>
+  <tr>
+   <td><strong>Teszt célja</strong>
+   </td>
+   <td>Ellenőrizni, hogy amennyiben a játékos elsőként lépett rá egy ragadós csőre, akkor valóban nem tud onnan rögtön elmozogni.
+   </td>
+  </tr>
+</table>
+
+### Lépések
+1. Egy játékos egy cső pályaelemre lép.
+![alt text](/doc/test_images/26.1image.png)
+2. A játékos a Glue akcióval ragadóssá teszi azt, valamint ő ezzel az akcióval a a cső egyik végére kerül random.
+![alt text](/doc/test_images/26.2image.png)
+3. Egy másik játékos rálép erre a csőre.
+![alt text](/doc/test_images/26.3image.png)
+4. Move akcióval megpróbál innen ellépni, de nem megy.
+![](/doc/test_images/26.4image.png)
+5. A következő Move akcióval már megy.
+![alt text](/doc/test_images/26.5image.png)
