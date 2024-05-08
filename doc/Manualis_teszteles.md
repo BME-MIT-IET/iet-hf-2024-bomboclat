@@ -319,3 +319,31 @@
 
 
 
+## Teszt 22
+<table>
+  <tr>
+   <td><strong>Teszt-eset neve</strong>
+   </td>
+   <td>Pick up Pipe on Pipe
+   </td>
+  </tr>
+  <tr>
+   <td><strong>Rövid leírás</strong>
+   </td>
+   <td>Egy játékos egy csövön állva megpróbálja azt lecsatlakoztatni.
+   </td>
+  </tr>
+  <tr>
+   <td><strong>Teszt célja</strong>
+   </td>
+   <td>Ellenőrizni, hogy egy csövön állva az adott csövet nem lehet felvenni.
+   </td>
+  </tr>
+</table>
+
+### Lépések
+1. Egy szerelő játékos egy csőre lép.
+![alt text](/doc/test_images/22.1image.png)
+2. Megpróbál a Pick up pipe akcióval felvenni onnan egy csövet.
+![alt text](/doc/test_images/22.2image.png)
+3. Ahogy a fenti lépen is látszik,  nem sikerült.
