@@ -346,4 +346,35 @@
 ![alt text](/doc/test_images/22.1image.png)
 2. Megpróbál a Pick up pipe akcióval felvenni onnan egy csövet.
 ![alt text](/doc/test_images/22.2image.png)
-3. Ahogy a fenti lépen is látszik,  nem sikerült.
+3. Ahogy a fenti lépen is látszik, nem sikerült.
+
+## Teszt 24
+<table>
+  <tr>
+   <td><strong>Teszt-eset neve</strong>
+   </td>
+   <td>Destroy Pump and Fix Pump
+   </td>
+  </tr>
+  <tr>
+   <td><strong>Rövid leírás</strong>
+   </td>
+   <td>A pumpa a játék folyamán a víz folyásakor bármikor tönkremehet. Megjavítani egy rajta álló szerelő játékos tudja.
+   </td>
+  </tr>
+  <tr>
+   <td><strong>Teszt célja</strong>
+   </td>
+   <td>Ellenőrizni, hogy ha a szerelő egy tönkrement pumpát javít akkor az valóban megjavul, ha pedig egy működő pumpát, akkor nem történik semmi.
+   </td>
+  </tr>
+</table>
+
+### Lépések
+1. A játék folyamán bármikor elromolhat egy pumpa, így ott megjelenik egy X.
+![alt text](/doc/test_images/24.1image.png)
+2. Egy szerelő játékos erre a pumpára megy (akár több) Move akcióval.
+![alt text](/doc/test_images/24.2image.png)
+3. A Fix akcióval megpróbálja ezt megjavítani.
+![alt text](/doc/test_images/24.3image.png)
+4. Ahogy a képen is látszik, sikerült, eltűnt az X.
