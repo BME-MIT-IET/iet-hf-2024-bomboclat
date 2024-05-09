@@ -6,7 +6,7 @@
    <td>
 <strong>Teszt-eset neve</strong>
    </td>
-   <td>test 1 : Step on empty pipe from pump
+   <td>Step on empty pipe from pump
    </td>
   </tr>
   <tr>
@@ -73,7 +73,7 @@
   <tr>
    <td><strong>Teszt-eset neve</strong>
    </td>
-   <td>test 3 : Step on empty pipe from city
+   <td>Step on empty pipe from city
    </td>
   </tr>
   <tr>
@@ -146,7 +146,7 @@
   <tr>
    <td><strong>Teszt-eset neve</strong>
    </td>
-   <td>test 5 : Step on empty pipe from source
+   <td>Step on empty pipe from source
    </td>
   </tr>
   <tr>
@@ -211,7 +211,7 @@
   <tr>
    <td><strong>Teszt-eset neve</strong>
    </td>
-   <td>test 7 : Step on pump from pipe
+   <td>Step on pump from pipe
    </td>
   </tr>
   <tr>
@@ -273,7 +273,7 @@
   <tr>
    <td><strong>Teszt-eset neve</strong>
    </td>
-   <td>test 9 : Step on source from pipe
+   <td>Step on source from pipe
    </td>
   </tr>
   <tr>
@@ -337,7 +337,7 @@
   <tr>
    <td><strong>Teszt-eset neve</strong>
    </td>
-   <td>test 11: Water flows in City
+   <td>Water flows in City
    </td>
   </tr>
   <tr>
@@ -400,7 +400,7 @@
   <tr>
    <td><strong>Teszt-eset neve</strong>
    </td>
-   <td>test 13: Change Pump
+   <td>Change Pump
    </td>
   </tr>
   <tr>
@@ -463,7 +463,7 @@
   <tr>
    <td><strong>Teszt-eset neve</strong>
    </td>
-   <td>test 15: Fix Pipe
+   <td>Fix Pipe
    </td>
   </tr>
   <tr>
@@ -528,7 +528,7 @@
   <tr>
    <td><strong>Teszt-eset neve</strong>
    </td>
-   <td>test 17:Place Pipe on Pipe
+   <td>Place Pipe on Pipe
    </td>
   </tr>
   <tr>
@@ -594,7 +594,7 @@
   <tr>
    <td><strong>Teszt-eset neve</strong>
    </td>
-   <td>test 19: Place pump on pipe
+   <td>Place pump on pipe
    </td>
   </tr>
   <tr>
@@ -658,7 +658,7 @@
   <tr>
    <td><strong>Teszt-eset neve</strong>
    </td>
-   <td>test 21: Pick up Pipe on Pump
+   <td>Pick up Pipe on Pump
    </td>
   </tr>
   <tr>
@@ -719,7 +719,7 @@
   <tr>
    <td><strong>Teszt-eset neve</strong>
    </td>
-   <td>test 23: Pick up Pipe on Source
+   <td>Pick up Pipe on Source
    </td>
   </tr>
   <tr>
@@ -782,7 +782,7 @@
   <tr>
    <td><strong>Teszt-eset neve</strong>
    </td>
-   <td>test 25: Test water step source
+   <td>Test water step source
    </td>
   </tr>
   <tr>
@@ -848,7 +848,7 @@
   <tr>
    <td><strong>Teszt-eset neve</strong>
    </td>
-   <td>test 27: Test water step Pump
+   <td>Test water step Pump
    </td>
   </tr>
   <tr>
@@ -909,7 +909,7 @@
   <tr>
    <td><strong>Teszt-eset neve</strong>
    </td>
-   <td>test 29 : Pick up pump on city
+   <td>Pick up pump on city
    </td>
   </tr>
   <tr>
@@ -971,7 +971,7 @@
   <tr>
    <td><strong>Teszt-eset neve</strong>
    </td>
-   <td>test 31 : Pick up pump on pipe
+   <td>Pick up pump on pipe
    </td>
   </tr>
   <tr>
@@ -1034,7 +1034,7 @@
   <tr>
    <td><strong>Teszt-eset neve</strong>
    </td>
-   <td>test 33: Repaired Pipe cannot be drilled
+   <td>Repaired Pipe cannot be drilled
    </td>
   </tr>
   <tr>
@@ -1103,7 +1103,7 @@
   <tr>
    <td><strong>Teszt-eset neve</strong>
    </td>
-   <td>test 35: Lubricate Pump
+   <td>Lubricate Pump
    </td>
   </tr>
   <tr>
@@ -1168,7 +1168,7 @@
   <tr>
    <td><strong>Teszt-eset neve</strong>
    </td>
-   <td>test 37: Glue Pipe on Pipe
+   <td>Glue Pipe on Pipe
    </td>
   </tr>
   <tr>
