@@ -1,5 +1,38 @@
 # Manuális tesztelés
 
+## Teszt 1
+<table>
+  <tr>
+   <td>
+<strong>Teszt-eset neve</strong>
+   </td>
+   <td>test 1 : Step on empty pipe from pump
+   </td>
+  </tr>
+  <tr>
+   <td><strong>Rövid leírás</strong>
+   </td>
+   <td>A játékos megpróbál rálépni egy üres csőre a pumpáról amin áll.
+   </td>
+  </tr>
+  <tr>
+   <td><strong>Teszt célja</strong>
+   </td>
+   <td>Annak tesztelése, hogy a játékos ebben az esetben rá tud lépni az adott csőre.
+   </td>
+  </tr>
+</table>
+
+### Lépések
+1. A játékos egy pumpán áll.  
+![Alt szöveg](/doc/test_images/1.1image.png)  
+2. Megnyomjuk a Move gombot, és rákattintunk a csőre.  
+![Alt szöveg](/doc/test_images/1.2image.png)  
+
+
+3. Ekkor a játékos a kattintott csőre kerül.  
+![Alt szöveg](/doc/test_images/1.3image.png)
+
 ## Teszt 2
 <table>
   <tr>
@@ -32,6 +65,40 @@
 
 3. Látható, hogy ez nem sikerült.
 ![alt text](/doc/test_images/2.4image.png)
+
+
+
+## Teszt 3
+<table>
+  <tr>
+   <td><strong>Teszt-eset neve</strong>
+   </td>
+   <td>test 3 : Step on empty pipe from city
+   </td>
+  </tr>
+  <tr>
+   <td><strong>Rövid leírás</strong>
+   </td>
+   <td>A játékos megpróbál rálépni üres csőre a városból, amin áll.
+   </td>
+  </tr>
+  <tr>
+   <td><strong>Teszt célja</strong>
+   </td>
+   <td>Annak tesztelése, hogy a játékos ebben az esetben rá tud lépni az adott csőre.
+   </td>
+  </tr>
+</table>
+
+### Lépések
+1. A játékos a városon áll. (sárga négyzet)  
+![Alt szöveg](/doc/test_images/3.1image.png)
+
+2. Megnyomjuk a Move gombot, és rákattintunk az üres csőre.  
+![alt text](/doc/test_images/3.2image.png)
+
+3. Látható, hogy sikeresen odalépett.  
+![alt text](/doc/test_images/3.3image.png)
 
 
 
@@ -74,6 +141,38 @@
 
 
 
+## Teszt 5
+<table>
+  <tr>
+   <td><strong>Teszt-eset neve</strong>
+   </td>
+   <td>test 5 : Step on empty pipe from source
+   </td>
+  </tr>
+  <tr>
+   <td><strong>Rövid leírás</strong>
+   </td>
+   <td>A játékos megpróbál rálépni egy üres csőre a forrásból, amin áll.
+   </td>
+  </tr>
+  <tr>
+   <td><strong>Teszt célja</strong>
+   </td>
+   <td>Annak tesztelése, hogy a játékos ebben az esetben rá tud lépni az adott csőre.
+   </td>
+  </tr>
+</table>
+
+### Lépések
+1. A játékos a forráson áll (kék négyzet).  
+![alt text](/doc/test_images/5.1image.png)
+2. Megnyomja a Move gombot, és rákattint az üres csőre.  
+![alt text](/doc/test_images/5.2image.png)
+3. A játékos sikeresen a csőre kerül.  
+![alt text](/doc/test_images/5.3image.png)
+
+
+
 ## Teszt 6
 <table>
   <tr>
@@ -106,6 +205,38 @@
 4. Nem sikerül neki, ahogy a fenti képen is látszik.
 
 
+
+## Teszt 7
+<table>
+  <tr>
+   <td><strong>Teszt-eset neve</strong>
+   </td>
+   <td>test 7 : Step on pump from pipe
+   </td>
+  </tr>
+  <tr>
+   <td><strong>Rövid leírás</strong>
+   </td>
+   <td>A játékos megpróbál egy csőről egy szomszédos pumpára rálépni.
+   </td>
+  </tr>
+  <tr>
+   <td><strong>Teszt célja</strong>
+   </td>
+   <td>A játékos sikeresen átlép egy mellette lévő pumpára.
+   </td>
+  </tr>
+</table>
+
+### Lépések
+1. A játékos egy csövön áll.  
+![alt text](/doc/test_images/7.1image.png)
+2. A játékos megnyomja a Move gombot, és rákattint a kívánt pumpára.  
+![alt text](/doc/test_images/7.2image.png)
+3. Sikeresen a pumpára kerül a játékos.  
+![alt text](/doc/test_images/7.3image.png)
+
+
 ## Teszt 8
 <table>
   <tr>
@@ -134,6 +265,40 @@
 2. A Move akcióval megpróbál a ciszternára lépni.
 ![alt text](/doc/test_images/8.2image.png)
 3. Sikerül ez az akció.
+
+
+
+## Teszt 9
+<table>
+  <tr>
+   <td><strong>Teszt-eset neve</strong>
+   </td>
+   <td>test 9 : Step on source from pipe
+   </td>
+  </tr>
+  <tr>
+   <td><strong>Rövid leírás</strong>
+   </td>
+   <td>A játékos megpróbál egy csőről egy szomszédos forrásra rálépni.
+   </td>
+  </tr>
+  <tr>
+   <td><strong>Teszt célja</strong>
+   </td>
+   <td>A játékos sikeresen átlép a forrásra.
+   </td>
+  </tr>
+</table>
+
+### Lépések
+1. A játékos egy csövön áll, amihez kapcsolódik egy forrás (kék négyzet).  
+![Alt szöveg](/doc/test_images/9.1image.png)
+2. A játékos megnyomja a Move gombot, és rákattint a forrásra.  
+![alt text](/doc/test_images/9.2image.png)
+3. A játékos sikeresen a forrásra kerül.  
+![alt text](/doc/test_images/9.3image.png)
+
+
 
 ## Teszt 10
 
@@ -165,6 +330,40 @@
 ![alt text](/doc/test_images/10.2image.png)
 3. Meg kell vizsgálni, hogy egyezik-e a folyás pályája az elvárttal. Egyeznek, így sikerült minden elemnek megfelelően továbbitani a vizet. 
 
+
+
+## Teszt 11
+<table>
+  <tr>
+   <td><strong>Teszt-eset neve</strong>
+   </td>
+   <td>test 11: Water flows in City
+   </td>
+  </tr>
+  <tr>
+   <td><strong>Rövid leírás</strong>
+   </td>
+   <td>Egy ciszternába a rajta kötött csövön keresztül víz érkezik
+   </td>
+  </tr>
+  <tr>
+   <td><strong>Teszt célja</strong>
+   </td>
+   <td>Ellenőrizni, hogy a ciszternába bele tud-e folyni a víz.
+   </td>
+  </tr>
+</table>
+
+### Lépések
+1. Egy olyan pálya összeállítása, ahol a ciszternába egy bekötött cső van, ami vízhez juthat.  
+![alt text](/doc/test_images/11.1image.png)
+2. Meg kell várni a kör végét, hogy a víz folyását meg lehessen vizsgálni.  
+![alt text](/doc/test_images/11.2image.png)
+3. Lehet látni, hogy valóban a ciszternába folyik a víz (ebben az esetben egészen a forrástól).  
+![alt text](/doc/test_images/11.3image.png)
+
+
+
 ## Teszt 12
 <table>
   <tr>
@@ -194,6 +393,40 @@
 ![alt text](/doc/test_images/12.1image.png)
 3. Lehet látni, hogy valóban nem folyik tovább a víz ott.
 
+
+
+## Teszt 13
+<table>
+  <tr>
+   <td><strong>Teszt-eset neve</strong>
+   </td>
+   <td>test 13: Change Pump
+   </td>
+  </tr>
+  <tr>
+   <td><strong>Rövid leírás</strong>
+   </td>
+   <td>Egy pumpának átállítjuk a ki és bemenetét. 
+   </td>
+  </tr>
+  <tr>
+   <td><strong>Teszt célja</strong>
+   </td>
+   <td>Ellenőrizzük, hogy a pumpa átállítása működik-e.
+   </td>
+  </tr>
+</table>
+
+### Lépések
+1. Megvizsgáljuk, hogy alap esetben honnan, hova folyik a víz. Ezt a 11. teszt példájában szereplő esettel szemléltetjük.  
+![alt text](/doc/test_images/11.3image.png)
+2. Rálépünk a pumpára egy karakterrel, és átállítjuk a pumpálási irányt.  
+
+3. Lehet látni, hogy valóban nem folyik tovább a víz az eredeti irányba.  
+![alt text](/doc/test_images/13.3image.png)
+
+
+
 ## Teszt 14
 <table>
   <tr>
@@ -222,6 +455,40 @@
 2. Egy kör végét megvárni, hogy látszódjon a víz folyása.
 ![alt text](/doc/test_images/14.2image.png)
 3. Láthatjuk, hogy nem folyik a víz a törött cső után.
+
+
+
+## Teszt 15
+<table>
+  <tr>
+   <td><strong>Teszt-eset neve</strong>
+   </td>
+   <td>test 15: Fix Pipe
+   </td>
+  </tr>
+  <tr>
+   <td><strong>Rövid leírás</strong>
+   </td>
+   <td>A szerelő játékos a csövön állva ha a cső lyukas megfoltozhatja azt.
+   </td>
+  </tr>
+  <tr>
+   <td><strong>Teszt célja</strong>
+   </td>
+   <td>Ellenőrizzük, hogy a cső melyet a játékos megpróbál megfoltozni val épp lesz ha eddig lyukas volt, illetve ha eddigis épp volt akkor továbbra is az marad.
+   </td>
+  </tr>
+</table>
+
+### Lépések
+1. A szituáció: van egy lyukas cső a pályán. Látható, ahogy a víz nem is folyik tovább.  
+![alt text](/doc/test_images/15.1image.png)
+2. A szerelővel odalépünk, és megnyomjuk a Fix gombot.  
+![alt text](/doc/test_images/15.2image.png)
+3. Látható, ahogy megjavul a cső, és a víz is továbbfolyik már rajta.  
+![alt text](/doc/test_images/15.3image.png)
+
+
 
 ## Teszt 16
 <table>
@@ -253,6 +520,40 @@
 3. A Place pipe akcióval el kell itt helyeznie.
 ![alt text](/doc/test_images/16.3image.png)
 4. Meg kell vizsgálni, hogy valóban bekötődött-e a cső. A szerelő kezéből eltűnt a cső.
+
+
+
+## Teszt 17
+<table>
+  <tr>
+   <td><strong>Teszt-eset neve</strong>
+   </td>
+   <td>test 17:Place Pipe on Pipe
+   </td>
+  </tr>
+  <tr>
+   <td><strong>Rövid leírás</strong>
+   </td>
+   <td>Megkísérelünk letenni egy cső objektumot egy másik cső objektumra.
+   </td>
+  </tr>
+  <tr>
+   <td><strong>Teszt célja</strong>
+   </td>
+   <td>Ellenőrizzük, hogy a cső nem rakódott le sehova, hiszen ez egy értelmetlen és szabálytalan művelet.
+   </td>
+  </tr>
+</table>
+
+### Lépések
+1. Egy szerelővel felveszünk egy cső objektumot.  
+![alt text](/doc/test_images/17.1image.png)
+2. Átlépünk vele a legközelebbi csőre, és megnyomjuk a Place Pipe gombot.  
+![alt text](/doc/test_images/17.2image.png)
+3. Látható, ahogy nem történik semmi, még a turn számláló sem növekedett.  
+![alt text](/doc/test_images/17.3image.png)
+
+
 
 ## Teszt 18
 <table>
@@ -287,6 +588,39 @@
 4. Látszik, hogy nem sikerült, a kezében maradt a pumpa.
 
 
+
+## Teszt 19
+<table>
+  <tr>
+   <td><strong>Teszt-eset neve</strong>
+   </td>
+   <td>test 19: Place pump on pipe
+   </td>
+  </tr>
+  <tr>
+   <td><strong>Rövid leírás</strong>
+   </td>
+   <td>Egy pumpát helyez le a kezéből a játékos arra a csőre. amin áll.
+   </td>
+  </tr>
+  <tr>
+   <td><strong>Teszt célja</strong>
+   </td>
+   <td>Ellenőrizni, hogy helyes-e a pumpa lehelyezése
+   </td>
+  </tr>
+</table>
+
+### Lépések
+1. Egy szerelő játékosnak a ciszternán állva a a Pick up pump gombbal felvesz egy pumpát.  
+![alt text](/doc/test_images/19.1image.png)
+2. A játékos rálép egy csőre és megnyomja a place pump gombot.  
+![alt text](/doc/test_images/19.2image.png)
+3. Ekkor látható, hogy megjelenik a pumpa a kívánt csövön.  
+![alt text](/doc/test_images/19.3image.png)
+
+
+
 ## Teszt 20
 <table>
   <tr>
@@ -319,6 +653,36 @@
 
 
 
+## Teszt 21
+<table>
+  <tr>
+   <td><strong>Teszt-eset neve</strong>
+   </td>
+   <td>test 21: Pick up Pipe on Pump
+   </td>
+  </tr>
+  <tr>
+   <td><strong>Rövid leírás</strong>
+   </td>
+   <td>Egy játékos egy pumpán állva lecsatlakoztatja az egyik cső végét.
+   </td>
+  </tr>
+  <tr>
+   <td><strong>Teszt célja</strong>
+   </td>
+   <td>Ellenőrizni, hogy a pumpába kötött csöveket le lehet-e csatlakoztatni.
+   </td>
+  </tr>
+</table>
+
+### Lépések
+1. Egy szerelő egy pumpán állva megnyomja a Pick Up Pipe gombot.  
+![alt text](/doc/test_images/21.1image.png)
+2. Ez sikerül neki, és látható a kezében a megjelenő pumpa.  
+![alt text](/doc/test_images/21.2image.png)
+
+
+
 ## Teszt 22
 <table>
   <tr>
@@ -347,6 +711,38 @@
 2. Megpróbál a Pick up pipe akcióval felvenni onnan egy csövet.
 ![alt text](/doc/test_images/22.2image.png)
 3. Ahogy a fenti lépen is látszik, nem sikerült.
+
+
+
+## Teszt 23
+<table>
+  <tr>
+   <td><strong>Teszt-eset neve</strong>
+   </td>
+   <td>test 23: Pick up Pipe on Source
+   </td>
+  </tr>
+  <tr>
+   <td><strong>Rövid leírás</strong>
+   </td>
+   <td>Egy játékos egy forráson állva lecsatlakoztatja az egyik cső végét.
+   </td>
+  </tr>
+  <tr>
+   <td><strong>Teszt célja</strong>
+   </td>
+   <td>Ellenőrizni, hogy forrásról nem lehet lecsatlakoztatni csövet.
+   </td>
+  </tr>
+</table>
+
+### Lépések
+1. Egy szerelő a forrásra lép és megnyomja a Pick Up Pipe gombot.  
+![alt text](/doc/test_images/23.1image.png)
+2. Látható, hogy nem sikerül neki, és lépést sem veszít érte.  
+![alt text](/doc/test_images/23.2image.png)
+
+
 
 ## Teszt 24
 <table>
@@ -378,6 +774,38 @@
 3. A Fix akcióval megpróbálja ezt megjavítani.
 ![alt text](/doc/test_images/24.3image.png)
 4. Ahogy a képen is látszik, sikerült, eltűnt az X.
+
+
+
+## Teszt 25
+<table>
+  <tr>
+   <td><strong>Teszt-eset neve</strong>
+   </td>
+   <td>test 25: Test water step source
+   </td>
+  </tr>
+  <tr>
+   <td><strong>Rövid leírás</strong>
+   </td>
+   <td>Teszteli a forrás csomópont step víz folyásának szimulálását.
+   </td>
+  </tr>
+  <tr>
+   <td><strong>Teszt célja</strong>
+   </td>
+   <td>Ellenőrizni, hogy helyes-e a forrás víz irányítási működése.
+   </td>
+  </tr>
+</table>
+
+### Lépések
+1. Tekintjük a játék egy első, még víz lépés előtti állapotát. Kilyukasztunk egy csövet, ami a city és a forrás között van.  
+![alt text](/doc/test_images/25.1image.png)
+2. Ezután passzoljuk a játékosok alkalmait, és a következő körre kerül a játék, amikor is már folyt a víz. Látható, hogy a forrásból kifelé ki is folyt (egészen a lyukas csőig persze), tehát helyesen működik.  
+![alt text](/doc/test_images/25.2image.png)
+
+
 
 ## Teszt 26
 <table>
@@ -413,6 +841,38 @@
 5. A következő Move akcióval már megy.
 ![alt text](/doc/test_images/26.5image.png)
 
+
+
+## Teszt 27
+<table>
+  <tr>
+   <td><strong>Teszt-eset neve</strong>
+   </td>
+   <td>test 27: Test water step Pump
+   </td>
+  </tr>
+  <tr>
+   <td><strong>Rövid leírás</strong>
+   </td>
+   <td>Teszteli a pumpa step víz folyásának szimulálását.
+   </td>
+  </tr>
+  <tr>
+   <td><strong>Teszt célja</strong>
+   </td>
+   <td>Ellenőrizni, hogy helyes-e a pumpa irányítási működése.
+   </td>
+  </tr>
+</table>
+
+### Lépések
+1. Tekintjük a játék egy első, még víz lépés előtti állapotát. Kilyukasztunk egy csövet, ami a pumpa és a forrás között van, hogy jobban szemléltessük a példát.  
+![alt text](/doc/test_images/25.1image.png)
+2. Ezután passzoljuk a játékosok alkalmait, és a következő körre kerül a játék, amikor is már folyt a víz. Látható, hogy a (bal alsó) pumpán keresztül folyt a víz, tehát helyesen működik.  
+![alt text](/doc/test_images/25.2image.png)
+
+
+
 ## Teszt 28
 <table>
   <tr>
@@ -441,6 +901,38 @@
 2. A játékos a Drill akcióval megpróbálha kilyukasztani a csövet.
 ![](/doc/test_images/28.2image.png)
 3. Lehet látni, hogy sikerült, megjelent a piros pötty a csövön.
+
+
+
+## Teszt 29
+<table>
+  <tr>
+   <td><strong>Teszt-eset neve</strong>
+   </td>
+   <td>test 29 : Pick up pump on city
+   </td>
+  </tr>
+  <tr>
+   <td><strong>Rövid leírás</strong>
+   </td>
+   <td>A játékos egy ciszternán állva megpróbál egy új pumpát a kezébe kapni.
+   </td>
+  </tr>
+  <tr>
+   <td><strong>Teszt célja</strong>
+   </td>
+   <td>Ellenőrizzük, hogy a játékos kap egy pumpát a kezébe.
+   </td>
+  </tr>
+</table>
+
+### Lépések
+1. Egy szerelővel a cityre lépünk, és megnyomjuk a Pick Up Pump gombot.  
+![alt text](/doc/test_images/29.1image.png)
+2. Látható, hogy a játékos kezében meg is jelenik a pumpa.  
+![alt text](/doc/test_images/29.2image.png)
+
+
 
 ## Teszt 30
 <table>
@@ -471,6 +963,38 @@
 2. A játékos a Pick up pump akcióval megpróbál egy pumpát felvenni.
 ![alt text](/doc/test_images/30.2image.png)
 3. Nem sikerül neki, ahogy a fenti képen is látható.
+
+
+
+## Teszt 31
+<table>
+  <tr>
+   <td><strong>Teszt-eset neve</strong>
+   </td>
+   <td>test 31 : Pick up pump on pipe
+   </td>
+  </tr>
+  <tr>
+   <td><strong>Rövid leírás</strong>
+   </td>
+   <td>A játékos egy csövön állva megpróbál egy új pumpát a kezébe kapni.
+   </td>
+  </tr>
+  <tr>
+   <td><strong>Teszt célja</strong>
+   </td>
+   <td>Ellenőrizzük, hogy a játékos nem kap pumpát a kezébe.
+   </td>
+  </tr>
+</table>
+
+### Lépések
+1. Egy szerelő egy csövön állva megnyomja a Pick Up Pump gombot.  
+![alt text](/doc/test_images/31.1image.png)
+2. Látható, hogy nem került a kezébe a pumpa, és a turn-je sem növekedett, a teszt sikeres volt.  
+![alt text](/doc/test_images/31.2image.png)
+
+
 
 ## Teszt 32
 <table>
@@ -503,6 +1027,46 @@
 
 3. Nem sikerül neki, ahogy a fenti képen is látható.
 
+
+
+## Teszt 33
+<table>
+  <tr>
+   <td><strong>Teszt-eset neve</strong>
+   </td>
+   <td>test 33: Repaired Pipe cannot be drilled
+   </td>
+  </tr>
+  <tr>
+   <td><strong>Rövid leírás</strong>
+   </td>
+   <td>Azok a csövek, melyek nemrégiben lettek megjavítva véletlen ideig nem lyukaszthatók ki.
+   </td>
+  </tr>
+  <tr>
+   <td><strong>Teszt célja</strong>
+   </td>
+   <td>Ellenőrizni, hogy olyan csövet amit még nem lehet kilyukasztani a rajta álló játékos nem tudja kilyukasztani.
+   </td>
+  </tr>
+</table>
+
+### Lépések
+1. A pályán egy karakterrel kilyukasztunk egy csövet.  
+![alt text](/doc/test_images/33.1image.png)
+2. Ráállunk egy szerelővel, és megnyomjuk a Fix gombot.  
+![alt text](/doc/test_images/33.2image.png)
+3. (Elmozgunk a szerelővel.) Ráállunk egy szabotőrrel, és megnyomjuk a Drill gombot.  
+![alt text](/doc/test_images/33.3image.png)
+4. Látható, hogy nem sikerül a lyukasztás, bármeddig is nyomogatjuk a gombot.  
+![alt text](/doc/test_images/33.4image.png)
+5. Passzoljuk a köreinket (6. körbe kerülünk), és látható, hogy mostmár a Drill megnyomására...  
+![alt text](/doc/test_images/33.5image.png)
+6. ...kilyukad a kívánt cső.  
+![alt text](/doc/test_images/33.6image.png)
+
+
+
 ## Teszt 34
 <table>
   <tr>
@@ -531,6 +1095,38 @@
 2. A játékos a Lube akcióval megpróbálja csúszássá tenni a csövet.
 ![alt text](/doc/test_images/34.2image.png)
 3. Sikerül neki, és átkerül az egyik oldalára a csőnek.
+
+
+
+## Teszt 35
+<table>
+  <tr>
+   <td><strong>Teszt-eset neve</strong>
+   </td>
+   <td>test 35: Lubricate Pump
+   </td>
+  </tr>
+  <tr>
+   <td><strong>Rövid leírás</strong>
+   </td>
+   <td>A szabotőr játékos a csövet amin áll rövid időre csúszóssá tudja tenni.
+   </td>
+  </tr>
+  <tr>
+   <td><strong>Teszt célja</strong>
+   </td>
+   <td>Ellenőrizni, hogy amennyiben a szabotőr egy Pump objektumon (vagy bármilyen Node-on) áll, az nem lesz csúszós, hiszen ez egy érvénytelen művelet.
+   </td>
+  </tr>
+</table>
+
+### Lépések
+1. A szabotőrrel egy pumpára lépünk és megnyomjuk a Lube gombot.  
+![alt text](/doc/test_images/35.1image.png)
+2. Látható, hogy nem történik semmi, és a pumpán is marad, tehát nem sikerült a pumpa csúszóssá tétele, a teszt sikeres.  
+![alt text](/doc/test_images/35.2image.png)
+
+
 
 ## Teszt 36
 <table>
@@ -564,6 +1160,42 @@
 ![](/doc/test_images/36.1image.png)
 ![alt text](/doc/test_images/36.2image.png)
 5. Már nem csúszós a cső, ahogy a fenti képen is látható.
+
+
+
+## Teszt 37
+<table>
+  <tr>
+   <td><strong>Teszt-eset neve</strong>
+   </td>
+   <td>test 37: Glue Pipe on Pipe
+   </td>
+  </tr>
+  <tr>
+   <td><strong>Rövid leírás</strong>
+   </td>
+   <td>A játékosok a csövet amin állnak ragadóssá tudják tenni.
+   </td>
+  </tr>
+  <tr>
+   <td><strong>Teszt célja</strong>
+   </td>
+   <td>Ellenőrizni, hogy a játékos a csövet valóban ragadóssá tette.
+   </td>
+  </tr>
+</table>
+
+### Lépések
+1. Egy játékos rálép egy csőre és megnyomja a Glue gombot.  
+![alt text](/doc/test_images/37.1image.png)
+2. Ez sikerül neki, és látható a csövön megjelenő ragasztó.  
+![alt text](/doc/test_images/37.2image.png)
+3. Egy másik játékossal rálépünk a csőre, és utána megpróbálunk elmozdulni.  
+![alt text](/doc/test_images/37.3image.png)
+4. Látható, hogy a csövön marad a játékos, a teszt sikeres.  
+![alt text](/doc/test_images/37.4image.png)
+
+
 
 ## Teszt 38
 <table>
