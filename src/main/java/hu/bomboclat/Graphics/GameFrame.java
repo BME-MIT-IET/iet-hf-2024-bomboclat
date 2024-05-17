@@ -188,10 +188,10 @@ public class GameFrame extends JFrame {
         JMenuBar menuBar;
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
         this.setResizable(false);
-        URL url = ClassLoader.getSystemResource("Graphics/Images/deserticon.jpg");
-        Toolkit kit = Toolkit.getDefaultToolkit();
-        Image img = kit.createImage(url);
-        this.setIconImage(img);
+        // URL url = ClassLoader.getSystemResource("Graphics/Images/deserticon.jpg");
+        // Toolkit kit = Toolkit.getDefaultToolkit();
+        // Image img = kit.createImage(url);
+        // this.setIconImage(img);
         setLayout(new BorderLayout());
         this.getContentPane().setBackground(bgColor);
 
