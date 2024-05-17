@@ -63,7 +63,7 @@ public class Game {
     public Game(int _all_rounds){
         round_count = 0;
         all_rounds = _all_rounds;
-        characters = new ArrayList<Character>();
+        characters = new ArrayList<>();
         currPlayfield = null;
     }
 
@@ -74,7 +74,7 @@ public class Game {
         frame = f;
         round_count = 0;
         all_rounds = _all_rounds;
-        characters = new ArrayList<Character>();
+        characters = new ArrayList<>();
         currPlayfield = null;
     }
 
@@ -84,7 +84,7 @@ public class Game {
     public Game(){
         round_count = 0;
         all_rounds = 10;
-        characters = new ArrayList<Character>();
+        characters = new ArrayList<>();
         currPlayfield = null;
     }
 
@@ -92,7 +92,7 @@ public class Game {
      * Elindítja a játékmenetet.
      */        
     public List<IView> StartGame(int _characters){
-        List<IView> ret = new ArrayList<IView>();
+        List<IView> ret = new ArrayList<>();
         round_count = 0;
         currPlayfield = new Playfield();
 

@@ -75,7 +75,7 @@ public class Pipe extends Field implements Stepable{
         has_water = false;
         lost = 0;
         has_player = false;
-        endpoints = new ArrayList<Node>(2);
+        endpoints = new ArrayList<>(2);
         endpoints.add(null);
         endpoints.add(null);
         pipeView = new PipeView(this);
@@ -95,16 +95,16 @@ public class Pipe extends Field implements Stepable{
             return null;
         }else if(!sticky){
             return endpoints.get(direction);
-        }else if(sticky){
+        }else{
             sticky = false;
             return this;
         }
-        return this;
     }
 
     /**
      * Megjavítja a csövet, eltünteti róla a lyukat.
      */
+    @Override
     public boolean Fix() {
         if(has_hole)
         {
@@ -121,6 +121,7 @@ public class Pipe extends Field implements Stepable{
      * a csövet, hanem 2 körig.
      * @param rnd ha igaz, akkor nemdeterminisztikusan működik
      */
+    @Override
     public boolean Drill(boolean rnd) {
         if(hole_timer == 0){
             if(rnd){
@@ -168,6 +169,7 @@ public class Pipe extends Field implements Stepable{
      * játékost a csőre, ha nem állnak már rajta.
      * @param c A játékost, amelyet rá szeretnének állítani a csőre.
      */
+    @Override
     public void Accept(Character c) {
         if(!has_player) {
             if(slippery){
@@ -187,6 +189,7 @@ public class Pipe extends Field implements Stepable{
      * Leveszi a játékost aki éppen a csövön áll.
      * @param c A levetendő játékos.
      */
+    @Override
     public void Remove(Character c) {
         has_player = false;
         super.Remove(c);
@@ -197,6 +200,7 @@ public class Pipe extends Field implements Stepable{
      * @param p  A lehelyezendő pumpa.
      * @return  Sikeres lehelyezés esetén null, egyébként a pumpa.
      */
+    @Override
     public Pump PlacePump(Pump p) {
         Pipe p2 = new Pipe();
         PipeView piv = new PipeView(p2);
@@ -267,6 +271,7 @@ public class Pipe extends Field implements Stepable{
      * Visszaadja, hogy csúszós-e a cső.
      * @return Igaz, ha csúszós, hamis, ha nem.
      */
+    @Override
     public boolean getSlippery(){
         return slippery;
     }
@@ -298,6 +303,7 @@ public class Pipe extends Field implements Stepable{
     /**
      * Beragasztózza a csövet. A sticky értékét true-ra állítja.
      */
+    @Override
     public boolean Glue(){
         if(this.getEndpoint(0)!=null){
             players.get(0).Move(0);
@@ -311,6 +317,7 @@ public class Pipe extends Field implements Stepable{
     /**
      * Csúszóssá teszi a csövet. A slippery értékét true-ra állítja.
      */
+    @Override
     public boolean Lube(){
         if(this.getEndpoint(0)!=null){
             players.get(0).Move(0);

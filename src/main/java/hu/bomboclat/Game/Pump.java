@@ -38,6 +38,7 @@ public class Pump extends Node{
     /**
      * Megjavítja az elromlott pumpát, ha a pumpa már működik, akkor nincsen hatása.
      */
+    @Override
     public boolean Fix() {
         working = true;
         return true;
@@ -48,6 +49,7 @@ public class Pump extends Node{
      * @param in Paraméterként megadott Pipe objektum, hogy honnan pumpáljon.
      * @param out Paraméterként megadott Pipe objektum, hogy hova pumpáljon.
      */
+    @Override
     public void Change(Pipe in, Pipe out) {
         if(this.edges.contains(in) && this.edges.contains(out)) {
             this.from = in;
@@ -76,6 +78,7 @@ public class Pump extends Node{
      * Leteszi a paraméterben megadott szerelő kezében lévő csövet, azaz hozzáadja a pumpából kimenő/pumpába befutó csövek közé.
      * @param m a csövet letenni kívánó szerelő
     */
+    @Override
     public void PlacePipe(Mechanic m){
         Pipe pipeInHand = m.GetPipeInHand();
         edges.add(pipeInHand);
@@ -101,15 +104,15 @@ public class Pump extends Node{
      * @param m a szerelő játékos
      * @return a felvett cső
      */
+    @Override
     public Pipe PickUpPipe(Mechanic m){
         if(m.GetPipeEnd() != -1){
-            if(m.GetPipeEnd() == 1 || m.GetPipeEnd() == 0){
-                if(edges.contains(m.GetPipeInHand())){
+            if((m.GetPipeEnd() == 1 || m.GetPipeEnd() == 0) && edges.contains(m.GetPipeInHand())){
                     edges.remove(m.GetPipeInHand());
                     m.GetPipeInHand().endpoints.remove(this);
                     m.SetPipeEnd(2);
                 }
-            }
+            
             return m.GetPipeInHand();
         } else{
             Pipe returnPipe = edges.remove(0);

@@ -42,7 +42,7 @@ public class CommandInterpreter {
 
     static boolean run = true;
 
-    static public void WriteToFile(String filename, String data) {
+    public static  void WriteToFile(String filename, String data) {
         try {
             File f = new File(filename);
             f.createNewFile();
@@ -52,7 +52,7 @@ public class CommandInterpreter {
         }
     }
 
-    static public void Add(String[] cmd) {
+    public static void Add(String[] cmd) {
         String output = "";
 
         if(cmd[1].equals("mechanic")) {
@@ -481,9 +481,8 @@ public class CommandInterpreter {
             }
             
             output = String.format("Pump %d has been modified.\n", Integer.parseInt(cmd[2]));
-            // pumps.add(pump);
         } else if(cmd[1].equals("pipe")) {
-            Pipe pipe = pipes.get(Integer.parseInt(cmd[2]));;
+            Pipe pipe = pipes.get(Integer.parseInt(cmd[2]));
             
             for(int i = 0; i < cmd.length; i++) {
                 if(cmd[i].equals("-endpoint")) {
@@ -760,7 +759,7 @@ public class CommandInterpreter {
     }
 
     public static void read(String[] cmd) {
-        List<String> result = new ArrayList<String>();
+        List<String> result = new ArrayList<>();
         try (Stream<String> lines = Files.lines(Paths.get(cmd[1]))) {
             result = lines.collect(Collectors.toList());
         } catch (IOException ie) {
@@ -796,7 +795,7 @@ public class CommandInterpreter {
             
             
 
-                List<String> result = new ArrayList<String>();
+                List<String> result = new ArrayList<>();
                 result.clear();
                 try (Stream<String> lines = Files.lines(Paths.get("temp.txt"))) {
                     result = lines.collect(Collectors.toList());
@@ -806,7 +805,7 @@ public class CommandInterpreter {
                 }
 
 
-                List<String> expected = new ArrayList<String>();
+                List<String> expected = new ArrayList<>();
                 expected.clear();
                 try (Stream<String> lines = Files.lines(Paths.get("tests/test" + i + "expected.txt"))) {
                     expected = lines.collect(Collectors.toList());
@@ -837,7 +836,7 @@ public class CommandInterpreter {
         
         
 
-            List<String> result = new ArrayList<String>();
+            List<String> result = new ArrayList<>();
             try (Stream<String> lines = Files.lines(Paths.get("temp.txt"))) {
                 result = lines.collect(Collectors.toList());
             } catch (IOException ie) {
@@ -845,7 +844,7 @@ public class CommandInterpreter {
             }
 
 
-            List<String> expected = new ArrayList<String>();
+            List<String> expected = new ArrayList<>();
             try (Stream<String> lines = Files.lines(Paths.get("tests/test" + cmd[1] + "expected.txt"))) {
                 expected = lines.collect(Collectors.toList());
             } catch (IOException ie) {
@@ -979,24 +978,24 @@ public class CommandInterpreter {
     public static void main(String[] args) {
 
         commands.put("exit", (String[] cmd) -> run = false);
-        commands.put("add", (String[] cmd) -> Add(cmd));
-        commands.put("delete", (String [] cmd) -> delete(cmd));
-        commands.put("list", (String [] cmd) -> list(cmd));
-        commands.put("set", (String[] cmd) -> set(cmd));
-        commands.put("move", (String[] cmd) -> move(cmd));
-        commands.put("fix", (String[] cmd) -> fix(cmd));
-        commands.put("changepump", (String[] cmd) -> changepump(cmd));
-        commands.put("lube", (String[] cmd) -> lube(cmd));
-        commands.put("glue", (String[] cmd) -> glue(cmd));
-        commands.put("placepump", (String[] cmd) -> placepump(cmd));
-        commands.put("pickuppipe", (String[] cmd) -> pickuppipe(cmd));
-        commands.put("pickuppump", (String[] cmd) -> pickuppump(cmd));
-        commands.put("init", (String[] cmd) -> init(cmd));
-        commands.put("read", (String[] cmd) -> read(cmd));
-        commands.put("test", (String[] cmd) -> test(cmd));
-        commands.put("drill", (String[] cmd) -> drill(cmd));
-        commands.put("simulate_step", (String[] cmd) -> simulate_step(cmd));
-        commands.put("placepipe", (String[] cmd) -> placepipe(cmd));
+        commands.put("add", CommandInterpreter::Add);
+        commands.put("delete", CommandInterpreter::delete);
+        commands.put("list", CommandInterpreter::list);
+        commands.put("set", CommandInterpreter::set);
+        commands.put("move", CommandInterpreter::move);
+        commands.put("fix", CommandInterpreter::fix);
+        commands.put("changepump", CommandInterpreter::changepump);
+        commands.put("lube", CommandInterpreter::lube);
+        commands.put("glue", CommandInterpreter::glue);
+        commands.put("placepump", CommandInterpreter::placepump);
+        commands.put("pickuppipe", CommandInterpreter::pickuppipe);
+        commands.put("pickuppump", CommandInterpreter::pickuppump);
+        commands.put("init", CommandInterpreter::init);
+        commands.put("read", CommandInterpreter::read);
+        commands.put("test", CommandInterpreter::test);
+        commands.put("drill", CommandInterpreter::drill);
+        commands.put("simulate_step", CommandInterpreter::simulate_step);
+        commands.put("placepipe", CommandInterpreter::placepipe);
 
         while(run){
             try {

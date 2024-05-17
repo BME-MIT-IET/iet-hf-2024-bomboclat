@@ -7,7 +7,7 @@ import java.util.List;
 /**
  * A csőhálózat csomópontjait reprezentáló osztály.
  */
-abstract public class Node extends Field implements Stepable{
+public abstract class Node extends Field implements Stepable{
     /**
      * A csomópontba befutó csövek. 
      */
@@ -16,7 +16,7 @@ abstract public class Node extends Field implements Stepable{
     /**
      * Node konstruktora. 
      */
-    public Node(){
+    protected Node(){
         edges=new ArrayList<>();
     }
 
@@ -26,14 +26,14 @@ abstract public class Node extends Field implements Stepable{
      * @return Az adott irányból a szomszédos mező, vagy ha az adott irányba nincs érvényes mező, nullt ad vissza.
      */
      public Field getNeighbour(int d){
-        return edges.get(d).has_player == true ? null : edges.get(d);
+        return edges.get(d).has_player ? null : edges.get(d);
      }
 
     /**
      * Absztrakt függvény, nincs implementálva.
      * @param rnd ha igaz, akkor nemdeterminisztikusan működik
+     * public abstract void Step(boolean rnd) ez volt a függvény, sonarlint kitöröltette.
      */
-    public abstract void Step(boolean rnd);
 
     /**
      * Összeszámolja a szerelők pontját a városba folyt 
@@ -49,6 +49,7 @@ abstract public class Node extends Field implements Stepable{
      * @param m mechanic típusú játékos, aki az adott node(leszármazottan) áll.
      * @return a felvett cső
      */
+    @Override
     public Pipe PickUpPipe(Mechanic m){
         return null;
     }
@@ -57,6 +58,7 @@ abstract public class Node extends Field implements Stepable{
      * A leszármazottakban van felüldefiniálva abban az esetben ha lehet rájuk letenni/hozzájuk adni csövet.
      * @param m a mechanic típusú játékos, aki leteszi a kezéből a csövet.
      */
+    @Override
     public void PlacePipe(Mechanic m){
         return;
     }
@@ -65,6 +67,7 @@ abstract public class Node extends Field implements Stepable{
      * Hozzáaadja az paraméterként kapott csövet az edges listához (a szomszédaihoz).
      * @param p Az paraméterként kapott cső.
      */
+    @Override
     public void addEdge(Pipe p){
         edges.add(p);
     }

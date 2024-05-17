@@ -9,12 +9,12 @@ import hu.bomboclat.Graphics.*;
 /**
  * A karakterek által használható mezőket reprezentáló osztály.
  */
-abstract public class Field{
+public abstract class Field{
     /**Az adott mezőn álló játékosok. */
     protected List<Character> players;
 
     /**Field konstruktora. */
-    public Field(){
+    protected Field(){
         players=new ArrayList<>();
     }
     
@@ -25,7 +25,7 @@ abstract public class Field{
      * @param d Irány, amelyből a szomszédot lekérik.
      * @return Az adott irányból a szomszédos mező, vagy ha az adott irányba nincs érvényes mező, nullt ad vissza.
      */
-    abstract public Field getNeighbour(int d);
+    public abstract Field getNeighbour(int d);
 
     /**
      * Leveszi a paraméterben kapott karaktert a mezőről, vagyis eltávolítja a players listából.
@@ -138,7 +138,7 @@ abstract public class Field{
      * Ebben az esetben virtuális függvényként jelenik meg, a leszármazottakban felül kell definiálni
      * @return Szomszédok száma
      */
-    abstract public int getNeighbourCount();
+    public abstract int getNeighbourCount();
 
     public boolean getSlippery() {
         return false;
@@ -148,11 +148,11 @@ abstract public class Field{
      * Absztrakt függvény, amelyek a leszármazottakban vannak megvalósítva.
      * @return Visszaadja az adott objektumhoz tartozó IView-t implementáló osztályt reprezentáló objektumot.
      */
-    abstract public IView getView();
+    public abstract IView getView();
 
     /**
      * Absztrakt függvény, amelyek a leszármazottakban vannak megvalósítva.
      * Beállítja a leszármazotthoz tartozó view objektumot a paraméterben megkapott objektumra.
      */
-    abstract public void setView(IView view);
+    public abstract void setView(IView view);
 }

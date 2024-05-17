@@ -33,6 +33,7 @@ public class PumpView extends NodeView{
      * Visszaadja a Node X koordinátáját.
      * @return A Node X koordinátája.
      */
+    @Override
     public int getPlayerPositionX() {
         return x + SIZE / 2;
     }
@@ -40,6 +41,7 @@ public class PumpView extends NodeView{
      * Visszaadja a Node Y koordinátáját.
      * @return A Node Y koordinátája.
      */
+    @Override
     public int getPlayerPositionY() {
         return y + SIZE / 2;
     }
@@ -67,7 +69,7 @@ public class PumpView extends NodeView{
         if(!pump.isWorking()) {
             g.setColor(Color.RED);
             g.drawLine((int)(Math.cos(Math.PI / 6) * SIZE/2  + getPlayerPositionX()),(int)(Math.sin(Math.PI / 6) * SIZE/2+ getPlayerPositionY()),(int)(Math.cos(Math.PI *180/150)* SIZE/2 + getPlayerPositionX()),(int)(Math.sin(Math.PI * 180/150) * SIZE/2+ getPlayerPositionY()));
-            g.drawLine((int)((Math.cos(Math.PI *120/180)* SIZE/2 + getPlayerPositionX())),(int)(Math.sin(Math.PI *120/180) * SIZE/2+ getPlayerPositionY()),(int)(Math.cos(Math.PI * 330/180)* SIZE/2 + getPlayerPositionX()),(int)(Math.sin(Math.PI* 330/180) * SIZE/2+ getPlayerPositionY()));
+            g.drawLine((int)(Math.cos(Math.PI *120/180)* SIZE/2 + getPlayerPositionX()),(int)(Math.sin(Math.PI *120/180) * SIZE/2+ getPlayerPositionY()),(int)(Math.cos(Math.PI * 330/180)* SIZE/2 + getPlayerPositionX()),(int)(Math.sin(Math.PI* 330/180) * SIZE/2+ getPlayerPositionY()));
         }
     }
 }

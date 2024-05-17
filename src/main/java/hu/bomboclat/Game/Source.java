@@ -38,6 +38,7 @@ public class Source extends Node{
      * vége(i) volt(ak))
      * @param m a csövet letenni kívánó szerelő
     */
+    @Override
     public void PlacePipe(Mechanic m){
         Pipe pipeInHand = m.GetPipeInHand();
         edges.add(pipeInHand);

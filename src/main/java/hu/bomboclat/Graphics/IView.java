@@ -6,7 +6,7 @@ import hu.bomboclat.Game.Field;
 /**
  * A megjelenítést kezelő interfész.
  */
-public interface IView {
+public interface IView{
    /**
     * Ezt megvalósítva végzendő el a g objektumra varó rajzolás.
     * @param g

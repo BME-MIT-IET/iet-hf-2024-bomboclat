@@ -24,9 +24,10 @@ public class Playfield implements Stepable{
      * Playfield konstruktor
      */
     public Playfield(){
-        nodes = new ArrayList<Node>();
-        pipes = new ArrayList<Pipe>();
+        nodes = new ArrayList<>();
+        pipes = new ArrayList<>();
     }
+    // random comment
 
     /**
      * A Stepable interface Step() függvényének az implementációja.
