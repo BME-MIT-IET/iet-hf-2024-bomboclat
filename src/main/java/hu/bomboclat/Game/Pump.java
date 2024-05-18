@@ -79,7 +79,8 @@ public class Pump extends Node{
     public void PlacePipe(Mechanic m){
         Pipe pipeInHand = m.GetPipeInHand();
         edges.add(pipeInHand);
-
+        //A játékhoz is hozzá kell adni a csövet
+        Game.frame.currentGame.currPlayfield.addPipe(pipeInHand);
         int pipeEnd = m.GetPipeEnd();
 
         if(pipeEnd == 0){

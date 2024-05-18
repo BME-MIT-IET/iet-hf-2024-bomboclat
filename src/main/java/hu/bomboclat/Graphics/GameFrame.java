@@ -1,6 +1,7 @@
 package hu.bomboclat.Graphics;
 
 import hu.bomboclat.Game.Game;
+import hu.bomboclat.Game.Character;
 
 import javax.swing.*;
 import javax.swing.border.LineBorder;

@@ -29,15 +29,15 @@ public class GuiTest extends AssertJSwingJUnitTestCase {
     private GameFrame frame;
 
     //Modify coordinates accordingly to your screen
-    private Point Source = new Point(440, 135);
-    private Point City = new Point(60, 135);
-    private Point leftPump = new Point(65, 390);
-    private Point rightPump = new Point(515, 390);
+    private Point Source = new Point(480, 135);
+    private Point City = new Point(95, 135);
+    private Point leftPump = new Point(100, 390);
+    private Point rightPump = new Point(555, 390);
     private Point newlyPlacedPump = new Point(335, 280);
     private Point pipeFromCityToSource = new Point(260,135);
     private Point pipeFromPumpToPump = new Point(285, 390);
     private Point pipeFromCityToPump = new Point(400, 300);
-    private Point pipeFromSourceToPump = new Point(350, 195);
+    private Point pipeFromSourceToPump = new Point(205, 315);
 
     @Override
     protected void onSetUp(){
@@ -70,6 +70,27 @@ public class GuiTest extends AssertJSwingJUnitTestCase {
         window.menuItem("ExitButton").click();
     }
 
+    protected void pressButton(String buttonName){
+        window.button(JButtonMatcher.withName(buttonName)).click();
+    }
+
+    protected void placePipeFromCityToLeftPump(){
+        pressButton("Move");
+        moveAndClickXY(City);
+        pressButton("Pick Up Pipe");
+        pressButton("Move");
+        moveAndClickXY(pipeFromCityToSource);
+        pressButton("Move");
+        moveAndClickXY(Source);
+        pressButton("Move");
+        moveAndClickXY(pipeFromSourceToPump);
+        pressButton("Pass");
+        pressButton("Pass");
+        pressButton("Move");
+        moveAndClickXY(leftPump);
+        pressButton("Place Pipe");
+    }
+
     @Test
     public void PlayAGameWithTwoPlayersAndOnlyPressPassThenExit(){
         startGameWithTwoPlayers();
@@ -82,10 +103,10 @@ public class GuiTest extends AssertJSwingJUnitTestCase {
     @Test
     public void PlayAGameWithTwoPlayersNomadPunturesPipeAndWin(){
         startGameWithTwoPlayers();
-        window.button(JButtonMatcher.withName("Pass")).click();
-        window.button(JButtonMatcher.withName("Move")).click();
+        pressButton("Pass");
+        pressButton("Move");
         moveAndClickXY(pipeFromPumpToPump);
-        window.button(JButtonMatcher.withName("Drill")).click();
+        pressButton("Drill");
         pressPassButton(19);
         assertTrue(frame.currentGame.isFinished());
         assertEquals(0, frame.currentGame.GetResult());
@@ -95,22 +116,22 @@ public class GuiTest extends AssertJSwingJUnitTestCase {
     @Test
     public void PlayAGameWithTwoPlayersNomadPuncturesPipeButMechanicFixesSoTheyWin() {
         startGameWithTwoPlayers();
-        window.button(JButtonMatcher.withName("Move")).click();
+        pressButton("Move");
         moveAndClickXY(Source);
-        window.button(JButtonMatcher.withName("Move")).click();
+        pressButton("Move");
         moveAndClickXY(pipeFromSourceToPump);
-        window.button(JButtonMatcher.withName("Move")).click();
+        pressButton("Move");
         moveAndClickXY(leftPump);
-        window.button(JButtonMatcher.withName("Pass")).click();
-        window.button(JButtonMatcher.withName("Move")).click();
+        pressButton("Pass");
+        pressButton("Move");
         moveAndClickXY(pipeFromPumpToPump);
-        window.button(JButtonMatcher.withName("Drill")).click();
-        window.button(JButtonMatcher.withName("Move")).click();
+        pressButton("Drill");
+        pressButton("Move");
         moveAndClickXY(rightPump);
-        window.button(JButtonMatcher.withName("Pass")).click();
-        window.button(JButtonMatcher.withName("Move")).click();
+        pressButton("Pass");
+        pressButton("Move");
         moveAndClickXY(pipeFromPumpToPump);
-        window.button(JButtonMatcher.withName("Fix")).click();
+        pressButton("Fix");
         pressPassButton(18);
         assertTrue(frame.currentGame.isFinished());
         assertEquals(1, frame.currentGame.GetResult());
@@ -120,37 +141,43 @@ public class GuiTest extends AssertJSwingJUnitTestCase {
     @Test
     public void TestForGlueWorking(){
         startGameWithTwoPlayers();
-        window.button(JButtonMatcher.withName("Glue")).click();
+        pressButton("Glue");
         assertTrue(frame.currentGame.getCurrPlayfield().getPipes().get(0).getSticky());
     }
 
     @Test
     public void TestForLubeWorking(){
         startGameWithTwoPlayers();
-        window.button(JButtonMatcher.withName("Pass")).click();
-        window.button(JButtonMatcher.withName("Move")).click();
+        pressButton("Pass");
+        pressButton("Move");
         moveAndClickXY(new Point(300, 392));
-        window.button(JButtonMatcher.withName("Lube")).click();
+        pressButton("Lube");
         assertTrue(frame.currentGame.getCurrPlayfield().getPipes().get(2).getSlippery());
     }
 
     @Test
     public void TestForPlacePump(){
         startGameWithTwoPlayers();
-        window.button(JButtonMatcher.withName("Move")).click();
+        pressButton("Move");
         moveAndClickXY(City);
-        window.button(JButtonMatcher.withName("Pick Up Pump")).click();
-        window.button(JButtonMatcher.withName("Move")).click();
+        pressButton("Pick Up Pump");
+        pressButton("Move");
         moveAndClickXY(pipeFromCityToPump);
         assertEquals(4, frame.currentGame.getCurrPlayfield().getNodes().size());
         assertEquals(4, frame.currentGame.getCurrPlayfield().getPipes().size());
-        window.button(JButtonMatcher.withName("Place Pump")).click();
+        pressButton("Place Pump");
         assertEquals(5, frame.currentGame.getCurrPlayfield().getNodes().size());
         assertEquals(5, frame.currentGame.getCurrPlayfield().getPipes().size());
-        window.button(JButtonMatcher.withName("Move")).click();
+        pressButton("Move");
         moveAndClickXY(newlyPlacedPump);
         assertEquals(frame.currentGame.getCurrPlayfield().getNodes().get(4), frame.currentGame.getCurrPlayer().getField());
     }
 
-
+    @Test
+    public void TestForPlacePipe(){
+        startGameWithTwoPlayers();
+        placePipeFromCityToLeftPump();
+        assertEquals(5, frame.currentGame.getCurrPlayfield().getPipes().size());
+        pressPassButton(18);
+    }
 }
