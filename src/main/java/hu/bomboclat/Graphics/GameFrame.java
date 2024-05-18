@@ -30,7 +30,7 @@ public class GameFrame extends JFrame {
     /**
      * Aktuális Game objektumot tároló változó
      */
-    private Game currentGame;
+    public Game currentGame;
 
     /**
      * Menüt tartalmazó tagváltozó, annak megjelenítéséért felel.

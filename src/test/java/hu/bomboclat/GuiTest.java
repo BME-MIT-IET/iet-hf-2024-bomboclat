@@ -22,10 +22,11 @@ import java.awt.*;
 
 public class GuiTest extends AssertJSwingJUnitTestCase {
     private FrameFixture window;
+    private GameFrame frame;
 
     @Override
     protected void onSetUp(){
-        GameFrame frame = GuiActionRunner.execute(() -> new GameFrame("GuiTest"));
+        frame = GuiActionRunner.execute(() -> new GameFrame("GuiTest"));
         window = new FrameFixture(robot(), frame);
         window.show();
     }
