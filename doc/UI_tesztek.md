@@ -54,7 +54,7 @@ Az előző esethez hasonlóan itt is találtam egy hibát a kódban, hiszen ebbe
 
 ## Teszt 8 
 <p>
-Azt ellenőriztem le, hogy működik-e a pumpák átállítása. Ehhez ismételten le kellett helyeznem egy új csövet, mert a játék kezdő állásaában minden pumpára két cső van rákötve, így nem állíthatóak át. Az új cső az előző tesztben lévő helyre került, majd pedig ezután a szerelő átállítja, hogy a pumpa kimenete az újonnan lehelyezett cső legyen. Ezt ellenőrzöm is a teszt során, hogy teljesült-e.
+Azt ellenőriztem le, hogy működik-e a pumpák átállítása. Ehhez ismételten le kellett helyeznem egy új csövet, mert a játék kezdő állásában minden pumpára két cső van rákötve, így nem állíthatóak át. Az új cső az előző tesztben lévő helyre került, majd pedig ezután a szerelő átállítja, hogy a pumpa kimenete az újonnan lehelyezett cső legyen. Ezt ellenőrzöm is a teszt során, hogy teljesült-e.
 </p>
 <p>
 Ez a teszt is segített egy meglévő hiba megtalálásában és kijavításában, hiszen a kódban a "Change Pump" gomb eseménykezelője rossz if-else ágban volt, ezért bal egérgomb kattintásra le sem futott. A hibát javítva már helyesen műkdött a gomb és a funkciója is.
