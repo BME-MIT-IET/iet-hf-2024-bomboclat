@@ -78,7 +78,7 @@ public class NomadView implements IView{
             g.drawImage(image, x - offsetX + 25, y - offsetY + 25, null);
         }
         catch(Exception e){
-            System.out.println("Nem lehet betölteni a képet!");
+            System.out.println(e.getMessage());
         }
     }
 

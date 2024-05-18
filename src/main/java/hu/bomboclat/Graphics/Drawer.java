@@ -144,7 +144,6 @@ public class Drawer extends Canvas{
                 else if(wantsToChange != null && !first_option) {
                     out = getClosestField(e.getX(), e.getY());
                     wantsToChange.ChangePump((Pipe)in, (Pipe)out);
-                    wantsToChange.setMoves(wantsToChange.getMoves() - 1);
                     wantsToChange=null;
                     first_option=true;
                     revalidate();
