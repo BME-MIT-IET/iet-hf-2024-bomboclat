@@ -107,8 +107,20 @@ public class GuiTest extends AssertJSwingJUnitTestCase {
     }
 
     @Test
+    public void TestForGlueWorking(){
+        startGameWithTwoPlayers();
+        window.button(JButtonMatcher.withName("Glue")).click();
+        assertTrue(frame.currentGame.getCurrPlayfield().getPipes().get(0).getSticky());
+    }
+
+    @Test
     public void TestForLubeWorking(){
-        
+        startGameWithTwoPlayers();
+        window.button(JButtonMatcher.withName("Pass")).click();
+        window.button(JButtonMatcher.withName("Move")).click();
+        moveAndClickXY(new Point(300, 392));
+        window.button(JButtonMatcher.withName("Lube")).click();
+        assertTrue(frame.currentGame.getCurrPlayfield().getPipes().get(2).getSlippery());
     }
 
 }
