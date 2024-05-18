@@ -161,5 +161,11 @@ public class Pump extends Node{
      */
     public boolean isWorking() {return working;}
 
-    
+    public Pipe getFrom(){
+        return from;
+    }
+
+    public Pipe getWhere(){
+        return where;
+    }
 }

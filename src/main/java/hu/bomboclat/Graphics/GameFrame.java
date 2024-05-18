@@ -102,7 +102,7 @@ public class GameFrame extends JFrame {
         control.add(infoLabel, BorderLayout.NORTH);
 
         this.changePump = new JButton("Change Pump");
-        this.changePump.setName("ChangePump");
+        this.changePump.setName("Change Pump");
         this.changePump.setMaximumSize(new Dimension(175, 50));
         this.changePump.setAlignmentX(Component.CENTER_ALIGNMENT);
         this.changePump.setForeground(new Color(0,0,0));

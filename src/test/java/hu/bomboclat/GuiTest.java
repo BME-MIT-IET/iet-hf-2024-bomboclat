@@ -1,11 +1,10 @@
 package hu.bomboclat;
 
-import static org.assertj.swing.launcher.ApplicationLauncher.application;
-import static org.assertj.swing.finder.WindowFinder.findFrame;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
 import hu.bomboclat.Game.Pipe;
+import hu.bomboclat.Game.Pump;
 import hu.bomboclat.Graphics.GameFrame;
 import org.assertj.swing.core.GenericTypeMatcher;
 import org.assertj.swing.core.MouseButton;
@@ -35,10 +34,13 @@ public class GuiTest extends AssertJSwingJUnitTestCase {
     private Point leftPump = new Point(100, 390);
     private Point rightPump = new Point(555, 390);
     private Point newlyPlacedPump = new Point(335, 280);
+    private Point newlyPlacedPumpOnNewPipe = new Point(60, 85);
     private Point pipeFromCityToSource = new Point(260,135);
     private Point pipeFromPumpToPump = new Point(285, 390);
     private Point pipeFromCityToPump = new Point(400, 300);
     private Point pipeFromSourceToPump = new Point(205, 315);
+    private Point newlyPlacedPipe = new Point(100, 260);
+    private Point newlyPlacedPipeAfterPumpPlaced = new Point(85, 260);
 
     @Override
     protected void onSetUp(){
@@ -90,6 +92,27 @@ public class GuiTest extends AssertJSwingJUnitTestCase {
         pressButton("Move");
         moveAndClickXY(leftPump);
         pressButton("Place Pipe");
+    }
+
+    protected void placePipeAndPumpFromCityToLeftPump(){
+        pressButton("Move");
+        moveAndClickXY(City);
+        pressButton("Pick Up Pipe");
+        pressButton("Pick Up Pump");
+        pressButton("Move");
+        moveAndClickXY(pipeFromCityToSource);
+        pressButton("Move");
+        moveAndClickXY(Source);
+        pressButton("Pass");
+        pressButton("Pass");
+        pressButton("Move");
+        moveAndClickXY(pipeFromSourceToPump);
+        pressButton("Move");
+        moveAndClickXY(leftPump);
+        pressButton("Place Pipe");
+        pressButton("Move");
+        moveAndClickXY(newlyPlacedPipe);
+        pressButton("Place Pump");
     }
 
     @Test
@@ -172,6 +195,7 @@ public class GuiTest extends AssertJSwingJUnitTestCase {
         pressButton("Move");
         moveAndClickXY(newlyPlacedPump);
         assertEquals(frame.currentGame.getCurrPlayfield().getNodes().get(4), frame.currentGame.getCurrPlayer().getField());
+        pressPassButton(20);
     }
 
     @Test
@@ -190,7 +214,48 @@ public class GuiTest extends AssertJSwingJUnitTestCase {
         startGameWithTwoPlayers();
         placePipeFromCityToLeftPump();
         pressButton("Change Pump");
-        moveAndClickXY(pipeFromPumpToPump);
+        moveAndClickXY(pipeFromSourceToPump);
+        pressButton("Change Pump");
+        moveAndClickXY(newlyPlacedPipe);
+        Pump modifiedPump = (Pump)frame.currentGame.getCurrPlayfield().getNodes().get(2);
+        assertEquals(frame.currentGame.getCurrPlayfield().getPipes().get(3), modifiedPump.getFrom());
+        assertEquals(frame.currentGame.getCurrPlayfield().getPipes().get(4), modifiedPump.getWhere());
+        pressPassButton(18);
+    }
+
+    @Test
+    public void TestForPickUpPipeAndPickUpPump(){
+        startGameWithTwoPlayers();
+        placePipeAndPumpFromCityToLeftPump();
+
+        Pipe newpipe = frame.currentGame.getCurrPlayfield().getPipes().get(4);
+        Pipe automaticallyCreatedPipe = frame.currentGame.getCurrPlayfield().getPipes().get(5);
+        Pump newPump = (Pump)frame.currentGame.getCurrPlayfield().getNodes().get(4);
+        assertEquals(newpipe, newPump.getFrom());
+        assertEquals(automaticallyCreatedPipe, newPump.getWhere());
+        assertEquals(5, frame.currentGame.getCurrPlayfield().getNodes().size());
+        assertEquals(6, frame.currentGame.getCurrPlayfield().getPipes().size());
+    }
+
+    @Test
+    public void TestForBothPickUpsAndChangePump(){
+        startGameWithTwoPlayers();
+        placePipeAndPumpFromCityToLeftPump();
+        pressButton("Pass");
+        pressButton("Pass");
+        pressButton("Move");
+        moveAndClickXY(newlyPlacedPumpOnNewPipe);
+        pressButton("Move");
+        moveAndClickXY(newlyPlacedPipeAfterPumpPlaced);
+        pressButton("Move");
+        moveAndClickXY(leftPump);
+        pressButton("Change Pump");
+        moveAndClickXY(pipeFromSourceToPump);
+        pressButton("Change Pump");
+        moveAndClickXY(newlyPlacedPipeAfterPumpPlaced);
+        pressPassButton(2);
+        Pipe automaticallyAddedPipe = frame.currentGame.getCurrPlayfield().getPipes().get(5);
+        assertTrue(automaticallyAddedPipe.getHasWater());
 
     }
 }
