@@ -142,12 +142,12 @@ public class Drawer extends Canvas{
                     first_option=false;
                 }
                 else if(wantsToChange != null && !first_option) {
-                    out = getClosestField(e.getX(), e.getY());
-                    wantsToChange.ChangePump((Pipe)in, (Pipe)out);
-                    wantsToChange=null;
-                    first_option=true;
-                    revalidate();
-                    repaint();
+                   out = getClosestField(e.getX(), e.getY());
+                   wantsToChange.ChangePump((Pipe)in, (Pipe)out);
+                   wantsToChange=null;
+                   first_option=true;
+                   revalidate();
+                   repaint();
                }
             }
 
