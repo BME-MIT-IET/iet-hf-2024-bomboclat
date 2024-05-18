@@ -141,9 +141,12 @@ public class GuiTest extends AssertJSwingJUnitTestCase {
         window.button(JButtonMatcher.withName("Pick Up Pump")).click();
         window.button(JButtonMatcher.withName("Move")).click();
         moveAndClickXY(pipeFromCityToPump);
+        assertEquals(4, frame.currentGame.getCurrPlayfield().getNodes().size());
+        assertEquals(4, frame.currentGame.getCurrPlayfield().getPipes().size());
         window.button(JButtonMatcher.withName("Place Pump")).click();
         assertEquals(5, frame.currentGame.getCurrPlayfield().getNodes().size());
-
+        assertEquals(5, frame.currentGame.getCurrPlayfield().getPipes().size());
     }
+
 
 }
