@@ -99,4 +99,12 @@ public class Playfield implements Stepable{
         return count;
     }
 
+    public List<Node> getNodes(){
+        return nodes;
+    }
+
+    public List<Pipe> getPipes(){
+        return pipes;
+    }
+
 }

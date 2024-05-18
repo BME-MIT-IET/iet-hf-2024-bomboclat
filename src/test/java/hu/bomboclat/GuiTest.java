@@ -60,7 +60,7 @@ public class GuiTest extends AssertJSwingJUnitTestCase {
     }
 
     @Test
-    public void PlayAGameWithTwoPlayersAndOnlyPressPassThenExit() throws AWTException, InterruptedException {
+    public void PlayAGameWithTwoPlayersAndOnlyPressPassThenExit(){
         startGameWithTwoPlayers();
         pressPassButton(20);
         assertTrue(frame.currentGame.isFinished());
@@ -69,7 +69,7 @@ public class GuiTest extends AssertJSwingJUnitTestCase {
     }
 
     @Test
-    public void PlayAGameWithTwoPlayersNomadPunturesPipeAndWin()throws AWTException, InterruptedException{
+    public void PlayAGameWithTwoPlayersNomadPunturesPipeAndWin(){
         startGameWithTwoPlayers();
         window.button(JButtonMatcher.withName("Pass")).click();
         window.button(JButtonMatcher.withName("Move")).click();
@@ -82,7 +82,7 @@ public class GuiTest extends AssertJSwingJUnitTestCase {
     }
 
     @Test
-    public void PlayAGameWithTwoPlayersNomadPuncturesPipeButMechanicFixesSoTheyWin() throws AWTException, InterruptedException, InaccessibleObjectException {
+    public void PlayAGameWithTwoPlayersNomadPuncturesPipeButMechanicFixesSoTheyWin() {
         startGameWithTwoPlayers();
         window.button(JButtonMatcher.withName("Move")).click();
         moveAndClickXY(new Point(440, 135));
@@ -104,6 +104,11 @@ public class GuiTest extends AssertJSwingJUnitTestCase {
         assertTrue(frame.currentGame.isFinished());
         assertEquals(1, frame.currentGame.GetResult());
         exitGame();
+    }
+
+    @Test
+    public void TestForLubeWorking(){
+        
     }
 
 }
