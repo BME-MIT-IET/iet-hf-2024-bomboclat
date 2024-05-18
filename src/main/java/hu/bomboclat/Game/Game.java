@@ -35,6 +35,10 @@ public class Game {
         return round_count;
     }
 
+    public Playfield getCurrPlayfield(){
+        return currPlayfield;
+    }
+
     /**
      * Getter függvény a currPlayer tagváltozóhoz.
      * @return a változóban tárolt objektum referencia.

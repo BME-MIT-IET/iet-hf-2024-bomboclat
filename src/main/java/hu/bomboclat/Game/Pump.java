@@ -3,7 +3,7 @@ package hu.bomboclat.Game;
 import hu.bomboclat.Graphics.IView;
 import hu.bomboclat.Graphics.PumpView;
 
-/**
+/**s
  * A pumpát reprezentáló osztály.
  */
 public class Pump extends Node{
@@ -82,7 +82,8 @@ public class Pump extends Node{
     public void PlacePipe(Mechanic m){
         Pipe pipeInHand = m.GetPipeInHand();
         edges.add(pipeInHand);
-
+        //A játékhoz is hozzá kell adni a csövet
+        Game.frame.currentGame.currPlayfield.addPipe(pipeInHand);
         int pipeEnd = m.GetPipeEnd();
 
         if(pipeEnd == 0){
@@ -163,5 +164,11 @@ public class Pump extends Node{
      */
     public boolean isWorking() {return working;}
 
-    
+    public Pipe getFrom(){
+        return from;
+    }
+
+    public Pipe getWhere(){
+        return where;
+    }
 }

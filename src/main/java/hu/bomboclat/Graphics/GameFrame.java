@@ -1,10 +1,13 @@
 package hu.bomboclat.Graphics;
 
 import hu.bomboclat.Game.Game;
+import hu.bomboclat.Game.Character;
 
 import javax.swing.*;
 import javax.swing.border.LineBorder;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.net.URL;
 
@@ -36,7 +39,7 @@ public class GameFrame extends JFrame {
     /**
      * Aktuális Game objektumot tároló változó
      */
-    private Game currentGame;
+    public Game currentGame;
 
     /**
      * Menüt tartalmazó tagváltozó, annak megjelenítéséért felel.
@@ -206,6 +209,7 @@ public class GameFrame extends JFrame {
         control.add(infoLabel, BorderLayout.NORTH);
 
         this.changePump = new JButton("Change Pump");
+        this.changePump.setName("Change Pump");
         this.changePump.setMaximumSize(new Dimension(175, 50));
         this.changePump.setAlignmentX(Component.CENTER_ALIGNMENT);
         this.changePump.setForeground(new Color(0,0,0));
@@ -218,6 +222,7 @@ public class GameFrame extends JFrame {
         control.add(Box.createVerticalStrut(40));
 
         this.drill = new JButton("Drill");
+        this.drill.setName("Drill");
         this.drill.setMaximumSize(new Dimension(175, 50));
         this.drill.setAlignmentX(Component.CENTER_ALIGNMENT);
         this.drill.setForeground(new Color(0,0,0));
@@ -230,6 +235,7 @@ public class GameFrame extends JFrame {
         control.add(Box.createVerticalStrut(40));
 
         this.fix = new JButton("Fix");
+        this.fix.setName("Fix");
         this.fix.setMaximumSize(new Dimension(175, 50));
         this.fix.setAlignmentX(Component.CENTER_ALIGNMENT);
         this.fix.setForeground(new Color(0,0,0));
@@ -242,6 +248,7 @@ public class GameFrame extends JFrame {
         control.add(Box.createVerticalStrut(40));
 
         this.glue = new JButton("Glue");
+        this.glue.setName("Glue");
         this.glue.setMaximumSize(new Dimension(175, 50));
         this.glue.setAlignmentX(Component.CENTER_ALIGNMENT);
         this.glue.setForeground(new Color(0,0,0));
@@ -254,6 +261,7 @@ public class GameFrame extends JFrame {
         control.add(Box.createVerticalStrut(40));
 
         this.lube = new JButton("Lube");
+        this.lube.setName("Lube");
         this.lube.setMaximumSize(new Dimension(175, 50));
         this.lube.setAlignmentX(Component.CENTER_ALIGNMENT);
         this.lube.setForeground(new Color(0,0,0));
@@ -266,6 +274,7 @@ public class GameFrame extends JFrame {
         control.add(Box.createVerticalStrut(40));
 
         this.move = new JButton("Move");
+        this.move.setName("Move");
         this.move.setMaximumSize(new Dimension(175, 50));
         this.move.setAlignmentX(Component.CENTER_ALIGNMENT);
         this.move.setForeground(new Color(0,0,0));
@@ -278,6 +287,7 @@ public class GameFrame extends JFrame {
         control.add(Box.createVerticalStrut(40));
 
         this.pickUpPipe = new JButton("Pick Up Pipe");
+        this.pickUpPipe.setName("Pick Up Pipe");
         this.pickUpPipe.setMaximumSize(new Dimension(175, 50));
         this.pickUpPipe.setAlignmentX(Component.CENTER_ALIGNMENT);
         this.pickUpPipe.setForeground(new Color(0,0,0));
@@ -290,6 +300,7 @@ public class GameFrame extends JFrame {
         control.add(Box.createVerticalStrut(40));
 
         this.pickUpPump = new JButton("Pick Up Pump");
+        this.pickUpPump.setName("Pick Up Pump");
         this.pickUpPump.setMaximumSize(new Dimension(175, 50));
         this.pickUpPump.setAlignmentX(Component.CENTER_ALIGNMENT);
         this.pickUpPump.setForeground(new Color(0,0,0));
@@ -302,6 +313,7 @@ public class GameFrame extends JFrame {
         control.add(Box.createVerticalStrut(40));
 
         this.placePipe = new JButton("Place Pipe");
+        this.placePipe.setName("Place Pipe");
         this.placePipe.setMaximumSize(new Dimension(175, 50));
         this.placePipe.setAlignmentX(Component.CENTER_ALIGNMENT);
         this.placePipe.setForeground(new Color(0,0,0));
@@ -314,6 +326,7 @@ public class GameFrame extends JFrame {
         control.add(Box.createVerticalStrut(40));
 
         this.placePump = new JButton("Place Pump");
+        this.placePump.setName("Place Pump");
         this.placePump.setMaximumSize(new Dimension(175, 50));
         this.placePump.setAlignmentX(Component.CENTER_ALIGNMENT);
         this.placePump.setForeground(new Color(0,0,0));
@@ -326,6 +339,7 @@ public class GameFrame extends JFrame {
         control.add(Box.createVerticalStrut(40));
 
         this.exit = new JButton("Pass");
+        this.exit.setName("Pass");
         this.exit.setMaximumSize(new Dimension(175, 50));
         this.exit.setAlignmentX(Component.CENTER_ALIGNMENT);
         this.exit.setForeground(new Color(0,0,0));
@@ -377,10 +391,12 @@ public class GameFrame extends JFrame {
     private JMenuBar createMenuBar() {
         JMenuBar menuBar = new JMenuBar();
         var menu = new JMenu("Menu");
+        menu.setName("MenuButton");
         menu.setMnemonic(KeyEvent.VK_F);
         menuBar.add(menu);
 
         var newGameMenuItem = new JMenuItem("Start new game", KeyEvent.VK_N);
+        newGameMenuItem.setName("NewGameMenuButton");
         JPanel p = new JPanel(new BorderLayout(5, 5));
         JPanel labels = new JPanel(new GridLayout(0, 1, 2, 2));
         labels.add(new JLabel("Mechanic: ", SwingConstants.TRAILING));
@@ -388,12 +404,15 @@ public class GameFrame extends JFrame {
         p.add(labels, BorderLayout.LINE_START);
         JPanel controls = new JPanel(new GridLayout(0, 1, 2, 2));
         JTextField mechanics = new JTextField();
+        mechanics.setName("NumberOfMechanics");
         controls.add(mechanics);
         JTextField nomads = new JTextField();
+        nomads.setName("NumberOfNomads");
         controls.add(nomads);
         p.add(controls, BorderLayout.CENTER);
         UIManager.put("OptionPane.noButtonText", "Cancel");
         UIManager.put("OptionPane.yesButtonText", "StartNewGame");
+
         newGameMenuItem.addActionListener(e -> {
             int result = JOptionPane.showConfirmDialog(this, p, "", JOptionPane.YES_NO_OPTION);
             if (result == JOptionPane.OK_OPTION) {
@@ -407,6 +426,7 @@ public class GameFrame extends JFrame {
             }
         });
         var exitMenuItem = new JMenuItem("Exit", KeyEvent.VK_X);
+        exitMenuItem.setName("ExitButton");
         exitMenuItem.addActionListener(e -> {
             this.dispose();
         });

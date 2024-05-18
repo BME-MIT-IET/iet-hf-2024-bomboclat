@@ -5,6 +5,7 @@ import hu.bomboclat.Game.Mechanic;
 import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
+import java.util.Objects;
 
 import javax.imageio.ImageIO;
 
@@ -78,12 +79,12 @@ public class MechanicView implements IView{
         }
         
         try{
-            BufferedImage image = ImageIO.read(getClass().getResourceAsStream("Images\\" + imageName + ".png"));
+            BufferedImage image = ImageIO.read(Objects.requireNonNull(getClass().getResourceAsStream("/Images/" + imageName + ".png")));
             int offsetX = image.getWidth();
             int offsetY = image.getHeight();
             g.drawImage(image, x - offsetX + 25, y - offsetY + 25, null);
         }
-        catch(IOException e){  
+        catch(Exception e){
             System.out.println("Nem lehet betölteni a képet!");
         }
         
