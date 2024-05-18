@@ -211,6 +211,8 @@ public class Pipe extends Field implements Stepable{
         }
         PumpView pv = new PumpView(pipeView.getPlayerPositionX(), pipeView.getPlayerPositionY(), p);
         p.setView(pv);
+        p.setFrom(this);
+        p.setWhere(p2);
         Game.frame.getCanvas().addViewable(pv);
         //Hozzá kell hogy adjuk a játékhoz a pumpát
         Game.frame.currentGame.currPlayfield.addNode(p);
