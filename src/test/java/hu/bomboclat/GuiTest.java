@@ -33,7 +33,7 @@ public class GuiTest extends AssertJSwingJUnitTestCase {
     private Point City = new Point(60, 135);
     private Point leftPump = new Point(65, 390);
     private Point rightPump = new Point(515, 390);
-    private Point newlyPlacePump = new Point(335, 280);
+    private Point newlyPlacedPump = new Point(335, 280);
     private Point pipeFromCityToSource = new Point(260,135);
     private Point pipeFromPumpToPump = new Point(285, 390);
     private Point pipeFromCityToPump = new Point(400, 300);
@@ -147,7 +147,9 @@ public class GuiTest extends AssertJSwingJUnitTestCase {
         window.button(JButtonMatcher.withName("Place Pump")).click();
         assertEquals(5, frame.currentGame.getCurrPlayfield().getNodes().size());
         assertEquals(5, frame.currentGame.getCurrPlayfield().getPipes().size());
-
+        window.button(JButtonMatcher.withName("Move")).click();
+        moveAndClickXY(newlyPlacedPump);
+        assertEquals(frame.currentGame.getCurrPlayfield().getNodes().get(4), frame.currentGame.getCurrPlayer().getField());
     }
 
 
