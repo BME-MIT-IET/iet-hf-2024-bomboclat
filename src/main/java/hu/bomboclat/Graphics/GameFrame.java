@@ -114,6 +114,7 @@ public class GameFrame extends JFrame {
         control.add(Box.createVerticalStrut(40));
 
         this.drill = new JButton("Drill");
+        this.drill.setName("Drill");
         this.drill.setMaximumSize(new Dimension(175, 50));
         this.drill.setAlignmentX(Component.CENTER_ALIGNMENT);
         this.drill.setForeground(new Color(0,0,0));
@@ -126,6 +127,7 @@ public class GameFrame extends JFrame {
         control.add(Box.createVerticalStrut(40));
 
         this.fix = new JButton("Fix");
+        this.fix.setName("Fix");
         this.fix.setMaximumSize(new Dimension(175, 50));
         this.fix.setAlignmentX(Component.CENTER_ALIGNMENT);
         this.fix.setForeground(new Color(0,0,0));
@@ -138,6 +140,7 @@ public class GameFrame extends JFrame {
         control.add(Box.createVerticalStrut(40));
 
         this.glue = new JButton("Glue");
+        this.glue.setName("Glue");
         this.glue.setMaximumSize(new Dimension(175, 50));
         this.glue.setAlignmentX(Component.CENTER_ALIGNMENT);
         this.glue.setForeground(new Color(0,0,0));
@@ -150,6 +153,7 @@ public class GameFrame extends JFrame {
         control.add(Box.createVerticalStrut(40));
 
         this.lube = new JButton("Lube");
+        this.lube.setName("Lube");
         this.lube.setMaximumSize(new Dimension(175, 50));
         this.lube.setAlignmentX(Component.CENTER_ALIGNMENT);
         this.lube.setForeground(new Color(0,0,0));
@@ -162,6 +166,7 @@ public class GameFrame extends JFrame {
         control.add(Box.createVerticalStrut(40));
 
         this.move = new JButton("Move");
+        this.move.setName("Move");
         this.move.setMaximumSize(new Dimension(175, 50));
         this.move.setAlignmentX(Component.CENTER_ALIGNMENT);
         this.move.setForeground(new Color(0,0,0));
@@ -174,6 +179,7 @@ public class GameFrame extends JFrame {
         control.add(Box.createVerticalStrut(40));
 
         this.pickUpPipe = new JButton("Pick Up Pipe");
+        this.pickUpPipe.setName("Pick Up Pipe");
         this.pickUpPipe.setMaximumSize(new Dimension(175, 50));
         this.pickUpPipe.setAlignmentX(Component.CENTER_ALIGNMENT);
         this.pickUpPipe.setForeground(new Color(0,0,0));
@@ -186,6 +192,7 @@ public class GameFrame extends JFrame {
         control.add(Box.createVerticalStrut(40));
 
         this.pickUpPump = new JButton("Pick Up Pump");
+        this.pickUpPump.setName("Pick Up Pump");
         this.pickUpPump.setMaximumSize(new Dimension(175, 50));
         this.pickUpPump.setAlignmentX(Component.CENTER_ALIGNMENT);
         this.pickUpPump.setForeground(new Color(0,0,0));
@@ -198,6 +205,7 @@ public class GameFrame extends JFrame {
         control.add(Box.createVerticalStrut(40));
 
         this.placePipe = new JButton("Place Pipe");
+        this.placePipe.setName("Place Pipe");
         this.placePipe.setMaximumSize(new Dimension(175, 50));
         this.placePipe.setAlignmentX(Component.CENTER_ALIGNMENT);
         this.placePipe.setForeground(new Color(0,0,0));
@@ -210,6 +218,7 @@ public class GameFrame extends JFrame {
         control.add(Box.createVerticalStrut(40));
 
         this.placePump = new JButton("Place Pump");
+        this.placePump.setName("Place Pump");
         this.placePump.setMaximumSize(new Dimension(175, 50));
         this.placePump.setAlignmentX(Component.CENTER_ALIGNMENT);
         this.placePump.setForeground(new Color(0,0,0));
@@ -222,6 +231,7 @@ public class GameFrame extends JFrame {
         control.add(Box.createVerticalStrut(40));
 
         this.exit = new JButton("Pass");
+        this.exit.setName("Pass");
         this.exit.setMaximumSize(new Dimension(175, 50));
         this.exit.setAlignmentX(Component.CENTER_ALIGNMENT);
         this.exit.setForeground(new Color(0,0,0));
