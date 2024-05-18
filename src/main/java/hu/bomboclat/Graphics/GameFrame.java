@@ -82,7 +82,7 @@ public class GameFrame extends JFrame {
     private void initFrame() {
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
         this.setResizable(false);
-        //URL url = ClassLoader.getSystemResource("Images/deserticon.jpg");
+        //URL url = ClassLoader.getSystemResource("Graphics/Images/deserticon.jpg");
         //Toolkit kit = Toolkit.getDefaultToolkit();
         //Image img = kit.createImage(url);
         //this.setIconImage(img);

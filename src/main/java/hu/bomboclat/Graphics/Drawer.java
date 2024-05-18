@@ -150,6 +150,7 @@ public class Drawer extends Canvas{
                     repaint();
                 }
             }
+            
         }
 
         /**
