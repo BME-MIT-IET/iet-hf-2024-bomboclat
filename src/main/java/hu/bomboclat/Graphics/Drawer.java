@@ -148,7 +148,7 @@ public class Drawer extends Canvas{
                     first_option=true;
                     revalidate();
                     repaint();
-                }
+               }
             }
 
         }
