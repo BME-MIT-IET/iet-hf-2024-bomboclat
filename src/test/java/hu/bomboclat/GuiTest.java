@@ -5,6 +5,7 @@ import static org.assertj.swing.finder.WindowFinder.findFrame;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
+import hu.bomboclat.Game.Pipe;
 import hu.bomboclat.Graphics.GameFrame;
 import org.assertj.swing.core.GenericTypeMatcher;
 import org.assertj.swing.core.MouseButton;
@@ -177,7 +178,19 @@ public class GuiTest extends AssertJSwingJUnitTestCase {
     public void TestForPlacePipe(){
         startGameWithTwoPlayers();
         placePipeFromCityToLeftPump();
+        Pipe newpipe = frame.currentGame.getCurrPlayfield().getPipes().get(4);
+        assertEquals(frame.currentGame.getCurrPlayfield().getNodes().get(0), newpipe.getEndpoint(0));
+        assertEquals(frame.currentGame.getCurrPlayfield().getNodes().get(2), newpipe.getEndpoint(1));
         assertEquals(5, frame.currentGame.getCurrPlayfield().getPipes().size());
         pressPassButton(18);
+    }
+
+    @Test
+    public void TestForChangePump(){
+        startGameWithTwoPlayers();
+        placePipeFromCityToLeftPump();
+        pressButton("Change Pump");
+        moveAndClickXY(pipeFromPumpToPump);
+
     }
 }
